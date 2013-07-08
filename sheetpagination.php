@@ -44,7 +44,7 @@ if($_GET)
 		echo "<td>";
 		echo $c_row[4];		
         echo "<td width='100' class='print'>";
-		echo "<a href='?c_id1=$c_row[0]' onclick='return confirmSubmit()'>Delete</a>&nbsp;<a href='updateworksheet.php?c_id2=$c_row[0]'>Update</a>&nbsp;<a href='viewwork.php?c_id3=$c_row[0]'>View</a>";
+		echo "<a href='?c_id1=$c_row[0]' onclick='return confirmSubmit()'>Delete</a>&nbsp;<a href='updateworksheet.php?c_id2=$c_row[0]'>Update</a>&nbsp;<a href='viewwork.php?c_id3=$c_row[0]'>View</a>&nbsp;<a href='assignstock.php?job_id=$c_row[0]'>assign stock</a>&nbsp;<a href='view_assgn.php'>view_assign</a>";
 		echo "</td>";
 		echo "</tr>";
 		}

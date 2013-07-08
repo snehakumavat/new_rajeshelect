@@ -49,12 +49,12 @@ else
     	<br />
 		<div class="quotation"><center>Employee Details</center></div>
         <div>
-        <table class="emp_tab">
+        <table class="emp_tab" style="table-layout:fixed;">
         <tr class="emp_header">
-        <td width="250">Emp. Name</td>
-        <td width="160">Contact No.</td>
-        <td>Address</td>
-        <td width="70">Action</td>
+        <td width="200">Emp. Name</td>
+        <td width="120">Contact No.</td>
+        <td width="160" style="word-wrap:break-word">Address</td>
+        <td width="200">Action</td>
         </tr>
 
         <?php
@@ -67,7 +67,7 @@ else
         echo "<td width='160'>";
 		echo $e_row[3];
 		echo "</td>";
-		echo "<td>";
+		echo "<td style='overflow:hidden;'>";
 		echo $e_row[2];
 		echo "</td>";
         echo "<td width='70' class='print'>";
