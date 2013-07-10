@@ -1,13 +1,20 @@
 <?php
-error_reporting(0);
 include("include/database.php");
 
-$in=$_REQUEST['i_id'];
+$in=$_REQUEST['c_id1'];
 
-$c_query="select * from invoice where i_id=".$in;
+$c_query="select * from clients where c_id=".$in;
 $c_res=mysql_query($c_query);
 $c_row=mysql_fetch_array($c_res);
 
+$c_query1="select * from invoice order by i_id DESC";
+$c_res1=mysql_query($c_query1);
+if($c_row1=mysql_fetch_array($c_res1))
+{
+	$count=$c_row1[0];
+	}
+
+ 
 ?>
 
 <?php
@@ -15,60 +22,48 @@ $c_row=mysql_fetch_array($c_res);
 
 if(isset($_REQUEST['submit']))
 {	
-	$a=$_POST['d'];
-	$b = count($a);
-	for($i=0; $i<$b; $i++)
-	{
-		$id=$_REQUEST['i_id'];
-		$c=$c_row[3];
-		$d=$c_row[1];	
-		$q_d=$_POST['d'][$i];
-		$q_c=$_POST['c'][$i];
-		$q_q=$_POST['q'][$i];
-		$q_r=$_POST['r'][$i];
-		$q_a=$_POST['s'][$i];
-		$total=$q_q * $q_r * $q_a;
-			
-	$quo="insert into sub_invoice(i_id,des,capacity,quantity,rate,service,total) values('".$id."','".$q_d."','".$q_c."','".$q_q."','".$q_r."','".$q_a."','".$total."')";
-	$quo_res=mysql_query($quo);
+		$c=$in;
+		$q_date=$_POST['q_date'];
+		$q_name=$_POST['q_name'];
+		$q_address=$_POST['q_address'];
+		$po=$_POST['po_no'];				
+		$rgp=$_POST['rgp'];
+		$dc=$_POST['dc'];
+		$v1=$_POST['vendr'];
+		$t1=$_POST['tin_no'];
+		$d1=$_POST['date1'];
+		$d2=$_POST['date2'];
 
-	$qry_r="insert into amc(i_id,c_name,a_date,des,service) values('".$id."','".$c."','".$d."','".$q_d."','".$q_a."')";
-	$res_r=mysql_query($qry_r);
-
-	$amc = $_POST['s'][$i];
-	$reminder_interval = 12/$amc;
-	$a =number_format($reminder_interval * 30)+1;
-	$c=0;
-	$NewDate = '';
-	for($j=0; $j<$amc; $j++)
-	{
-		$day=$c_row[1];
-		$arr = explode("-", $day);
-		list($day, $month, $year) = $arr;
-		$date = $day."-".$month."-".$year;
-		$c = $c + $a;
-		$NewDate[$j]=date('Y-m-d', strtotime("$date +$c days"));
-	}
-	foreach($NewDate as $x)
-	{
-		$ia=$_REQUEST['i_id'];
-		$des=$q_d;
-		$name=$c_row[3];
-		$qry="insert into reminder(i_id,r_name,r_des,r_date) values('".$ia."','".$name."','".$des."','".$x."')";
-		$res=mysql_query($qry);
-	}
+		$add="INSERT INTO `invoice`(`q_date`,`c_id`,`c_comp`, `q_name`, `q_address`, `po_no`, `rgp_no`, `dc_no`, `code_no`, `tin_no`, `date1`, `date2`) VALUES ('".$q_date."','".$c."','".$c_row[3]."','".$q_name."','".$q_address."','".$po."','".$rgp."','".$dc."','".$v1."','".$t1."','".$d1."','".$d2."')";
+		$query=mysql_query($add);
 	
-	
-	if($quo_res)
-	{
-		header("location:invoicedetails.php");
-	}
-	else
-	{
-		echo"error";
-	}
-	}
-	
+		$a=$_POST['d'];
+		$b = count($a);
+		for($i=0; $i<$b; $i++)
+		{
+			$id=$_REQUEST['invoice'];
+			$c=$c_row[3];
+			$d=$c_row[1];	
+			$q_d=$_POST['d'][$i];
+			$q_q=$_POST['q'][$i];
+			$q_r=$_POST['r'][$i];
+			$total=$q_q * $q_r ;
+				
+		$quo="insert into sub_invoice(i_id,des,quantity,rate,total) values('".$id."','".$q_d."','".$q_q."','".$q_r."','".$total."')";
+		$quo_res=mysql_query($quo);
+		
+		
+		
+		if($quo_res)
+		{
+			header("location:invoicedetails.php");
+		}
+		else
+		{
+			echo"error";
+		}
+		}
+		
 }
 if(isset($_REQUEST['cancel']))
 {
@@ -77,7 +72,7 @@ if(isset($_REQUEST['cancel']))
 ?>
 <html>
 <head>
-<title>Anmol Water Tank Cleaners</title>
+<title>Rajesh Electric Wires</title>
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
 <script>
@@ -86,7 +81,7 @@ if(isset($_REQUEST['cancel']))
  {
   var obj = document.getElementById("phone");
   var data = obj.innerHTML;
-  data += "<table class='des'><tr><td><input class='des_in' type='text' name='d["+counter+"]' id='person_phone"+counter+"' /></td><td><input class='des_cap' type='text' name='c["+counter+"]' id='person_phone"+counter+"' /></td><td><input class='des_q' type='text' name='q["+counter+"]' id='person_phone"+counter+"' /></td><td><input class='des_r' type='text' name='r["+counter+"]' id='person_phone"+counter+"' /></td><td><input class='des_ser' type='text' name='s["+counter+"]' id='person_phone"+counter+"' /></td></tr></table>";
+  data += "<table class='des'><tr><td><input class='des_in' type='text' name='d["+counter+"]' id='person_phone"+counter+"' /></td><td><input class='des_q' type='text' name='q["+counter+"]' id='person_phone"+counter+"' /></td><td><input class='des_r' type='text' name='r["+counter+"]' id='person_phone"+counter+"' /></td></tr></table>";
   obj.innerHTML = data;
   counter++;
   }
@@ -106,52 +101,70 @@ if(isset($_REQUEST['cancel']))
                 <form name="form5" action="" method="post" enctype="multipart/form-data">
                 <br />
                 
-                <div class="quotationI"><center>AMC INVOICE</center></div>
+                <div class="quotationI"><center>REW TAX INVOICE</center></div>
                 <br />
-                <table class="q_info3">
+                <table class="q_info3" height="300px">
                 <tr><td class="l_form">Date:</td><td><input name="q_date" class="q_in" type="text" value="<?php  echo date("d-m-Y"); ?>"/></td></tr>
                 <tr><td class="l_form">Client Name:</td>
                 <td>
-                <input type="text" class="q_in" name="q_name" value="<?php echo $c_row[3]; ?>">
+                <input type="text" class="q_in" name="q_name" value="<?php echo $c_row[2]; ?>">
 				</td>
                 </tr>
                 <tr><td class="l_form">Address:</td><td><textarea class="q_add" name="q_address"><?php echo $c_row[4]; ?></textarea></td></tr>
-                </table>
-                <table class="q_info4">
-                <tr><td class="l_form">Invoice No</td>
-                <td><input name="q_mo" class="q_in" type="text" value="<?php echo $c_row[0]; ?>"/></td></tr>
-                <tr><td class="l_form">Kind Attn:</td>
-                <td><input name="q_mo" class="q_in" type="text" value="<?php echo $c_row[5]; ?>"/></td>
+                <tr><td class="l_form">PO No:</td>
+                <td>
+                <input type="text" class="q_in" name="po_no" >
+				</td>
                 </tr>
-                <tr><td class="l_form">Mo No:</td><td><input name="q_mo" class="q_in" type="text" value="<?php echo $c_row[6]; ?>"/></td>
+                <tr><td class="l_form">Your RGP No:</td>
+                <td>
+                <input type="text" class="q_in" name="rgp" >
+				</td></tr>
+                </table>
+                <table class="q_info5">
+                <tr><td class="l_form">Invoice No</td>
+                <td><input name="invoice" class="q_in" type="text" value="<?php echo $count+1; ?>"/></td></tr>
+                <tr><td class="l_form">Our DC No:</td>
+                <td>
+                <input type="text" class="q_in" name="dc" >
+				</td></tr>
+                 <tr><td class="l_form">Vendor Code No:</td>
+                <td>
+                <input type="text" class="q_in" name="vendr" >
+				</td></tr>
+                 <tr><td class="l_form">Consignee Vat / Tin No:</td>
+                <td>
+                <input type="text" class="q_in" name="tin_no" >
+				</td></tr>
+                 <tr><td class="l_form">Date:</td>
+                <td>
+                <input type="text" class="q_in" name="date1" value="<?php echo date('Y-m-d'); ?>" >
+				</td></tr>
+                <tr><td class="l_form">Date:</td>
+                <td>
+                <input type="text" class="q_in" name="date2" value="<?php echo date('Y-m-d'); ?>" >
+				</td></tr>
                 </table>
                 <br />
                 <table class="des">
                 <tr>
-                <td class="heading">Description</td>
-                <td class="heading">Capacity</td>
-                <td class="heading" >Quantity</td>
-                <td class="heading">Rate</td>
-                <td class="heading">Service in Year</td>
+                <td class="heading">DESCRIPTION</td>
+                <td class="heading" >QTY</td>
+                <td class="heading">RATE/EACH</td>
+                
                 </tr>
                 <span style="color:#00f;font-size:20px;font-weight:bold;cursor:pointer;" onClick="add_phone_field()">[+]</span>
                 <tr>
                 <td>
                  <input class="des_in" type="text" name="d[]" id="0"><br>
-                </td>
-                <td>
-                 <input class="des_cap" type="text" name="c[]" id="0"><br>
-                </td>
+                </td>                
                 <td>
                  <input class="des_q" type="text" name="q[]" id="0"><br>
                 </td>
                 <td>
                  <input class="des_r" type="text" name="r[]" id="0"><br>
                 </td>
-                <td>
-                 <input class="des_ser" type="text" name="s[]" id="0"><br>
-                </td>
-                
+                               
                 </tr>
                 
                 </table>

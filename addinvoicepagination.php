@@ -36,7 +36,7 @@ $page=$_GET['page'];
         <tr class="emp_header">
         <td width="250">Client Name</td>
         <td width="160">Contact No.</td>
-        <td>Site Address</td>
+        <td>Address</td>
         <td width="100">Action</td>
         </tr>
 
@@ -45,16 +45,16 @@ $page=$_GET['page'];
 		{
         echo "<tr class='emp_header'>";
         echo "<td width='250'>";
-		echo $c_row[2]; echo "&nbsp;"; echo $c_row[3];
+		echo $c_row[2];
 		echo "</td>";
         echo "<td width='160'>";
-		echo $c_row[8];
+		echo $c_row[9];
 		echo "</td>";
 		echo "<td>";
 		echo $c_row[4];
 		echo "</td>";
 		echo "<td width='100' class='print'>";
-		echo "<a href='invoice.php?c_id1=$c_row[0]'>Create</a>";
+		echo "<a href='invoicebasic.php?c_id1=$c_row[0]'>Create</a>";
 		echo "</td>";
 		echo "</tr>";
 		}

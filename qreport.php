@@ -262,7 +262,7 @@ $she_cess=$serv_tax * 0.01;
 $vat=$plus * .05;
 $g_total=$row_t[0]+$serv_tax+$e_cess+$she_cess+$vat+$row[12];
 	
-	}
+}
 ?>
 <td  rowspan="5" height="10px;" style="text-align:left; vertical-align:text-top;">
 <font size="-1">

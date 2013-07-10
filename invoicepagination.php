@@ -22,7 +22,7 @@ $rsd = mysql_query($sql);
                 <td width="80">In. No</td>
                 <td width="250">Client Name</td>
                 <td width="160">Date</td>
-                <td>Site Address</td>
+                <td>Address</td>
                 <td width="70">Print</td>
                 </tr>
                 
@@ -35,13 +35,13 @@ $rsd = mysql_query($sql);
                 echo $row[0];
                 echo "</td>";
                 echo "<td width='250'>";
-                echo $row[3];
+                echo $row[4];
                 echo "</td>";
                 echo "<td width='160'>";
                 echo $row[1];
                 echo "</td>";
                 echo "<td width='500'>";
-                echo $row[4];
+                echo $row[5];
                 echo "</td>";
 				echo "<td width='70' class='print'>";
                 echo "<a href='report.php?id=$row[0]'>Print</a>";
