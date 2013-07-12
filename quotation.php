@@ -125,12 +125,69 @@ cursor: pointer;
     <div id="sub-header">
     			
                 <div class="quo">
-                <br />
-                <div class="quotation"><center>Quotation Details</center></div>
+                <br /> <?php
+		
+		if(isset($_REQUEST['search']))
+		  {
+		 	 $srch=$_REQUEST['search'];			
+			 $query="select * from quotation where q_name LIKE '%$srch%'OR q_date LIKE '%$srch%' OR q_mail LIKE '%$srch%' OR q_ref_no LIKE '%$srch%' OR q_address LIKE '%$srch%' OR q_mo LIKE '%$srch%'";
+	 		 $ans=mysql_query($query);
+	 
+	?>
+        <table class="emp_tab">
+        <?php
+        if(mysql_num_rows($ans)==0)
+		{
+		?>
+        <tr class='emp_header'>
+         <td colspan='6' align="center"><h3> No Data available</h3></td>
+        </tr>
+		
+		<?php
+        }
+		?>
+        <?php
+		while($row=mysql_fetch_array($ans))
+		{		
+        	echo "<tr class='emp_header'>";
+                echo "<td width='80'>";
+                echo $row[0];
+                echo "</td>";
+                echo "<td width='250'>";
+                echo $row[4];
+                echo "</td>";
+                echo "<td width='160'>";
+                echo $row[3];
+                echo "</td>";
+                echo "<td width='300'>";
+                echo $row[5];
+                echo "</td>";
+				 echo "<td width='200'>";
+                echo $row[2];
+                echo "</td>";
+				echo "<td width='70' class='print'>";
+                echo "<a href='updatequo.php?id=$row[0]'>Update</a>&nbsp;<a href='qreport.php?id=$row[0]'>Print</a>";
+                echo "</td>";
+                echo "</tr>";
                 
-                <div>
+		}
+		?>        
+        </table>
+        <?php
+		  }
+		?>
+                 <form action="" method="post" name="search">
+				<table class="quotation">
+                <tr>
+                <td>Quotation Details</td>
+                <td><input type='text' name="search"  title="Enter client name,date,address,email,ref no.,mobile no here" />
+                </td>
+                <td><input type="submit" name="result" value="search" class="formbutton" /></td>
+                </tr>
+                </table>
+                </form>
                 
-                <div id="loading" ></div>
+                       <div id="loading" ></div>
 		<div id="content" ></div>
         <table width="800px">
 			<tr><Td>
@@ -144,8 +201,7 @@ cursor: pointer;
 				?>
 	</ul>	
 	</Td></tr></table>
-        
-                </div>                
+                     
                
   				</div>
                 

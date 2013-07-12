@@ -118,17 +118,69 @@ cursor: pointer;
 </style>
 </head>
 
-<body>
-<div id="container">
+<body><div id="container">
 	
     <?php
 	include("header.php");
 	?>
-    
-    <div id="sub-header">
-    <div class="quo">
+      <div id="sub-header">
+        <div class="quo">
     	<br />
-		<div class="quotation"><center>Stock Assign Details</center></div>
+        <?php
+		
+		if(isset($_REQUEST['search']))
+		  {
+		 	 $srch=$_REQUEST['search'];			
+			 $query="select emp.e_name,stock.st_name,assign_job.assg_val,assign_job.date from assign_job ,emp,stock where assign_job.stock_id=stock.st_id and assign_job.emp_id=emp.e_id and (emp.e_name LIKE '%$srch%' OR stock.st_name LIKE '%$srch%' OR date LIKE '%$srch%' )";
+	 		 $ans=mysql_query($query);
+	 
+	?>
+        <table class="emp_tab">
+        <?php
+        if(mysql_num_rows($ans)==0)
+		{
+		?>
+        <tr class='emp_header'>
+         <td colspan='6' align="center"><h3>No Data available</h3></td>
+        </tr>
+		
+		<?php
+        }
+		?>
+           <?php
+		while($e_row=mysql_fetch_array($ans))
+		{
+        echo "<tr class='emp_header'>";
+        echo "<td width='250'>";
+		echo $e_row[0];
+		echo "</td>";
+        echo "<td width='160'>";
+		echo $e_row[1];
+		echo "</td>";
+		echo "<td>";
+		echo $e_row[2];
+		echo "</td>";
+       echo "<td>";
+		echo date('d-m-Y',strtotime($e_row[3]));
+		echo "</td>";
+		echo "</tr>";
+		}
+		?>      
+        </table>
+        <?php
+		  }
+		?>
+        
+                <form action="" method="post" name="search">
+				<table class="quotation">
+                <tr>
+                <td>Stock Assign Details</td>
+                <td><input type='text' name="search"  title="Enter Employee name,sotck_name,date here" />
+                </td>
+                <td><input type="submit" name="result" value="search" class="formbutton" /></td>
+                </tr>
+                </table>
+                </form>
         <div id="loading" ></div>
 		<div id="content" ></div>
         <table width="800px">
@@ -141,7 +193,7 @@ cursor: pointer;
 				{								
 					echo '<li id="'.$i.'">'.$i.'</li>';
 				}
-				?>
+				?>                
 	</ul>	
 	</Td></tr></table>
     </div>

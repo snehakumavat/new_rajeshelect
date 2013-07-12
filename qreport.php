@@ -1,5 +1,4 @@
 <?php
-
 include("include/database.php");
 
 $p=$_REQUEST['id'];

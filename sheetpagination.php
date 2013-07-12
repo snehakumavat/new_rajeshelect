@@ -27,7 +27,17 @@ if($_GET)
 		<td>RPM</td>	        
         <td width="180">Action</td>
         </tr>
-
+<?php
+        if(mysql_num_rows($c_res_f)==0)
+		{
+		?>
+        <tr class='emp_header'>
+         <td colspan='6' align="center"><h3> No Data available</h3></td>
+        </tr>
+		
+		<?php
+        }
+		?>
         <?php
 		while($c_row=mysql_fetch_array($c_res_f))
 		{

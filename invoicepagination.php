@@ -19,31 +19,56 @@ $rsd = mysql_query($sql);
 
 				<table class="emp_tab">
                 <tr class="emp_header">
-                <td width="80">In. No</td>
-                <td width="250">Client Name</td>
-                <td width="160">Date</td>
-                <td>Address</td>
+                <td>SR.No</td>
+                <td>InvoiceNo</td>
+                <td >ClientName</td>
+                <td>Date</td>
+                <td>DC.No</td>
+                <td>SUB-TOTAL</td>
+                <td>SER.TAX</td>
+                <td>VAT</td>
+                <td>Total</td>
                 <td width="70">Action</td>
                 </tr>
                 
         <?php
-		
+		$count=0;
 		while($row=mysql_fetch_array($rsd))
 		{		
         	echo "<tr class='emp_header'>";
-                echo "<td width='70'>";
+				echo "<td >";
+                echo $count+=1;
+                echo "</td>";				
+                echo "<td >";
                 echo $row[0];
                 echo "</td>";
-                echo "<td width='250'>";
+                echo "<td >";
                 echo $row[4];
                 echo "</td>";
-                echo "<td width='160'>";
+                echo "<td>";
                 echo $row[1];
                 echo "</td>";
-                echo "<td width='500'>";
-                echo $row[5];
+                echo "<td >";
+                echo $row[9];
                 echo "</td>";
-				echo "<td width='70' class='print'>";
+				echo "<td >";
+				$qury="select SUM(total) from sub_invoice where i_id='$row[0]'";$res=mysql_query($qury);
+				$sub_total=mysql_result($res,0);
+                echo $sub_total;		/*Sub total*/
+                echo "</td>";
+				echo "<td >";
+				$ser_tax=($sub_total*.33)*.12;
+                echo round($ser_tax,2);		/*Service Tax*/
+                echo "</td>";
+				echo "<td >";
+				$vat=($sub_total*.67)*.5;
+                echo round($vat,2);		/*VAT*/
+                echo "</td>";
+				echo "<td >";
+				$total=$vat+$ser_tax+$sub_total;
+                echo round($total,2);		/*total*/
+                echo "</td>";
+				echo "<td class='print'>";
                 echo "<a href='updateinvoice.php?id=$row[0]'>Update</a>&nbsp;<a href='report.php?id=$row[0]'>Print</a>";
                 echo "</td>";
                 echo "</tr>";

@@ -28,12 +28,7 @@ $pages = ceil($count/$per_page);
 		}
 		
 	}
-	if(isset($_REQUEST['search']))
-	{
-		echo $srch=$_REQUEST['search'];
-		exit();
-		}
-?>
+	?>
 
 <html>
 <head>
@@ -133,16 +128,12 @@ padding:5px;3
 color:#FFF;
 margin-left:-10px;
 background-color:#00a1d2;
-
 }
 #pagination li:hover
 { 
 color:#FF0084; 
 cursor: pointer; 
-
 }
-
-
 </style>
 
 
@@ -155,15 +146,61 @@ cursor: pointer;
 	include("header.php");
 	?>
     
-    <div id="sub-header">
-    			
+    <div id="sub-header"><br>
+    	<?php
+		
+		if(isset($_REQUEST['search']))
+		  {
+		 	 $srch=$_REQUEST['search'];
+			 $id=$_REQUEST['id'];
+			 $query="select * from gatepass where client_id='$id' AND (g_no LIKE '%$srch%' OR g_date LIKE '%$srch%' OR status LIKE '%$srch%' OR appr_nm LIKE '%$srch%')";
+	 		 $ans=mysql_query($query);
+	 
+	?>
+	
+		<table class="emp_tab">        
+		<?php
+        if(mysql_num_rows($ans)==0)
+		{
+		?>
+        <tr class='emp_header'>
+         <td colspan='6' align="center"><h3> No Data available</h3></td>
+        </tr>
+		
+		<?php
+        }
+		while($c_row=mysql_fetch_array($ans))
+		{			
+        echo "<tr class='emp_header'>";
+        echo "<td width='250'>";
+		echo $c_row[8];
+		echo "</td>";
+        echo "<td width='160'>";
+		echo $c_row[9];
+		echo "</td>";
+		echo "<td>";
+		echo $c_row[13];
+		echo "</td>";
+		echo "<td>";
+		echo $c_row[26];		
+        echo "<td width='100' class='print'>";
+		echo "<a href='?c_id1=$c_row[8]&c_id3=$id' onclick='return confirmSubmit()'>Delete</a>&nbsp;<a href='updategatepass.php?c_id2=$c_row[0]'>Update</a>&nbsp;<a href='view_gate.php?c_id3=$c_row[0]'>View</a>";
+		echo "</td>";
+		echo "</tr>";
+		}
+		?>        
+        </table>	
+	<?php
+		}
+?>
                 <div class="quo">
                 <br />
                 <form action="" method="post" name="search">
 				<table class="quotation">
                 <tr>
                 <td>GatePass Details</td>
-                <td><input type='text' name="search" /></td>
+                <td><input type='text' name="search" title="Enter gatepass no,date,approver name,status here.." /><input type="hidden" name="id" value="<?php echo $id; ?>">
+                </td>
                 <td><input type="submit" name="result" value="search" class="formbutton" /></td>
                 </tr>
                 </table>

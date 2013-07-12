@@ -188,11 +188,21 @@ while($row_d=mysql_fetch_array($res_detail))
 </tr>
 <tr>
 <td>
+<?php
+ $plus=$row_t[0];
+$per70=round (($plus* 0.7)/2);
+$serv_tax=$per70 *.12;
+$e_cess=$serv_tax *0.02;
+$she_cess=$serv_tax * 0.01;
+$vat=$plus * .05;
+$g_total=$row_t[0]+$serv_tax+$e_cess+$she_cess+$vat;
+?>
 <font size="-1">
-<b><u>SERVICE TAX @ 12% ON LABOUR CHARGES ONLY<br> (A)</u>Value of the <u>LABOUR</u> is <u>33%</u> of the<u>SUB TOTAL</u> i.e. <u>Rs. <?php echo round ($plus * 0.33,00).'.00';?></u> <br>
-<u>(B) VAT </u>@<u> 5%</u>on<u><b>(R/M)</b>Which is <u><b>67%</b></u>of the <u><b>SUB TOTAL</b></u> i.e. <u>Rs. <?php echo $plus * .67; ?></u></font>
+<b><u>SERVICE TAX @ 12% ON LABOUR CHARGES ONLY<br> (A)</u>Value of the <u>LABOUR</u> is <u>70%</u> of <u>SUB TOTAL</u> i.e. <u>Rs. <?php echo round ($plus* 0.7,00).'.00';?></u> / <u>50% </u>=<u><?php echo $per70.'.00';?></u><br>
+<font size="-2"><u>{PAYABLE 50% BY SERVICE PROVIDER & 50% BY SERVICE UNDER REVERSE CHARGE MECHANISE}</u></font></b><BR>
+<u>(B) VAT </u>@<u> 5%</u> of the <u>SUB TOTAL</u> i.e. <u>Rs. <?php echo $plus; ?></u></font>
 </td>
-<td colspan="2" style="text-align:right;">Services Tax 12% on <?php echo $per33.'/-';?></td>
+<td colspan="2" style="text-align:right;">Services Tax 12% on <?php echo $per70.'/-';?></td>
 <td><?php echo $serv_tax; ?></td>
 </tr>
 <tr>
@@ -213,7 +223,7 @@ while($row_d=mysql_fetch_array($res_detail))
 <tr>
 <td><font size="-2">VAT TIN NO.27900789615 V w.e.f. 27/08/2010 & CST TIN NO. 27900789615 C w.e.f. 27/08/2010</font></td>
 <td colspan="2" style="text-align:right;">Transportation Charges</td>
-<td><?php echo $row[12]; ?></td>
+<td><?php echo '00.00' ?></td>
 </tr>
 <tr>
 <td><font size="-2">Service Tax NO. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PAN NO. :-AMEPM1485H </font></td>

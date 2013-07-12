@@ -25,6 +25,8 @@
 		}
 		
 	}
+	
+	
 ?>
 
 <html>
@@ -169,11 +171,69 @@ cursor: pointer;
 		} 
 		?>
     
-    <div id="sub-header">
+    <div id="sub-header"><br>
+    <?php
+		
+		if(isset($_REQUEST['search']))
+		  {
+		 	 $srch=$_REQUEST['search'];
+			
+		 $query="select * from stock where st_name LIKE '%$srch%' OR  st_category LIKE '%$srch%' OR suplier_name LIKE '%$srch%' OR avail_id LIKE '%$srch%'OR st_date LIKE '%$srch%'";
+	 		 $ans=mysql_query($query);
+	 
+	?>
+    <table class="emp_tab">
+       <?php
+        if(mysql_num_rows($ans)==0)
+		{
+		?>
+        <tr class='emp_header'>
+         <td colspan='6' align="center"><h3> No Data available</h3></td>
+        </tr>
+        <?php
+		}
+		while($c_row=mysql_fetch_array($ans))
+		{
+        echo "<tr class='emp_header'>";
+        echo "<td width='160'>";
+		echo $c_row[2];
+		echo "</td>";
+        echo "<td width='240'>";
+		echo $c_row[8];
+		echo "</td>";
+		echo "<td>";
+		echo $c_row[7];
+		echo "</td>";
+		echo "<td>";
+		echo $c_row[6];
+		echo "</td>";
+		echo "<td>";
+		echo $c_row[4];
+		echo "</td>";
+        echo "<td width='100' class='print'>";
+		echo "<a href='?c_id1=$c_row[0]' onclick='return confirmSubmit()'>Delete</a>&nbsp;<a href='updatestock.php?c_id2=$c_row[0]'>Update</a>&nbsp;<a href='stockview.php?c_id3=$c_row[0]'>View</a>";
+		echo "</td>";
+		echo "</tr>";
+		}
+		?>
+        
+        </table>
+<?php
+		  }
+?>
 	<div class="quo">
     	<br />
-		<div class="quotation"><center>View Stock Details</center></div>
-         
+         <form action="" method="post" name="search">
+				<table class="quotation">
+                <tr>
+                <td>View Stock Details</td>
+                <td><input type='text' name="search" title="Enter stock name,date,category,spplier name,Id here.." />
+                </td>
+                <td><input type="submit" name="result" value="search" class="formbutton" /></td>
+                </tr>
+                </table>
+                </form>
+		         
                 <div id="loading" ></div>
 		<div id="content" ></div>
        <?php

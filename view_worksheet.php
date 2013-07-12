@@ -160,10 +160,65 @@ cursor: pointer;
     
     <div id="sub-header">
 	<div class="quo">
-    	<br />
-		<div class="quotation"><center>Job Worksheet Details</center></div>
-         
-                <div id="loading" ></div>
+    	<br /><br />
+        <?php
+		
+		if(isset($_REQUEST['search']))
+		  {
+		 	 $srch=$_REQUEST['search'];			
+			 $query="select * from job_worksheet where client_name LIKE '%$srch%'";
+	 		 $ans=mysql_query($query);
+	 
+	?>
+        <table class="emp_tab">
+        <?php
+        if(mysql_num_rows($ans)==0)
+		{
+		?>
+        <tr class='emp_header'>
+         <td colspan='6' align="center"><h3> No Data available</h3></td>
+        </tr>
+		
+		<?php
+        }
+		?>
+        <?php
+		while($c_row=mysql_fetch_array($ans))
+		{
+        echo "<tr class='emp_header'>";
+        echo "<td width='250'>";
+		echo $c_row[1];
+		echo "</td>";
+        echo "<td width='160'>";
+		echo $c_row[2];
+		echo "</td>";
+		echo "<td >";
+		echo $c_row[3];
+		echo "</td>";
+		echo "<td >";
+		echo $c_row[4];		
+        echo "<td class='print'>";
+		echo "<a href='?c_id1=$c_row[0]' onclick='return confirmSubmit()'>Delete</a>&nbsp;<a href='updateworksheet.php?c_id2=$c_row[0]'>Update</a>&nbsp;<a href='viewwork.php?c_id3=$c_row[0]'>View</a>&nbsp;<a href='assignstock.php?job_id=$c_row[0]'>assign stock</a>&nbsp;<a href='view_assgn.php'>view_assign</a>";
+		echo "</td>";
+		echo "</tr>";
+		}
+		?>        
+        </table>
+        <?php
+		  }
+		?>
+
+                <form action="" method="post" name="search">
+				<table class="quotation">
+                <tr>
+                <td>Job Worksheet Details</td>
+                <td><input type='text' name="search"  title="Enter client name here" />
+                </td>
+                <td><input type="submit" name="result" value="search" class="formbutton" /></td>
+                </tr>
+                </table>
+                </form>
+		<div id="loading" ></div>
 		<div id="content" ></div>
         <table width="800px">
 	<tr><Td>
