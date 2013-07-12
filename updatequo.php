@@ -61,7 +61,7 @@ if(isset($_REQUEST['submit']))
 		
 		$total= $q_c * $q_q;
 		
-	echo $quo="insert into sub_quotation(q_id,des,quantity,rate,amount) values('".$id."','".$q_d."','".$q_q."','".$q_c."','".$total."')";
+	$quo="insert into sub_quotation(q_id,des,quantity,rate,amount) values('".$id."','".$q_d."','".$q_q."','".$q_c."','".$total."')";
 	
 	$quo_res1=mysql_query($quo);
 	if($quo_res1)

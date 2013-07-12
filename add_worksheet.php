@@ -65,7 +65,7 @@ include("include/database.php");
 	}
 	if(isset($_REQUEST['can']))
 	{
-		header("location:add_worksheet.php");
+		header("location:view_worksheet.php");
 	}
 ?>
 <html>

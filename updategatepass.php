@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+//error_reporting(0);
 	include("include/database.php");
 	$c_up=$_REQUEST['c_id2'];
 	$c_qry_f="select * from gatepass where pass_id=".$c_up;
@@ -24,8 +24,8 @@ if(isset($_REQUEST['g_up']))
 	$g_t12=$_REQUEST['nm1'];
 	$g_t13=$_REQUEST['vno'];
 	$g_t14=$_REQUEST['ip1'];
-	$g_t16=$_REQUEST['quant'];
-	$g_t20=$_REQUEST['amt'];
+	$g_t16=$_REQUEST['tot_qnt'];
+	$g_t20=$_REQUEST['tot_amt'];
 	$g_t21=$_REQUEST['remark'];
 	$g_t22=$_REQUEST['nm2'];
 	$g_t23=$_REQUEST['apr'];
@@ -43,24 +43,21 @@ if(isset($_REQUEST['g_up']))
 	$delete="delete from material_desc where gatpas_id='$c_row[8]'";
 	mysql_query($delete);
 	
-	for($i=1; $i<=$b; $i++)
+	for($i=1; $i<$b; $i++)
 	{
-		$id=$_REQUEST['i_id'];			
+		//$id=$_REQUEST['i_id'];			
 		$q_d=$_POST['d'][$i];
-		$q_c=$_POST['c'][$i];
+		$q_u=$_POST['u'][$i];
 		$q_q=$_POST['q'][$i];
 		$q_r=$_POST['r'][$i];
-		$q_a=$_POST['s'][$i];
-		$total=10;
-			
-			
+		$q_a=$_POST['a'][$i];		
 	/* $quo="UPDATE `material_desc` SET `gatpas_id`='".$g_t1."',`client_id`='".$c_up."' ,`desc_mat`='".$q_d."',`quant`='".$q_c."',`tot_qnt`='-',`unit`='".$q_r."',`rate`='".$q_q."',`amount`='".$q_a."',`tot_amt`='-' WHERE gatpas_id='$c_row[8]'"; */
-	$quo="INSERT INTO `material_desc`( `gatpas_id`,`client_id`, `desc_mat`, `quant`, `tot_qnt`, `unit`, `rate`, `amount`, `tot_amt`) VALUES ('".$g_t1."','".$c_row[1]."','".$q_d."','".$q_c."','-','".$q_q."','".$q_r."','".$q_a."','".$total."')";
+	 $quo="INSERT INTO `material_desc`( `gatpas_id`,`client_id`, `desc_mat`, `quant`,`unit`, `rate`, `amount`) VALUES ('".$g_t1."','".$c_row[1]."','".$q_d."','".$q_q."','".$q_u."','".$q_r."','".$q_a."')";
 	mysql_query($quo);
 	}
-	 $result="UPDATE `gatepass` SET `client_id`='".$c_row[1]."', `tin_no`='".$g_t25."',`cst_no`='".$g_t26."',`ex_ring`='".$g_t27."'
-	,`ex_no`='".$g_t28."',`ex_div`='".$g_t29."',`ex_com`='".$g_t30."',`g_no`='".$g_t1."',`g_date`='".$g_t2."',`due_date`='".$g_t3."',`req`='".$g_t4."',`dept`='".$g_t5."',`status`='".$g_t6."',`t_ref_no`='".$g_t7."' ,`p_name`='".$g_t8."',`addr`='".$g_t9."',`mode`='".$g_t10."',`time`='".$g_t11."',`t_name`='".$g_t12."',`v_no`='".$g_t13."',`issue`='".$g_t14."',`total_qnt`='-',`total_amt`='-',`remark`='".$g_t21."',`req_by`='".$g_t22."',`appr_nm`='".$g_t23."',`date_tim`='".$g_t24."' WHERE pass_id='$c_up'";
-	
+	$result="UPDATE `gatepass` SET `client_id`='".$c_row[1]."', `tin_no`='".$g_t25."',`cst_no`='".$g_t26."',`ex_ring`='".$g_t27."'
+	,`ex_no`='".$g_t28."',`ex_div`='".$g_t29."',`ex_com`='".$g_t30."',`g_no`='".$g_t1."',`g_date`='".$g_t2."',`due_date`='".$g_t3."',`req`='".$g_t4."',`dept`='".$g_t5."',`status`='".$g_t6."',`t_ref_no`='".$g_t7."' ,`p_name`='".$g_t8."',`addr`='".$g_t9."',`mode`='".$g_t10."',`time`='".$g_t11."',`t_name`='".$g_t12."',`v_no`='".$g_t13."',`issue`='".$g_t14."',`total_qnt`='".$g_t16."',`total_amt`='".$g_t20."',`remark`='".$g_t21."',`req_by`='".$g_t22."',`appr_nm`='".$g_t23."',`date_tim`='".$g_t24."' WHERE pass_id='$c_up'";
+	//exit();
 	$ans=mysql_query($result);
 	if($ans)
 	{
@@ -88,7 +85,100 @@ if(isset($_REQUEST['g_up']))
 <title>Rajesh Electic Works</title>
 <link rel="stylesheet" href="styles.css" type="text/css" />
 <script>
- var counter =1+<?php echo $count; ?>;
+//  *********************** addition of rate + qty =amt *************
+var total = 0;
+var tot_qty =0;
+function getValues() {
+var qty = 0;
+var rate = 0;
+var obj = document.getElementsByTagName("input");
+      for(var i=0; i<obj.length; i++){
+         if(obj[i].name == "q[]")
+		 {
+			 var qty = obj[i].value;
+			 if(qty>0)
+		     {
+			 tot_qty+=(qty*1);  
+			 }
+		}
+         if(obj[i].name == "r[]")
+		 {
+			 var rate = obj[i].value;
+		 }
+         if(obj[i].name == "a[]")
+		 {
+          		if(qty > 0 && rate > 0)
+				{
+					obj[i].value = qty*rate;
+					total+=(obj[i].value*1);
+				}
+				else
+				{
+					obj[i].value = 0;
+				    total+=(obj[i].value*1);
+				}
+          }
+         	 }
+        document.getElementById("tot_amt").value = total*1;
+		document.getElementById("tot_qnt").value = tot_qty*1;
+        total=0;
+		tot_qty=0;
+}
+</script>
+<script>
+function addRow(tableID) {
+            var table = document.getElementById(tableID);
+            var rowCount = table.rows.length;
+            var row = table.insertRow(rowCount);
+            var colCount = table.rows[0].cells.length;
+            for(var i=0; i<colCount; i++) {
+                var newcell = row.insertCell(i);
+                newcell.innerHTML = table.rows[0].cells[i].innerHTML;
+                //alert(newcell.childNodes);
+                switch(newcell.childNodes[0].type) {
+                    case "text":
+                            newcell.childNodes[0].value = '';
+                            break;
+                    case "checkbox":
+                            newcell.childNodes[0].checked = false;
+                            break;
+                    
+                }
+            }
+        }
+		
+				function deleteRow(tableID)
+{
+            try
+                 {
+                var table = document.getElementById(tableID);
+                var rowCount = table.rows.length;
+                    for(var i=0; i<rowCount; i++)
+                        {
+                        var row = table.rows[i];
+                        var chkbox = row.cells[0].childNodes[0];
+                        if (null != chkbox && true == chkbox.checked)
+                            {
+                            if (rowCount <= 1)
+                                {
+                                alert("Cannot delete all the rows.");
+                                break;
+                                }
+                            table.deleteRow(i);
+                            rowCount--;
+                            i--;
+                            }
+                        }
+                    } catch(e)
+                        {
+                        alert(e);
+                        }
+   getValues();
+}
+</script>
+
+<!--
+ var counter =1+<?php  ?>;
  function add_phone_field()
  {
   var obj = document.getElementById("phone");
@@ -96,24 +186,9 @@ if(isset($_REQUEST['g_up']))
   data += "<table class='des'><tr><td><input class='des_in' type='text' name='d["+counter+"]' id='person_phone"+counter+"' /></td><td><input class='des_cap' type='text' name='c["+counter+"]' id='person_phone"+counter+"' /></td><td><input class='des_q' type='text' name='q["+counter+"]' id='person_phone"+counter+"' /></td><td><input class='des_r' type='text' name='r["+counter+"]' id='person_phone"+counter+"' /></td><td><input class='des_ser' type='text' name='s["+counter+"]' id='person_phone"+counter+"' /></td></tr></table>";
   obj.innerHTML = data;
   counter++;
-  }
+  }-->
   
-function total()
-{
-var a = document.getElementById("c[].value");
-var b = document.getElementById("r[].value");
-if(a.length=="")
-{
-a.value = 0;
-}
-if(b.length=="")
-{
-b.value = 0;
-}
-var f = b.value * e.value;
-var d = a.value * f;
-document.getElementById("total").value=d;
-}
+
  </script>
 </head>
 
@@ -212,18 +287,40 @@ document.getElementById("total").value=d;
              <table class="midtext">
             <tr >
             <td colspan="3"><label class="desc">Material Details</label></td>
+            </tr>
+            <tr><td colspan="3">
+            <input type="button" value="Add Row" onClick="addRow('dataTable')" >&nbsp;
+<input type="button" value="Delete Row" onClick="deleteRow('dataTable')" >
+				</td>
             </tr> 
             </table>
 				 <table class="des">
-                <tr>
-                <td class="heading">Description  Of Material.</td>                
-                <td class="heading" >Quantity</td>
-                <td class="heading">Unit</td>
-                <td class="heading">Rate</td>
+                <tr><td width="20"></td>
+                <td class="heading" width="250">Description  Of Material.</td>                
+                <td class="heading" width="178">Quantity</td>
+                <td class="heading" width="178">Unit</td>
+                <td class="heading" width="178">Rate</td>
                 <td class="heading">Amount</td>
-                </tr>
-                <span style="color:#00f;font-size:20px;font-weight:bold;cursor:pointer;" onClick="add_phone_field()">[+]</span>
-              
+                </tr></table>
+                <!--<span style="color:#00f;font-size:20px;font-weight:bold;cursor:pointer;" onClick="add_phone_field()">[+]</span>-->
+               <table class="des" id="dataTable">
+<tr style="display:none;"><td style="white-space:nowrap;" width="20"><input type="checkbox" name="chk[]"/></td>
+                <td width="250" >                
+                 <input class="des_in" type="text" name="d[]" id="0" value=""><br>
+                </td>
+                <td>
+                 <input class="des_cap" type="text" name="q[]" id="0" value="" onKeyUp="getValues()"><br>
+                </td>
+                <td>
+                 <input class="des_q" type="text" name="u[]" value="" id="0"><br>
+                </td>
+                <td>
+                 <input class="des_r" type="text" name="r[]" value="" id="0" onKeyUp="getValues()"><br>
+                </td>
+                <td>
+               <input class="des_ser" type="text" name="a[]" value=""id="0"><br>
+                </td>
+                             </tr> 
                 <?php
                $count1=1;
 				if($res1)
@@ -234,24 +331,26 @@ document.getElementById("total").value=d;
 					{
 						
 				?>
-                  <tr>
-                <td>
-                 <input class="des_in" type="text" name="d[<?php echo $count1; ?>]" id="d[<?php echo $count1; ?>]" value="<?php echo $res[3];?>"><br>
+                  <tr><td style="white-space:nowrap;" width="20"><input type="checkbox" name="chk[]"/></td>
+                <td width="250">
+                 <input class="des_in" type="text" name="d[]" id="d[]" value="<?php echo $res[3];?>"><br>
+                </td>
+                <td >
+                 <input class="des_cap" type="text" name="q[]" id="q[]" value="<?php echo $res[4];?>" onKeyUp="getValues()"><br>
                 </td>
                 <td>
-                 <input class="des_cap" type="text" name="c[<?php echo $count1; ?>]" id="c[<?php echo $count1; ?>]" value="<?php echo $res[4];?>" onBlur="total();"><br>
+                 <input class="des_q" type="text" name="u[]" value="<?php echo $res[5];?>" id="u[]"><br>
                 </td>
                 <td>
-                 <input class="des_q" type="text" name="q[<?php echo $count1; ?>]" value="<?php echo $res[6];?>" id="q[<?php echo $count1; ?>]"><br>
+                 <input class="des_r" type="text" name="r[]" value="<?php echo $res[6];?>" id="r[]" onKeyUp="getValues()"><br>
                 </td>
                 <td>
-                 <input class="des_r" type="text" name="r[<?php echo $count1; ?>]" value="<?php echo $res[7];?>" id="r[<?php echo $count1; ?>]"><br>
-                </td>
-                <td>
-                 <input class="des_ser" type="text" name="s[<?php echo $count1; ?>]" value="<?php echo $res[8];?>" id="s[<?php echo $count1; ?>]" readonly><br>
+               <input class="des_ser" type="text" name="a[]" value="<?php echo $res[7];?>" id="a[]" readonly>
+                 <br>
                 </td>                
                                 </tr>  
-                                 <?php
+                                
+                     <?php
 					$count1=$count1+1;
 					}
 					
@@ -261,21 +360,21 @@ document.getElementById("total").value=d;
 				else
 				{
 				?> 
-                <tr>
-                <td>                
+                <tr><td>&nbsp;&nbsp;&nbsp;</td>
+                <td width="250">                
                  <input class="des_in" type="text" name="d[]" id="0" value=""><br>
                 </td>
                 <td>
-                 <input class="des_cap" type="text" name="c[]" id="0" value="" onBlur="total();"><br>
+                 <input class="des_cap" type="text" name="q[]" id="0" value="" onKeyUp="getValues()"><br>
                 </td>
                 <td>
-                 <input class="des_q" type="text" name="q[]" value="" id="0"><br>
+                 <input class="des_q" type="text" name="u[]" value="" id="0"><br>
                 </td>
                 <td>
-                 <input class="des_r" type="text" name="r[]" value="" id="0"><br>
+                 <input class="des_r" type="text" name="r[]" value="" id="0" onKeyUp="getValues()"><br>
                 </td>
                 <td>
-                 <input class="des_ser" type="text" name="s[]" value="" id="0" readonly><br>
+               <input class="des_ser" type="text" name="a[]" value=""id="0"><br>
                 </td>
                              </tr>                 
                   
@@ -287,21 +386,21 @@ document.getElementById("total").value=d;
                 
                 </div>
                  <table class="des">
-                <tr>
-                <td>
+                <tr><td>&nbsp;&nbsp;&nbsp;</td>
+                <td width="250">
                  <input class="des_in" type="text" name="total" id="tot" value='TOTAL' align="right"  readonly><br>
                 </td>
                 <td>
                  <input class="des_cap" type="text" name="tot_qnt" id="tot_qnt" value="<?php echo $c_row[22];?>" readonly><br>
                 </td>
                 <td>
-                 <input class="des_q" type="text" name="" id="" value="<?php echo $c_row[23];?>" readonly><br>
+                 <input class="des_q" type="text" name="" id=""><br>
                 </td>
                 <td>
-                 <input class="des_r" type="text" name="" id="" value="<?php echo $c_row[24];?>" readonly><br>
+                 <input class="des_r" type="text" name="" id=""><br>
                 </td>
                 <td>
-                 <input class="des_ser" type="text" name="tot_amt" id="" value="<?php echo $c_row[25];?>" readonly><br>
+                 <input class="des_ser" type="text" name="tot_amt" id="tot_amt" value="<?php echo $c_row[23];?>" readonly><br>
                 </td>
                 
                 </tr>
@@ -333,6 +432,18 @@ document.getElementById("total").value=d;
           <input type="text" id="nm2" class="q_in" name="nm2" tabindex="27" /></td>
             </tr>                        
             </table>-->
+            <table class="midtext">
+            <tr >
+            <td colspan="3"><label class="desc">Remarks</label></td>
+            </tr>
+            <tr><td align="center"><br><input type="text" name="remark" class="q_in" value="<?php echo $c_row[24];?>"></td></tr> 
+            </table>
+            <table class="midtext">
+            <tr >
+            <td colspan="3"><label class="desc">Requested By</label></td>
+            </tr>
+            <tr><td colspan="3" align="center"><br><input type="text" name="nm2"  class="q_in" value="<?php echo $c_row[25];?>"></td></tr> 
+            </table>
                       
              <table class="midtext">
             <tr >

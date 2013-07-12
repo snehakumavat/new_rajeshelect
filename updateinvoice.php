@@ -1,20 +1,24 @@
 <?php
 include("include/database.php");
 
-$in=$_REQUEST['c_id1'];
+$in=$_REQUEST['id'];
 
-$c_query="select * from clients where c_id=".$in;
+$c_query="select * from invoice where i_id='$in'";
 $c_res=mysql_query($c_query);
 $c_row=mysql_fetch_array($c_res);
 
-$c_query1="select * from invoice order by i_id DESC";
-$c_res1=mysql_query($c_query1);
-if($c_row1=mysql_fetch_array($c_res1))
+if(isset($_GET['del']))
 {
-	$count=$c_row1[0];
-	}
+ $del=$_GET['del'];
+echo $query="delete from sub_invoice where s_id='$del'";
+mysql_query($query);
 
- 
+}
+
+
+$c_query1="select * from sub_invoice where i_id='$in'";
+$c_res1=mysql_query($c_query1);
+
 ?>
 
 <?php
@@ -34,14 +38,20 @@ if(isset($_REQUEST['submit']))
 		$d1=date('Y-m-d',strtotime($_POST['date1']));
 		$d2=date('Y-m-d',strtotime($_POST['date2']));
 
-		$add="INSERT INTO `invoice`(`q_date`,`c_id`,`c_comp`, `q_name`, `q_address`, `po_no`, `rgp_no`, `dc_no`, `code_no`, `tin_no`, `date1`, `date2`) VALUES ('".$q_date."','".$c."','".$c_row[3]."','".$q_name."','".$q_address."','".$po."','".$rgp."','".$dc."','".$v1."','".$t1."','".$d1."','".$d2."')";
+		$add="update`invoice` set `q_date`=".$q_date."',`c_id`='".$c."',`c_comp`='".$c_row[3]."',`q_name`='".$q_name."',`q_address`='".$q_address."',`po_no`='".$po."',`rgp_no`='".$rgp."',`dc_no`='".$dc."',`code_no`='".$v1."',`tin_no`='".$t1."',`date1`='".$d1."',`date2`='".$d2."'";
 		$query=mysql_query($add);
 	
 		$a=$_POST['d'];
+		if(($a!=NULL ))
+	{
+		 $b = count($a);	 	
+	$delete="delete from sub_invoice where i_id='$in'";
+	mysql_query($delete);
+	
 		$b = count($a);
-		for($i=0; $i<$b; $i++)
+		for($i=1; $i<=$b; $i++)
 		{
-			$id=$_REQUEST['invoice'];
+			$id=$in;
 			$c=$c_row[3];
 			$d=$c_row[1];	
 			$q_d=$_POST['d'][$i];
@@ -62,13 +72,18 @@ if(isset($_REQUEST['submit']))
 		{
 			echo"error";
 		}
-		}
+	}//close for loop
+  } // close if loop
 		
 }
 if(isset($_REQUEST['cancel']))
 {
 	header("location:invoicedetails.php");
 }
+
+echo $c_query1="select * from sub_invoice where i_id='$in'";
+$c_res1=mysql_query($c_query1);
+$count=mysql_num_rows($c_res1);
 ?>
 <html>
 <head>
@@ -76,12 +91,12 @@ if(isset($_REQUEST['cancel']))
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
 <script>
- var counter = 1;
+ var counter = <?php echo $count+1; ?>;
  function add_phone_field()
  {
   var obj = document.getElementById("phone");
   var data = obj.innerHTML;
-  data += "<table class='des'><tr><td><input class='des_in' type='text' name='d["+counter+"]' id='person_phone"+counter+"' /></td><td><input class='des_q' type='text' name='q["+counter+"]' id='person_phone"+counter+"' /></td><td><input class='des_r' type='text' name='r["+counter+"]' id='person_phone"+counter+"' /></td></tr></table>";
+  data += "<table class='des'><tr><td><input class='des_in' type='text' name='d["+counter+"]' id='person_phone"+counter+"' /></td><td><input class='des_q' type='text' name='q["+counter+"]' id='person_phone"+counter+"' /></td><td><input class='des_r' type='text' name='r["+counter+"]' id='person_phone"+counter+"' /></td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td></tr></table>";
   obj.innerHTML = data;
   counter++;
   }
@@ -107,42 +122,42 @@ if(isset($_REQUEST['cancel']))
                 <tr><td class="l_form">Date:</td><td><input name="q_date" class="q_in" type="text" value="<?php  echo date("d-m-Y"); ?>"/></td></tr>
                 <tr><td class="l_form">Client Name:</td>
                 <td>
-                <input type="text" class="q_in" name="q_name" value="<?php echo $c_row[2]; ?>">
+                <input type="text" class="q_in" name="q_name" value="<?php echo $c_row[4]; ?>">
 				</td>
                 </tr>
-                <tr><td class="l_form">Address:</td><td><textarea class="q_add" name="q_address"><?php echo $c_row[4]; ?></textarea></td></tr>
+                <tr><td class="l_form">Address:</td><td><textarea class="q_add" name="q_address"><?php echo $c_row[5]; ?></textarea></td></tr>
                 <tr><td class="l_form">PO No:</td>
                 <td>
-                <input type="text" class="q_in" name="po_no" >
+                <input type="text" class="q_in" name="po_no" value="<?php echo $c_row[7]; ?>" >
 				</td>
                 </tr>
                 <tr><td class="l_form">Your RGP No:</td>
                 <td>
-                <input type="text" class="q_in" name="rgp" >
+                <input type="text" class="q_in" name="rgp" value="<?php echo $c_row[8]; ?>">
 				</td></tr>
                 </table>
                 <table class="q_info5">
                 <tr><td class="l_form">Invoice No</td>
-                <td><input name="invoice" class="q_in" type="text" value="<?php echo $count+1; ?>"/></td></tr>
+                <td><input name="invoice" class="q_in" type="text" value="<?php echo $c_row[0]; ?>" readonly/></td></tr>
                 <tr><td class="l_form">Our DC No:</td>
                 <td>
-                <input type="text" class="q_in" name="dc" >
+                <input type="text" class="q_in" name="dc" value="<?php echo $c_row[9]; ?>" >
 				</td></tr>
                  <tr><td class="l_form">Vendor Code No:</td>
                 <td>
-                <input type="text" class="q_in" name="vendr" >
+                <input type="text" class="q_in" name="vendr" value="<?php echo $c_row[10]; ?>" >
 				</td></tr>
                  <tr><td class="l_form">Consignee Vat / Tin No:</td>
                 <td>
-                <input type="text" class="q_in" name="tin_no" >
+                <input type="text" class="q_in" name="tin_no" value="<?php echo $c_row[11]; ?>" >
 				</td></tr>
                  <tr><td class="l_form">Date:</td>
                 <td>
-                <input type="text" class="q_in" name="date1" value="<?php echo date('d-m-Y'); ?>" >
+                <input type="text" class="q_in" name="date1" value="<?php echo date('d-m-Y', strtotime($c_row[12])); ?>" >
 				</td></tr>
                 <tr><td class="l_form">Date:</td>
                 <td>
-                <input type="text" class="q_in" name="date2" value="<?php echo date('d-m-Y'); ?>" >
+                <input type="text" class="q_in" name="date2"value="<?php echo date('d-m-Y', strtotime($c_row[13])); ?>" >
 				</td></tr>
                 </table>
                 <br />
@@ -151,23 +166,61 @@ if(isset($_REQUEST['cancel']))
                 <td class="heading">DESCRIPTION</td>
                 <td class="heading" >QTY</td>
                 <td class="heading">RATE/EACH</td>
-                
+                <td></td>
                 </tr>
+                
                 <span style="color:#00f;font-size:20px;font-weight:bold;cursor:pointer;" onClick="add_phone_field()">[+]</span>
+                               <?php
+               $count1=1;
+				if($count!=NULL)
+				{
+					
+				while($rows=mysql_fetch_array($c_res1))
+				{
+					if($count>0)
+					{
+						
+				?>
+              
                 <tr>
                 <td>
-                 <input class="des_in" type="text" name="d[]" id="0"><br>
+                 <input class="des_in" type="text" name="d[<?php echo $count1; ?>]" id="0" value="<?php echo $rows[2]?>"><br>
                 </td>                
                 <td>
-                 <input class="des_q" type="text" name="q[]" id="0"><br>
+                 <input class="des_q" type="text" name="q[<?php echo $count1; ?>]" id="0" value="<?php echo $rows[3]?>"><br>
                 </td>
                 <td>
-                 <input class="des_r" type="text" name="r[]" id="0"><br>
+                 <input class="des_r" type="text" name="r[<?php echo $count1; ?>]" id="0" value="<?php echo $rows[4]?>"><br>
                 </td>
-                               
-                </tr>
+               <td><a href="updateinvoice.php?id=<?php echo $in;?>&del=<?php echo $rows[0];?>">[-]</a></td>              
+                </tr> 
+                <?php
+					$count1=$count1+1;
+					}
+					
+					$count=$count-1;
+					}
+				}
+				else
+				{
+				?> 
+                <tr>
+                <td>                
+                 <input class="des_in" type="text" name="d[]" id="0" value="">
+                </td>
+                <td>
+                 <input class="des_cap" type="text" name="c[]" id="0" value="" >
+                </td>
+                <td>
+                 <input class="des_q" type="text" name="q[]" value="" id="0"><br>
+                </td>
                 
+                </tr>                 
+                  
+                <?php }
+				?>               
                 </table>
+                
                  <div id="phone">
                 
                 </div>

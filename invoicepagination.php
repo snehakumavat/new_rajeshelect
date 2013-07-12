@@ -23,7 +23,7 @@ $rsd = mysql_query($sql);
                 <td width="250">Client Name</td>
                 <td width="160">Date</td>
                 <td>Address</td>
-                <td width="70">Print</td>
+                <td width="70">Action</td>
                 </tr>
                 
         <?php
@@ -44,7 +44,7 @@ $rsd = mysql_query($sql);
                 echo $row[5];
                 echo "</td>";
 				echo "<td width='70' class='print'>";
-                echo "<a href='report.php?id=$row[0]'>Print</a>";
+                echo "<a href='updateinvoice.php?id=$row[0]'>Update</a>&nbsp;<a href='report.php?id=$row[0]'>Print</a>";
                 echo "</td>";
                 echo "</tr>";
                 

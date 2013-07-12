@@ -111,7 +111,7 @@ th
  <tr>
  <td style="font-size:11px;"><b>Works:</b>Plot No. C/42, M.I.D.C. Industrial Estate, Malegaon, Tal. Sinnar, Dist. Nashik-422113.
 <b>Ph. :</b>02551-230829 <b>E-mail :</b> rew.nsk@rediffmail.com</td>
- <td>Date:- <?php echo date('Y-m-d'); ?> </td>
+ <td>Date:- <?php echo date('d-m-Y'); ?> </td>
  </tr>
  
  <tr>
@@ -128,15 +128,15 @@ th
  <table class="tab2" >
  <tr>
  <td>PO NO :- <?php echo $row[7]; ?></td>
-  <td>Date :- <?php echo $row[12]; ?></td>
+  <td>Date :- <?php echo date('d-m-Y',strtotime($row[12])); ?></td>
 </tr>
 <tr>
  <td>Your RGP No :- <?php echo $row[8]; ?></td>
-  <td>Date :- <?php echo $row[12]; ?></td>
+  <td>Date :- <?php echo date('d-m-Y',strtotime($row[12])); ?></td>
 </tr>
 <tr>
  <td>Our DC No :- <?php echo $row[9]; ?></td>
-  <td>Date :- <?php echo $row[13]; ?></td>
+  <td>Date :- <?php echo date('d-m-Y',strtotime($row[13])); ?></td>
 </tr>
 <tr>
  <td colspan="2">Vendor Code No :- <?php echo $row[10]; ?></td>

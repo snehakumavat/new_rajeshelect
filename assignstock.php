@@ -11,7 +11,8 @@ if(isset($_REQUEST['e_add']))
 		$e_nm=$_POST['e_id'];
 		$e_st=$_POST['stock_id'];
 		$e_val=$_POST['stock_val'];		
-		$e_date=$_POST['date'];
+		$e_date=date('Y-m-d', strtotime($_POST['date']));
+		
 		
 $e_qry="insert into assign_job(job_id,stock_id,emp_id,assg_val,date) values('".$job_id."','".$e_st."','".$e_nm."','".$e_val."','".$e_date."')";
 		$e_res=mysql_query($e_qry);
@@ -99,7 +100,7 @@ $e_qry="insert into assign_job(job_id,stock_id,emp_id,assg_val,date) values('".$
         </tr>
         <tr>
         <td class="l_form">Assign Date</td>
-        <td><input type="text" name="date" value="<?php echo date('Y-m-d'); ?>" /></td>
+        <td><input type="text" name="date" value="<?php echo date('d-m-Y'); ?>" /></td>
         </tr>
         </table>        
         <div class="addemp_button">

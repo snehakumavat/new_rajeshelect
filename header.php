@@ -3,16 +3,10 @@
      <ul class="sf-menu dropdown">
         	
         	<li class="selected"><a href="home.php">Home</a></li>
-            
-            <li><a class="has_submenu" href="view_stock.php">Stock</a>
-            <ul>
-                	<li><a href="add_stock.php">Add Stock</a></li>                	
-
-            </ul></li>
+                        
             <li ><a class="has_submenu" href="view_worksheet.php">Job Worksheet</a>
             <ul>
-                	<li><a href="add_worksheet.php">Add Job</a></li>                	
-
+               	<li><a href="add_worksheet.php">Add Job</a></li>            	
             </ul>
            
                       
@@ -29,6 +23,11 @@
                     </ul>
             
             </li>
+            <li><a class="has_submenu" href="view_stock.php">Stock</a>
+            <ul>
+                	<li><a href="add_stock.php">Add Stock</a></li>                	
+
+            </ul></li>
             <li><a href="payment.php">Payments</a>
             		
             </li>

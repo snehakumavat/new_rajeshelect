@@ -10,7 +10,7 @@ $pages = ceil($count/$per_page)
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Anmol Water Tank Cleaners</title>
+<title>Rajesh Electic Works</title>
 <link rel="stylesheet" href="styles.css" type="text/css" />
 <script type="text/javascript" src="js/jquery.min.js"></script>
 

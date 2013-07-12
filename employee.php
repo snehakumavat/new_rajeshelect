@@ -1,15 +1,19 @@
 <?php
-error_reporting(0);	
+//error_reporting(0);	
 	include("include/database.php");
-	$e_qry_f="select * from emp";
-	$e_res_f=mysql_query($e_qry_f);
+	$per_page = 20; 
+	$sql = "select * from emp";
+	$rsd = mysql_query($sql);
+	$count = mysql_num_rows($rsd);
+	$pages = ceil($count/$per_page);
+
 		
 ?>
 <?php
 	if(isset($_REQUEST['e_id1']))
 	{
 		$e_d=$_REQUEST['e_id1'];
-		$e_del="delete from emp where e_id=".$e_d;
+		$e_del="delete from emp where e_id='$e_d'";
 		$e_dres=mysql_query($e_del);
 		if($e_dres)
 		{
@@ -24,6 +28,8 @@ error_reporting(0);
 <html>
 <head><title>Rajesh Electric Works</title>
 <link rel="stylesheet" href="styles.css" type="text/css" />
+ <script type="text/javascript" src="js/jquery.min.js"></script>
+
 <script type="text/javascript">
 function confirmSubmit()
 {
@@ -33,8 +39,104 @@ if (agree)
 else
 	return false ;
 }
+$(document).ready(function(){
+	//Display Loading Image
+	function Display_Load()
+	{
+	    $("#loading").fadeIn(900,0);
+	
+	}
+	//Hide Loading Image
+	function Hide_Load()
+	{
+		$("#loading").fadeOut('slow');
+	};
+	
 
-</script>
+    //Default Starting Page Results
+   
+	$("#pagination li:first").css({'color' : '#FF0084'}).css({'border' : 'none'});
+	
+	Display_Load();
+	
+	$("#content").load("paginationemp.php?page=1", Hide_Load());
+
+
+
+	//Pagination Click
+	$("#pagination li").click(function(){
+			
+		Display_Load();
+		
+		//CSS Styles
+		$("#pagination li")
+		.css({'color' : '#0063DC'});
+		
+		$(this)
+		.css({'color' : '#FF0084'})
+		.css({'border' : 'none'});
+
+		//Loading Data
+		var pageNum = this.id;
+		$("#content").load("paginationemp.php?page=" + pageNum, Hide_Load());
+		
+	});
+	
+	
+});
+	</script>
+	          
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/slider.js"></script>
+<script type="text/javascript" src="js/superfish.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+<style>
+a
+{
+text-decoration:none;
+color:#B2b2b2;
+
+}
+
+a:hover
+{
+
+color:#DF3D82;
+text-decoration:underline;
+
+}
+#loading { 
+width: 100%; 
+position: absolute;
+}
+
+#pagination
+{
+text-align:center;
+color:#6F0;
+margin-left:10px;
+margin-top:0px;
+}
+#pagination li {	
+list-style: none; 
+float: left; 
+margin-right: 16px; 
+padding:5px;3 
+color:#FFF;
+margin-left:-10px;
+background-color:#00a1d2;
+
+}
+#pagination li:hover
+{ 
+color:#FF0084; 
+cursor: pointer; 
+
+}
+
+
+</style>
+
 </head>
 
 <body>
@@ -48,36 +150,21 @@ else
     <div class="quo">
     	<br />
 		<div class="quotation"><center>Employee Details</center></div>
-        <div>
-        <table class="emp_tab" style="table-layout:fixed;">
-        <tr class="emp_header">
-        <td width="200">Emp. Name</td>
-        <td width="120">Contact No.</td>
-        <td width="160" style="word-wrap:break-word">Address</td>
-        <td width="200">Action</td>
-        </tr>
-
-        <?php
-		while($e_row=mysql_fetch_array($e_res_f))
-		{
-        echo "<tr class='emp_header'>";
-        echo "<td width='250'>";
-		echo $e_row[1];
-		echo "</td>";
-        echo "<td width='160'>";
-		echo $e_row[3];
-		echo "</td>";
-		echo "<td style='overflow:hidden;'>";
-		echo $e_row[2];
-		echo "</td>";
-        echo "<td width='70' class='print'>";
-		echo "<a href='?e_id1=$e_row[0]' onclick='return confirmSubmit()'>Delete</a>&nbsp;<a href='updateemp.php?e_id2=$e_row[0]'>Update</a>";
-		echo "</td>";
-		echo "</tr>";
-		}
-		?>
-        </table>
-        </div>
+        <div id="loading" ></div>
+		<div id="content" ></div>
+        <table width="800px">
+	<tr><Td>
+			<ul id="pagination">
+				<?php
+						
+				//Show page links
+				for($i=1; $i<=$pages; $i++)
+				{								
+					echo '<li id="'.$i.'">'.$i.'</li>';
+				}
+				?>
+	</ul>	
+	</Td></tr></table>
     </div>
     </div>
         

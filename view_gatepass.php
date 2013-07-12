@@ -4,7 +4,7 @@ if(isset($_REQUEST['c_id3']))
 {
  $id=$_REQUEST['c_id3'];
 $per_page = 20; 
-echo $sql = "select * from gatepass where client_id=".$id;
+$sql = "select * from gatepass where client_id=".$id;
 $rsd = mysql_query($sql);
 $count = mysql_num_rows($rsd);
 $pages = ceil($count/$per_page);
@@ -28,6 +28,11 @@ $pages = ceil($count/$per_page);
 		}
 		
 	}
+	if(isset($_REQUEST['search']))
+	{
+		echo $srch=$_REQUEST['search'];
+		exit();
+		}
 ?>
 
 <html>
@@ -154,7 +159,15 @@ cursor: pointer;
     			
                 <div class="quo">
                 <br />
-                <div class="quotation"><center>GatePass Details</center></div>
+                <form action="" method="post" name="search">
+				<table class="quotation">
+                <tr>
+                <td>GatePass Details</td>
+                <td><input type='text' name="search" /></td>
+                <td><input type="submit" name="result" value="search" class="formbutton" /></td>
+                </tr>
+                </table>
+                </form>
                 
                 <div id="loading" ></div>
 		<div id="content" ></div>

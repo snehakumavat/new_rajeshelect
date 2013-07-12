@@ -88,7 +88,7 @@ $res_site=mysql_query($qry_site);
 <br>
 <br>
 
-<div class="heading"><center>ANMOL WATER TANK CLEANERS</center></div>
+<div class="heading"><center>Rajesh Electic Works</center></div>
 <div class="sub_heading"><center>Shop No 4, Vaibhavlakshmi Appt, Behind Prakash Petrol Pump</center></div>
 <div class="sub_heading"><center>Govind Nagar, Nashik-422009</center></div>
 <div class="sub_heading"><center>Ph:&nbsp;9970301010 / 9175299779</center></div>
@@ -171,7 +171,7 @@ Authorised Person:____________________
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-For Anmol Water Tank Cleaners
+For Rajesh Electic Works
 <br><br>
 </div>
 

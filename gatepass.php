@@ -24,12 +24,12 @@
 	$g_t12=$_REQUEST['nm1'];
 	$g_t13=$_REQUEST['vno'];
 	$g_t14=$_REQUEST['ip1'];
-	$g_t16=$_REQUEST['quant'];
-	$g_t20=$_REQUEST['amt'];
+	$g_t16=$_REQUEST['tot_qnt'];   //total quantity  16
+	$g_t20=$_REQUEST['tot_amt'];    // total amount 20
 	$g_t21=$_REQUEST['remark'];
 	$g_t22=$_REQUEST['nm2'];
 	$g_t23=$_REQUEST['apr'];
-	$g_t24=$_REQUEST['date'];		
+	$g_t24=date('Y-m-d',strtotime($_REQUEST['date']));		
 	$g_t25=$_REQUEST['tin'];
 	$g_t26=$_REQUEST['cst'];
 	$g_t27=$_REQUEST['ring'];
@@ -41,20 +41,22 @@
 	$b = count($a);
 	for($i=0; $i<$b; $i++)
 	{
-		$id=$_REQUEST['i_id'];			
+		//$id=$_REQUEST['i_id'];			
 		$q_d=$_POST['d'][$i];
-		$q_c=$_POST['c'][$i];
+		$q_u=$_POST['u'][$i];
 		$q_q=$_POST['q'][$i];
 		$q_r=$_POST['r'][$i];
-		$q_a=$_POST['s'][$i];
-		$total=10;
+		$q_a=$_POST['a'][$i];
+	//	$total=10;
 			
-	$quo="INSERT INTO `material_desc`( `gatpas_id`,`client_id`, `desc_mat`, `quant`, `tot_qnt`, `unit`, `rate`, `amount`, `tot_amt`) VALUES ('".$g_t1."','".$c_up."','".$q_d."','".$q_c."','-','".$q_q."','".$q_r."','".$q_a."','".$total."')";
-	$quo_res=mysql_query($quo);	
+	 $quo="INSERT INTO `material_desc`( `gatpas_id`,`client_id`, `desc_mat`, `quant`, `unit`, `rate`, `amount`) VALUES ('".$g_t1."','".$c_up."','".$q_d."','".$q_q."','".$q_u."','".$q_r."','".$q_a."')";
+	 $quo_res=mysql_query($quo);	
+	
 	}
 	
-$result="insert into gatepass(`client_id`, `tin_no`, `cst_no`, `ex_ring`, `ex_no`, `ex_div`, `ex_com`,`g_no`,`g_date`,`due_date`,`req`,`dept`,`status`, `t_ref_no`,`p_name`,`addr`,`mode`, `time`, `t_name`, `v_no`, `issue`,`total_qnt`, `total_amt`, `remark`, `req_by`, `appr_nm`, `date_tim`) values('".$c_up."','".$g_t25."','".$g_t26."','".$g_t27."','".$g_t28."','".$g_t29."','".$g_t30."','".$g_t1."','".$g_t2."','".$g_t3."','".$g_t4."','".$g_t5."','".$g_t6."','".$g_t7."','".$g_t8."','".$g_t9."','".$g_t10."','".$g_t11."','".$g_t12."','".$g_t13."','".$g_t14."','-','-','".$g_t21."','".$g_t22."','".$g_t23."','".$g_t24."')";
+ $result="insert into gatepass(`client_id`, `tin_no`, `cst_no`, `ex_ring`, `ex_no`, `ex_div`, `ex_com`,`g_no`,`g_date`,`due_date`,`req`,`dept`,`status`, `t_ref_no`,`p_name`,`addr`,`mode`, `time`, `t_name`, `v_no`, `issue`,`total_qnt`, `total_amt`, `remark`, `req_by`, `appr_nm`, `date_tim`) values('".$c_up."','".$g_t25."','".$g_t26."','".$g_t27."','".$g_t28."','".$g_t29."','".$g_t30."','".$g_t1."','".$g_t2."','".$g_t3."','".$g_t4."','".$g_t5."','".$g_t6."','".$g_t7."','".$g_t8."','".$g_t9."','".$g_t10."','".$g_t11."','".$g_t12."','".$g_t13."','".$g_t14."','".$g_t16."','".$g_t20."','".$g_t21."','".$g_t22."','".$g_t23."','".$g_t24."')";
 	$ans=mysql_query($result);
+	//exit();
 	if($ans)
 	{
 	header("location:clients.php");
@@ -76,40 +78,106 @@ $result="insert into gatepass(`client_id`, `tin_no`, `cst_no`, `ex_ring`, `ex_no
 <head>
 <title>Rajesh Electic Works</title>
 <link rel="stylesheet" href="styles.css" type="text/css" />
-
-	<script language="javascript" type="text/javascript">
-	function data()
-	{
-
-	alert($('input[id="a[]"]').length);
-	
-	}
-	
-	function data1()
-	{
-
-	  var a= document.getElementsByName('c1[]');
-	  alert('trdt'+a.length);
-	  var b=document.getElementsByName("r1[]");	  		
-	  var total=document.getElementsByName("s1[]");
-	  alert('val='+b.length);
-	  for(var i=2;i<=a.length; i++)
-		{
-		alert('value='+(a[i].value * b[i].value));
-		}	
-	}
-	  
-	</script>
 <script>
- var counter = 2;
- function add_phone_field()
+var total = 0;
+var tot_qty =0;
+function getValues() {
+var qty = 0;
+var rate = 0;
+var obj = document.getElementsByTagName("input");
+      for(var i=0; i<obj.length; i++){
+         if(obj[i].name == "q[]")
+		 {
+			 var qty = obj[i].value;
+			 if(qty>0)
+		     {
+			 tot_qty+=(qty*1);  
+			 }
+		}
+         if(obj[i].name == "r[]")
+		 {
+			 var rate = obj[i].value;
+		 }
+         if(obj[i].name == "a[]")
+		 {
+          		if(qty > 0 && rate > 0)
+				{
+					obj[i].value = qty*rate;
+					total+=(obj[i].value*1);
+				}
+				else
+				{
+					obj[i].value = 0;
+				    total+=(obj[i].value*1);
+				}
+          }
+         	 }
+        document.getElementById("tot_amt").value = total*1;
+		document.getElementById("tot_qnt").value = tot_qty*1;
+        total=0;
+		tot_qty=0;
+}
+
+</script>
+<script>
+function addRow(tableID) {
+            var table = document.getElementById(tableID);
+            var rowCount = table.rows.length;
+            var row = table.insertRow(rowCount);
+            var colCount = table.rows[0].cells.length;
+            for(var i=0; i<colCount; i++) {
+                var newcell = row.insertCell(i);
+                newcell.innerHTML = table.rows[0].cells[i].innerHTML;
+                //alert(newcell.childNodes);
+                switch(newcell.childNodes[0].type) {
+                    case "text":
+                            newcell.childNodes[0].value = "";
+                            break;
+                    case "checkbox":
+                            newcell.childNodes[0].checked = false;
+                            break;
+                    
+                }
+            }
+        }
+		
+				function deleteRow(tableID)
+{
+            try
+                 {
+                var table = document.getElementById(tableID);
+                var rowCount = table.rows.length;
+                    for(var i=0; i<rowCount; i++)
+                        {
+                        var row = table.rows[i];
+                        var chkbox = row.cells[0].childNodes[0];
+                        if (null != chkbox && true == chkbox.checked)
+                            {
+                            if (rowCount <= 1)
+                                {
+                                alert("Cannot delete all the rows.");
+                                break;
+                                }
+                            table.deleteRow(i);
+                            rowCount--;
+                            i--;
+                            }
+                        }
+                    } catch(e)
+                        {
+                        alert(e);
+                        }
+   getValues();
+}
+  /*var counter = 2;
+function add_phone_field()
  {
   var obj = document.getElementById("phone");
   var data = obj.innerHTML;
   data += "<table class='des'><tr><td><input class='des_in' type='text' name='d1["+counter+"]' id='d"+counter+"' /></td><td><input class='des_cap' type='text' name='c1["+counter+"]' id='a["+counter+"]' /></td><td><input class='des_q' type='text' name='q1["+counter+"]' id='person_phone"+counter+"' /></td><td><input class='des_r' type='text' name='r1["+counter+"]' id='b["+counter+"]' onChange='return data1()' /></td><td><input class='des_ser' type='text' name='s1["+counter+"]' id='total["+counter+"]' /></td></tr></table>";
   obj.innerHTML = data;
   counter++;
-  }
+  }*/
   
   
  </script>
@@ -159,11 +227,11 @@ $result="insert into gatepass(`client_id`, `tin_no`, `cst_no`, `ex_ring`, `ex_no
               <td class="l_form">Gate Pass No.:</td>
               <td><input id="gn1" class="q_in" type="text" name="gn1" tabindex="7"/></td>
               <td class="l_form">&nbsp;&nbsp;Gate Pass &nbsp;&nbsp;Date:</td>
-              <td><input id="gd1" class="q_in" type="text" name="gd1" value="<?php echo date('Y-m-d'); ?>" tabindex="8"/></td>             </tr>
+              <td><input id="gd1" class="q_in" type="text" name="gd1" value="<?php echo date('d-m-Y'); ?>" tabindex="8"/></td>             </tr>
            
             <tr>
           <td class="l_form">Due Date:</td>
-          <td><input id="due1" class="q_in" type="text" name="due1" value="<?php echo date('Y-m-d'); ?>" tabindex="9"/></td>  
+          <td><input id="due1" class="q_in" type="text" name="due1" value="<?php echo date('d-m-Y'); ?>" tabindex="9"/></td>  
           <td class="l_form" >&nbsp;&nbsp;Requested By:</td>
           <td><input id="req1" class="q_in" type="text" name="req1" tabindex="10"/></td>              
             </tr>
@@ -211,41 +279,51 @@ $result="insert into gatepass(`client_id`, `tin_no`, `cst_no`, `ex_ring`, `ex_no
             <tr >
             <td colspan="3"><label class="desc">Material Details</label></td>
             </tr> 
+            <tr><td colspan="3">
+            <input type="button" value="Add Row" onClick="addRow('dataTable')" >&nbsp;
+<input type="button" value="Delete Row" onClick="deleteRow('dataTable')" >
+				</td>
+            </tr>
             </table>
-				 <table class="des">
+				 <table class="des" >
                 <tr>
-                <td class="heading">Description  Of Material.</td>                
-                <td class="heading" >Quantity</td>
-                <td class="heading">Unit</td>
-                <td class="heading">Rate</td>
-                <td class="heading">Amount</td>
+                <td width="20"></td>
+                <td class="heading" width="205">Description  Of Material.</td>                
+                <td class="heading" width="200">Quantity</td>
+                <td class="heading" width="200">Unit</td>
+                <td class="heading" width="200">Rate</td>
+                <td class="heading" width="200">Amount</td>
                 </tr>
-                <span style="color:#00f;font-size:20px;font-weight:bold;cursor:pointer;" onClick="add_phone_field()">[+]</span>
+                </table>
+               <!-- <span style="color:#00f;font-size:20px;font-weight:bold;cursor:pointer;" onClick="add_phone_field()">[+]</span>-->
+               <table class="des" id="dataTable">
+
                 <tr>
+                <td style="white-space:nowrap;" width="20"><input type="checkbox" name="chk[]"/></td>
                 <td>
                  <input class="des_in" type="text" name="d[]" id="0" value=""> <br>
                 </td>
                 <td>
-                 <input class="des_cap" type="text" name="c[]" id="a[1]" value=""  ><br>
+                 <input class="des_cap" type="text" name="q[]" id="a[1]" value="" onKeyUp="getValues()" ><br>
                 </td>
                 <td>
-                 <input class="des_q" type="text" name="q[]" id="0" value="" ><br>
+                 <input class="des_q" type="text" name="u[]" id="0" value="" ><br>
                 </td>
                 <td>
-                 <input class="des_r" type="text" name="r[]" id="b[1]" value=""  onChange="return data()" ><br>
+                 <input class="des_r" type="text" name="r[]" id="b[1]" value=""  onkeyup="getValues()" ><br>
                 </td>
                 <td>
-                 <input class="des_ser" type="text" name="s[]" id="total[1]" value=""  readonly><br>
+                 <input class="des_ser" type="text" name="a[]" id="total[1]" value=""  readonly><br>
                 </td>                
                                 </tr>                 
                 
-                </table>
-                <div id="phone">
+                </table>               
                 
-                </div>
+                
                  <table class="des">
                 <tr>
-                <td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td width="199">
                  <input class="des_in" type="text" name="total" id="tot" value='TOTAL' align="right" readonly><br>
                 </td>
                 <td>
@@ -258,13 +336,25 @@ $result="insert into gatepass(`client_id`, `tin_no`, `cst_no`, `ex_ring`, `ex_no
                  <input class="des_r" type="text" name="" id="" readonly><br>
                 </td>
                 <td>
-                 <input class="des_ser" type="text" name="tot_amt" id="" value="" readonly><br>
+                 <input class="des_ser" type="text" name="tot_amt" id="tot_amt" value="" readonly><br>
                 </td>
                 
                 </tr>
                 </table>
-             
-                      
+              <table class="midtext">
+            <tr >
+            <td colspan="3"><label class="desc">Remarks</label></td>
+            </tr>
+            <tr><td align="center"><br><input type="text" name="remark" class="q_in"></td></tr> 
+            </table>
+            <table class="midtext">
+            <tr >
+            <td colspan="3"><label class="desc">Requested By</label></td>
+            </tr>
+            <tr><td colspan="3" align="center"><br><input type="text" name="nm2"  class="q_in"></td></tr> 
+            </table>
+
+                                  
              <table class="midtext">
             <tr >
             <td colspan="3"><label class="desc">Authorization</label></td>
@@ -276,10 +366,8 @@ $result="insert into gatepass(`client_id`, `tin_no`, `cst_no`, `ex_ring`, `ex_no
               <td class="l_form">Approver Name:</td>
               <td><input id="apr" class="q_in" type="text" name="apr" tabindex="28"/></td>
               <td class="l_form">&nbsp;&nbsp;Date:</td>
-              <td><input id="date" class="q_in1" type="text" name="date" value="<?php echo date('Y-m-d - h:i:sa'); ?>" tabindex="29" width="40px"/></td>             </tr>
-            </table>
-  
-            
+              <td><input id="date" class="q_in1" type="text" name="date" value="<?php echo date('d-m-Y - h:i:sa'); ?>" tabindex="29" width="40px"/></td>             </tr>
+            </table>            
                 
         <div class="addclients_b">
          <input name="g_add" class="formbutton" value=" Submit " type="submit" />

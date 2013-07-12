@@ -54,7 +54,7 @@ if($_GET)
         <?php
 		while($c_row=mysql_fetch_array($c_res_f))
 		{
-echo			$id=$_GET['id'];
+			$id=$_GET['id'];
         echo "<tr class='emp_header'>";
         echo "<td width='250'>";
 		echo $c_row[8];
