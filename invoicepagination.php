@@ -21,7 +21,7 @@ $rsd = mysql_query($sql);
                 <tr class="emp_header">
                 <td>SR.No</td>
                 <td>InvoiceNo</td>
-                <td >ClientName</td>
+                <td >Gatepass_No</td>
                 <td>Date</td>
                 <td>DC.No</td>
                 <td>SUB-TOTAL</td>
@@ -43,7 +43,7 @@ $rsd = mysql_query($sql);
                 echo $row[0];
                 echo "</td>";
                 echo "<td >";
-                echo $row[4];
+                echo $row[2];
                 echo "</td>";
                 echo "<td>";
                 echo $row[1];

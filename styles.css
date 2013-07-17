@@ -279,7 +279,7 @@ ul.styledlist li {
 #nav ul {
 	list-style: none;
 	padding: 0;
-	margin-left: 50px;
+	margin-left: 0px;
 	height: 50px;
 }
 
@@ -290,6 +290,7 @@ ul.styledlist li {
 #nav ul li {
 	display: block;
 	float: left;
+	margin-left:-10px;
 	width:110px;
 }
 
@@ -309,7 +310,7 @@ ul.styledlist li {
 
 #nav ul li a.has_submenu {
 	background:  transparent url('images/submenu-item.gif') no-repeat scroll right center;
-	padding-right: 30px;
+	padding-right: 25px;
 	
 }
 
@@ -577,6 +578,20 @@ div#footer-links p {
 	text-shadow:-1px -1px #CE5709;
 	padding:3px 0px 0px 0px;
 }
+.quotationT
+{
+	font-size:20px;
+	color:#fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight:400;
+	letter-spacing:4px;
+	background-color:#00a1d2;
+	width:90%;
+	height:30px;
+	margin-top:2px;
+	text-shadow:-1px -1px #CE5709;
+	padding:3px 0px 0px 0px;
+}
 .quotationI
 {
 	font-size:22px;
@@ -625,7 +640,7 @@ div#footer-links p {
 .q_in
 {
 	width:250px;
-	height:40px;
+	height:35px;
 	background-color:#333;
 	/*opacity:0.5;*/
 	font-size:18px;
@@ -635,7 +650,7 @@ div#footer-links p {
 .q_in2
 {
 	width:400px;
-	height:40px;
+	height:35px;
 	background-color:#333;
 	/*opacity:0.5;*/
 	font-size:18px;
@@ -849,6 +864,31 @@ div#footer-links p {
 	height:300px;
 	margin-top:20px;
 	margin-left:400px;
+}
+.addpay_tab
+{
+	width:500px;
+	height:600px;
+	margin-top:20px;
+	margin-left:400px;
+}
+.testing1
+{
+	
+	height:300px;
+	width:800px;
+}
+.test2
+{
+	
+	height:500px;
+	width:800px;
+}
+.test3
+{
+	
+	height:250px;
+	width:385px;
 }
 .addemp_b
 {

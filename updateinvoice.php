@@ -38,9 +38,8 @@ if(isset($_REQUEST['submit']))
 		$d1=date('Y-m-d',strtotime($_POST['date1']));
 		$d2=date('Y-m-d',strtotime($_POST['date2']));
 
-		$add="update`invoice` set `q_date`=".$q_date."',`c_id`='".$c."',`c_comp`='".$c_row[3]."',`q_name`='".$q_name."',`q_address`='".$q_address."',`po_no`='".$po."',`rgp_no`='".$rgp."',`dc_no`='".$dc."',`code_no`='".$v1."',`tin_no`='".$t1."',`date1`='".$d1."',`date2`='".$d2."'";
+		 $add="update`invoice` set `q_date`='".$q_date."',`c_id`='".$c."',`c_comp`='".$c_row[3]."',`q_name`='".$q_name."',`q_address`='".$q_address."',`po_no`='".$po."',`rgp_no`='".$rgp."',`dc_no`='".$dc."',`code_no`='".$v1."',`tin_no`='".$t1."',`date1`='".$d1."',`date2`='".$d2."' where i_id='$in'";
 		$query=mysql_query($add);
-	
 		$a=$_POST['d'];
 		if(($a!=NULL ))
 	{
@@ -81,7 +80,7 @@ if(isset($_REQUEST['cancel']))
 	header("location:invoicedetails.php");
 }
 
-echo $c_query1="select * from sub_invoice where i_id='$in'";
+ $c_query1="select * from sub_invoice where i_id='$in'";
 $c_res1=mysql_query($c_query1);
 $count=mysql_num_rows($c_res1);
 ?>
@@ -120,20 +119,25 @@ $count=mysql_num_rows($c_res1);
                 <br />
                 <table class="q_info3" height="300px">
                 <tr><td class="l_form">Date:</td><td><input name="q_date" class="q_in" type="text" value="<?php  echo date("d-m-Y"); ?>"/></td></tr>
-                <tr><td class="l_form">Client Name:</td>
+                <tr><td class="l_form">Gatepass No:</td>
                 <td>
-                <input type="text" class="q_in" name="q_name" value="<?php echo $c_row[4]; ?>">
+                <input type="text" class="q_in" name="g_no" value="<?php echo $c_row[2]; ?>" readonly>
 				</td>
                 </tr>
-                <tr><td class="l_form">Address:</td><td><textarea class="q_add" name="q_address"><?php echo $c_row[5]; ?></textarea></td></tr>
+                <tr><td class="l_form">Client Name:</td>
+                <td>
+                <input type="text" class="q_in" name="q_name" value="<?php echo $c_row[5]; ?>">
+				</td>
+                </tr>
+                <tr><td class="l_form">Address:</td><td><textarea class="q_add" name="q_address"><?php echo $c_row[6]; ?></textarea></td></tr>
                 <tr><td class="l_form">PO No:</td>
                 <td>
-                <input type="text" class="q_in" name="po_no" value="<?php echo $c_row[7]; ?>" >
+                <input type="text" class="q_in" name="po_no" value="<?php echo $c_row[8]; ?>" >
 				</td>
                 </tr>
                 <tr><td class="l_form">Your RGP No:</td>
                 <td>
-                <input type="text" class="q_in" name="rgp" value="<?php echo $c_row[8]; ?>">
+                <input type="text" class="q_in" name="rgp" value="<?php echo $c_row[9]; ?>">
 				</td></tr>
                 </table>
                 <table class="q_info5">
@@ -141,23 +145,37 @@ $count=mysql_num_rows($c_res1);
                 <td><input name="invoice" class="q_in" type="text" value="<?php echo $c_row[0]; ?>" readonly/></td></tr>
                 <tr><td class="l_form">Our DC No:</td>
                 <td>
-                <input type="text" class="q_in" name="dc" value="<?php echo $c_row[9]; ?>" >
+                <input type="text" class="q_in" name="dc" value="<?php echo $c_row[10]; ?>" >
 				</td></tr>
                  <tr><td class="l_form">Vendor Code No:</td>
                 <td>
-                <input type="text" class="q_in" name="vendr" value="<?php echo $c_row[10]; ?>" >
+                <select name="vendr" class="q_add_i">
+                <option value="">select</option>
+                <?php
+                $query="select * from vendor";
+				$exe=mysql_query($query);
+				while($ven=mysql_fetch_array($exe))
+				{
+					if($ven[3]==$c_row[11])
+					  echo "<option value='$ven[3]' selected>$ven[1]</option>";
+					else	
+					  echo "<option value='$ven[3]'>$ven[1]</option>";
+				}
+				?>
+                <option value="-" <?php if($c_row[11]=='-') echo 'selected'; ?> >none</option>
+                </select>                
 				</td></tr>
                  <tr><td class="l_form">Consignee Vat / Tin No:</td>
                 <td>
-                <input type="text" class="q_in" name="tin_no" value="<?php echo $c_row[11]; ?>" >
+                <input type="text" class="q_in" name="tin_no" value="<?php echo $c_row[12]; ?>" >
 				</td></tr>
                  <tr><td class="l_form">Date:</td>
                 <td>
-                <input type="text" class="q_in" name="date1" value="<?php echo date('d-m-Y', strtotime($c_row[12])); ?>" >
+                <input type="text" class="q_in" name="date1" value="<?php echo date('d-m-Y', strtotime($c_row[13])); ?>" >
 				</td></tr>
                 <tr><td class="l_form">Date:</td>
                 <td>
-                <input type="text" class="q_in" name="date2"value="<?php echo date('d-m-Y', strtotime($c_row[13])); ?>" >
+                <input type="text" class="q_in" name="date2"value="<?php echo date('d-m-Y', strtotime($c_row[14])); ?>" >
 				</td></tr>
                 </table>
                 <br />

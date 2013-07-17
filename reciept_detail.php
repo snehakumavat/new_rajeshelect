@@ -2,7 +2,7 @@
 	include("include/database.php");
 	error_reporting(0);
 	$a=$_REQUEST['id'];
-	$c_qry_f="select * from reminder where i_id='$a'";
+	$c_qry_f="select * from payment";
 	$c_res_f=mysql_query($c_qry_f);
 
 	if(isset($_REQUEST['can']))

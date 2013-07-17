@@ -130,7 +130,7 @@ cursor: pointer;
 		if(isset($_REQUEST['search']))
 		  {
 		 	 $srch=$_REQUEST['search'];			
-			 $query="select * from invoice where q_name LIKE '%$srch%'OR q_date LIKE '%$srch%' OR po_no LIKE '%$srch%' OR rgp_no LIKE '%$srch%' OR q_address LIKE '%$srch%' OR dc_no LIKE '%$srch%' OR tin_no LIKE '%$srch%'" ;
+			 $query="select * from invoice where gatepass_no LIKE '%$srch%' OR  q_date LIKE '%$srch%' OR po_no LIKE '%$srch%' OR rgp_no LIKE '%$srch%' OR q_address LIKE '%$srch%' OR dc_no LIKE '%$srch%' OR tin_no LIKE '%$srch%'" ;
 	 		 $ans=mysql_query($query);
 	 
 	?>
@@ -180,7 +180,7 @@ cursor: pointer;
 				<table class="quotation">
                 <tr>
                 <td>Invoice Details</td>
-                <td><input type='text' name="search"  title="Enter client name,address,date,tin_no,rgp_no,po_no here" />
+                <td><input type='text' name="search"  title="Enter gatepass no,address,date,tin_no,rgp_no,po_no here" />
                 </td>
                 <td><input type="submit" name="result" value="search" class="formbutton" /></td>
                 </tr>

@@ -20,10 +20,12 @@
         <tr class="emp_header">
         <td width="70">In. No</td>
         <td width="100">Start Date.</td>
+        <td> Gatepass No</td>
         <td width="250">Client Name</td>
         <td>Client Address</td>
         <td width="150">Contact</td>
-        <td width="100">Reciept</td>
+        <!--<td width="100">Reciept</td>-->
+        <td>Action</td>
         </tr>
         <?php
 		while($c_row=mysql_fetch_array($c_res_f))
@@ -36,16 +38,24 @@
 		echo $c_row[1];
 		echo "</td>";
 		echo "<td>";
-		echo $c_row[3];
+		echo $c_row[2];
 		echo "</td>";
 		echo "<td>";
-		echo $c_row[4];
+		echo $c_row[5];
 		echo "</td>";
 		echo "<td>";
 		echo $c_row[6];
 		echo "</td>";
-        echo "<td class='print'>";
-		echo "<a href='reciept_detail.php?id=$c_row[0]'>Details</a>";
+		echo "<td>";
+		echo $c_row[7];
+		echo "</td>";
+        /*echo "<td class='print'>";
+		echo "<a href='reciept_detail.php?id=$c_row[0]'>Details</a>&nbsp;";
+		echo "<a href='addreciept.php?id=$row[0]&&id2=$a'>Reciept</a>";
+		echo "</td>";*/
+		echo "<td class='print'>";
+		echo "<a href='addreciept.php?id=$c_row[0]'>Create</a>&nbsp;";
+		echo "<a href='recieptpdf.php?id=$c_row[0]'>Print</a>";
 		echo "</td>";
 		echo "</tr>";
 		}

@@ -124,8 +124,19 @@ if(isset($_REQUEST['cancel']))
                 <tr><td class="l_form">Address:</td><td><textarea class="q_add" name="q_address"><?php echo $c_row[4]; ?></textarea></td></tr>
                  <tr><td class="l_form">Enter Ref No:</td><td><input name="q_ref" class="q_in" type="text"/></td></tr>
                <tr><td class="l_form">Enter Vendor No:</td>
-               <td>
-                <input type="text" class="q_in" name="q_vendor" value="">
+               <td><select name="q_vendor" class="q_add_i">
+                <option value="">select</option>
+                <?php
+                $query="select * from vendor";
+				$exe=mysql_query($query);
+				while($ven=mysql_fetch_array($exe))
+				{
+				echo "<option value='$ven[3]'>$ven[1]</option>";
+				}
+				?>
+                <option value="-">none</option>
+                </select>
+                
 				</td>
                  <tr><td class="l_form">Enter Client TeleFax No:</td>
                <td>

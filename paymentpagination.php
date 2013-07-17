@@ -19,9 +19,13 @@ $page=$_GET['page'];
         <table class="emp_tab">
         <tr class="emp_header">
         <td width="70">In No.</td>
-        <td width="250">Client Name</td>
-        <td width="160">Contact No.</td>
-        <td>Site Address</td>
+        <td width="100">Date</td>
+        <td width="150">Client Name</td>
+        <td width="150">Company Name</td>
+        <td>Gatepass No.</td>
+        <td>Amount</td>
+        <td>Contact No</td>
+        <td>Address</td>
         <td width="100">Action</td>
         </tr>
 
@@ -32,17 +36,32 @@ $page=$_GET['page'];
         echo "<td>";
 		echo $c_row[0];
 		echo "</td>";
-		echo "<td width='250'>";
-		echo $c_row[3];
+		echo "<td >";
+		echo $c_row[1];
 		echo "</td>";
-        echo "<td width='160'>";
-		echo $c_row[6];
+        echo "<td >";
+		echo $c_row[5];
 		echo "</td>";
-		echo "<td>";
+		echo "<td >";
 		echo $c_row[4];
 		echo "</td>";
+		echo "<td>";
+		echo $c_row[2];
+		echo "</td>";
+		echo "<td>";
+		$pid_qry="select SUM(total) from sub_invoice where i_id='$c_row[0]'";
+		$pid_res=mysql_query($pid_qry);
+		$row_pid=mysql_result($pid_res,0);
+		echo $row_pid;
+		echo "</td>";
+		echo "<td>";
+		echo $c_row[7];
+		echo "</td>";
+		echo "<td>";
+		echo $c_row[6];
+		echo "</td>";
 	    echo "<td width='100' class='print'>";
-		echo "<a href='addpayment.php?p_id=$c_row[0]&&c_id=$c_row[2]'>Pay</a>&nbsp;<a href='viewpayment.php?v_id=$c_row[0]'>View</a>";
+		echo "<a href='addpayment.php?p_id=$c_row[0]&c_id=$c_row[3]'>Pay</a>&nbsp;<a href='viewpayment.php?v_id=$c_row[0]'>View</a>";
 		echo "</td>";
 		echo "</tr>";
 		}

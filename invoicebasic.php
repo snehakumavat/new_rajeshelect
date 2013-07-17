@@ -3,9 +3,14 @@ include("include/database.php");
 
 $in=$_REQUEST['c_id1'];
 
-$c_query="select * from clients where c_id=".$in;
+$c_query="select * from clients where c_id='$in'";
 $c_res=mysql_query($c_query);
 $c_row=mysql_fetch_array($c_res);
+
+$c_query2="select g_no from gatepass where client_id='$c_row[0]'";
+$c_res2=mysql_query($c_query2);
+$gate=mysql_result($c_res2,0);
+
 
 $c_query1="select * from invoice order by i_id DESC";
 $c_res1=mysql_query($c_query1);
@@ -34,7 +39,7 @@ if(isset($_REQUEST['submit']))
 		$d1=date('Y-m-d',strtotime($_POST['date1']));
 		$d2=date('Y-m-d',strtotime($_POST['date2']));
 
-		$add="INSERT INTO `invoice`(`q_date`,`c_id`,`c_comp`, `q_name`, `q_address`, `po_no`, `rgp_no`, `dc_no`, `code_no`, `tin_no`, `date1`, `date2`) VALUES ('".$q_date."','".$c."','".$c_row[3]."','".$q_name."','".$q_address."','".$po."','".$rgp."','".$dc."','".$v1."','".$t1."','".$d1."','".$d2."')";
+		$add="INSERT INTO `invoice`(`q_date`,`gatepass_no`,`c_id`,`c_comp`, `q_name`, `q_address`,`q_mo`, `po_no`, `rgp_no`, `dc_no`, `code_no`, `tin_no`, `date1`, `date2`) VALUES ('".$q_date."','".$gate."','".$c."','".$c_row[3]."','".$q_name."','".$q_address."','".$c_row[9]."','".$po."','".$rgp."','".$dc."','".$v1."','".$t1."','".$d1."','".$d2."')";
 		$query=mysql_query($add);
 	
 		$a=$_POST['d'];
@@ -105,6 +110,11 @@ if(isset($_REQUEST['cancel']))
                 <br />
                 <table class="q_info3" height="300px">
                 <tr><td class="l_form">Date:</td><td><input name="q_date" class="q_in" type="text" value="<?php  echo date("d-m-Y"); ?>"/></td></tr>
+                <tr><td class="l_form">Gatepass No:</td>
+                <td>
+                <input type="text" class="q_in" name="g_no" value="<?php echo $gate; ?>" readonly>
+				</td>
+                </tr>
                 <tr><td class="l_form">Client Name:</td>
                 <td>
                 <input type="text" class="q_in" name="q_name" value="<?php echo $c_row[2]; ?>">
@@ -130,7 +140,20 @@ if(isset($_REQUEST['cancel']))
 				</td></tr>
                  <tr><td class="l_form">Vendor Code No:</td>
                 <td>
-                <input type="text" class="q_in" name="vendr" >
+                <select name="vendr" class="q_add_i">
+                <option value="">select</option>
+                <?php
+                $query="select * from vendor";
+				$exe=mysql_query($query);
+				while($ven=mysql_fetch_array($exe))
+				{
+				echo "<option value='$ven[3]'>$ven[1]</option>";
+				}
+				?>
+                <option value="-">none</option>
+                </select>
+                
+
 				</td></tr>
                  <tr><td class="l_form">Consignee Vat / Tin No:</td>
                 <td>

@@ -1,14 +1,17 @@
 <?php
 	
-	error_reporting(0);
+	//error_reporting(0);
 	include("include/database.php");
 	$c_up=$_REQUEST['v_id'];
-	$c_qry_f="select * from partial_payment where i_id=".$c_up;
+	$c_qry_f="select * from partial_payment where i_id='$c_up'";
 	$c_res_f=mysql_query($c_qry_f);
 	
-	$qry_i="select * from invoice where i_id=".$c_up;
+	$qry_i="select * from invoice where i_id='$c_up'";
 	$res_i=mysql_query($qry_i);
 	$row_i=mysql_fetch_array($res_i);
+	
+	
+	
 ?>
 <?php
 	if(isset($_REQUEST['can']))
@@ -32,16 +35,18 @@
     <div id="sub-header">
     <div class="quo">
     	<br />
-		<div class="quotation"><center>Payment Details</center></div>
+		<div class="quotation"><center><?php echo mysql_result($res_i,0,4);?> Payment Details</center></div>
         <div>
         
         <table class="emp_tab">
         
         <tr class="emp_header">
-        <td width="350">Payment Mode</td>
-        <td width="400">Cheque No.</td>
-        <td width="220">Pay Date</td>
+        <td width="250">Payment Mode</td>
+        <td>Bank Name</td>
+        <td width="250">Cheque No.</td>
+        <td width="200">Pay Date</td>
         <td>Amount</td>
+        <td>Remark</td>
         </tr>
 
         <?php
@@ -50,6 +55,9 @@
         echo "<tr class='emp_header'>";
         echo "<td>";
 		echo $c_row[4];
+		echo "</td>";
+		 echo "<td>";
+		echo $c_row[9];
 		echo "</td>";
 		echo "<td>";
 		echo $c_row[5];
@@ -60,10 +68,14 @@
 		echo "<td>";
 		echo $c_row[8];
 		echo "</td>";
+		echo "<td>";
+		echo $c_row[10];
+		echo "</td>";
         echo "</tr>";
 		}
 		?>
         </table>
+        <br><br><br>
         <?php
 			$up=$_REQUEST['v_id'];
 			$c_qry="select * from partial_payment where i_id=".$up;
@@ -91,7 +103,7 @@
         <td>Paid By Client:</td><td><?php echo $to_row[0]; ?></td>
         </tr>
         <tr class="emp_header">
-        <td>Address</td><td><?php echo $row_i[4]; ?></td>
+        <td>Address</td><td><?php echo $row_i[6]; ?></td>
         <td>Balance:</td><td><?php echo $c; ?></td>
         </tr>
         </table>

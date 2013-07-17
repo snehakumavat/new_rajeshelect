@@ -1,16 +1,16 @@
 <?php
-error_reporting(0);
+//error_reporting(0);
 include("include/database.php");
-
+include('converter.php');
 $p=$_REQUEST['id'];
-$qry="select * from invoice where i_id=".$p;
+$qry="select * from invoice where i_id='$p'";
 $res=mysql_query($qry);
 $row=mysql_fetch_array($res);
 
-$qry_detail="select * from sub_invoice where i_id=".$p;
+$qry_detail="select * from sub_invoice where i_id='$p'";
 $res_detail=mysql_query($qry_detail);
 
-$qry_t="select SUM(total) from sub_invoice where i_id=".$p;
+$qry_t="select SUM(total) from sub_invoice where i_id='$p'";
 $res_t=mysql_query($qry_t);
 $row_t=mysql_fetch_array($res_t);
 ?>
@@ -121,29 +121,29 @@ th
  <td align="center">TAX INVOICE</td>
  </tr>
  <tr>
-  <td height="100px">m/s <?php echo $row[4].'<br>'.$row[3].'<br>'.$row[5];?></td>
+  <td height="100px"><b>M/s. </b><?php echo $row[5].'<br>'.$row[4].'<br>'.$row[6];?></td>
 </tr>
 </table>
 
  <table class="tab2" >
  <tr>
- <td>PO NO :- <?php echo $row[7]; ?></td>
-  <td>Date :- <?php echo date('d-m-Y',strtotime($row[12])); ?></td>
-</tr>
-<tr>
- <td>Your RGP No :- <?php echo $row[8]; ?></td>
-  <td>Date :- <?php echo date('d-m-Y',strtotime($row[12])); ?></td>
-</tr>
-<tr>
- <td>Our DC No :- <?php echo $row[9]; ?></td>
+ <td><b>PO NO :-</b> <?php echo $row[8]; ?></td>
   <td>Date :- <?php echo date('d-m-Y',strtotime($row[13])); ?></td>
 </tr>
 <tr>
- <td colspan="2">Vendor Code No :- <?php echo $row[10]; ?></td>
+ <td>Your RGP No :- <?php echo $row[9]; ?></td>
+  <td>Date :- <?php echo date('d-m-Y',strtotime($row[13])); ?></td>
+</tr>
+<tr>
+ <td>Our DC No :- <?php echo $row[10]; ?></td>
+  <td>Date :- <?php echo date('d-m-Y',strtotime($row[14])); ?></td>
+</tr>
+<tr>
+ <td colspan="2">Vendor Code No :- <?php echo $row[11]; ?></td>
 
 </tr>
 <tr>
- <td colspan="2">Consignee Vat / Tin No :- <?php echo $row[11]; ?></td>
+ <td colspan="2">Consignee Vat / Tin No :- <?php echo $row[12]; ?></td>
 </tr>
 </table>
 
@@ -206,17 +206,17 @@ $g_total=$row_t[0]+$serv_tax+$e_cess+$she_cess+$vat;
 <td><?php echo $serv_tax; ?></td>
 </tr>
 <tr>
-<td></td>
+<td rowspan="3" style="vertical-align:text-top">In Words:- <?php echo convert_number_to_words(round($g_total)).'Rupees Only'; ?></td>
 <td colspan="2" style="text-align:right;">E.Cess @2%</td>
 <td><?php echo $e_cess;?></td>
 </tr>
 <tr>
-<td></td>
+
 <td colspan="2" style="text-align:right;">She.Cess @1%</td>
 <td><?php echo $she_cess;?></td>
 </tr>
 <tr>
-<td></td>
+
 <td colspan="2" style="text-align:right;">VAT 05% on <?php $plus.'./-'; ?> </td>
 <td><?php echo $vat;?></td>
 </tr>
@@ -229,11 +229,20 @@ $g_total=$row_t[0]+$serv_tax+$e_cess+$she_cess+$vat;
 <td><font size="-2">Service Tax NO. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PAN NO. :-AMEPM1485H </font></td>
 <td colspan="2" style="text-align:right; font-weight:800; "> GRAND TOTAL:-</td>
 <td><?php echo round($g_total,2) ;?></td>
-
-</td>
 </tr>
 </table>
 </div>
+</td>
+</tr>
+<tr>
+<td colspan="3">
+<table>
+<tr>
+<td width="375px">we hereby certify that my</td>
+<td width="120px"><br><br><br>Receiver Sign & Stamp</td>
+<td width="120px"><b>For Rajesh Electric Works<br><br> <br>Authorised Signatory</b> </td>
+</tr>
+</table>
 </td>
 </tr>
 </table>

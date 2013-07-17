@@ -3,14 +3,18 @@
      <ul class="sf-menu dropdown">
         	
         	<li class="selected"><a href="home.php">Home</a></li>
-                        
-            <li ><a class="has_submenu" href="view_worksheet.php">Job Worksheet</a>
+              <li><a class="has_submenu" href="view_cert.php">Testing</a>
+            <ul>
+              	<li><a href="raj.php">add</a></li>
+            </ul>
+           </li>            
+            <li ><a class="has_submenu" href="view_worksheet.php">Worksheet</a>
             <ul>
                	<li><a href="add_worksheet.php">Add Job</a></li>            	
             </ul>
            
                       
-            <li><a class="has_submenu" href="clients.php">Clients</a>
+            <li><a class="has_submenu" href="clients.php">Client</a>
             	<ul>
                 	<li><a href="addclients.php">Add Clients</a></li>
                 </ul>
@@ -23,6 +27,11 @@
                     </ul>
             
             </li>
+             <li ><a class="has_submenu" href="view_vendor.php">Vendor</a>
+            <ul>
+               	<li><a href="add_vendor.php">Add Vendor</a></li>            	
+            </ul>
+           
             <li><a class="has_submenu" href="view_stock.php">Stock</a>
             <ul>
                 	<li><a href="add_stock.php">Add Stock</a></li>                	
@@ -47,10 +56,11 @@
                 	
                     </ul>
             </li>
-            <li><a class="has_submenu" href="term.php">Terms & Conditions</a>
+            <li><a class="has_submenu" href="term.php">T &C </a>
             <ul>
               	<li><a href="addterm.php">Add Terms</a></li>
             </ul>
-           </li>                 
+           </li>  
+                          
         </ul>
   </div>

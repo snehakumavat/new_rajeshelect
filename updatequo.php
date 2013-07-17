@@ -128,7 +128,22 @@ $query="select * from sub_quotation where q_id='$c_res[0]' and less='0'";
                  <tr><td class="l_form">Ref No:</td><td><input name="q_ref" class="q_in" type="text" value="<?php echo $c_res[2]; ?>"/></td></tr>
                <tr><td class="l_form">Vendor No:</td>
                <td>
-                <input type="text" class="q_in" name="q_vendor" value="<?php echo $c_res[9]; ?>">
+               <select name="q_vendor" class="q_add_i">
+                <option value="">select</option>
+                <?php
+                $query="select * from vendor";
+				$exe=mysql_query($query);
+				while($ven=mysql_fetch_array($exe))
+				{
+					if($ven[3]==$c_res[9])
+					  echo "<option value='$ven[3]' selected>$ven[1]</option>";
+					else	
+					  echo "<option value='$ven[3]'>$ven[1]</option>";
+				}
+				?>
+                <option value="-" <?php if($c_row[11]=='-') echo 'selected'; ?>>none</option>
+                </select>
+                
 				</td>
                  <tr><td class="l_form">Client TeleFax No:</td>
                <td>

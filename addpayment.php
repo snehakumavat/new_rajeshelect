@@ -1,14 +1,14 @@
 <?php
 	
-	error_reporting(0);
+	//error_reporting(0);
 	include("include/database.php");
 	$p=$_REQUEST['p_id'];
-	$p_qry="select * from invoice where i_id=".$p;
+	$p_qry="select * from invoice where i_id='$p'";
 	$p_res=mysql_query($p_qry);
 	$p_row=mysql_fetch_array($p_res);
 	
 
-	$pid_qry="select SUM(total) from sub_invoice where i_id=".$p;
+	$pid_qry="select SUM(total) from sub_invoice where i_id='$p'";
 	$pid_res=mysql_query($pid_qry);
 	$row_pid=mysql_fetch_array($pid_res);
 	
@@ -38,8 +38,11 @@
 		$p_t5=$_POST['t5'];
 		$p_t6=$_POST['t6'];
 		$p_t7=$_POST['t7'];
+		$p_t8=$_POST['bnk'];
+		$p_t9=$_POST['remark'];
 		
-		$pa_qry="insert into partial_payment(i_id,c_id,c_name,p_mode,c_no,p_date,i_amt,p_amt) values('".$p_t1."','".$c."','".$p_t2."','".$p_t3."','".$p_t4."','".$p_t5."','".$p_t7."','".$p_t6."')";
+		 $pa_qry="insert into partial_payment(i_id,c_id,c_name,p_mode,c_no,p_date,i_amt,p_amt,bank_nm,remark) values('".$p_t1."','".$c."','".$p_t2."','".$p_t3."','".$p_t4."','".$p_t5."','".$p_t7."','".$p_t6."','".$p_t8."','".$p_t9."')"; 
+//		exit();
 		$pa_res=mysql_query($pa_qry);
 		if($pa_res)
 		{
@@ -59,7 +62,7 @@
 ?>
 <html>
 <head>
-<title>Anmol Water Tank Cleaners</title>
+<title>Rajesh Electric Wires</title>
 <link rel="stylesheet" href="styles.css" type="text/css" />
 <script type="text/javascript" language="javascript">
 function validateMyForm ( ) { 
@@ -88,14 +91,14 @@ function validateMyForm ( ) {
 		<div class="quotation"><center>Payments Details</center></div>
         <div>
         <form name="form1" action="" method="post">
-        <table class="addemp_tab">
+        <table class="addpay_tab">
         <tr>
         <td class="l_form">Invoice No:</td>
         <td><input id="des" type="text" class="q_in" name="t1" value="<?php echo $p_row[0]; ?>"></td>
         </tr>
         <tr>
         <td class="l_form">Clients Name:</td>
-        <td><input id="ename" type="text" class="q_in" name="t2" value="<?php echo $p_row[3]; ?>"></td>
+        <td><input id="ename" type="text" class="q_in" name="t2" value="<?php echo $p_row[5]; ?>"></td>
         </tr>
         <tr>
         <td class="l_form">Payment Mode:</td>
@@ -126,14 +129,37 @@ function validateMyForm ( ) {
         <td class="l_form">Pay Amount:</td>
         <td><input id="p_amt" type="text" class="q_in" name="t6" value="0"></td>
         </tr>
+        <tr>
+        <td class="l_form">Bank Name:</td>
+      <td><input id="bnk" type="text" class="q_in" name="bnk" value=""></td>
+        </tr>
+         <tr>
+        <td class="l_form">Remark:</td>
+      <td><input id="remark" type="text" class="q_in" name="remark" value=""></td>
+        </tr>
         
         </div>
         </table>
+        <?php 
+		if($row_res[0]>=$row_pid[0])
+		{
+		?>
+        <div class="addemp_button">
+        <font color="#FF3300" face="Verdana, Geneva, sans-serif" size="+3">Final Payment Is done</font><br><br>
+       <input name="e_can" class="formbutton" value="Cancel" type="submit" />
+        </div>
+        <?php
+		}
+		else
+		{
+		?>
         <div class="addemp_button">
          <input name="e_add" class="formbutton" value=" Add " type="submit" onClick="javascript:return validateMyForm();" />
-         <input name="e_can" class="formbutton" value="Cancel" type="submit" />
+       <input name="e_can" class="formbutton" value="Cancel" type="submit" />
         </div>
-        
+   <?php
+		}
+   ?>     
         </form>
     </div>
     </div>
