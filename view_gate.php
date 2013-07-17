@@ -91,11 +91,11 @@ document.getElementById("total").value=d;
               <td class="l_form">Gate Pass No.:</td>
               <td><input id="gn1" class="q_in" type="text" name="gn1" tabindex="7" value="<?php echo $c_row[8];?>"/></td>
               <td class="l_form">&nbsp;&nbsp;Gate Pass &nbsp;&nbsp;Date:</td>
-              <td><input id="gd1" class="q_in" type="text" name="gd1" value="<?php echo $c_row[9];?>" tabindex="8"/></td>             </tr>
+              <td><input id="gd1" class="q_in" type="text" name="gd1" value="<?php echo date('d-m-Y',strtotime($c_row[9]));?>" tabindex="8"/></td>             </tr>
            
             <tr>
           <td class="l_form">Due Date:</td>
-          <td><input id="due1" class="q_in" type="text" name="due1" value="<?php echo $c_row[10];?>" tabindex="9"/></td>  
+          <td><input id="due1" class="q_in" type="text" name="due1" value="<?php echo date('d-m-Y',strtotime($c_row[10]));?>" tabindex="9"/></td>  
           <td class="l_form" >&nbsp;&nbsp;Requested By:</td>
           <td><input id="req1" class="q_in" type="text" name="req1" tabindex="10" value="<?php echo $c_row[11];?>"/></td>              
             </tr>
@@ -283,7 +283,7 @@ document.getElementById("total").value=d;
               <td class="l_form">Approver Name:</td>
               <td><input id="apr" class="q_in" type="text" name="apr" tabindex="28" value="<?php echo $c_row[26];?>"/></td>
               <td class="l_form">&nbsp;&nbsp;Date:</td>
-              <td><input id="date" class="q_in1" type="text" name="date" value="<?php echo $c_row[27];?>" tabindex="29" width="40px"/></td>             </tr>
+              <td><input id="date" class="q_in1" type="text" name="date" value="<?php echo date('d-m-Y h:i:s',strtotime($c_row[27]));?>" tabindex="29" width="40px"/></td>             </tr>
             </table>
   
             

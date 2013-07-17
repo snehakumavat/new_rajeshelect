@@ -5,7 +5,7 @@
         	<li class="selected"><a href="home.php">Home</a></li>
               <li><a class="has_submenu" href="view_cert.php">Testing</a>
             <ul>
-              	<li><a href="raj.php">add</a></li>
+              	<li><a href="raj.php">add_certificate</a></li>
             </ul>
            </li>            
             <li ><a class="has_submenu" href="view_worksheet.php">Worksheet</a>

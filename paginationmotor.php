@@ -24,7 +24,7 @@ if($_GET)
         <td width="120">Contact Person.</td>
         <td width="160" style="word-wrap:break-word">Address</td>
         <td width="160">Work Done</td>
-        <td width="200">Action</td>
+        <td width="250">Action</td>
         </tr>
 
         <?php
@@ -44,7 +44,7 @@ if($_GET)
 		echo $e_row[48];
 		echo "</td>";
         echo "<td width='70' class='print'>";
-		echo "<a href='?cr_id1=$e_row[0]' onclick='return confirmSubmit()'>Delete</a>&nbsp;<a href='updatemotor.php?cr_id2=$e_row[0]'>View/Update</a>";
+		echo "<a href='?cr_id1=$e_row[0]' onclick='return confirmSubmit()'>Delete</a>&nbsp;<a href='updatemotor.php?cr_id2=$e_row[0]'>View/Update</a>&nbsp; <a href='motor_pdf.php?cr_id=$e_row[0]'>Print</a>";
 		echo "</td>";
 		echo "</tr>";
 		}

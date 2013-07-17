@@ -384,23 +384,6 @@ while($row=mysql_fetch_array($term_res))
 ?>
 </div>
 
-<!--<div>
-<br>
-<br>
-<br><br><br><br>
-Authorised Person:____________________
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-For Rajesh Electric Works
-<br><br>
-Name Signature and Stamp
-<br><br>
-By signing we accept the Rates & Terms & Conditions
-</div>-->
-
 </body>
 </html>
 
