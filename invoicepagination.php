@@ -28,14 +28,14 @@ $rsd = mysql_query($sql);
                 <td>SER.TAX</td>
                 <td>VAT</td>
                 <td>Total</td>
-                <td width="70">Action</td>
+                <td width="130">Action</td>
                 </tr>
                 
         <?php
 		$count=0;
 		while($row=mysql_fetch_array($rsd))
 		{		
-        	echo "<tr class='emp_header'>";
+        	echo "<tr class='pagi'>";
 				echo "<td >";
                 echo $count+=1;
                 echo "</td>";				

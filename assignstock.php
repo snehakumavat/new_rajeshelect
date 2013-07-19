@@ -35,7 +35,13 @@ $e_qry="insert into assign_job(job_id,stock_id,emp_id,assg_val,date) values('".$
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Rajesh Electric Works</title>
+<link rel="stylesheet" href="styles2.css" type="text/css" />
 <link rel="stylesheet" href="styles.css" type="text/css" />
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/slider.js"></script>
+<script type="text/javascript" src="js/superfish.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/slider.js"></script>
 <script type="text/javascript" src="js/superfish.js"></script>

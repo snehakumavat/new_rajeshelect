@@ -25,12 +25,12 @@
         <td>Client Address</td>
         <td width="150">Contact</td>
         <!--<td width="100">Reciept</td>-->
-        <td>Action</td>
+        <td width="130">Action</td>
         </tr>
         <?php
 		while($c_row=mysql_fetch_array($c_res_f))
 		{
-        echo "<tr class='emp_header'>";
+        echo "<tr class='pagi'>";
         echo "<td>";
 		echo $c_row[0];
 		echo "</td>";

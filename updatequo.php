@@ -87,8 +87,13 @@ $query="select * from sub_quotation where q_id='$c_res[0]' and less='0'";
 <html>
 <head>
 <title>Rajesh Electric Works</title>
+<link rel="stylesheet" href="styles2.css" type="text/css" />
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/slider.js"></script>
+<script type="text/javascript" src="js/superfish.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
 <script>
  var counter = <?php echo $count+1; ?>;
  function add_phone_field()

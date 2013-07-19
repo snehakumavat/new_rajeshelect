@@ -1,7 +1,11 @@
 ﻿.mybody {
-	background:#000;
+
 	width:1200px;	
 	margin-top:-18px;	
+}
+.emp_month
+{
+	width:1288px;
 }
 .page {
 	text-align:left;
@@ -139,7 +143,7 @@
 }
 .menuTable{
 	margin-left:-200px;
-	width:1178px;
+	width:1288px;
 }
 
 .menuTable td{

@@ -63,7 +63,13 @@
 <html>
 <head>
 <title>Rajesh Electric Wires</title>
+<link rel="stylesheet" href="styles2.css" type="text/css" />
 <link rel="stylesheet" href="styles.css" type="text/css" />
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/slider.js"></script>
+<script type="text/javascript" src="js/superfish.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
 <script type="text/javascript" language="javascript">
 function validateMyForm ( ) { 
     var isValid = true;
@@ -80,14 +86,10 @@ function validateMyForm ( ) {
 
 <body>
 <div id="container">
-	
+<div id="sub-header">	
     <?php
 	include("header.php");
-	?>
-    
-    <div id="sub-header">
-    <div class="quo">
-    	<br />
+	?><br /><div class="quo">
 		<div class="quotation"><center>Payments Details</center></div>
         <div>
         <form name="form1" action="" method="post">

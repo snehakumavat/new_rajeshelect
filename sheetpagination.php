@@ -25,7 +25,7 @@ if($_GET)
         <td width="160">Make</td>
         <td>Phase</td>
 		<td>RPM</td>	        
-        <td width="180">Action</td>
+        <td width="430">Action</td>
         </tr>
 <?php
         if(mysql_num_rows($c_res_f)==0)
@@ -41,7 +41,7 @@ if($_GET)
         <?php
 		while($c_row=mysql_fetch_array($c_res_f))
 		{
-        echo "<tr class='emp_header'>";
+        echo "<tr class='pagi'>";
         echo "<td width='250'>";
 		echo $c_row[1];
 		echo "</td>";

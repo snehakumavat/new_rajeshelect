@@ -6,8 +6,13 @@
 <html>
 <head>
 <title>Rajesh Electic Works</title>
+<link rel="stylesheet" href="styles2.css" type="text/css" />
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/slider.js"></script>
+<script type="text/javascript" src="js/superfish.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
 <script type="text/javascript">
 function confirmSubmit()
 {
@@ -23,14 +28,10 @@ else
 
 <body>
 <div id="container">
-	
+<div id="sub-header">	
     <?php
 	include("header.php");
-	?>
-    
-    <div id="sub-header">
-    <div class="quo">
-    	<br />
+	?><br />
 		<div class="quotation"><center>Terms and Conditions</center></div>
         <div>
         <table class="emp_tab">
@@ -43,7 +44,7 @@ else
         <?php
 		while($e_row=mysql_fetch_array($e_res_f))
 		{
-        echo "<tr class='emp_header'>";
+        echo "<tr class='pagi'>";
         echo "<td width='50'>";
 		echo $e_row[0];
 		echo "</td>";

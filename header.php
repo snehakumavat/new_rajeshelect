@@ -38,6 +38,13 @@
 
             </ul></li>
             <li><a href="payment.php">Payments</a>
+            <ul>
+            		<li><a href="income.php">Income</a></li>
+            		<li><a href="expense.php">Expense</a></li>
+					<li><a href="montlyincome.php">Monthy Inc.</a></li>
+                    <li><a href="montlyexpense.php">Monthy Exp.</a></li>
+                    <li><a href="totalreport.php">Reports</a></li>     
+			</ul>
             		
             </li>
             <li><a href="reciept.php">Reciept</a>

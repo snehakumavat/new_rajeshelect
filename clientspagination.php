@@ -1,13 +1,7 @@
 <?php
 include("include/database.php");
 error_reporting(0);
-	
-	
-	
-	
 ?>
-
-
 <?php
 $per_page = 20; 
 
@@ -28,13 +22,13 @@ if($_GET)
         <td width="160">Company Name.</td>
         <td>Address</td>
 		<td>PhoneNo.</td>	        
-        <td width="180">Action</td>
+        <td width="340">Action</td>
         </tr>
 
         <?php
 		while($c_row=mysql_fetch_array($c_res_f))
 		{
-        echo "<tr class='emp_header'>";
+        echo "<tr class='pagi'>";
         echo "<td width='250'>";
 		echo $c_row[2];
 		echo "</td>";

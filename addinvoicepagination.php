@@ -32,7 +32,7 @@ $page=$_GET['page'];
 		 $getpas="select * from clients where c_id='$c_row1[1]'";
 		$exect=mysql_query($getpas);		
 		$c_row=mysql_fetch_array($exect);		
-        echo "<tr class='emp_header'>";
+        echo "<tr class='pagi'>";
         echo "<td width='250'>";
 		echo $c_row[2];
 		echo "</td>";		

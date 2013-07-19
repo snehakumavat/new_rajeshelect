@@ -72,7 +72,9 @@ include("include/database.php");
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>M/s. Rajesh Electric Works</title>
+<link rel="stylesheet" href="styles2.css" type="text/css" />
 <link rel="stylesheet" href="styles.css" type="text/css" />
+
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/slider.js"></script>
 <script type="text/javascript" src="js/superfish.js"></script>
@@ -137,12 +139,13 @@ function validateMyForm ( ) {
 
   <body>
 <div id="container">
+  <div id="sub-header">
+
     <?php
         include('header.php');
 		?>
     
-  <div id="sub-header">
-    <div class="quo"> <br />
+  <div class="quo"> <br />
       <div class="quotation">
         <center>
           Add Job Worksheet
@@ -271,9 +274,9 @@ function validateMyForm ( ) {
           <td><input id="current2" class="q_in" type="text" name="current2" tabindex="31"/></td>
             </tr>
             </table>
-            <table class="midtext">
+            <table class="toptext1">
             <tr >
-            <td colspan="3"><label class="desc">Additional Work/Spare Replacement</label></td>
+            <td colspan="3"><label class="desc2">Additional Work/Spare Replacement</label></td>
             </tr> 
             </table>
             
@@ -315,9 +318,9 @@ function validateMyForm ( ) {
               <td><input id="core" class="q_in" type="text" name="core" tabindex="43"/></td>
             </tr>            
             </table> 
-              <table class="midtext">
+              <table class="midtext1">
             <tr >
-            <td colspan="3"><label class="desc">Additional Details</label></td>
+            <td colspan="3"><label class="desc3">Additional Details</label></td>
             </tr> 
             </table>
             

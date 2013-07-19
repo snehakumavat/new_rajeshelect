@@ -2,21 +2,27 @@
 error_reporting(0);
 	include("include/database.php");
 	$c_up=$_REQUEST['c_id3'];
-	$c_qry_f="select * from gatepass where pass_id=".$c_up;
+	$c_qry_f="select * from gatepass where pass_id='$c_up'";
 	$c_res_f=mysql_query($c_qry_f);
 	$c_row=mysql_fetch_array($c_res_f);
 ?>
 <?php
 	if(isset($_REQUEST['can']))
 	{
-		header("location:view_gatepass.php?c_id3=".$c_row[1]);
+		header("location:view_gatepass.php?c_id3=$c_row[1]");
 	}
 ?>
 
 <html>
 <head>
 <title>Rajesh Electic Works</title>
+<link rel="stylesheet" href="styles2.css" type="text/css" />
 <link rel="stylesheet" href="styles.css" type="text/css" />
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/slider.js"></script>
+<script type="text/javascript" src="js/superfish.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
 <script>
  var counter = 1;
  function add_phone_field()
@@ -49,19 +55,21 @@ document.getElementById("total").value=d;
 
 <body>
 <div id="container">
-	
+<div id="sub-header">	
     <?php
 	include("header.php");
-	?>
-    
-    <div id="sub-header">
-    <div class="quo">
-    	<br />
+	$query="select * from clients where c_id='$c_row[1]'";
+	$nm=mysql_query($query);
+	$cmpnm=mysql_fetch_array($nm);
+	
+	?>  <div class="quo"> <br />
 		<div class="quotation"><center>Returnable Gate Pass</center></div>
         <div>
         <form action="" method="post">
+         <table  style="margin-left:500px;"><tr><td colspan="3" align="right" style="font-size:30px;"><?php echo $cmpnm['comp_name'];?></td></tr></table>
         <table class="q_clients_2" >       
             <tr>
+            
               <td class="l_form">TIN NO:</td>
               <td><input id="tin" class="q_in" type="text" name="tin" value="<?php echo $c_row[2]; ?>" tabindex="1"/></td>
               <td class="l_form">&nbsp;&nbsp; CST NO:</td>
@@ -80,9 +88,9 @@ document.getElementById("total").value=d;
           <td><input id="com1" class="q_in" type="text" name="com1" tabindex="6" value="<?php echo $c_row[7];?>"/></td>
             </tr>
             </table>
-        <table class="midtext">
+        <table class="midtext1">
             <tr >
-            <td colspan="3"><label class="desc">Gate Pass Details</label></td>
+            <td colspan="3"><label class="descg">Gate Pass Details</label></td>
             </tr> 
             </table>
             
@@ -106,9 +114,9 @@ document.getElementById("total").value=d;
           <td><input id="st1" class="q_in" type="text" name="st1" tabindex="12" value="<?php echo $c_row[13];?>"/></td>
             </tr>
             </table>
-            <table class="midtext">
+            <table class="midtext1">
             <tr >
-            <td colspan="3"><label class="desc">Party Details</label></td>
+            <td colspan="3"><label class="descg">Party Details</label></td>
             </tr> 
             </table>
              <table class="q_clients_2" >       
@@ -139,9 +147,9 @@ document.getElementById("total").value=d;
             </table>
             
             
-             <table class="midtext">
+             <table class="midtext1">
             <tr >
-            <td colspan="3"><label class="desc">Material Details</label></td>
+            <td colspan="3"><label class="descg">Material Details</label></td>
             </tr> 
             </table>
 				 <table class="des">
@@ -259,22 +267,22 @@ document.getElementById("total").value=d;
           <input type="text" id="nm2" class="q_in" name="nm2" tabindex="27" /></td>
             </tr>                        
             </table>-->
-             <table class="midtext">
+             <table class="midtext1">
             <tr >
-            <td colspan="3"><label class="desc">Remarks</label></td>
+            <td colspan="3"><label class="descg">Remarks</label></td>
             </tr>
             <tr><td align="center"><br><input type="text" name="remark" class="q_in" value="<?php echo $c_row[24];?>" readonly></td></tr> 
             </table>
-            <table class="midtext">
+            <table class="midtext1">
             <tr >
-            <td colspan="3"><label class="desc">Requested By</label></td>
+            <td colspan="3"><label class="descg">Requested By</label></td>
             </tr>
             <tr><td colspan="3" align="center"><br><input type="text" name="nm2"  class="q_in" value="<?php echo $c_row[25];?>" readonly></td></tr> 
             </table>
                       
-             <table class="midtext">
+             <table class="midtext1">
             <tr >
-            <td colspan="3"><label class="desc">Authorization</label></td>
+            <td colspan="3"><label class="descg">Authorization</label></td>
             </tr> 
             </table>
 

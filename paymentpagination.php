@@ -32,7 +32,7 @@ $page=$_GET['page'];
         <?php
 		while($c_row=mysql_fetch_array($c_res_f))
 		{
-        echo "<tr class='emp_header'>";
+        echo "<tr class='pagi'>";
         echo "<td>";
 		echo $c_row[0];
 		echo "</td>";

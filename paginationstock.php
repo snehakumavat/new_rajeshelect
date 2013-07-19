@@ -29,7 +29,7 @@ if($_GET)
         <?php
 		while($e_row=mysql_fetch_array($e_res_f))
 		{
-        echo "<tr class='emp_header'>";
+        echo "<tr class='pagi'>";
         echo "<td width='250'>";
 		$nm="select e_name from emp where e_id='$e_row[3]'";
 		$res=mysql_query($nm);

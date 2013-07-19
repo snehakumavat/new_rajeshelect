@@ -30,7 +30,7 @@ $rsd = mysql_query($sql);
 		
 		while($row=mysql_fetch_array($rsd))
 		{		
-        	echo "<tr class='emp_header'>";
+        	echo "<tr class='pagi'>";
                 echo "<td width='80'>";
                 echo $row[0];
                 echo "</td>";

@@ -23,13 +23,13 @@ if($_GET)
         <td width="200">Vendor Name</td>
         <td width="120">Contact No.</td>
         <td width="160" style="word-wrap:break-word">Vendor_code</td>
-        <td width="200">Action</td>
+        <td width="60">Action</td>
         </tr>
 
         <?php
 		while($v_row=mysql_fetch_array($v_res_f))
 		{
-        echo "<tr class='emp_header'>";
+        echo "<tr class='pagi'>";
         echo "<td width='250'>";
 		echo $v_row[1];
 		echo "</td>";

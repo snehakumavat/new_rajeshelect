@@ -44,8 +44,13 @@ if(isset($_REQUEST['cancel']))
 <html>
 <head>
 <title>Rajesh Electic Works</title>
+<link rel="stylesheet" href="styles2.css" type="text/css" />
 <link rel="stylesheet" href="styles.css" type="text/css" />
- 
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/slider.js"></script>
+<script type="text/javascript" src="js/superfish.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
 </head>
 
 <body>

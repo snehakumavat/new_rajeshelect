@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 	include("include/database.php");
 	if(isset($_REQUEST['c_id3']))
 	{
@@ -77,7 +78,13 @@
 <html>
 <head>
 <title>Rajesh Electic Works</title>
+<link rel="stylesheet" href="styles2.css" type="text/css" />
 <link rel="stylesheet" href="styles.css" type="text/css" />
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/slider.js"></script>
+<script type="text/javascript" src="js/superfish.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
 <script>
 var total = 0;
 var tot_qty =0;
@@ -185,66 +192,67 @@ function add_phone_field()
 
 <body>
 <div id="container">
-	
+<div id="sub-header">	
     <?php
 	include("header.php");
-	?>
-    
-    <div id="sub-header">
-    <div class="quo">
-    	<br />
-		<div class="quotation"><center>Returnable Gate Pass</center></div>
+	$query="select * from clients where c_id='$c_up'";
+	$nm=mysql_query($query);
+	$cmpnm=mysql_fetch_array($nm);
+	
+	?><br />
+        <div class="quotation"><center>Returnable Gate Pass</center></div>
         <div>
         <form action="" method="post" name="gatepass1">
-        <table class="q_clients_2" >       
+        <table  style="margin-left:500px;"><tr><td colspan="3" align="right" style="font-size:30px;"><?php echo $cmpnm['comp_name'];?></td></tr></table>
+        <table class="tab-1" >       
             <tr>
               <td class="l_form">TIN NO:</td>
               <td><input id="tin" class="q_in" type="text" name="tin" tabindex="1"/></td>
-              <td class="l_form">&nbsp;&nbsp; CST NO:</td>
+              <td class="l_form">CST NO:</td>
               <td><input id="cst" class="q_in" type="text" name="cst" tabindex="2"/></td>             </tr>
            
             <tr>
           <td class="l_form">Ex Ring:</td>
           <td><input id="ring" class="q_in" type="text" name="ring" tabindex="3"/></td>  
-          <td class="l_form" >&nbsp;&nbsp;Ex No.:</td>
+          <td class="l_form" >Ex No.:</td>
           <td><input id="exno" class="q_in" type="text" name="exno" tabindex="4"/></td>              
             </tr>
             <tr>
           <td class="l_form">Ex Div:</td>
           <td><input id="div1" class="q_in" type="text" name="div1" tabindex="5"/></td>
-          <td class="l_form">&nbsp;&nbsp;Ex Com:</td>
+          <td class="l_form">Ex Com:</td>
           <td><input id="com1" class="q_in" type="text" name="com1" tabindex="6"/></td>
             </tr>
             </table>
-        <table class="midtext">
+        <table  >
             <tr >
-            <td colspan="3"><label class="desc">Gate Pass Details</label></td>
+            <td colspan="3"><label class="descg">Gate Pass Details</label></td>
             </tr> 
             </table>
             
-            <table class="q_clients_2" >       
+            <table class="tab-2" >       
             <tr>
               <td class="l_form">Gate Pass No.:</td>
               <td><input id="gn1" class="q_in" type="text" name="gn1" tabindex="7"/></td>
-              <td class="l_form">&nbsp;&nbsp;Gate Pass &nbsp;&nbsp;Date:</td>
+              <td class="l_form">Gate Pass Date:</td>
               <td><input id="gd1" class="q_in" type="text" name="gd1" value="<?php echo date('d-m-Y'); ?>" tabindex="8"/></td>             </tr>
            
             <tr>
           <td class="l_form">Due Date:</td>
           <td><input id="due1" class="q_in" type="text" name="due1" value="<?php echo date('d-m-Y'); ?>" tabindex="9"/></td>  
-          <td class="l_form" >&nbsp;&nbsp;Requested By:</td>
+          <td class="l_form" >Requested By:</td>
           <td><input id="req1" class="q_in" type="text" name="req1" tabindex="10"/></td>              
             </tr>
             <tr>
           <td class="l_form">Department:</td>
           <td><input id="dept" class="q_in" type="text" name="dept" tabindex="11"/></td>
-          <td class="l_form">&nbsp;&nbsp;Status:</td>
+          <td class="l_form">Status:</td>
           <td><input id="st1" class="q_in" type="text" name="st1" tabindex="12"/></td>
             </tr>
             </table>
-            <table class="midtext">
+            <table class="midtext1">
             <tr >
-            <td colspan="3"><label class="desc">Party Details</label></td>
+            <td colspan="3"><label class="descg">Party Details</label></td>
             </tr> 
             </table>
              <table class="q_clients_2" >       
@@ -275,13 +283,13 @@ function add_phone_field()
             </table>
             
             
-             <table class="midtext">
+             <table class="midtext1">
             <tr >
-            <td colspan="3"><label class="desc">Material Details</label></td>
+            <td colspan="3"><label class="descg">Material Details</label></td>
             </tr> 
-            <tr><td colspan="3">
+            <tr><td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="button" value="Add Row" onClick="addRow('dataTable')" >&nbsp;
-<input type="button" value="Delete Row" onClick="deleteRow('dataTable')" >
+			<input type="button" value="Delete Row" onClick="deleteRow('dataTable')" >
 				</td>
             </tr>
             </table>
@@ -341,23 +349,23 @@ function add_phone_field()
                 
                 </tr>
                 </table>
-              <table class="midtext">
+              <table class="midtext1">
             <tr >
-            <td colspan="3"><label class="desc">Remarks</label></td>
+            <td colspan="3"><label class="descg">Remarks</label></td>
             </tr>
             <tr><td align="center"><br><input type="text" name="remark" class="q_in"></td></tr> 
             </table>
-            <table class="midtext">
+            <table class="midtext1">
             <tr >
-            <td colspan="3"><label class="desc">Requested By</label></td>
+            <td colspan="3"><label class="descg">Requested By</label></td>
             </tr>
             <tr><td colspan="3" align="center"><br><input type="text" name="nm2"  class="q_in"></td></tr> 
             </table>
 
                                   
-             <table class="midtext">
+             <table class="midtext1">
             <tr >
-            <td colspan="3"><label class="desc">Authorization</label></td>
+            <td colspan="3"><label class="descg">Authorization</label></td>
             </tr> 
             </table>
 

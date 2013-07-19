@@ -11,7 +11,13 @@ $pages = ceil($count/$per_page)
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Rajesh Electic Works</title>
+<link rel="stylesheet" href="styles2.css" type="text/css" />
 <link rel="stylesheet" href="styles.css" type="text/css" />
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/slider.js"></script>
+<script type="text/javascript" src="js/superfish.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 
 	<script type="text/javascript">
@@ -97,9 +103,12 @@ float: left;
 margin-right: 16px; 
 padding:5px;3 
 color:#FFF;
-margin-left:-10px;
+margin-left:2px;
 background-color:#00a1d2;
-
+box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+   -o-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+   -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+   -moz-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);	
 }
 #pagination li:hover
 { 
@@ -116,15 +125,10 @@ cursor: pointer;
 
 <body>
 <div id="container">
-	
+<div id="sub-header">	
     <?php
 	include("header.php");
-	?>
-    
-    <div id="sub-header">
-    			
-                <div class="quo">
-                <br />
+	?><br />
                  <?php
 		
 		if(isset($_REQUEST['search']))
@@ -149,7 +153,7 @@ cursor: pointer;
         <?php
 		while($row=mysql_fetch_array($ans))
 		{		
-        	echo "<tr class='emp_header'>";
+        	echo "<tr class='pagi'>";
                 echo "<td width='80'>";
                 echo $row[0];
                 echo "</td>";
@@ -179,10 +183,9 @@ cursor: pointer;
                  <form action="" method="post" name="search">
 				<table class="quotation">
                 <tr>
-                <td>Invoice Details</td>
-                <td><input type='text' name="search"  title="Enter gatepass no,address,date,tin_no,rgp_no,po_no here" />
-                </td>
-                <td><input type="submit" name="result" value="search" class="formbutton" /></td>
+                <td class="info">Invoice Details</td>
+                <td width="350"><input type='text' class="result" name="search"  title="Enter gatepass no,address,date,tin_no,rgp_no,po_no here" />
+                <input type="submit" name="result" value="search" class="go" /></td>
                 </tr>
                 </table>
                 </form>
