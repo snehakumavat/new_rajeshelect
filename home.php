@@ -163,6 +163,11 @@ cursor: pointer;
 		while($c_row=mysql_fetch_array($ans))
 		{			
         echo "<tr class='pagi'>";
+		$nm="select client_name from clients where c_id='$c_row[1]'";
+		$res=mysql_result(mysql_query($nm),0);
+        echo "<td width='250'>";
+		echo $res;
+		echo "</td>";
         echo "<td width='250'>";
 		echo $c_row[8];
 		echo "</td>";

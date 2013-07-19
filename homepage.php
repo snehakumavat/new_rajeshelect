@@ -20,6 +20,7 @@ if($_GET)
 ?>
         <table class="emp_tab">
         <tr class="emp_header">
+        <td> Client Name</td>
         <td width="250">Gate pass No.</td>
         <td width="160">Gate pass date.</td>
         <td>Status</td>
@@ -42,6 +43,12 @@ if($_GET)
 		{
 			
         echo "<tr class='pagi'>";
+		$nm="select client_name from clients where c_id='$c_row[1]'";
+		$res=mysql_result(mysql_query($nm),0);
+        echo "<td width='250'>";
+		echo $res;
+		echo "</td>";
+
         echo "<td width='250'>";
 		echo $c_row[8];
 		echo "</td>";
