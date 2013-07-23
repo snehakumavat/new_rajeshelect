@@ -322,13 +322,17 @@ $e_cess=$serv_tax *0.02;
 $she_cess=$serv_tax * 0.01;
 $vat=($plus * .67 ) * .05;
 $g_total=$row_t[0]+$serv_tax+$e_cess+$she_cess+$vat+$row[12];
-	
-	}
+}
 ?>
 <td  rowspan="5" height="10px;" style="text-align:left; vertical-align:text-top;">
 <font size="-1">
-<b><u>SERVICE TAX @ 12% ON LABOUR CHARGES ONLY<br> (A)</u>Value of the <u>LABOUR</u> is <u>33%</u> of the<u>SUB TOTAL</u> i.e. <u>Rs. <?php echo round ($plus * 0.33,00).'.00';?></u> <br>
-<u>(B) VAT </u>@<u> 5%</u>on<u><b>(R/M)</b>Which is <u><b>67%</b></u>of the <u><b>SUB TOTAL</b></u> i.e. <u>Rs. <?php echo $plus * .67; ?></u></font>
+<b>
+<u>SERVICE TAX @ 12% ON LABOUR CHARGES ONLY<br> (A)</u></b>
+Value of the <u>LABOUR</u> is <u>33%</u>
+ of the<u>SUB TOTAL</u> 
+ i.e. <u>Rs. <?php echo round ($plus * 0.33,00).'.00';?></u> <br>
+<u>(B) VAT </u>@<u> 5%</u>on<u><b>(R/M)</b></u>Which is <u><b>67%</b></u>of the <u><b>SUB TOTAL</b></u> i.e. <u>Rs. <?php echo $plus * .67; ?></u>
+</font>
 </td>
 <td colspan="2" style="text-align:right;">Services Tax 12% on <?php echo $per33.'/-';?></td>
 <td><?php echo $serv_tax; ?></td>
@@ -365,10 +369,10 @@ else
 ?>
 </tr>
 </table>
+
 </div>
 
-<br><br><br>
-
+<div style="page-break-after:always;"></div>
 <div>
 <u>* </u> &nbsp;&nbsp;&nbsp;&nbsp;<u> Terms & Conditions</u>
 <?php

@@ -142,10 +142,13 @@ cursor: pointer;
 		
 		if(isset($_REQUEST['search']))
 		  {
-		 	 $srch=$_REQUEST['search'];
-			 $id=$_REQUEST['id'];
-			 $query="select * from gatepass where client_id='$id' AND (g_no LIKE '%$srch%' OR g_date LIKE '%$srch%' OR status LIKE '%$srch%' OR appr_nm LIKE '%$srch%')";
+		 	 $srch=$_REQUEST['search'];	
+			 if($srch!=NULL)
+		 $query="select * from gatepass where client_id=(select c_id from clients where client_name LIKE '%$srch%') OR g_no LIKE '%$srch%' OR g_date LIKE '%$srch%' OR status LIKE '%$srch%' OR appr_nm LIKE '%$srch%'";
+		 else
+		     $query="select * from gatepass order by pass_id DESC";
 	 		 $ans=mysql_query($query);
+			 
 	 
 	?>
 	
@@ -193,7 +196,7 @@ cursor: pointer;
 				<table class="quotation">
                 <tr>
                 <td class="info">GatePass Details</td>
-                <td width="350px"><input type='text' name="search" class="result" title="Enter gatepass no,date,approver name,status here.." /><input type="hidden" name="id">
+                <td width="350px"><input type='text' name="search" class="result" title="Enter gatepass no,date,approver name,status here.." />
                     <input type="submit" name="result" value="search" class="go" /></td>
                 </tr>
                 </table>

@@ -254,7 +254,7 @@ function validateMyForm ( ) {
             </tr> 
             </table>
             
-            <table class="q_clients_2" >       
+            <table class="q_clients_w" >       
             <tr>
               <td class="l_form">N.L.Ampere:</td>
               <td><input id="nl1" class="q_in" type="text" name="nl1" tabindex="26"/></td>

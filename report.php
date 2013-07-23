@@ -99,7 +99,6 @@ th
 <br>
 <br>
 <table class="light">
-
 <tr class="dat">
 <td  rowspan="2" width="230px;"><b>RAJESH ELECTRIC WORKS</b></td>
 <td style="font-size:11px; width:350px;">Specialist in Rewinding of: <b>*</b>Ac Servo Motors<b>*</b> DC Servo Motors<b>*</b> High Frequency Spindle Motors<b>*</b>Transformers<b>*</b> 
