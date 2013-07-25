@@ -1,7 +1,6 @@
 <?php
-
 	include("include/database.php");
-	
+include("session.php");	
 	if(isset($_REQUEST['v_add']))
 	{
 		$e_t1=$_POST['v_name'];		

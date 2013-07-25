@@ -1,6 +1,8 @@
 <?php
 include("include/database.php");
 
+error_reporting(0);
+include("session.php");
 $per_page = 20; 
 $sql = "select * from gatepass";
 $rsd = mysql_query($sql);

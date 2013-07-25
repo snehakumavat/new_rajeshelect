@@ -1,3 +1,7 @@
+<?php
+error_reporting(0);
+include("session.php");
+?>
 <html>
 <head>
 <title>Rajesh Electric Works</title>

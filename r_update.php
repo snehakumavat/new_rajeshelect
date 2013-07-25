@@ -1,5 +1,6 @@
 <?php
-	error_reporting(0);
+error_reporting(0);
+include("session.php");
 	include("include/database.php");
 	$up=$_REQUEST['id'];
 	$up_qry="select * from reminder where r_id=".$up;

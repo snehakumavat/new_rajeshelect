@@ -1,6 +1,7 @@
 <?php
 include("include/database.php");
-error_reporting(0);	
+error_reporting(0);
+include("session.php");
 
 $per_page = 20; 
 

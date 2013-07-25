@@ -1,5 +1,7 @@
 <?php
 include("include/database.php");
+error_reporting(0);
+include("session.php");
 
 $p=$_REQUEST['id'];
 $qry="select * from quotation where q_id='$p'";

@@ -1,5 +1,6 @@
 <?php
 error_reporting(0);
+include("session.php");
 	include("include/database.php");	
 	$per_page = 20; 
 	$sql = "select * from assign_job";

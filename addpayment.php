@@ -1,6 +1,6 @@
 <?php
-	
-	//error_reporting(0);
+error_reporting(0);
+include("session.php");
 	include("include/database.php");
 	$p=$_REQUEST['p_id'];
 	$p_qry="select * from invoice where i_id='$p'";
@@ -117,7 +117,7 @@ function validateMyForm ( ) {
         </tr>
         <tr>
         <td class="l_form">Date:</td>
-        <td><input id="des" type="text" class="q_in" name="t5" value="<?php echo $d; ?>"></td>
+        <td><input id="des" type="date" class="q_in" name="t5" value="<?php echo $d; ?>"></td>
         </tr>
         <tr>
         <td class="l_form">Invoice Amt:</td>

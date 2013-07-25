@@ -1,6 +1,11 @@
 <?php
+error_reporting(0);
+include("session.php");
+?>
+<?php
 //error_reporting(0);
 include("include/database.php");
+
 if(isset($_REQUEST['cr_id']))
 {
 	$id=$_REQUEST['cr_id'];

@@ -1,5 +1,6 @@
 <?php
 include("include/database.php");
+include("session.php");
 	if(isset($_REQUEST['c_add']))
 	{
 	
@@ -114,7 +115,7 @@ function validateMyForm ( ) {
                 <tr><td class="l_form">Phone No:</td><td><input id="ph" class="q_in" type="text" name="c_ph"/></td></tr>
                 <tr><td class="l_form">Mobile No:</td><td><input id="mo" class="q_in" type="text" name="c_mo"/></td></tr>
                 
-                <tr><td class="l_form">Date:</td><td><input class="q_in" type="text" name="c_date" value="<?php  echo date("d-m-Y"); ?>"/></td></tr>
+                <tr><td class="l_form">Date:</td><td><input class="q_in" type="date" name="c_date" value="<?php  echo date("d-m-Y"); ?>"/></td></tr>
                 
                 </table>
         <div class="addclients_b">

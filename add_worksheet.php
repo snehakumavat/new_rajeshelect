@@ -1,5 +1,6 @@
 <?php
 include("include/database.php");
+include("session.php");
 	if(isset($_REQUEST['c_add']))
 	{
 	

@@ -1,5 +1,6 @@
 <?php
 error_reporting(0);
+include("session.php");
 	include("include/database.php");
 	if(isset($_REQUEST['c_id3']))
 	{
@@ -60,7 +61,7 @@ error_reporting(0);
 	//exit();
 	if($ans)
 	{
-	header("location:clients.php");
+	header("location:gatepass.php?c_id3=$c_up");
 	}
 	else
 	{

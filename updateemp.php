@@ -1,7 +1,7 @@
 <?php
-
-	include("include/database.php");
-	
+error_reporting(0);
+include("session.php");
+include("include/database.php");
 	$up_e = 0;
 	$up_e=$_REQUEST['e_id2'];
 	$up_qry="select * from emp where e_id=".$up_e;

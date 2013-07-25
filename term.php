@@ -1,4 +1,7 @@
 <?php
+error_reporting(0);
+include("session.php");
+
 	include("include/database.php");
 	$e_qry_f="select * from terms";
 	$e_res_f=mysql_query($e_qry_f);

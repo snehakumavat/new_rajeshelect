@@ -1,9 +1,12 @@
 <?php
 	include("include/database.php");
+	error_reporting(0);
+include("session.php");
+
 ?>
 <html>
 <head>
-<title>Anmol Water Tank Cleaners</title>
+<title>Rajesh Electric Works</title>
 <link rel="stylesheet" href="styles.css" type="text/css" />
 <link rel="stylesheet" href="styles2.css" type="text/css" />
 

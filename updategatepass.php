@@ -1,5 +1,6 @@
 <?php
 error_reporting(0);
+include("session.php");
 	include("include/database.php");
 	$c_up=$_REQUEST['c_id2'];
 	$c_qry_f="select * from gatepass where pass_id=".$c_up;

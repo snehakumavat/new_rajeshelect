@@ -1,5 +1,8 @@
 <?php
 include("include/database.php");
+error_reporting(0);
+include("session.php");
+
 if(isset($_REQUEST['cr_id2']))
 {
 	$m=$_REQUEST['cr_id2'];

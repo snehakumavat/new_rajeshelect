@@ -1,6 +1,7 @@
 <?php
 include("include/database.php");
-	
+error_reporting(0);
+include("session.php");	
 	if(isset($_REQUEST['c_id1']))
 	{
 		$del=$_GET['c_id1'];

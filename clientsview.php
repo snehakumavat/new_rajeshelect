@@ -1,5 +1,7 @@
 <?php
 	include("include/database.php");
+	error_reporting(0);
+include("session.php");
 	$c_up=$_REQUEST['c_id3'];
 	$c_qry_f="select * from clients where c_id=".$c_up;
 	$c_res_f=mysql_query($c_qry_f);

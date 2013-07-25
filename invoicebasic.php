@@ -1,6 +1,7 @@
 <?php
 include("include/database.php");
-
+error_reporting(0);
+include("session.php");
 $in=$_REQUEST['c_id1'];
 
 $c_query="select * from clients where c_id='$in'";

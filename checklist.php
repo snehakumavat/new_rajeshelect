@@ -1,6 +1,7 @@
 <?php
 include("include/database.php");
 error_reporting(0);
+include("session.php");
 if(isset($_REQUEST['submit']))
 {	
 	$c=$_REQUEST['id_a'];

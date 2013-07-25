@@ -1,4 +1,7 @@
 <?php
+error_reporting(0);
+include("session.php");
+
 include("include/database.php");
 	if(isset($_REQUEST['c_id3']))
 	{

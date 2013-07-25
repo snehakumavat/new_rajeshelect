@@ -1,6 +1,7 @@
 <?php
 include("include/database.php");
-
+error_reporting(0);
+include("session.php");
 $in=$_REQUEST['id'];
 
 $c_query="select * from invoice where i_id='$in'";

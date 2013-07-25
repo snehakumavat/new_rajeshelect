@@ -1,6 +1,8 @@
 <?php
 //error_reporting(0);
 include("include/database.php");
+error_reporting(0);
+include("session.php");
 
 $in=$_REQUEST['c_id2'];
 
