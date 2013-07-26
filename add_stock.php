@@ -8,12 +8,12 @@ include("session.php");
 	$c_t2=$_POST['nm1'];
 	$c_t3=$_POST['cate'];
 	$c_t8=$_POST['qunt'];
-    $c_t12=$_POST['brate'];	
-	$c_t4=$_POST['srate'];
+   // $c_t12=$_POST['brate'];	
+	//$c_t4=$_POST['srate'];
 	$c_t6=$_POST['sname'];	
  $c_t7=date('Y-m-d - h:i:s');	
 
-	$c_qry="INSERT INTO `stock`(`avail_id`, `st_name`, `st_category`,`quantity`, `buy_rate`, `sell_rate`, `suplier_name`, `st_date`) VALUES ('".$c_t1."','".$c_t2."','".$c_t3."','".$c_t8."','".$c_t12."','".$c_t4."','".$c_t6."','".$c_t7."')";
+	$c_qry="INSERT INTO `stock`(`avail_id`, `st_name`, `st_category`,`quantity`,  `suplier_name`, `st_date`) VALUES ('".$c_t1."','".$c_t2."','".$c_t3."','".$c_t8."','".$c_t6."','".$c_t7."')";
 
 	$c_res=mysql_query($c_qry);
 	if($c_res)
@@ -63,8 +63,7 @@ include("session.php");
                 <tr><td class="l_form">Name:</td><td><input id="nm1" class="q_in" type="text" name="nm1" /></td></tr>
                 <tr><td class="l_form">Category:</td><td><input type="text" id="cate" class="q_in" name="cate" /></td></tr>
                 <tr><td class="l_form">Quantity:</td><td><input type="text" id="qunt" class="q_in" name="qunt" /></td></tr>		
-                 <tr><td class="l_form">Buying Rate:</td><td><input type="text" id="brate" class="q_in" name="brate" /></td></tr>
-                <tr><td class="l_form">Selling Rate:</td><td><input id="srate" class="q_in" type="text" name="srate" /></td></tr>
+                 
                  <tr><td class="l_form">Suplier Name:</td><td><input id="sname" class="q_in" type="text" name="sname" /></td></tr>				
                 </table>
                 

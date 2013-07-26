@@ -155,21 +155,7 @@ $count=mysql_num_rows($c_res1);
 				</td></tr>
                  <tr><td class="l_form">Vendor Code No:</td>
                 <td>
-                <select name="vendr" class="q_add_i">
-                <option value="">select</option>
-                <?php
-                $query="select * from vendor";
-				$exe=mysql_query($query);
-				while($ven=mysql_fetch_array($exe))
-				{
-					if($ven[3]==$c_row[11])
-					  echo "<option value='$ven[3]' selected>$ven[1]</option>";
-					else	
-					  echo "<option value='$ven[3]'>$ven[1]</option>";
-				}
-				?>
-                <option value="-" <?php if($c_row[11]=='-') echo 'selected'; ?> >none</option>
-                </select>                
+                <input type="text" value="<?php echo $c_row[11]; ?>" name="vendr" class="q_add_i">
 				</td></tr>
                  <tr><td class="l_form">Consignee Vat / Tin No:</td>
                 <td>

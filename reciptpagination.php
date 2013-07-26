@@ -20,9 +20,8 @@
         <tr class="emp_header">
         <td width="70">In. No</td>
         <td width="100">Start Date.</td>
-        <td> Gatepass No</td>
-        <td width="250">Client Name</td>
-        <td>Client Address</td>
+        <td width="100"> Gatepass No</td>
+        <td width="200">Contact Person Name</td>       
         <td width="150">Contact</td>
         <!--<td width="100">Reciept</td>-->
         <td width="130">Action</td>
@@ -43,9 +42,7 @@
 		echo "<td>";
 		echo $c_row[5];
 		echo "</td>";
-		echo "<td>";
-		echo $c_row[6];
-		echo "</td>";
+		
 		echo "<td>";
 		echo $c_row[7];
 		echo "</td>";

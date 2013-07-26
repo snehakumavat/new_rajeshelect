@@ -17,12 +17,11 @@ include("session.php");
 	$c_t2=$_POST['nm1'];
 	$c_t3=$_POST['cate'];
 	$c_t8=$_POST['qunt'];
-    $c_t12=$_POST['brate'];	
-	$c_t4=$_POST['srate'];
+   
 	$c_t6=$_POST['sname'];	
  $c_t7=date('Y-m-d - h:i:s');	
 
-	$c_qry="update `stock` set `avail_id`='".$c_t1."', `st_name`='".$c_t2."',`st_category`='".$c_t3."',`quantity`='".$c_t8."', `buy_rate`='".$c_t12."', `sell_rate`='".$c_t4."', `suplier_name`='".$c_t6."', `st_date`='".$c_t7."' where st_id=".$id;
+	$c_qry="update `stock` set `avail_id`='".$c_t1."', `st_name`='".$c_t2."',`st_category`='".$c_t3."',`quantity`='".$c_t8."', `suplier_name`='".$c_t6."', `st_date`='".$c_t7."' where st_id=".$id;
 
 	$c_res=mysql_query($c_qry);
 	if($c_res)
@@ -72,9 +71,8 @@ include("session.php");
                 <tr><td class="l_form">Name:</td><td><input id="nm1" class="q_in" type="text" name="nm1" value="<?php echo $result[2] ;?>" /></td></tr>
                 <tr><td class="l_form">Category:</td><td><input type="text" id="cate" class="q_in" name="cate" value="<?php echo $result[3];?>" /></td></tr>
                  <tr><td class="l_form">Quantity:</td><td><input type="text" id="qunt" class="q_in" name="qunt" value="<?php echo $result[4];?>" /></td></tr>		
-                 <tr><td class="l_form">Buying Rate:</td><td><input type="text" id="brate" class="q_in" name="brate" value="<?php echo $result[5];?>" /></td></tr>
-                <tr><td class="l_form">Selling Rate:</td><td><input id="srate" class="q_in" type="text" name="srate" value="<?php echo $result[6];?>" /></td></tr>
-                 <tr><td class="l_form">Suplier Name:</td><td><input id="sname" class="q_in" type="text" name="sname" value="<?php echo $result[7];?>" /></td></tr>				
+                
+                 <tr><td class="l_form">Suplier Name:</td><td><input id="sname" class="q_in" type="text" name="sname" value="<?php echo $result[5];?>" /></td></tr>				
                 </table>
                 
                 

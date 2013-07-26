@@ -51,12 +51,12 @@ $e_qry="insert into assign_job(job_id,stock_id,emp_id,assg_val,date) values('".$
 
 <body>
 <div id="container">
-	
+ <div id="sub-header">	
      <?php
    include('header.php');
   ?>
     
-    <div id="sub-header">
+   
 		<div class="quo">
     	<br />
 		<div class="quotation"><center>Assign Stock</center></div>

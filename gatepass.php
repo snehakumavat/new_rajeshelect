@@ -28,7 +28,7 @@ include("session.php");
 	$g_t14=$_REQUEST['ip1'];
 	$g_t16=$_REQUEST['tot_qnt'];   //total quantity  16
 	$g_t20=$_REQUEST['tot_amt'];    // total amount 20
-	$g_t21=$_REQUEST['remark'];
+	//$g_t21=$_REQUEST['remark'];
 	$g_t22=$_REQUEST['nm2'];
 	$g_t23=$_REQUEST['apr'];
 	$g_t24=date('Y-m-d',strtotime($_REQUEST['date']));		
@@ -45,27 +45,29 @@ include("session.php");
 	{
 		//$id=$_REQUEST['i_id'];			
 		$q_d=$_POST['d'][$i];
+		$alp=$_POST['alp'][$i];
+		$rmk=$_POST['rmrk'][$i];
 		$q_u=$_POST['u'][$i];
 		$q_q=$_POST['q'][$i];
 		$q_r=$_POST['r'][$i];
 		$q_a=$_POST['a'][$i];
 	//	$total=10;
 			
-	 $quo="INSERT INTO `material_desc`( `gatpas_id`,`client_id`, `desc_mat`, `quant`, `unit`, `rate`, `amount`) VALUES ('".$g_t1."','".$c_up."','".$q_d."','".$q_q."','".$q_u."','".$q_r."','".$q_a."')";
+	 $quo="INSERT INTO `material_desc`( `gatpas_id`,`client_id`, `desc_mat`, `appl`,`remark`,`quant`, `unit`, `rate`, `amount`) VALUES ('".$g_t1."','".$c_up."','".$q_d."','".$alp."','".$rmk."','".$q_q."','".$q_u."','".$q_r."','".$q_a."')";
 	 $quo_res=mysql_query($quo);	
 	
 	}
 	
- $result="insert into gatepass(`client_id`, `tin_no`, `cst_no`, `ex_ring`, `ex_no`, `ex_div`, `ex_com`,`g_no`,`g_date`,`due_date`,`req`,`dept`,`status`, `t_ref_no`,`p_name`,`addr`,`mode`, `time`, `t_name`, `v_no`, `issue`,`total_qnt`, `total_amt`, `remark`, `req_by`, `appr_nm`, `date_tim`) values('".$c_up."','".$g_t25."','".$g_t26."','".$g_t27."','".$g_t28."','".$g_t29."','".$g_t30."','".$g_t1."','".$g_t2."','".$g_t3."','".$g_t4."','".$g_t5."','".$g_t6."','".$g_t7."','".$g_t8."','".$g_t9."','".$g_t10."','".$g_t11."','".$g_t12."','".$g_t13."','".$g_t14."','".$g_t16."','".$g_t20."','".$g_t21."','".$g_t22."','".$g_t23."','".$g_t24."')";
-	$ans=mysql_query($result);
+ '<br>'.$result="insert into gatepass(`client_id`, `tin_no`, `cst_no`, `ex_ring`, `ex_no`, `ex_div`, `ex_com`,`g_no`,`g_date`,`due_date`,`req`,`dept`,`status`, `t_ref_no`,`p_name`,`addr`,`mode`, `time`, `t_name`, `v_no`, `issue`,`total_qnt`, `total_amt`, `req_by`, `appr_nm`, `date_tim`) values('".$c_up."','".$g_t25."','".$g_t26."','".$g_t27."','".$g_t28."','".$g_t29."','".$g_t30."','".$g_t1."','".$g_t2."','".$g_t3."','".$g_t4."','".$g_t5."','".$g_t6."','".$g_t7."','".$g_t8."','".$g_t9."','".$g_t10."','".$g_t11."','".$g_t12."','".$g_t13."','".$g_t14."','".$g_t16."','".$g_t20."','".$g_t22."','".$g_t23."','".$g_t24."')";
+	//$ans=mysql_query($result);
 	//exit();
 	if($ans)
 	{
-	header("location:gatepass.php?c_id3=$c_up");
+	header("location:view_gatepass.php?c_id3=$c_up");
 	}
 	else
 	{
-		header("location:gatepass.php?c_id3=".$c_up);
+		header("location:gatepass.php?c_id3=$c_up");
 	}	
 	}
 	
@@ -204,6 +206,7 @@ function add_phone_field()
         <div class="quotation"><center>Returnable Gate Pass</center></div>
         <div>
         <form action="" method="post" name="gatepass1">
+        <INPUT class="formbutton" Type="button" VALUE="Back" onClick="history.go(-1);return true;">
         <table  style="margin-left:500px;"><tr><td colspan="3" align="right" style="font-size:30px;"><?php echo $cmpnm['comp_name'];?></td></tr></table>
         <table class="tab-1" >       
             <tr>
@@ -236,11 +239,11 @@ function add_phone_field()
               <td class="l_form">Gate Pass No.:</td>
               <td><input id="gn1" class="q_in" type="text" name="gn1" tabindex="7"/></td>
               <td class="l_form">Gate Pass Date:</td>
-              <td><input id="gd1" class="q_in" type="text" name="gd1" value="<?php echo date('d-m-Y'); ?>" tabindex="8"/></td>             </tr>
+              <td><input id="gd1" class="q_in" type="date" name="gd1" value="<?php echo date('d-m-Y'); ?>" tabindex="8"/></td>             </tr>
            
             <tr>
           <td class="l_form">Due Date:</td>
-          <td><input id="due1" class="q_in" type="text" name="due1" value="<?php echo date('d-m-Y'); ?>" tabindex="9"/></td>  
+          <td><input id="due1" class="q_in" type="date" name="due1" value="<?php echo date('d-m-Y'); ?>" tabindex="9"/></td>  
           <td class="l_form" >Requested By:</td>
           <td><input id="req1" class="q_in" type="text" name="req1" tabindex="10"/></td>              
             </tr>
@@ -297,7 +300,8 @@ function add_phone_field()
 				 <table class="des" >
                 <tr>
                 <td width="20"></td>
-                <td class="heading" width="205">Description  Of Material.</td>                
+                <td class="heading" width="205">Description  Of Material.</td>                <td class="heading" width="250">Appl of Motor</td>
+                <td class="heading" width="200">Remark</td>
                 <td class="heading" width="200">Quantity</td>
                 <td class="heading" width="200">Unit</td>
                 <td class="heading" width="200">Rate</td>
@@ -309,8 +313,14 @@ function add_phone_field()
 
                 <tr>
                 <td style="white-space:nowrap;" width="20"><input type="checkbox" name="chk[]"/></td>
-                <td>
-                 <input class="des_in" type="text" name="d[]" id="0" value=""> <br>
+                <td width="150px">
+                 <input class="des_in" type="text" name="d[]" id="0" value="" > <br>
+                </td>
+                 <td width="150px">
+                 <input class="des_in" type="text" name="alp[]" id="0" value=""> <br>
+                </td>
+                 <td>
+                 <input class="des_in" type="text" name="rmrk[]" id="0" value=""> <br>
                 </td>
                 <td>
                  <input class="des_cap" type="text" name="q[]" id="a[1]" value="" onKeyUp="getValues()" ><br>
@@ -336,11 +346,12 @@ function add_phone_field()
                  <input class="des_in" type="text" name="total" id="tot" value='TOTAL' align="right" readonly><br>
                 </td>
                 <td>
-                 <input class="des_cap" type="text" name="tot_qnt" id="tot_qnt" value="" readonly><br>
-                </td>
-                <td>
                  <input class="des_q" type="text" name="" id="" readonly><br>
                 </td>
+                <td>
+                 <input class="des_cap" type="text" name="tot_qnt" id="tot_qnt" value="" readonly><br>
+                </td>
+                
                 <td>
                  <input class="des_r" type="text" name="" id="" readonly><br>
                 </td>
@@ -350,12 +361,12 @@ function add_phone_field()
                 
                 </tr>
                 </table>
-              <table class="midtext1">
+              <!--<table class="midtext1">
             <tr >
             <td colspan="3"><label class="descg">Remarks</label></td>
             </tr>
             <tr><td align="center"><br><input type="text" name="remark" class="q_in"></td></tr> 
-            </table>
+            </table>-->
             <table class="midtext1">
             <tr >
             <td colspan="3"><label class="descg">Requested By</label></td>

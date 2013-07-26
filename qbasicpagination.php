@@ -20,9 +20,8 @@ $page=$_GET['page'];
         <table class="emp_tab">
         <tr class="emp_header">
         <td width="80">Q No.</td>
-        <td width="250">Client Name</td>
-        <td width="160">Kind Attend</td>
-        <td>Site Address</td>
+        <td width="250">Contact Person Name</td>
+        <td width="160">Kind Attend</td>     
         <td width="180">Contact No.</td>
         <td width="100">Action</td>
         </tr>

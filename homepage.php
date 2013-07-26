@@ -21,7 +21,7 @@ if($_GET)
 ?>
         <table class="emp_tab">
         <tr class="emp_header">
-        <td> Client Name</td>
+        <td> Contact Person Name</td>
         <td width="250">Gate pass No.</td>
         <td width="160">Gate pass date.</td>
         <td>Status</td>
@@ -60,7 +60,7 @@ if($_GET)
 		echo $c_row[13];
 		echo "</td>";
 		echo "<td>";
-		echo $c_row[26];		
+		echo $c_row[25];		
         
 		echo "</td>";
 		echo "</tr>";

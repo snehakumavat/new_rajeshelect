@@ -19,11 +19,10 @@ $page=$_GET['page'];
 
         <table class="emp_tab">
         <tr class="emp_header">
-        <td width="250">Client Name</td>
+        <td width="250">Contact Person Name</td>
         <td width="200">Company Name.</td>
         <td width="160">Contact No.</td>
       <td  width="10">Email_id </td>
-        <td width="160">Address</td>
         <td width="100">Action</td>
         </tr>
 
@@ -44,11 +43,7 @@ $page=$_GET['page'];
      echo "<td width='160'>";
 		echo $c_row[10];
 		echo "</td>"; 
-		echo "<td>";
-		echo $c_row[4];
-		echo "</td>";
-		
-        echo "<td width='100'class='print'>";
+		 echo "<td width='100'class='print'>";
 		echo "<a href='quotationbasic.php?c_id2=$c_row[0]'>Create</a>";
 		echo "</td>";
 		echo "</tr>";

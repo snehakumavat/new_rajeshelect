@@ -2,7 +2,16 @@
 <div id="nav">
      <ul class="sf-menu dropdown">
         	
-        	<li class="selected"><a href="home.php">Home</a></li>
+        	<li class="selected"><a href="home.php">Home</a>
+            	<ul>
+                	<li><a href="term.php">T&amp;C</a>
+                    <ul>
+              	<li><a href="addterm.php">Add Terms</a></li>
+            	</ul>
+            </li>
+                </ul>
+            
+            </li>
                       
             <li><a class="has_submenu" href="clients.php">Client</a>
             	<ul>
@@ -33,7 +42,7 @@
                     </ul>
             </li> 
             </li>
-            <li><a href="reciept.php">Reciept</a>
+            <li><a href="reciept.php">Delivery Chalan</a>
             		
             </li>
                                      
@@ -80,3 +89,10 @@
                           
         </ul>
   </div>
+
+ <?php
+ if(isset($_SESSION['uname']) && isset($_SESSION['password']))
+{
+	echo '<h4 align="right" style="margin-right:60px;">'.$_SESSION['uname'].' is Login</h4>';
+}
+ ?>

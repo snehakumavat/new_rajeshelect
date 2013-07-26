@@ -209,6 +209,7 @@ cursor: pointer;
                 <br />
                 
                 <form action="" method="post" name="search">
+                <INPUT class="formbutton" Type="button" VALUE="Back" onClick="history.go(-1);return true;">
 				<table class="emp_tab">
                 <tr class="search_res" >
                 <td class="info">GatePass Details</td>

@@ -114,7 +114,7 @@ $term_res=mysql_query($term);
 <body>
 <br>
 <br>
-
+<font face="Arial, Helvetica, sans-serif">
 <div class="heading" >M/s. Rajesh Electric Works</center></div>
 <div class="sub_heading"><b>Office:</b>Opp.Satpur Bus Stand, Trimbak Road,Satpur,Nashik - 7. Ph. 2353366 </div>
 <div class="sub_heading"><b>Works:</b>Plot No. C/42, M.I.D.C. Industrial Estate, Malegaon, Tal. Sinnar, Dist. Nashik-422113.</div>

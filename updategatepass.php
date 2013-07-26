@@ -27,7 +27,7 @@ if(isset($_REQUEST['g_up']))
 	$g_t14=$_REQUEST['ip1'];
 	$g_t16=$_REQUEST['tot_qnt'];
 	$g_t20=$_REQUEST['tot_amt'];
-	$g_t21=$_REQUEST['remark'];
+	//$g_t21=$_REQUEST['remark'];
 	$g_t22=$_REQUEST['nm2'];
 	$g_t23=$_REQUEST['apr'];
 	$g_t24=$_REQUEST['date'];		
@@ -48,16 +48,18 @@ if(isset($_REQUEST['g_up']))
 	{
 		//$id=$_REQUEST['i_id'];			
 		$q_d=$_POST['d'][$i];
+		$alp=$_POST['alp'][$i];
+		$rmk=$_POST['rmrk'][$i];
 		$q_u=$_POST['u'][$i];
 		$q_q=$_POST['q'][$i];
 		$q_r=$_POST['r'][$i];
 		$q_a=$_POST['a'][$i];		
 	/* $quo="UPDATE `material_desc` SET `gatpas_id`='".$g_t1."',`client_id`='".$c_up."' ,`desc_mat`='".$q_d."',`quant`='".$q_c."',`tot_qnt`='-',`unit`='".$q_r."',`rate`='".$q_q."',`amount`='".$q_a."',`tot_amt`='-' WHERE gatpas_id='$c_row[8]'"; */
-	 $quo="INSERT INTO `material_desc`( `gatpas_id`,`client_id`, `desc_mat`, `quant`,`unit`, `rate`, `amount`) VALUES ('".$g_t1."','".$c_row[1]."','".$q_d."','".$q_q."','".$q_u."','".$q_r."','".$q_a."')";
+	 $quo="INSERT INTO `material_desc`( `gatpas_id`,`client_id`, `desc_mat`,`appl`,`remark`,`quant`,`unit`, `rate`, `amount`) VALUES ('".$g_t1."','".$c_row[1]."','".$q_d."','".$alp."','".$rmk."','".$q_q."','".$q_u."','".$q_r."','".$q_a."')";
 	mysql_query($quo);
 	}
 	$result="UPDATE `gatepass` SET `client_id`='".$c_row[1]."', `tin_no`='".$g_t25."',`cst_no`='".$g_t26."',`ex_ring`='".$g_t27."'
-	,`ex_no`='".$g_t28."',`ex_div`='".$g_t29."',`ex_com`='".$g_t30."',`g_no`='".$g_t1."',`g_date`='".$g_t2."',`due_date`='".$g_t3."',`req`='".$g_t4."',`dept`='".$g_t5."',`status`='".$g_t6."',`t_ref_no`='".$g_t7."' ,`p_name`='".$g_t8."',`addr`='".$g_t9."',`mode`='".$g_t10."',`time`='".$g_t11."',`t_name`='".$g_t12."',`v_no`='".$g_t13."',`issue`='".$g_t14."',`total_qnt`='".$g_t16."',`total_amt`='".$g_t20."',`remark`='".$g_t21."',`req_by`='".$g_t22."',`appr_nm`='".$g_t23."',`date_tim`='".$g_t24."' WHERE pass_id='$c_up'";
+	,`ex_no`='".$g_t28."',`ex_div`='".$g_t29."',`ex_com`='".$g_t30."',`g_no`='".$g_t1."',`g_date`='".$g_t2."',`due_date`='".$g_t3."',`req`='".$g_t4."',`dept`='".$g_t5."',`status`='".$g_t6."',`t_ref_no`='".$g_t7."' ,`p_name`='".$g_t8."',`addr`='".$g_t9."',`mode`='".$g_t10."',`time`='".$g_t11."',`t_name`='".$g_t12."',`v_no`='".$g_t13."',`issue`='".$g_t14."',`total_qnt`='".$g_t16."',`total_amt`='".$g_t20."',`req_by`='".$g_t22."',`appr_nm`='".$g_t23."',`date_tim`='".$g_t24."' WHERE pass_id='$c_up'";
 	//exit();
 	$ans=mysql_query($result);
 	if($ans)
@@ -210,6 +212,7 @@ function addRow(tableID) {
 		<div class="quotation"><center>Returnable Gate Pass</center></div>
         <div>
         <form action="" method="post">
+        <INPUT class="formbutton" Type="button" VALUE="Back" onClick="history.go(-1);return true;">
          <table  style="margin-left:500px;"><tr><td colspan="3" align="right" style="font-size:30px;"><?php echo $cmpnm['comp_name'];?></td></tr></table>
         <table class="q_clients_2" >       
             <tr>
@@ -242,11 +245,11 @@ function addRow(tableID) {
               <td class="l_form">Gate Pass No.:</td>
               <td><input id="gn1" class="q_in" type="text" name="gn1" tabindex="7" value="<?php echo $c_row[8];?>"/></td>
               <td class="l_form">&nbsp;&nbsp;Gate Pass &nbsp;&nbsp;Date:</td>
-              <td><input id="gd1" class="q_in" type="text" name="gd1" value="<?php echo $c_row[9];?>" tabindex="8"/></td>             </tr>
+              <td><input id="gd1" class="q_in" type="date" name="gd1" value="<?php echo $c_row[9];?>" tabindex="8"/></td>             </tr>
            
             <tr>
           <td class="l_form">Due Date:</td>
-          <td><input id="due1" class="q_in" type="text" name="due1" value="<?php echo $c_row[10];?>" tabindex="9"/></td>  
+          <td><input id="due1" class="q_in" type="date" name="due1" value="<?php echo $c_row[10];?>" tabindex="9"/></td>  
           <td class="l_form" >&nbsp;&nbsp;Requested By:</td>
           <td><input id="req1" class="q_in" type="text" name="req1" tabindex="10" value="<?php echo $c_row[11];?>"/></td>              
             </tr>
@@ -302,30 +305,37 @@ function addRow(tableID) {
             </table>
 				 <table class="des">
                 <tr><td width="20"></td>
-                <td class="heading" width="250">Description  Of Material.</td>                
-                <td class="heading" width="178">Quantity</td>
-                <td class="heading" width="178">Unit</td>
-                <td class="heading" width="178">Rate</td>
-                <td class="heading">Amount</td>
+               <td class="heading" width="205">Description  Of Material.</td>                <td class="heading" width="250">Appl of Motor</td>
+                <td class="heading" width="200">Remark</td>
+                <td class="heading" width="200">Quantity</td>
+                <td class="heading" width="200">Unit</td>
+                <td class="heading" width="200">Rate</td>
+                <td class="heading" width="200">Amount</td>
                 </tr></table>
                 <!--<span style="color:#00f;font-size:20px;font-weight:bold;cursor:pointer;" onClick="add_phone_field()">[+]</span>-->
                <table class="des" id="dataTable">
 <tr style="display:none;"><td style="white-space:nowrap;" width="20"><input type="checkbox" name="chk[]"/></td>
-                <td width="250" >                
-                 <input class="des_in" type="text" name="d[]" id="0" value=""><br>
+                <td width="150px">
+                 <input class="des_in" type="text" name="d[]" id="0" value="" > <br>
+                </td>
+                 <td width="150px">
+                 <input class="des_in" type="text" name="alp[]" id="0" value=""> <br>
+                </td>
+                 <td>
+                 <input class="des_in" type="text" name="rmrk[]" id="0" value=""> <br>
                 </td>
                 <td>
-                 <input class="des_cap" type="text" name="q[]" id="0" value="" onKeyUp="getValues()"><br>
+                 <input class="des_cap" type="text" name="q[]" id="a[1]" value="" onKeyUp="getValues()" ><br>
                 </td>
                 <td>
-                 <input class="des_q" type="text" name="u[]" value="" id="0"><br>
+                 <input class="des_q" type="text" name="u[]" id="0" value="" ><br>
                 </td>
                 <td>
-                 <input class="des_r" type="text" name="r[]" value="" id="0" onKeyUp="getValues()"><br>
+                 <input class="des_r" type="text" name="r[]" id="b[1]" value=""  onkeyup="getValues()" ><br>
                 </td>
                 <td>
-               <input class="des_ser" type="text" name="a[]" value=""id="0"><br>
-                </td>
+                 <input class="des_ser" type="text" name="a[]" id="total[1]" value=""  readonly><br>
+                </td> 
                              </tr> 
                 <?php
                $count1=1;
@@ -338,20 +348,26 @@ function addRow(tableID) {
 						
 				?>
                   <tr><td style="white-space:nowrap;" width="20"><input type="checkbox" name="chk[]"/></td>
-                <td width="250">
+                <td width="150">
                  <input class="des_in" type="text" name="d[]" id="d[]" value="<?php echo $res[3];?>"><br>
                 </td>
+                <td width="150px">
+                 <input class="des_in" type="text" name="alp[]" id="0" value="<?php echo $res[4];?>"> <br>
+                </td>
+                 <td>
+                 <input class="des_in" type="text" name="rmrk[]" id="0" value="<?php echo $res[5];?>"> <br>
+                </td>
                 <td >
-                 <input class="des_cap" type="text" name="q[]" id="q[]" value="<?php echo $res[4];?>" onKeyUp="getValues()"><br>
+                 <input class="des_cap" type="text" name="q[]" id="q[]" value="<?php echo $res[6];?>" onKeyUp="getValues()"><br>
                 </td>
                 <td>
-                 <input class="des_q" type="text" name="u[]" value="<?php echo $res[5];?>" id="u[]"><br>
+                 <input class="des_q" type="text" name="u[]" value="<?php echo $res[7];?>" id="u[]"><br>
                 </td>
                 <td>
-                 <input class="des_r" type="text" name="r[]" value="<?php echo $res[6];?>" id="r[]" onKeyUp="getValues()"><br>
+                 <input class="des_r" type="text" name="r[]" value="<?php echo $res[8];?>" id="r[]" onKeyUp="getValues()"><br>
                 </td>
                 <td>
-               <input class="des_ser" type="text" name="a[]" value="<?php echo $res[7];?>" id="a[]" readonly>
+               <input class="des_ser" type="text" name="a[]" value="<?php echo $res[9];?>" id="a[]" readonly>
                  <br>
                 </td>                
                                 </tr>  
@@ -367,21 +383,27 @@ function addRow(tableID) {
 				{
 				?> 
                 <tr><td>&nbsp;&nbsp;&nbsp;</td>
-                <td width="250">                
-                 <input class="des_in" type="text" name="d[]" id="0" value=""><br>
+                <td width="150px">
+                 <input class="des_in" type="text" name="d[]" id="0" value="" > <br>
+                </td>
+                 <td width="150px">
+                 <input class="des_in" type="text" name="alp[]" id="0" value=""> <br>
+                </td>
+                 <td>
+                 <input class="des_in" type="text" name="rmrk[]" id="0" value=""> <br>
                 </td>
                 <td>
-                 <input class="des_cap" type="text" name="q[]" id="0" value="" onKeyUp="getValues()"><br>
+                 <input class="des_cap" type="text" name="q[]" id="a[1]" value="" onKeyUp="getValues()" ><br>
                 </td>
                 <td>
-                 <input class="des_q" type="text" name="u[]" value="" id="0"><br>
+                 <input class="des_q" type="text" name="u[]" id="0" value="" ><br>
                 </td>
                 <td>
-                 <input class="des_r" type="text" name="r[]" value="" id="0" onKeyUp="getValues()"><br>
+                 <input class="des_r" type="text" name="r[]" id="b[1]" value=""  onkeyup="getValues()" ><br>
                 </td>
                 <td>
-               <input class="des_ser" type="text" name="a[]" value=""id="0"><br>
-                </td>
+                 <input class="des_ser" type="text" name="a[]" id="total[1]" value=""  readonly><br>
+                </td> 
                              </tr>                 
                   
                 <?php }
@@ -391,8 +413,14 @@ function addRow(tableID) {
                 
                  <table class="des">
                 <tr><td>&nbsp;&nbsp;&nbsp;</td>
-                <td width="250">
+                <td width="250" colspan="3">
                  <input class="des_in" type="text" name="total" id="tot" value='TOTAL' align="right"  readonly><br>
+                </td>
+                <td>
+                 <input class="des_q" type="text" name="" id=""><br>
+                </td>
+                <td>
+                 <input class="des_q" type="text" name="" id=""><br>
                 </td>
                 <td>
                  <input class="des_cap" type="text" name="tot_qnt" id="tot_qnt" value="<?php echo $c_row[22];?>" readonly><br>
@@ -436,17 +464,12 @@ function addRow(tableID) {
           <input type="text" id="nm2" class="q_in" name="nm2" tabindex="27" /></td>
             </tr>                        
             </table>-->
-            <table class="midtext1">
-            <tr >
-            <td colspan="3"><label class="descg">Remarks</label></td>
-            </tr>
-            <tr><td align="center"><br><input type="text" name="remark" class="q_in" value="<?php echo $c_row[24];?>"></td></tr> 
-            </table>
+            
             <table class="midtext1">
             <tr >
             <td colspan="3"><label class="descg">Requested By</label></td>
             </tr>
-            <tr><td colspan="3" align="center"><br><input type="text" name="nm2"  class="q_in" value="<?php echo $c_row[25];?>"></td></tr> 
+            <tr><td colspan="3" align="center"><br><input type="text" name="nm2"  class="q_in" value="<?php echo $c_row[24];?>"></td></tr> 
             </table>
                       
              <table class="midtext1">
@@ -458,9 +481,9 @@ function addRow(tableID) {
              <table style="margin-left:250px;">       
             <tr>
               <td class="l_form">Approver Name:</td>
-              <td><input id="apr" class="q_in" type="text" name="apr" tabindex="28" value="<?php echo $c_row[26];?>"/></td>
+              <td><input id="apr" class="q_in" type="text" name="apr" tabindex="28" value="<?php echo $c_row[25];?>"/></td>
               <td class="l_form">&nbsp;&nbsp;Date:</td>
-              <td><input id="date" class="q_in1" type="text" name="date" value="<?php echo $c_row[27];?>" tabindex="29" width="40px"/></td>             </tr>
+              <td><input id="date" class="q_in1" type="text" name="date" value="<?php echo $c_row[26];?>" tabindex="29" width="40px"/></td>             </tr>
             </table>
   
             

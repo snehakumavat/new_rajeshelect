@@ -139,28 +139,15 @@ if(isset($_REQUEST['cancel']))
                 </table>
                 <table class="q_info5">
                 <tr><td class="l_form">Invoice No</td>
-                <td><input name="invoice" class="q_in" type="text" value="<?php echo $count+1; ?>"/></td></tr>
+                <td><input name="invoice" class="q_in" type="text" value="<?php echo $count+1; ?>" readonly /></td></tr>
                 <tr><td class="l_form">Our DC No:</td>
                 <td>
                 <input type="text" class="q_in" name="dc" >
 				</td></tr>
                  <tr><td class="l_form">Vendor Code No:</td>
                 <td>
-                <select name="vendr" class="q_add_i">
-                <option value="">select</option>
-                <?php
-                $query="select * from vendor";
-				$exe=mysql_query($query);
-				while($ven=mysql_fetch_array($exe))
-				{
-				echo "<option value='$ven[3]'>$ven[1]</option>";
-				}
-				?>
-                <option value="-">none</option>
-                </select>
-                
-
-				</td></tr>
+                <input type="text" name="vendr" class="q_in">
+                				</td></tr>
                  <tr><td class="l_form">Consignee Vat / Tin No:</td>
                 <td>
                 <input type="text" class="q_in" name="tin_no" >

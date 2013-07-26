@@ -183,7 +183,7 @@ cursor: pointer;
 		echo $c_row[13];
 		echo "</td>";
 		echo "<td>";
-		echo $c_row[26];		
+		echo $c_row[25];		
         echo "</td>";
 		echo "</tr>";
 		}

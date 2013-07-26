@@ -155,11 +155,12 @@ document.getElementById("total").value=d;
             </table>
 				 <table class="des">
                 <tr>
-                <td class="heading">Description  Of Material.</td>                
-                <td class="heading" >Quantity</td>
-                <td class="heading">Unit</td>
-                <td class="heading">Rate</td>
-                <td class="heading">Amount</td>
+                <td class="heading" width="205">Description  Of Material.</td>                <td class="heading" width="250">Appl of Motor</td>
+                <td class="heading" width="200">Remark</td>
+                <td class="heading" width="200">Quantity</td>
+                <td class="heading" width="200">Unit</td>
+                <td class="heading" width="200">Rate</td>
+                <td class="heading" width="200">Amount</td>
                 </tr>
                 <!--<span style="color:#00f;font-size:20px;font-weight:bold;cursor:pointer;" onClick="add_phone_field()">[+]</span>-->
                 
@@ -177,17 +178,23 @@ document.getElementById("total").value=d;
                 <td>                
                  <input class="des_in" type="text" name="d[]" id="0" value="<?php echo $res[3];?>"><br>
                 </td>
+                <td>                
+                 <input class="des_in" type="text" name="apl[]" id="0" value="<?php echo $res[4];?>"><br>
+                </td>
+                <td>                
+                 <input class="des_in" type="text" name="rmrk[]" id="0" value="<?php echo $res[5];?>"><br>
+                </td>                
                 <td>
-                 <input class="des_cap" type="text" name="q[]" id="0" value="<?php echo $res[4];?>"><br>
+                 <input class="des_cap" type="text" name="q[]" id="0" value="<?php echo $res[6];?>"><br>
                 </td>
                 <td>
-                 <input class="des_q" type="text" name="u[]" value="<?php echo $res[5];?>" id="0"><br>
+             <input class="des_q" type="text" name="u[]" value="<?php echo $res[7];?>" id="0"><br>
                 </td>
                 <td>
-                 <input class="des_r" type="text" name="r[]" value="<?php echo $res[6];?>" id="0"><br>
+             <input class="des_r" type="text" name="r[]" value="<?php echo $res[8];?>" id="0"><br>
                 </td>
                 <td>
-                 <input class="des_ser" type="text" name="a[]" value="<?php echo $res[7];?>" id="0" readonly><br>
+            <input class="des_ser" type="text" name="a[]" value="<?php echo $res[9];?>" id="0" readonly><br>
                 </td>
                 </tr> 
                 <?php
@@ -223,19 +230,20 @@ document.getElementById("total").value=d;
                 </div>
                  <table class="des">
                 <tr>
-                <td>
+                <td colspan="3">
                  <input class="des_in" type="text" name="total" id="tot" value='TOTAL' align="right"  readonly><br>
                 </td>
-                <td>
+               
+                <td width="130">
                  <input class="des_cap" type="text" name="tot_qnt" id="tot_qnt" value="<?php echo $c_row[22];?>" readonly><br>
                 </td>
-                <td>
-                 <input class="des_q" type="text" name="" id="" readonly><br>
-                </td>
-                <td>
+                <td width="100">
                  <input class="des_r" type="text" name="" id=""  readonly><br>
                 </td>
-                <td>
+                <td width="120">
+                 <input class="des_r" type="text" name="" id=""  readonly><br>
+                </td>
+                <td width="130">
                  <input class="des_ser" type="text" name="tot_amt" id="" value="<?php echo $c_row[23];?>" readonly><br>
                 </td>
                 
@@ -268,17 +276,12 @@ document.getElementById("total").value=d;
           <input type="text" id="nm2" class="q_in" name="nm2" tabindex="27" /></td>
             </tr>                        
             </table>-->
-             <table class="midtext1">
-            <tr >
-            <td colspan="3"><label class="descg">Remarks</label></td>
-            </tr>
-            <tr><td align="center"><br><input type="text" name="remark" class="q_in" value="<?php echo $c_row[24];?>" readonly></td></tr> 
-            </table>
+             
             <table class="midtext1">
             <tr >
             <td colspan="3"><label class="descg">Requested By</label></td>
             </tr>
-            <tr><td colspan="3" align="center"><br><input type="text" name="nm2"  class="q_in" value="<?php echo $c_row[25];?>" readonly></td></tr> 
+            <tr><td colspan="3" align="center"><br><input type="text" name="nm2"  class="q_in" value="<?php echo $c_row[24];?>" readonly></td></tr> 
             </table>
                       
              <table class="midtext1">
@@ -290,9 +293,9 @@ document.getElementById("total").value=d;
              <table style="margin-left:250px;">       
             <tr>
               <td class="l_form">Approver Name:</td>
-              <td><input id="apr" class="q_in" type="text" name="apr" tabindex="28" value="<?php echo $c_row[26];?>"/></td>
+              <td><input id="apr" class="q_in" type="text" name="apr" tabindex="28" value="<?php echo $c_row[25];?>"/></td>
               <td class="l_form">&nbsp;&nbsp;Date:</td>
-              <td><input id="date" class="q_in1" type="text" name="date" value="<?php echo date('d-m-Y h:i:s',strtotime($c_row[27]));?>" tabindex="29" width="40px"/></td>             </tr>
+              <td><input id="date" class="q_in1" type="text" name="date" value="<?php echo date('d-m-Y h:i:s',strtotime($c_row[26]));?>" tabindex="29" width="40px"/></td>             </tr>
             </table>
   
             

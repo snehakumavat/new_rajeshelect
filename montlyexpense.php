@@ -249,6 +249,7 @@ $('.info8').fadeIn(200);
 		    <table class="emp_month">
         	<tr class="emp_header">
         	<td width="150">Date</td>
+            <td width="100">Vendor_code</td>
         	<td width="350">Expense In</td>
         	<td>Payment Mode</td>
         	<td width="150">Cheque No.</td>
@@ -281,9 +282,13 @@ $('.info8').fadeIn(200);
 				echo "<td>";
 				echo date('d-m-Y', strtotime($row_f[1]));
 				echo "</td>";
+				
+				echo "<td>";
+				echo $row_f[7];
+				echo "</td>";
 				echo "<td>";
 				echo $row_f[2];
-				echo "</td>";
+				echo "</td>";				
 				echo "<td>";
 				echo $row_f[3];
 				echo "</td>";
@@ -304,6 +309,7 @@ $('.info8').fadeIn(200);
             <table class="emp_month">
         	<tr class="emp_header">
         	<td width="150">Date</td>
+            <td width="100">Vendor_code</td>
         	<td width="350">Expense In</td>
         	<td>Payment Mode</td>
         	<td width="150">Cheque No.</td>
@@ -333,6 +339,9 @@ $('.info8').fadeIn(200);
 				echo date('d-m-Y', strtotime($row_ma[1]));
 				echo "</td>";
 				echo "<td>";
+				echo $row_f[7];
+				echo "</td>";
+				echo "<td>";
 				echo $row_ma[2];
 				echo "</td>";
 				echo "<td>";
@@ -358,6 +367,7 @@ $('.info8').fadeIn(200);
             <table class="emp_month">
         	<tr class="emp_header">
         	<td width="150">Date</td>
+            <td width="100">Vendor_code</td>
         	<td width="350">Expense In</td>
         	<td>Payment Mode</td>
         	<td width="150">Cheque No.</td>
@@ -387,6 +397,9 @@ $('.info8').fadeIn(200);
 				echo date('d-m-Y', strtotime($row_ap[1]));
 				echo "</td>";
 				echo "<td>";
+				echo $row_f[7];
+				echo "</td>";
+				echo "<td>";
 				echo $row_ap[2];
 				echo "</td>";
 				echo "<td>";
@@ -413,6 +426,7 @@ $('.info8').fadeIn(200);
 			<table class="emp_month">
         	<tr class="emp_header">
         	<td width="150">Date</td>
+            <td width="100">Vendor_code</td>
         	<td width="350">Expense In</td>
         	<td>Payment Mode</td>
         	<td width="150">Cheque No.</td>
@@ -442,6 +456,9 @@ $('.info8').fadeIn(200);
 				echo date('d-m-Y', strtotime($row_j[1]));
 				echo "</td>";
 				echo "<td>";
+				echo $row_f[7];
+				echo "</td>";
+				echo "<td>";
 				echo $row_j[2];
 				echo "</td>";
 				echo "<td>";
@@ -468,6 +485,7 @@ $('.info8').fadeIn(200);
 			<table class="emp_month">
         	<tr class="emp_header">
         	<td width="150">Date</td>
+            <td width="100">Vendor_code</td>
         	<td width="350">Expense In</td>
         	<td>Payment Mode</td>
         	<td width="150">Cheque No.</td>
@@ -497,6 +515,9 @@ $('.info8').fadeIn(200);
 				echo date('d-m-Y', strtotime($row_m[1]));
 				echo "</td>";
 				echo "<td>";
+				echo $row_f[7];
+				echo "</td>";
+				echo "<td>";
 				echo $row_m[2];
 				echo "</td>";
 				echo "<td>";
@@ -523,6 +544,7 @@ $('.info8').fadeIn(200);
 			<table class="emp_month">
         	<tr class="emp_header">
         	<td width="150">Date</td>
+            <td width="100">Vendor_code</td>
         	<td width="350">Expense In</td>
         	<td>Payment Mode</td>
         	<td width="150">Cheque No.</td>
@@ -552,6 +574,9 @@ $('.info8').fadeIn(200);
 				echo date('d-m-Y', strtotime($row_ju[1]));
 				echo "</td>";
 				echo "<td>";
+				echo $row_f[7];
+				echo "</td>";
+				echo "<td>";
 				echo $row_ju[2];
 				echo "</td>";
 				echo "<td>";
@@ -578,6 +603,7 @@ $('.info8').fadeIn(200);
 			<table class="emp_month">
         	<tr class="emp_header">
         	<td width="150">Date</td>
+            <td width="100">Vendor_code</td>
         	<td width="350">Expense In</td>
         	<td>Payment Mode</td>
         	<td width="150">Cheque No.</td>
@@ -607,6 +633,9 @@ $('.info8').fadeIn(200);
 				echo date('d-m-Y', strtotime($row_jl[1]));
 				echo "</td>";
 				echo "<td>";
+				echo $row_f[7];
+				echo "</td>";
+				echo "<td>";
 				echo $row_jl[2];
 				echo "</td>";
 				echo "<td>";
@@ -633,6 +662,7 @@ $('.info8').fadeIn(200);
 			<table class="emp_month">
         	<tr class="emp_header">
         	<td width="150">Date</td>
+            <td width="100">Vendor_code</td>
         	<td width="350">Expense In</td>
         	<td>Payment Mode</td>
         	<td width="150">Cheque No.</td>
@@ -662,6 +692,9 @@ $('.info8').fadeIn(200);
 				echo date('d-m-Y', strtotime($row_au[1]));
 				echo "</td>";
 				echo "<td>";
+				echo $row_f[7];
+				echo "</td>";
+				echo "<td>";
 				echo $row_au[2];
 				echo "</td>";
 				echo "<td>";
@@ -688,6 +721,7 @@ $('.info8').fadeIn(200);
 			<table class="emp_month">
         	<tr class="emp_header">
         	<td width="150">Date</td>
+            <td width="100">Vendor_code</td>
         	<td width="350">Expense In</td>
         	<td>Payment Mode</td>
         	<td width="150">Cheque No.</td>
@@ -717,6 +751,9 @@ $('.info8').fadeIn(200);
 				echo date('d-m-Y', strtotime($row_se[1]));
 				echo "</td>";
 				echo "<td>";
+				echo $row_f[7];
+				echo "</td>";
+				echo "<td>";
 				echo $row_se[2];
 				echo "</td>";
 				echo "<td>";
@@ -743,6 +780,7 @@ $('.info8').fadeIn(200);
 			<table class="emp_month">
         	<tr class="emp_header">
         	<td width="150">Date</td>
+            <td width="100">Vendor_code</td>
         	<td width="350">Expense In</td>
         	<td>Payment Mode</td>
         	<td width="150">Cheque No.</td>
@@ -772,6 +810,9 @@ $('.info8').fadeIn(200);
 				echo date('d-m-Y', strtotime($row_o[1]));
 				echo "</td>";
 				echo "<td>";
+				echo $row_f[7];
+				echo "</td>";
+				echo "<td>";
 				echo $row_o[2];
 				echo "</td>";
 				echo "<td>";
@@ -798,6 +839,7 @@ $('.info8').fadeIn(200);
 			<table class="emp_month">
         	<tr class="emp_header">
         	<td width="150">Date</td>
+            <td width="100">Vendor_code</td>
         	<td width="350">Expense In</td>
         	<td>Payment Mode</td>
         	<td width="150">Cheque No.</td>
@@ -827,6 +869,9 @@ $('.info8').fadeIn(200);
 				echo date('d-m-Y', strtotime($row_n[1]));
 				echo "</td>";
 				echo "<td>";
+				echo $row_f[7];
+				echo "</td>";
+				echo "<td>";
 				echo $row_n[2];
 				echo "</td>";
 				echo "<td>";
@@ -853,6 +898,7 @@ $('.info8').fadeIn(200);
 			<table class="emp_month">
         	<tr class="emp_header">
         	<td width="150">Date</td>
+            <td width="100">Vendor_code</td>
         	<td width="350">Expense In</td>
         	<td>Payment Mode</td>
         	<td width="150">Cheque No.</td>
@@ -880,6 +926,9 @@ $('.info8').fadeIn(200);
 				echo "<tr class='pagi'>";
 				echo "<td>";
 				echo date('d-m-Y', strtotime($row_d[1]));
+				echo "</td>";
+				echo "<td>";
+				echo $row_f[7];
 				echo "</td>";
 				echo "<td>";
 				echo $row_d[2];

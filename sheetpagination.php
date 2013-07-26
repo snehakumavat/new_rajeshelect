@@ -22,7 +22,7 @@ if($_GET)
 ?>
         <table class="emp_tab">
         <tr class="emp_header">
-        <td width="250">Client Name</td>
+        <td width="250">Contact Person Name</td>
         <td width="160">Make</td>
         <td>Phase</td>
 		<td>RPM</td>	        

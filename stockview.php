@@ -49,9 +49,8 @@ include("session.php");
                 <tr><td class="l_form">Name:</td><td><input id="nm1" class="q_in" type="text" name="nm1" value="<?php echo $result[2] ;?>"  readonly="readonly" /></td></tr>
                 <tr><td class="l_form">Category:</td><td><input type="text" id="cate" class="q_in" name="cate" value="<?php echo $result[3];?>"  readonly="readonly" /></td></tr>
                  <tr><td class="l_form">Quantity:</td><td><input type="text" id="qunt" class="q_in" name="qunt" value="<?php echo $result[4];?>" readonly /></td></tr>		
-                 <tr><td class="l_form">Buying Rate:</td><td><input type="text" id="brate" class="q_in" name="brate" value="<?php echo $result[5];?>"  readonly="readonly" /></td></tr>
-                <tr><td class="l_form">Selling Rate:</td><td><input id="srate" class="q_in" type="text" name="srate" value="<?php echo $result[6];?>"  readonly="readonly" /></td></tr>
-                 <tr><td class="l_form">Suplier Name:</td><td><input id="sname" class="q_in" type="text" name="sname" value="<?php echo $result[7];?>"  readonly="readonly" /></td></tr>				
+                 
+                 <tr><td class="l_form">Suplier Name:</td><td><input id="sname" class="q_in" type="text" name="sname" value="<?php echo $result[5];?>"  readonly="readonly" /></td></tr>				
                 </table>
                 
                 

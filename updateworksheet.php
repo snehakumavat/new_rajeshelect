@@ -167,6 +167,7 @@ function validateMyForm ( ) {
       </div>
       <div>
         <form name="form1" action="" method="post">
+        <INPUT class="formbutton" Type="button" VALUE="Back" onClick="history.go(-1);return true;">
           <table class="toptext">
             <tr>
               <td class="l_form" colspan="2">Name of the Client:</td>

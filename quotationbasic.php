@@ -129,20 +129,9 @@ if(isset($_REQUEST['cancel']))
 				</td>
                 </tr>
                 <tr><td class="l_form">Address:</td><td><textarea class="q_add" name="q_address"><?php echo $c_row[4]; ?></textarea></td></tr>
-                 <tr><td class="l_form">Enter Ref No:</td><td><input name="q_ref" class="q_in" type="text"/></td></tr>
+                 <tr><td class="l_form">Enter Ref No:</td><td><input name="q_ref" class="q_in1" type="text" value="REW.SNR/13-14/MLL-"/></td></tr>
                <tr><td class="l_form">Enter Vendor No:</td>
-               <td><select name="q_vendor" class="q_add_i">
-                <option value="">select</option>
-                <?php
-                $query="select * from vendor";
-				$exe=mysql_query($query);
-				while($ven=mysql_fetch_array($exe))
-				{
-				echo "<option value='$ven[3]'>$ven[1]</option>";
-				}
-				?>
-                <option value="-">none</option>
-                </select>
+               <td><input type="text" name="q_vendor" class="q_in" />
                 
 				</td>
                  <tr><td class="l_form">Enter Client TeleFax No:</td>
@@ -159,7 +148,7 @@ if(isset($_REQUEST['cancel']))
                 
                 <table class="q_info4" >
                 <tr><td class="l_form">Quotation No</td>
-                <td><input name="q_no" class="q_in" type="text" value="<?php echo $c_res +1; ?>"/></td></tr>
+                <td><input name="q_no" class="q_in" type="text" value="<?php echo $c_res +1; ?>" readonly/></td></tr>
                 <!--<tr><td class="l_form">Select Gatepass No:</td>
                 <td> <select class="q_add_i" name="q_attn">-->               								
 				<?php /*?>$query="select *from gatepass where client_id='$c_row[0]'";

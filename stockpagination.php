@@ -25,7 +25,7 @@ if($_GET)
         <td width="250">Name</td>
         <td width="160">date</td>
         <td>Supplier</td>
-		<td>Selling Prize</td>
+		
         <td>Quantity</td>	        
         <td width="100">Action</td>
         </tr>
@@ -48,14 +48,12 @@ if($_GET)
 		echo $c_row[2];
 		echo "</td>";
         echo "<td width='240'>";
-		echo $c_row[8];
-		echo "</td>";
-		echo "<td>";
-		echo $c_row[7];
-		echo "</td>";
-		echo "<td>";
 		echo $c_row[6];
 		echo "</td>";
+		echo "<td>";
+		echo $c_row[5];
+		echo "</td>";
+		
 		echo "<td>";
 		echo $c_row[4];
 		echo "</td>";

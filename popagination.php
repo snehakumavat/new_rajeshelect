@@ -12,17 +12,16 @@ if($_GET)
 }
 	
 	$start = ($page-1)*$per_page;
-	$c_qry_f="select * from clients order by c_id desc limit $start,$per_page";
+	$c_qry_f="select * from po order by po_id desc limit $start,$per_page";
 	
 	$c_res_f=mysql_query($c_qry_f);
 		
 ?>
         <table class="emp_tab">
         <tr class="emp_header">
-        <td width="250">Client Name</td>
-        <td width="160">Company Name.</td>
-        <td>Address</td>
-		<td>PhoneNo.</td>	        
+        <td width="250">Contact Person Details</td>
+		<td>PhoneNo.</td>	
+        <td>Vendor Code</td>        
         <td width="340">Action</td>
         </tr>
 
@@ -31,18 +30,18 @@ if($_GET)
 		{
         echo "<tr class='pagi'>";
         echo "<td width='250'>";
-		echo $c_row[2];
+		echo $c_row[1];
 		echo "</td>";
-        echo "<td width='160'>";
+        
+		echo "<td>";
 		echo $c_row[3];
 		echo "</td>";
 		echo "<td>";
 		echo $c_row[4];
 		echo "</td>";
-		echo "<td>";
-		echo $c_row[8];		
+					
         echo "<td width='100' class='print'>";
-		echo "<a href='?c_id1=$c_row[0]' onclick='return confirmSubmit()'>Delete</a>&nbsp;<a href=''>View/Update</a>&nbsp;";
+		echo "<a href='?po_id1=$c_row[0]' onclick='return confirmSubmit()'>Delete</a>&nbsp;<a href='updatepo.php?po_id=$c_row[0]'>View/Update</a>&nbsp;";
 		echo "</td>";
 		echo "</tr>";
 		}

@@ -13,8 +13,8 @@ include("session.php");
 		$p_t4=$_POST['t4'];
 		$p_t5=$_POST['t5'];
 		$rmk=$_POST['rmark'];
-	
-		$pa_qry="insert into expense(e_date,e_name,e_mode,e_ch,e_amt,e_rmark) values('".$date."','".$p_t2."','".$p_t3."','".$p_t4."','".$p_t5."','".$rmk."')";
+		$vendor=$_POST['e_vendor'];
+		$pa_qry="insert into expense(e_date,e_name,e_mode,e_ch,e_amt,e_rmark,e_vendor) values('".$date."','".$p_t2."','".$p_t3."','".$p_t4."','".$p_t5."','".$rmk."')";
 		$pa_res=mysql_query($pa_qry);
 		if($pa_res)
 		{
@@ -68,6 +68,22 @@ function validateMyForm ( ) {
         <td class="l_form">Date:</td>
         <td><input id="des" type="text" class="q_in" name="t1" value="<?php echo $d; ?>"></td>
         </tr>
+        <tr><td class="l_form">Enter Vendor No:</td>
+               <td><select name="e_vendor" class="q_add_i">
+                <option value="">select</option>
+                <?php
+                $query="select * from vendor";
+				$exe=mysql_query($query);
+				while($ven=mysql_fetch_array($exe))
+				{
+				echo "<option value='$ven[3]'>$ven[1]</option>";
+				}
+				?>
+                <option value="-">none</option>
+                </select>
+                
+				</td>
+                </tr>
         <tr>
         <td class="l_form">Expense For:</td>
         <td><input id="ename" type="text" class="q_in" name="t2"></td>
@@ -78,6 +94,7 @@ function validateMyForm ( ) {
         <select class="a" name="t3">
         <option>By Check</option>
         <option>By Cash</option>
+        <option>By Online</option>
         </select>
         </td>
         </tr>

@@ -22,9 +22,8 @@ $rsd = mysql_query($sql);
 				<table class="emp_tab">
                 <tr class="emp_header">
                 <td width="80">In. No</td>
-                <td width="250">Client Name</td>
+                <td width="250">Contact Person Name</td>
                 <td width="160">Date</td>
-                <td>Address</td>
                 <td width="70">Action</td>
                 </tr>
                 
@@ -39,9 +38,7 @@ $rsd = mysql_query($sql);
                 echo "<td width='250'>";
                 echo $row[4];
                 echo "</td>";
-                echo "<td width='160'>";
-                echo $row[1];
-                echo "</td>";
+                
                 echo "<td width='500'>";
                 echo $row[5];
                 echo "</td>";

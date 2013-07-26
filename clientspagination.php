@@ -19,10 +19,9 @@ if($_GET)
 ?>
         <table class="emp_tab">
         <tr class="emp_header">
-        <td width="250">Client Name</td>
-        <td width="160">Company Name.</td>
-        <td>Address</td>
-		<td>PhoneNo.</td>	        
+        <td width="250">Contact Person Name</td>
+        <td width="160">Company Name.</td>        
+		<td width='160'>PhoneNo.</td>	        
         <td width="340">Action</td>
         </tr>
 
@@ -35,10 +34,7 @@ if($_GET)
 		echo "</td>";
         echo "<td width='160'>";
 		echo $c_row[3];
-		echo "</td>";
-		echo "<td>";
-		echo $c_row[4];
-		echo "</td>";
+		echo "</td>";		
 		echo "<td>";
 		echo $c_row[8];		
         echo "<td width='100' class='print'>";

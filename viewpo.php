@@ -10,22 +10,21 @@ $pages = ceil($count/$per_page);
 ?>
 
 <?php
-	if(isset($_REQUEST['c_id2']))
+	if(isset($_REQUEST['po_id1']))
 	{
-		$c_d=$_REQUEST['c_id1'];		
-		$g_gatepas="delete from gatepass where client_id='$c_d'";
+		$c_d=$_REQUEST['po_id1'];		
+		$g_gatepas="delete from po where po_id='$c_d'";
 		$query1=mysql_query($g_gatepas);
-		$g_des="delete from material_desc where client_id='$c_d'";
+		$g_des="delete from sub_service where po_id='$c_d'";
 		$query2=mysql_query($g_des);
-		$c_del="delete from clients where c_id='$c_d'";
-		$c_dres=mysql_query($c_del);
-		if($c_dres)
+		
+		if($query2)
 		{
-			header("location:clients.php?res=suc");
+			header("location:viewpo.php?res=suc");
 		}
 		else
 		{
-			header("location:clients.php?res=er1");
+			header("location:viewpo.php?res=er1");
 		}
 		
 	}
@@ -164,7 +163,7 @@ cursor: pointer;
 		if(isset($_REQUEST['search']))
 		  {
 		 	 $srch=$_REQUEST['search'];			
-			 $query="select  * from clients where client_name LIKE '%$srch%' OR comp_name LIKE '%$srch%' OR c_date LIKE '%$srch%' OR c_email LIKE'%srch%'";
+			 $query="select  * from po where client_name LIKE '%$srch%' OR comp_name LIKE '%$srch%' OR c_date LIKE '%$srch%' OR c_email LIKE'%srch%'";
 	 		 $ans=mysql_query($query);
 	 
 	?>
@@ -197,7 +196,7 @@ cursor: pointer;
 		echo date('d-m-Y',strtotime($c_row[3]));
 		echo "</td>";
 		echo "<td width='100' class='print'>";
-		echo "<a href='?c_id1=$c_row[0]' onclick='return confirmSubmit()'>Delete</a>&nbsp;<a href='updateclients.php?c_id2=$c_row[0]'>Update</a>&nbsp;<a href='clientsview.php?c_id3=$c_row[0]'>View</a>&nbsp;<a href='gatepass.php?c_id3=$c_row[0]'>GatePass</a>&nbsp;<a href='view_gatepass.php?c_id3=$c_row[0]'>g_v</a>";
+		echo "<a href='?po_id1=$c_row[0]' onclick='return confirmSubmit()'>Delete</a>&nbsp;<a href='updatepo.php?po_id=$c_row[0]'>View/Update</a>&nbsp;";
 		echo "</td>";
 		echo "</tr>";
 		}
@@ -210,8 +209,8 @@ cursor: pointer;
                 <form action="" method="post" name="search">
 				<table class="emp_tab">
                 <tr class="search_res" >
-                <td class="info">Clients Details</td>
-                <td width="300px;"><input type='text' name="search"   class="result" title="Enter client name,cmp_name,date here" />
+                <td class="info">purches Order Details</td>
+                <td width="300px;"><input type='text' name="search"   class="result" title="Enter client name,cmp_name,vendor_code,Ph no here" />
                 
                 <input type="submit" name="result" value="search" class="go" /></td>
                 </tr>

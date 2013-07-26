@@ -19,10 +19,10 @@ $page=$_GET['page'];
 
         <table class="emp_tab">
         <tr class="emp_header">
-        <td width="250">Client Name</td>
+        <td width="150">Contact Person Name</td>
         <td width='80'>Gatepass No</td>
         <td width="60">Contact No.</td>
-        <td>Address</td>
+
         <td width="100">Action</td>
         </tr>
 
@@ -42,9 +42,7 @@ $page=$_GET['page'];
         echo "<td width='160'>";
 		echo $c_row[9];
 		echo "</td>";
-		echo "<td>";
-		echo $c_row[4];
-		echo "</td>";
+		
 		echo "<td width='100' class='print'>";
 		echo "<a href='invoicebasic.php?c_id1=$c_row[0]'>Create</a>";
 		echo "</td>";

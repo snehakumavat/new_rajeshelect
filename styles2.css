@@ -687,6 +687,16 @@ div#footer-links p {
 	color:#000
 
 }
+.q_in1
+{
+	width:230px;
+	height:35px;
+	border:1px solid #999;
+	background-color:#FFF;
+	font-size:18px;
+	color:#000
+
+}
 .q_info4
 {
 	margin-left:550px;	
@@ -936,16 +946,6 @@ div#footer-links p {
 	border:1px solid #999;
 }
 
-.des_in
-{
-	width:100%;
-	background-color:#FFF;
-	font-size:18px;
-	color:#000;
-	border:1px solid #999;
-
-	
-}
 .invoice_b
 {
 	margin-left:872px;
@@ -955,6 +955,16 @@ div#footer-links p {
 {
 	margin-left:925px;
 	margin-top:10px;
+}
+.des_in
+{
+	width:100%;
+	background-color:#FFF;
+	font-size:18px;
+	color:#000;
+	border:1px solid #999;
+
+	
 }
 .des_sr
 {
