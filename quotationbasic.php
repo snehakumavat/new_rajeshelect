@@ -41,7 +41,7 @@ if(isset($_REQUEST['submit']))
 		$trans_chrg=$_POST['t_charge'];
 		$tax=$_POST['tax'];
 		
-		$quo="insert into quotation(c_id,q_ref_no,q_date,q_name,q_address,q_mo,q_mail,q_vendor_no,q_sub,q_fax,q_trans,q_tax) values('".$c."','".$q_ref."','".$q_date."','".$q_name."','".$q_address."','".$q_mo."','".$q_mail1."','".$q_vender."','".$q_sub."','".$q_fax."','".$trans_chrg."','".$tax."')";
+		$quo="insert into quotation(c_id,q_ref_no,q_date,q_name,q_address,q_mo,q_mail,q_vendor_no,q_sub,q_fax,q_trans,q_tax,a_failure) values('".$c."','".$q_ref."','".$q_date."','".$q_name."','".$q_address."','".$q_mo."','".$q_mail1."','".$q_vender."','".$q_sub."','".$q_fax."','".$trans_chrg."','".$tax."','".$_POST['af']."')";
 		$quo_res=mysql_query($quo);
 	if($_POST['dis']!=NULL)
 	{
@@ -179,6 +179,7 @@ if(isset($_REQUEST['cancel']))
                 <td><input name="q_sub" class="q_in2" type="text" value=""/></td></tr>
                 <tr><td class="l_form">Enter Transportation Charges</td>
                 <td><input name="t_charge" class="q_in" type="text" value=""  /></td></tr>
+                
                 </table>
                 <br />
                 <table class="des">
@@ -223,10 +224,14 @@ if(isset($_REQUEST['cancel']))
                 <td>
                  <input class="des_q" type="text" name="capacity"id="capacity"  value="" ><br>
                 </td>
-                </tr>       
+                </tr>
+                <tr>
+                <td class="l_form" ><br><br>Analysis of Failure :</td>
+                      <td> <br><br> <textarea  class="q_add"  name="af"></textarea></td>
+                      </tr>       
                 </table>
-                
-                <div class="q_button5">
+                <br><br>
+                <div class="q_button5" align="center">
                 
                 <input name="submit" class="formbutton" value=" Submit " type="submit" onClick="javascript:return validateMyForm();" />
                 <input name="cancel" class="formbutton" value="Cancel" type="submit" />

@@ -131,7 +131,7 @@ cursor: pointer;
     <?php
 	include("header.php");
 	?><br />
-                <div class="quotation"><center>Reciept</center></div>
+                <div class="quotation"><center>Delivery Chalan</center></div>
                 
                 <div id="loading" ></div>
 		<div id="content" ></div>

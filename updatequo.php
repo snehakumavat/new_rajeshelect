@@ -31,7 +31,7 @@ if(isset($_REQUEST['submit']))
 		$tr=$_POST['t_charge'];
 	$tax=$_POST['tax'];
 		
-	 $quo="UPDATE `quotation` SET `q_ref_no`='".$q_ref."', `q_date`='".$q_date."' ,`q_name`='".$q_name."', `q_address`='".$q_address."',`q_mo`='".$q_mo."',`q_mail`='".$q_mail1."',`q_vendor_no`='".$q_vender."',`q_sub`='".$q_sub."',`q_fax`='".$q_fax."',`q_trans`='".$tr."',`q_tax`='".$tax."' WHERE q_id=$in";				
+	 $quo="UPDATE `quotation` SET `q_ref_no`='".$q_ref."', `q_date`='".$q_date."' ,`q_name`='".$q_name."', `q_address`='".$q_address."',`q_mo`='".$q_mo."',`q_mail`='".$q_mail1."',`q_vendor_no`='".$q_vender."',`q_sub`='".$q_sub."',`q_fax`='".$q_fax."',`q_trans`='".$tr."',`q_tax`='".$tax."',`a_failure`='".$_POST['af']."' WHERE q_id=$in";				
 	
 		$quo_res=mysql_query($quo);
 		
@@ -275,11 +275,15 @@ $query="select * from sub_quotation where q_id='$c_res[0]' and less='0'";
                 <td>
                  <input class="des_q" type="text" name="capacity"id="capacity"  value="<?php echo $l1[4];?>" ><br>
                 </td>
-                </tr>       
+                </tr>
+                <tr>
+                <td class="l_form" ><br><br>Analysis of Failure :</td>
+                      <td> <br><br> <textarea  class="q_add"  name="af"><?php echo $c_res[15];?></textarea></td>
+                      </tr>        
                 </table>
                 
                 <div class="q_button5">
-                
+                <br><br>
                 <input name="submit" class="formbutton" value=" Submit " type="submit" onClick="javascript:return validateMyForm();" />
                 <input name="cancel" class="formbutton" value="Cancel" type="submit" />
                 </div>

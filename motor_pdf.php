@@ -59,7 +59,7 @@ td
 </style>
 </head>
 <body>
-
+<font face="Calibri" size="12px;">
 <div class="heading" > M/s. RAJESH ELECTRONIC WORKS</div>
 <div class="sub_heading">Flat No. C/42,M.I.D.C.Industrial Estate,Malegaon,Tal-Sinner,Dist-Nashik-422103.<br>Ph:02551-230829,E-Mail :new.nsk@rediffmail.com
 </div>
@@ -142,6 +142,10 @@ td
 <td><b>Cooling Fan:- </b> <?php echo $motor[19];?></td>
 <td><b>Terminal Plate:- </b> <?php echo $motor[28];?></td>
 </tr>
+<tr>
+<td><b>Frame Size:- </b> <?php echo $motor[19];?></td>
+<td><b>Terminal Plate:- </b> <?php echo $motor[28];?></td>
+</tr>
 
 </table>
 
@@ -203,6 +207,8 @@ td
 <td><b>Terminal Plate:- </b> <?php echo $motor[46];?></td>
 </tr>
 </table>
+</td>
+</tr>
 <tr>
 <td colspan="3">
 <table class="total" width="710px">
@@ -212,10 +218,8 @@ td
 </table>
 </td>
 </tr>
-<tr>
-<td align="right" colspan="3"><br><br><b>FOR RAJESH ELECTRONIC WORKS</b></td>
-</tr>
-</table>
+
+</table></font>
 
 </body>
 </html>
@@ -231,6 +235,11 @@ include("dompdf/dompdf_config.inc.php");
   $dompdf->load_html($htmlcontent);
   $dompdf->set_paper("folio", "portrait");
   $dompdf->render();
+ $canvas = $dompdf->get_canvas();
+  $font = Font_Metrics::get_font("", "bold");
+  $canvas->page_text(50,850, "RAJESH ELECTRIC WORKS", $font, 6, array(0,0,0));
+  $canvas->page_text(500,850, "PAGE: {PAGE_NUM} OF {PAGE_COUNT}", $font, 8, array(0,0,0));
+
   $dompdf->stream($filename, array("Attachment" => false));	
   exit(0);
 ?>

@@ -39,7 +39,7 @@ if(isset($_REQUEST['submit']))
 		$d1=date('Y-m-d',strtotime($_POST['date1']));
 		$d2=date('Y-m-d',strtotime($_POST['date2']));
 
-		 $add="update`invoice` set `q_date`='".$q_date."',`c_id`='".$c."',`c_comp`='".$c_row[3]."',`q_name`='".$q_name."',`q_address`='".$q_address."',`po_no`='".$po."',`rgp_no`='".$rgp."',`dc_no`='".$dc."',`code_no`='".$v1."',`tin_no`='".$t1."',`date1`='".$d1."',`date2`='".$d2."' where i_id='$in'";
+		 $add="update`invoice` set `q_date`='".$q_date."',`c_id`='".$c."',`c_comp`='".$c_row[3]."',`q_name`='".$q_name."',`q_address`='".$q_address."',`po_no`='".$po."',`rgp_no`='".$rgp."',`dc_no`='".$dc."',`code_no`='".$v1."',`tin_no`='".$t1."',`date1`='".$d1."',`date2`='".$d2."',`given`='".$_POST['given']."' where i_id='$in'";
 		$query=mysql_query($add);
 		$a=$_POST['d'];
 		if(($a!=NULL ))
@@ -169,6 +169,15 @@ $count=mysql_num_rows($c_res1);
                 <td>
                 <input type="text" class="q_in" name="date2"value="<?php echo date('d-m-Y', strtotime($c_row[14])); ?>" >
 				</td></tr>
+                <tr>
+                <td class="l_form">Invoice given to Client:</td>
+                <td><select name="given">
+                <option value="0">Select</option>
+                <option value="1" <?php if($c_row[15]==1) echo 'selected';?> >Yes</option>
+                <option value="2" <?php if($c_row[15]==2) echo 'selected';?>>No</option>
+              </select>
+              	</td>
+                </tr>
                 </table>
                 <br />
                 <table class="des">

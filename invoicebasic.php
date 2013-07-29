@@ -40,7 +40,7 @@ if(isset($_REQUEST['submit']))
 		$d1=date('Y-m-d',strtotime($_POST['date1']));
 		$d2=date('Y-m-d',strtotime($_POST['date2']));
 
-		$add="INSERT INTO `invoice`(`q_date`,`gatepass_no`,`c_id`,`c_comp`, `q_name`, `q_address`,`q_mo`, `po_no`, `rgp_no`, `dc_no`, `code_no`, `tin_no`, `date1`, `date2`) VALUES ('".$q_date."','".$gate."','".$c."','".$c_row[3]."','".$q_name."','".$q_address."','".$c_row[9]."','".$po."','".$rgp."','".$dc."','".$v1."','".$t1."','".$d1."','".$d2."')";
+		$add="INSERT INTO `invoice`(`q_date`,`gatepass_no`,`c_id`,`c_comp`, `q_name`, `q_address`,`q_mo`, `po_no`, `rgp_no`, `dc_no`, `code_no`, `tin_no`, `date1`, `date2`,`given`) VALUES ('".$q_date."','".$gate."','".$c."','".$c_row[3]."','".$q_name."','".$q_address."','".$c_row[9]."','".$po."','".$rgp."','".$dc."','".$v1."','".$t1."','".$d1."','".$d2."','".$_POST['given']."')";
 		$query=mysql_query($add);
 	
 		$a=$_POST['d'];
@@ -160,6 +160,15 @@ if(isset($_REQUEST['cancel']))
                 <td>
                 <input type="text" class="q_in" name="date2" value="<?php echo date('d-m-Y'); ?>" >
 				</td></tr>
+                <tr>
+                <td class="l_form">Invoice given to Client:</td>
+                <td><select name="given">
+                <option value="0">Select</option>
+                <option value="1">Yes</option>
+                <option value="2">No</option>
+              </select>
+              	</td>
+                </tr>
                 </table>
                 <br />
                 <table class="des">

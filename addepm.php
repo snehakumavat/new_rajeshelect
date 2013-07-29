@@ -4,12 +4,19 @@
 	include("session.php");
 	if(isset($_REQUEST['e_add']))
 	{
+		$e_t0=$_POST['e_id'];
 		$e_t1=$_POST['e_name'];
 		$e_t2=$_POST['e_address'];
 		$e_t3=$_POST['e_contact'];
 		$e_t4=$_POST['e_desig'];
+		$e_t5=$_POST['e_doj'];
+		$e_t6=$_POST['e_bname'];
+		$e_t7=$_POST['e_accno'];
+		$e_t8=$_POST['e_panno'];
+		$e_t9=$_POST['e_nod'];
 		
-		$e_qry="insert into emp(e_name,e_add,e_contact,e_desig) values('".$e_t1."','".$e_t2."','".$e_t3."','".$e_t4."')";
+		$e_qry="insert into emp(e_code,e_name,e_add,e_contact,e_doj,e_desig,e_accno,e_bankname,e_panno,e_no_of_days) values('".$e_t0."','".$e_t1."'
+	,'".$e_t2."','".$e_t3."','".$e_t5."','".$e_t4."','".$e_t7."','".$e_t6."','".$e_t8."','".$e_t9."')";
 		$e_res=mysql_query($e_qry);
 		if($e_res)
 		{
@@ -73,6 +80,10 @@ function validateMyForm ( ) {
         <form name="form1" action="" method="post">
         <table class="addemp_tab">
         <tr>
+        <td class="l_form">Employee ID:</td>
+        <td><input id="eid" type="text" class="q_in" name="e_id"></td>
+        </tr>
+        <tr>
         <td class="l_form">Emp Name:</td>
         <td><input id="ename" type="text" class="q_in" name="e_name"></td>
         </tr>
@@ -87,6 +98,26 @@ function validateMyForm ( ) {
         <tr>
         <td class="l_form">Designation:</td>
         <td><input id="des" type="text" class="q_in" name="e_desig"></td>
+        </tr>
+        <tr>
+        <td class="l_form">Date of Joining:</td>
+        <td><input id="doj" type="date" class="q_in" name="e_doj"></td>
+        </tr>
+        <tr>
+        <td class="l_form">Bank Name:</td>
+        <td><input id="bank_name" type="text" class="q_in" name="e_bname"></td>
+        </tr>
+        <tr>
+        <td class="l_form">Bank Account No:</td>
+        <td><input id="acc_no" type="text" class="q_in" name="e_accno"></td>
+        </tr>
+        <tr>
+        <td class="l_form">PAN No:</td>
+        <td><input id="pan_no" type="text" class="q_in" name="e_panno"></td>
+        </tr>
+        <tr>
+        <td class="l_form">No of Days:</td>
+        <td><input id="nod" type="text" class="q_in" name="e_nod"></td>
         </tr>
         
         </div>

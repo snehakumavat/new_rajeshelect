@@ -61,8 +61,15 @@ if(isset($_REQUEST['cr_id2']))
 	$af=$_POST['af'];
 	$wd=$_POST['wd'];
 	$sr=$_POST['sr'];
-			
-	echo	$c_qry="update `certificate` set `name`= '".$nm."',`addr`='".$addr."',`ydc_no`='".$dc."',`ydc_date`='".$dcd."',
+	$apl=$_POST['appl'];
+	$frm=$_POST['frmsiz'];
+	$mount=$_POST['mount'];
+	$mainf=$_POST['mainf'];
+	$mainc=$_POST['mainc'];
+	$inter1=$_POST['inter1'];
+	$inter2=$_POST['inter2'];
+
+	$c_qry="update `certificate` set `name`= '".$nm."',`addr`='".$addr."',`ydc_no`='".$dc."',`ydc_date`='".$dcd."',
 	 `no`='".$no."', `odc_no`='".$odc."',`odc_date`='".$odcd."',`vendor_cod`='".$vno."',`cnt_per`='".$cp."',`dept`='".$dpt."',
 `make1`='".$mk."', `hp1`='".$hp."', `kw1`='".$kw."', `volts1`='".$vlt."',`loadamp1`='".$lda."', `capacitor_val`='".$cv."',
 `driv_cover1`='".$dec."', `non_driv1`='".$nde."',`cooling_fan1`='".$cf."',`sr_no1`='".$sno."', `phase1`=  '".$ph."',`rpm`='".$rp."',
@@ -71,7 +78,7 @@ if(isset($_REQUEST['cr_id2']))
 `driv_end2`='".$dec1."', `non_driv2`='".$ndec."',`cooling_fan2`='".$cf1."',
 `sr_no2`='".$sno1."', `comut2`='".$ct."',`frame`='".$frm."', `clas_insult2`='".$ci1."',
 `motor2`='".$mfr."', `armature`='".$afr."', `bear_no1`='".$brn."',`bear_no2`='".$brno2."', `terminal2`='".$tp1."', 
-`analysis_fail`='".$af."', `wrk_don`='".$wd."', `remark`='".$sr."'";
+`analysis_fail`='".$af."', `wrk_don`='".$wd."', `remark`='".$sr."' ,`frame_size`='".$frm."',`mount_type`='".$mount."',`appl_motor`='".$apl."',`m_res`='".$mainf."',`m_no_cur`='".$mainc."',`m_inter1`='".$inter1."',`m_inter2`='".$inter2."'";
 //	exit();
 	$c_res=mysql_query($c_qry);
 	
@@ -153,7 +160,7 @@ if(isset($_REQUEST['cr_id2']))
             </table>
             <table>
                   <tr>
-                    <td class="desc">AC SQ.CAGE INDUCTION MOTOR TESTING CERTIFICATE</td>
+                    <td class="des1">AC SQ.CAGE INDUCTION MOTOR TESTING CERTIFICATE</td>
                   </tr>
                 </table>
                 
@@ -213,11 +220,28 @@ if(isset($_REQUEST['cr_id2']))
                     <td class="l_form"  width="379" >Terminal Plate:-
                        <td> <input type="text"  class="q_in" value="<?php echo $motor[28]; ?>" name="tp"></td>
                   </tr>
+                   <tr>
+                    <td class="l_form"  width="395"   >Frame Size:-</td>
+                     <td> <input type="text"  class="q_in" value="<?php echo $motor[50]; ?>" name="frmsiz"></td>
+                    <td class="l_form"  width="379" >Mounting Type:-
+                    </td>
+                    <td>
+                       <select class="a" name="mount">
+                       <option value="0">select</option>
+                       <option value="1" <?php if($motor[51]=='1') echo 'selected'; ?>>1</option>
+                       <option value="2" <?php if($motor[51] =='2') echo 'selected'; ?>>3</option>
+                       </select>
+                       </td>
+                  </tr>
+                  <tr>
+                    <td class="l_form"  width="395">Application of Motor:-</td>
+                     <td colspan="3"> <textarea class="q_add" name="appl"><?php echo $motor[52]; ?></textarea></td>
+                     </tr>
                 </table>
                 
             <table>
                   <tr>
-                    <td class="desc" >DC MOTOR TESTING CERTIFICATE</td>
+                    <td class="des1" >DC MOTOR TESTING CERTIFICATE</td>
                   </tr>
                 </table>
               
@@ -276,20 +300,31 @@ if(isset($_REQUEST['cr_id2']))
                     <td class="l_form"  width="379" >Terminal Plate:-</td>
                       <td>  <input type="text"  class="q_in" value="<?php echo $motor[46]; ?>" name="tp1"></td>
                   </tr>
+                  <tr>
+                    <td class="l_form"  width="395" >Main field resistance:-</td>
+                      <td>  <input type="text"  class="q_in" value="<?php echo $motor[53]; ?>" name="mainf"></td>
+                    <td class="l_form"  width="379" >Main field no load current:-</td>
+                     <td>   <input type="text"  class="q_in" value="<?php echo $motor[54]; ?>" name="mainc"></td>
+                  </tr>
+                  <tr>
+                    <td class="l_form"  width="395" >Main interpole resistance:-</td>
+                      <td>  <input type="text"  class="q_in" value="<?php echo $motor[55]; ?>" name="inter1"></td>
+                    <td class="l_form"  width="379" >Main interpole no load current:-</td>
+                     <td>   <input type="text"  class="q_in" value="<?php echo $motor[56]; ?>" name="inter2"></td>
+                  </tr>
                 </table>
            
-             <table class='test3'>
+             <table class='test2'>
                   <tr>
-                    <td class="l_form" >Analysis of Failure :</td>
-                      <td>  <textarea  class="q_add"  name="af"><?php echo $motor[47]; ?></textarea></td>
-                  </tr>
-                  <tr>
-                    <td class="l_form" >Work Done :</td>
+                    <td class="l_form" width="260"  >Work Done :</td>
                       <td>  <textarea  class="q_in" name="wd"><?php echo $motor[48]; ?></textarea></td>
                   </tr>
-                  <tr>
+                    <tr>
                     <td class="l_form" >Special  Remarks:</td>
                       <td>  <textarea  class="q_add" name="sr"><?php echo $motor[49]; ?></textarea></td>
+                      
+                      <td class="l_form" >Analysis of Failure :</td>
+                      <td>  <textarea  class="q_add"  name="af"><?php echo $motor[47]; ?></textarea></td>
                   </tr>
                 </table>
                 <div class="addclients_b">

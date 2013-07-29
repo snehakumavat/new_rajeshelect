@@ -54,14 +54,22 @@ include("include/database.php");
 	$af=$_POST['af'];
 	$wd=$_POST['wd'];
 	$sr=$_POST['sr'];
+	$apl=$_POST['appl'];
+	$frm=$_POST['frmsiz'];
+	$mount=$_POST['mount'];
+	$mainf=$_POST['mainf'];
+	$mainc=$_POST['mainc'];
+	$inter1=$_POST['inter1'];
+	$inter2=$_POST['inter2'];
+	
 			
-	$c_qry="INSERT INTO `certificate`(`name`, `addr`, `ydc_no`,`ydc_date`, `no`, `odc_no`, `odc_date`, `vendor_cod`, `cnt_per`, `dept`,
+	echo $c_qry="INSERT INTO `certificate`(`name`, `addr`, `ydc_no`,`ydc_date`, `no`, `odc_no`, `odc_date`, `vendor_cod`, `cnt_per`, `dept`,
 	 `make1`, `hp1`, `kw1`, `volts1`, `loadamp1`, `capacitor_val`,`driv_cover1`, `non_driv1`, `cooling_fan1`, `sr_no1`, `phase1`, `rpm`,
 	   `insulatin1`, `resistnce`, `megar`, `bearing_n1`, `bearing_n2`, 
 	   `termplat1`, `make2`, `hp2`, `kw2`, `volts2`, `load_amp2`, `brush`,
 	    `driv_end2`, `non_driv2`,`cooling_fan2`, `sr_no2`, `comut2`, `frame`, `clas_insult2`,
 		 `motor2`, `armature`, `bear_no1`, `bear_no2`, `terminal2`, 
-		 `analysis_fail`, `wrk_don`, `remark`) VALUES ('".$nm."','".$addr."','".$dc."','".$dcd."','".$no."',
+		 `analysis_fail`, `wrk_don`, `remark`,`frame_size`, `mount_type`, `appl_motor`, `m_res`, `m_no_cur`, `m_inter1`,`m_inter2`) VALUES ('".$nm."','".$addr."','".$dc."','".$dcd."','".$no."',
 		 '".$odc."','".$odcd."','".$vno."','".$cp."','".$dpt."',
 		 '".$mk."','".$hp."','".$kw."','".$vlt."','".$lda."',
 			 '".$cv."','".$dec."','".$nde."','".$cf."','".$sno."',
@@ -70,8 +78,8 @@ include("include/database.php");
 		 '".$kw1."','".$vlt1."','".$la."','".$br."','".$dec1."',
 		 '".$ndec."','".$cf1."','".$sno1."','".$ct."','".$frm."',
 		 '".$ci1."','".$mfr."','".$afr."','".$brn."','".$brno2."',
-		 '".$tp1."','".$af."','".$wd."','".$sr."')";
-	$c_res=mysql_query($c_qry);
+		 '".$tp1."','".$af."','".$wd."','".$sr."','".$frm."','".$mount."','".$apl."','".$mainf."','".$mainc."','".$inter1."','".$inter2."')";
+	//$c_res=mysql_query($c_qry);
 	
 	if($c_res)
 	{
@@ -151,7 +159,7 @@ include("include/database.php");
             </table>
             <table>
                   <tr>
-                    <td class="desc">AC SQ.CAGE INDUCTION MOTOR TESTING CERTIFICATE</td>
+                    <td class="des1">AC SQ.CAGE INDUCTION MOTOR TESTING CERTIFICATE</td>
                   </tr>
                 </table>
                 
@@ -211,11 +219,27 @@ include("include/database.php");
                     <td class="l_form"  width="379" >Terminal Plate:-
                        <td> <input type="text"  class="q_in" value="" name="tp"></td>
                   </tr>
+                  <tr>
+                    <td class="l_form"  width="395"   >Frame Size:-</td>
+                     <td> <input type="text"  class="q_in" value="" name="frmsiz"></td>
+                    <td class="l_form"  width="379" >Mounting Type:-</td>
+                       <td> 
+                       <select class="a" name="mount">
+                       <option value="0">select</option>
+                       <option value="1">1</option>
+                       <option value="2">3</option>
+                       </select>
+                       </td>
+                  </tr>
+                  <tr>
+                    <td class="l_form"  width="395">Application of Motor:-</td>
+                     <td colspan="3"> <textarea class="q_add" name="appl"></textarea></td>
+                     </tr>
                 </table>
                 
             <table>
                   <tr>
-                    <td class="desc" >DC MOTOR TESTING CERTIFICATE</td>
+                    <td class="des1" >DC MOTOR TESTING CERTIFICATE</td>
                   </tr>
                 </table>
               
@@ -274,25 +298,36 @@ include("include/database.php");
                     <td class="l_form"  width="379" >Terminal Plate:-</td>
                       <td>  <input type="text"  class="q_in" value="" name="tp1"></td>
                   </tr>
-                </table>
-           
-             <table class='test3'>
                   <tr>
-                    <td class="l_form" >Analysis of Failure :</td>
-                      <td>  <textarea  class="q_in" name="af"></textarea>
-                      </td>
+                    <td class="l_form"  width="395" >Main field resistance:-</td>
+                      <td>  <input type="text"  class="q_in" value="" name="mainf"></td>
+                    <td class="l_form"  width="379" >Main field no load current:-</td>
+                     <td>   <input type="text"  class="q_in" value="" name="mainc"></td>
                   </tr>
                   <tr>
-                    <td class="l_form" >Work Done :</td>
+                    <td class="l_form"  width="395" >Main interpole resistance:-</td>
+                      <td>  <input type="text"  class="q_in" value="" name="inter1"></td>
+                    <td class="l_form"  width="379" >Main interpole no load current:-</td>
+                     <td>   <input type="text"  class="q_in" value="" name="inter2"></td>
+                  </tr>
+                </table>
+           
+             <table class='test2'>
+                  <tr>
+                    <td class="l_form" width="260" >Analysis of Failure :</td>
+                      <td  colspan="3">  <textarea  class="q_in" name="af"></textarea>
+                      </td>
+                       
+                  </tr>
+                               <tr>
+                    <td class="l_form" >Special  Remarks:</td>
+                      <td>  <textarea  class="q_add" name="sr"></textarea></td>
+                      <td class="l_form" >Work Done :</td>
                       <td>  <textarea  class="q_add" name="wd"></textarea>
                       </td>
                   </tr>
-                  <tr>
-                    <td class="l_form" >Special  Remarks:</td>
-                      <td>  <textarea  class="q_add" name="sr"></textarea></td>
-                  </tr>
                 </table>
-                <div class="addclients_b">
+                <div class="addclients_b" align="center">
             <input name="c_add" class="formbutton" value=" Add " type="submit" tabindex="49" onClick="javascript:return validateMyForm();" />
             <input name="can" class="formbutton" value="Cancel" type="submit" tabindex="50" />
           </div>

@@ -69,6 +69,7 @@ $row_t=mysql_fetch_array($res_t);
 td 
 {
 		border:1px solid #000;
+		height:30px;
 }
 th
 {
@@ -93,6 +94,7 @@ th
 .tab1
 {
 	width:250px;
+
 }
 </style>
 </head>
@@ -100,6 +102,7 @@ th
 <body>
 <br>
 <br>
+<font face="Calibri" size="12px;">
 <table class="light">
 <tr class="dat">
 <td  rowspan="2" width="230px;"><b>RAJESH ELECTRIC WORKS</b></td>
@@ -156,17 +159,23 @@ th
 <div class="description">
 <table class="report">    		<!-- New des table added here -->
 <tr>
+<th>Item</th>
 <th>DESCRIPTION</th>
 <th>QTY</th>
 <th>RATE/EACH</th>
 <th>AMOUNT</th>
 </tr>
 <?php
+$item=0;
 while($row_d=mysql_fetch_array($res_detail))
 {
+	$item+=1;
 	
 	echo "<tr>";
-	echo "<td>";
+	echo "<td >";
+	echo $item;
+	echo "</td>";
+	echo "<td width='300px'>";
 	echo $row_d[2];
 	echo "</td>";
 	echo "<td>";
@@ -183,12 +192,12 @@ while($row_d=mysql_fetch_array($res_detail))
 }
 ?>
 <tr>
-<td>&nbsp;</td>
-<td colspan="2">SUB TOTAL:</td>
+
+<td colspan="4">SUB TOTAL:</td>
 <td><?php echo $row_t[0].' /-'; ?></td>
 </tr>
 <tr>
-<td>
+<td colspan="2">
 <?php
  $plus=$row_t[0];
 $per70=round (($plus* 0.7)/2);
@@ -207,7 +216,7 @@ $g_total=$row_t[0]+$serv_tax+$e_cess+$she_cess+$vat;
 <td><?php echo $serv_tax; ?></td>
 </tr>
 <tr>
-<td rowspan="3" style="vertical-align:text-top">In Words:- <?php echo convert_number_to_words(round($g_total)).'Rupees Only'; ?></td>
+<td colspan="2"rowspan="3" style="vertical-align:text-top">In Words:- <?php echo convert_number_to_words(round($g_total)).'Rupees Only'; ?></td>
 <td colspan="2" style="text-align:right;">E.Cess @2%</td>
 <td><?php echo $e_cess;?></td>
 </tr>
@@ -222,12 +231,12 @@ $g_total=$row_t[0]+$serv_tax+$e_cess+$she_cess+$vat;
 <td><?php echo $vat;?></td>
 </tr>
 <tr>
-<td><font size="-2">VAT TIN NO.27900789615 V w.e.f. 27/08/2010 & CST TIN NO. 27900789615 C w.e.f. 27/08/2010</font></td>
+<td colspan="2"><font size="-2">VAT TIN NO.27900789615 V w.e.f. 27/08/2010 & CST TIN NO. 27900789615 C w.e.f. 27/08/2010</font></td>
 <td colspan="2" style="text-align:right;">Transportation Charges</td>
 <td><?php echo '00.00' ?></td>
 </tr>
 <tr>
-<td><font size="-2">Service Tax NO. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PAN NO. :-AMEPM1485H </font></td>
+<td colspan="2"><font size="-2">Service Tax NO. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PAN NO. :-AMEPM1485H </font></td>
 <td colspan="2" style="text-align:right; font-weight:800; "> GRAND TOTAL:-</td>
 <td><?php echo round($g_total,2) ;?></td>
 </tr>
@@ -237,16 +246,17 @@ $g_total=$row_t[0]+$serv_tax+$e_cess+$she_cess+$vat;
 </tr>
 <tr>
 <td colspan="3">
-<table>
+<table border="0">
 <tr>
 <td width="375px">we hereby certify that my</td>
 <td width="120px"><br><br><br>Receiver Sign & Stamp</td>
-<td width="120px"><b>For Rajesh Electric Works<br><br> <br>Authorised Signatory</b> </td>
+<td align="right"><b>For Rajesh Electric Works<br><br> <br>Authorised Signatory</b> </td>
 </tr>
 </table>
 </td>
 </tr>
 </table>
+</font>
 </body>
 </html>
 
@@ -261,6 +271,11 @@ include("dompdf/dompdf_config.inc.php");
   $dompdf->load_html($htmlcontent);
   $dompdf->set_paper("folio", "portrait");
   $dompdf->render();
+   $canvas = $dompdf->get_canvas();
+  $font = Font_Metrics::get_font("", "bold");
+  $canvas->page_text(50,850, "RAJESH ELECTRIC WORKS", $font, 6, array(0,0,0));
+  $canvas->page_text(500,850, "PAGE: {PAGE_NUM} OF {PAGE_COUNT}", $font, 8, array(0,0,0));
+
   $dompdf->stream($filename, array("Attachment" => false));	
   exit(0);
 ?>

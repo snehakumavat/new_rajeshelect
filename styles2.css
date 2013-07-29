@@ -282,8 +282,9 @@ form input.formbutton {
 	text-decoration: none;
 	text-transform: uppercase;
 	background: #00a1d2;
+	margin-left: 35px;
 	border: none;
-	width:115px;
+	width:135px;
 	height:35px;
 	overflow: visible;
 	font-family: Lucida Grande;
@@ -674,17 +675,18 @@ div#footer-links p {
 	color:#000;
 	border:none;
 	margin-left:125px;
-	margin-top:30px;
+	margin-top:5px;
 }
 
 .q_in
 {
 	width:175px;
-	height:35px;
+	height:30px;
 	border:1px solid #999;
 	background-color:#FFF;
 	font-size:18px;
-	color:#000
+	color:#000;
+	margin-top: 5px;
 
 }
 .q_in1
@@ -1243,7 +1245,7 @@ div#footer-links p {
  .toptext
 {
     height:75px;
-	margin-top:40px;		
+	margin-top:8px;		
 	margin-left:30px;
 }
 
@@ -1278,13 +1280,13 @@ div#footer-links p {
 }
  .desc
 {
-	width:630px;
+	width:610px;
 	display:block;
 	background-color:#00a1d2;
 	font-size:20px;
 	color:#600;
 	text-align:center;
-	margin-left:-60px;
+	margin-left:-20px;
 	
 	
 	 box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
@@ -1297,7 +1299,7 @@ div#footer-links p {
 
 .desc1
 {
-	width:600px;
+	width:590px;
 	display:block;
 	background-color:#00a1d2;
 	font-size:20px;
@@ -1328,13 +1330,13 @@ div#footer-links p {
 	
 	.desc3
 {
-	width:630px;
+	width:610px;
 	display:block;
 	background-color:#00a1d2;
 	font-size:20px;
 	color:#600;
 	text-align:center;
-	margin-left:-60px;
+	margin-left:-20px;
 	margin-top:-250px;
 	
 	
@@ -1362,25 +1364,25 @@ div#footer-links p {
 }
 .w_clients2
 {
-margin-top:-200px;
-	width:600px;
-	height:200px;
-	margin-left:0px;	
-	}
+	margin-top: -255px;
+	width: 589px;
+	height: 180px;
+	margin-left: 15px;
+}
 
 .q_clients1
 {
-	margin-top:-140px;
-	width:600px;
-	height:430px;
-	margin-left:630px;
+	margin-top: -180px;
+    width: 580px;
+    height: 380px;
+    margin-left: 640px;
 }
 .q_client_s
 {
 	margin-top:5px;
 	width:565px;
 	height:230px;
-	margin-left:0px;
+	margin-left:28px;
 }
 .q_clients_2
 {
@@ -1391,17 +1393,17 @@ margin-top:-200px;
 }
 .q_clients_w
 {
-	margin-top:10px;
-	width:600px;
-	height:150px;
-	margin-left:0px;
+	margin-top: 5px;
+	width: 580px;
+	height: 140px;
+	margin-left: 18px;
 }
 .q_clients3
 {
-	margin-top:-20px;
-	width:615px;
-	height:300px;
-	margin-left:620px;
+	margin-top: -50px;
+	width: 585px;
+	height: 288px;
+	margin-left: 640px;
 }
 .q_clients4
 {
@@ -1422,7 +1424,7 @@ select
 .addclients_b
 {
 	margin-top:30px;
-	margin-left:500px;
+	margin-left:20px;
 	
 }
 .booking
@@ -1641,3 +1643,47 @@ option
 	width:25%;
 	padding-left:10px;
 }
+/*----------------------*/
+.testing1{
+	width: 960px;
+	margin-left: 25px;
+	margin-top: -10px;
+	margin-bottom:-10px;
+}
+.des1
+{
+	width:950px;
+	display:block;
+	background-color:#00a1d2;
+	font-size:16px;
+	color:#600;
+	text-align:center;
+	margin-left:10px;
+	margin-top:15px;
+	
+	 box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+   -o-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+   -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+   -moz-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);	
+	
+	}
+	
+	.test2{
+		margin-left: 25px;
+		margin-top: 5px;
+		width: 880px;
+		margin-bottom: -10px;
+	}
+	
+	.test3{
+		width: 880px;
+		margin-left: 25px;
+	}
+	
+	.guaranty{
+	}
+	.guaranty h3{
+		font-family:"Times New Roman", Times, serif;
+		font-size:10px;
+		
+	}

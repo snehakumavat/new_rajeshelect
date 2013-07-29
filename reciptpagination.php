@@ -18,7 +18,7 @@
 ?>
         <table class="emp_tab">
         <tr class="emp_header">
-        <td width="70">In. No</td>
+        <td width="70">Invoice No</td>
         <td width="100">Start Date.</td>
         <td width="100"> Gatepass No</td>
         <td width="200">Contact Person Name</td>       
