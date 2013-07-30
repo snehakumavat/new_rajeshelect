@@ -13,10 +13,10 @@
 		$e_t6=$_POST['e_bname'];
 		$e_t7=$_POST['e_accno'];
 		$e_t8=$_POST['e_panno'];
-		$e_t9=$_POST['e_nod'];
+		//$e_t9=$_POST['e_nod'];
 		
-		$e_qry="insert into emp(e_code,e_name,e_add,e_contact,e_doj,e_desig,e_accno,e_bankname,e_panno,e_no_of_days) values('".$e_t0."','".$e_t1."'
-	,'".$e_t2."','".$e_t3."','".$e_t5."','".$e_t4."','".$e_t7."','".$e_t6."','".$e_t8."','".$e_t9."')";
+		$e_qry="insert into emp(e_code,e_name,e_add,e_contact,e_doj,e_desig,e_accno,e_bankname,e_panno) values('".$e_t0."','".$e_t1."'
+	,'".$e_t2."','".$e_t3."','".$e_t5."','".$e_t4."','".$e_t7."','".$e_t6."','".$e_t8."')";
 		$e_res=mysql_query($e_qry);
 		if($e_res)
 		{
@@ -115,10 +115,7 @@ function validateMyForm ( ) {
         <td class="l_form">PAN No:</td>
         <td><input id="pan_no" type="text" class="q_in" name="e_panno"></td>
         </tr>
-        <tr>
-        <td class="l_form">No of Days:</td>
-        <td><input id="nod" type="text" class="q_in" name="e_nod"></td>
-        </tr>
+        
         
         </div>
         </table>

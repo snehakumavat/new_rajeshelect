@@ -25,9 +25,9 @@ include("include/database.php");
 		$eu_t6=$_POST['eu_bname'];
 		$eu_t7=$_POST['eu_accno'];
 		$eu_t8=$_POST['eu_panno'];
-		$eu_t9=$_POST['eu_nod'];
+		//$eu_t9=$_POST['eu_nod'];
 		
-		$qry_up="update emp SET e_code='".$eu_id."',e_name='".$eu_t1."', e_add='".$eu_t2."', e_contact='".$eu_t3."', e_desig='".$eu_t4."',e_doj='".$eu_t5."',e_accno='".$eu_t7."',e_bankname='".$eu_t6."',e_panno='".$eu_t8."',e_no_of_days='".$eu_t9."' where e_id=".$up_e;
+		$qry_up="update emp SET e_code='".$eu_id."',e_name='".$eu_t1."', e_add='".$eu_t2."', e_contact='".$eu_t3."', e_desig='".$eu_t4."',e_doj='".$eu_t5."',e_accno='".$eu_t7."',e_bankname='".$eu_t6."',e_panno='".$eu_t8."' where e_id=".$up_e;
 		$res_up=mysql_query($qry_up);
 		if($res_up)
 		{
@@ -98,10 +98,7 @@ include("include/database.php");
         <td class="l_form">PAN No:</td>
         <td><input id="pan_no" type="text" class="q_in" name="eu_panno" value="<?php echo $row_up[9]; ?>"></td>
         </tr>
-        <tr>
-        <td class="l_form">No of Days:</td>
-        <td><input id="nod" type="text" class="q_in" name="eu_nod" value="<?php echo $row_up[10]; ?>"></td>
-        </tr>        
+             
         </table><br><br>
         <div class="addemp_b">
          <input name="e_up" class="formbutton" value=" Update " type="submit" />

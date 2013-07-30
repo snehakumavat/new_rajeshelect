@@ -1,10 +1,10 @@
 <?php
-error_reporting(0);
+//error_reporting(0);
 include("session.php");
 include("include/database.php");
 
 $p=$_REQUEST['id'];
-$qry="select * from reciept where i_id='$p'";
+$qry="select * from reciept where i_id='$p' order by r_id Desc limit 1";
 $res=mysql_query($qry);
 $row=mysql_fetch_array($res);
 

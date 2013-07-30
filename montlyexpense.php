@@ -267,10 +267,9 @@ $('.info8').fadeIn(200);
 			$a=date('Y-m-d', strtotime("$date +1 year"));
 			$b=date('Y-m-d', strtotime("$date1 +1 year"));
 			$to_f=date('Y-02-28');
-			$qry_f="select * from expense where e_date >='".$from_f."' and e_date<='".$to_f."'";
+	$qry_f="select * from expense where e_date >='".$from_f."' and e_date<='".$to_f."'";
 			$res_f=mysql_query($qry_f);
-			
-			$qry_fe="select SUM(e_amt) from expense where e_date >='".$from_f."' and e_date<='".$to_f."'";
+	$qry_fe="select SUM(e_amt) from expense where e_date >='".$from_f."' and e_date<='".$to_f."'";
 			$res_fe=mysql_query($qry_fe);
 			$row_fe=mysql_fetch_array($res_fe);
 			?>			

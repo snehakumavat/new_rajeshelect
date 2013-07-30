@@ -8,11 +8,8 @@
                     <li><a href="taxdetails.php">Service Tax Details</a>
                     <li><a href="addterm.php">Add Terms</a></li>
                     <li><a href="addTaxDetails.php">Add Tax Details</a></li>
-                    
-                <?php /*?><ul>
-              	<li><a href="addterm.php">Add Terms</a></li>
-            	</ul><?php */?>
-            </li>
+              
+            
                 </ul>
             
             </li>
@@ -77,6 +74,7 @@
             <li><a class="has_submenu" href="employee.php">Employees</a>
             	<ul>
                 	<li><a href="addepm.php">Add Employee</a></li>    
+                    <li><a href="month_emp_income.php">View income Details</a></li>    
                  </ul>
             </li>
             <li><a class="has_submenu" href="view_vendor.php">Vendor</a>
@@ -95,14 +93,13 @@
             </ul>
            </li>  
            
-            <?php /*?><li><a class="has_submenu" href="term.php">T &C </a>
-            <ul>
-              	<li><a href="addterm.php">Add Terms</a></li>
-            </ul>
-           </li><?php */?> 
+            <li><a class="has_submenu" href="loghistory.php">log_history</a>
+                      </li> 
+                                  
            <li>
            <a class="has_submenu" href="logout.php">logout</a>
            </li> 
+          
                           
         </ul>
   </div>

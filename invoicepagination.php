@@ -41,7 +41,11 @@ $rsd = mysql_query($sql);
                 echo $count+=1;
                 echo "</td>";				
                 echo "<td >";
-                echo $row[0];
+				$signal=$row[15];
+				if($signal=='1')
+                echo $row[0].'<img src="images/ornament1_green.png"/>';
+				elseif($signal=='2')
+				echo $row[0].'<img src="images/ornament2_red.png"/>';
                 echo "</td>";
                 echo "<td >";
                 echo $row[2];

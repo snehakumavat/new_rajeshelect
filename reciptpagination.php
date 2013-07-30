@@ -22,8 +22,7 @@
         <td width="100">Start Date.</td>
         <td width="100"> Gatepass No</td>
         <td width="200">Contact Person Name</td>       
-        <td width="150">Contact</td>
-        <!--<td width="100">Reciept</td>-->
+        <td width="150">Contact</td>        
         <td width="130">Action</td>
         </tr>
         <?php
@@ -52,6 +51,10 @@
 		echo "</td>";*/
 		echo "<td class='print'>";
 		echo "<a href='addreciept.php?id=$c_row[0]'>Create</a>&nbsp;";
+		$qury="select * from reciept where i_id=$c_row[0]";
+		$ans=mysql_query($qury);
+		$cnt=mysql_num_rows($ans);
+		if($cnt>0)		
 		echo "<a href='recieptpdf.php?id=$c_row[0]'>Print</a>";
 		echo "</td>";
 		echo "</tr>";

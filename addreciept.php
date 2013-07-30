@@ -9,13 +9,11 @@ $c_row=mysql_fetch_array($c_res);
 
 if(isset($_GET['del']))
 {
- $del=$_GET['del'];
- $query="delete from sub_invoice where s_id='$del'";
-mysql_query($query);
+ 	$del=$_GET['del'];
+ 	$query="delete from sub_invoice where s_id='$del'";
+	mysql_query($query);
 
 }
-
-
 $c_query1="select * from sub_invoice where i_id='$in'";
 $c_res1=mysql_query($c_query1);
 
@@ -26,8 +24,6 @@ $c_res1=mysql_query($c_query1);
 
 if(isset($_REQUEST['submit']))
 {	
-
-
 		$c=$in;
 		$q_date=date('Y-m-d',strtotime($_POST['q_date']));
 		$q_name=$_POST['q_name'];
@@ -125,7 +121,7 @@ $count=mysql_num_rows($c_res1);
                 <div class="quotationI"><center>REW Delivery Challan</center></div>
                 <br />
                 <table class="q_info3" height="300px">
-                <tr><td class="l_form">Date:</td><td><input name="q_date" class="q_in" type="date" value="<?php  echo date("d-m-Y"); ?>"/></td></tr>
+                <tr><td class="l_form">Date:</td><td><input name="q_date" class="q_in" type="text" value="<?php  echo date("d-m-Y"); ?>"/></td></tr>
                 
                 <tr><td class="l_form">Client Name:</td>
                 <td>
@@ -148,26 +144,13 @@ $count=mysql_num_rows($c_res1);
                 
                  <tr><td class="l_form">Vendor Code No:</td>
                 <td>
-                <select name="vendr" class="q_add_i">
-                <option value="">select</option>
-                <?php
-                $query="select * from vendor";
-				$exe=mysql_query($query);
-				while($ven=mysql_fetch_array($exe))
-				{
-					if($ven[3]==$c_row[11])
-					  echo "<option value='$ven[3]' selected>$ven[1]</option>";
-					else	
-					  echo "<option value='$ven[3]'>$ven[1]</option>";
-				}
-				?>
-                <option value="-" <?php if($c_row[11]=='-') echo 'selected'; ?> >none</option>
-                </select>                
+                <input type="text" name="vendr" class="q_in" value="<?php echo $c_row[11]; ?>"/>
+                
 				</td></tr>
                  
                  <tr><td class="l_form">Date:</td>
                 <td>
-                <input type="date" class="q_in" name="date1" value="<?php echo date('d-m-Y', strtotime($c_row[13])); ?>" >
+                <input type="text" class="q_in" name="date1" value="<?php echo date('d-m-Y', strtotime($c_row[13])); ?>" >
 				</td></tr>
                 <tr><td class="l_form">Date:</td>
                 <td>
@@ -234,14 +217,23 @@ $count=mysql_num_rows($c_res1);
                 <?php }
 				?>               
                 </table>
-                
-                 <div id="phone">
-                
-                </div>
+                <?php
+                $qury="select * from reciept where i_id=$c_row[0]";
+				$ans=mysql_query($qury);
+				$cnt=mysql_num_rows($ans);
+				if($cnt>0)
+				{
+					echo"<h4> You Can Print the Reciept Record is Inserted Successfully";
+				}
+				else
+				{
+		?>
                 <div class="q_button5">
             	 <input name="submit" class="formbutton" value=" Submit " type="submit" onClick="javascript:return validateMyForm();" />
                 <input name="cancel" class="formbutton" value="Cancel" type="submit" />
                 </div>
+                <?php }
+				?>  
                 
                 </form>
   				</div>

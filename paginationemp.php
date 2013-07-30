@@ -21,18 +21,18 @@ if($_GET)
 ?>
 <table class="emp_tab" style="table-layout:fixed;">
         <tr class="emp_header">
-        <td width="140">Emp. Code</td>
+        <td width="100">Emp. Code</td>
         <td width="100">Name</td>
         <td width="100">Contact </td>
-        <td width="120" style="word-wrap:break-word">Designation</td>
-        <td width="80">Action</td>
+        <td width="100" style="word-wrap:break-word">Designation</td>
+        <td width="70">Action</td>
         </tr>
 
         <?php
 		while($e_row=mysql_fetch_array($e_res_f))
 		{
         echo "<tr class='pagi'>";
-        echo "<td width='140'>";
+        echo "<td width='100'>";
 		echo $e_row[1];
 		echo "</td>";
         echo "<td width='100'>";
@@ -44,8 +44,8 @@ if($_GET)
 		echo "<td style='overflow:hidden;'>";
 		echo $e_row[6];
 		echo "</td>";
-        echo "<td width='80' class='print'>";
-		echo "<a href='?e_id1=$e_row[0]' onclick='return confirmSubmit()'>Delete</a>&nbsp;<a href='updateemp.php?e_id2=$e_row[0]'>Update</a>";
+        echo "<td width='70' class='print'>";
+		echo "<a href='?e_id1=$e_row[0]' onclick='return confirmSubmit()'>Delete</a>&nbsp;<a href='updateemp.php?e_id2=$e_row[0]'>Update</a>&nbsp;<a href='addempreceipt.php?e_id3=$e_row[0]'>Payment</a>";
 		echo "</td>";
 		echo "</tr>";
 		}

@@ -1,33 +1,18 @@
 <?php
+include("include/database.php");
+
 error_reporting(0);
 include("session.php");
-	include("include/database.php");
-	$per_page = 20; 
-	$sql = "select * from emp";
-	$rsd = mysql_query($sql);
-	$count = mysql_num_rows($rsd);
-	$pages = ceil($count/$per_page);
-
-		
-?>
-<?php
-	if(isset($_REQUEST['e_id1']))
-	{
-		$e_d=$_REQUEST['e_id1'];
-		$e_del="delete from emp where e_id='$e_d'";
-		$e_dres=mysql_query($e_del);
-		if($e_dres)
-		{
-			header("location:employee.php");
-		}
-		else
-		{
-			echo "error";
-		}
-	}
+$per_page = 20; 
+$sql = "select * from gatepass";
+$rsd = mysql_query($sql);
+$count = mysql_num_rows($rsd);
+$pages = ceil($count/$per_page);
 ?>
 <html>
-<head><title>Rajesh Electric Works</title>
+<head>
+<title>Rajesh Electic Works</title>
+<link rel="stylesheet" href="styles2.css" type="text/css" />
 <link rel="stylesheet" href="styles2.css" type="text/css" />
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
@@ -35,10 +20,14 @@ include("session.php");
 <script type="text/javascript" src="js/slider.js"></script>
 <script type="text/javascript" src="js/superfish.js"></script>
 <script type="text/javascript" src="js/custom.js"></script>
-<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/slider.js"></script>
+<script type="text/javascript" src="js/superfish.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
 
-<script type="text/javascript">
-function confirmSubmit()
+<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+	function confirmSubmit()
 {
 var agree=confirm("Are you sure to Delete this Entry?");
 if (agree)
@@ -46,7 +35,8 @@ if (agree)
 else
 	return false ;
 }
-$(document).ready(function(){
+	
+	$(document).ready(function(){
 	//Display Loading Image
 	function Display_Load()
 	{
@@ -66,7 +56,7 @@ $(document).ready(function(){
 	
 	Display_Load();
 	
-	$("#content").load("paginationemp.php?page=1", Hide_Load());
+	$("#content").load("logpage.php?page=1", Hide_Load());
 
 
 
@@ -85,18 +75,14 @@ $(document).ready(function(){
 
 		//Loading Data
 		var pageNum = this.id;
-		$("#content").load("paginationemp.php?page=" + pageNum, Hide_Load());
+		$("#content").load("logpage.php?page=" + pageNum, Hide_Load());
 		
 	});
 	
 	
 });
 	</script>
-	          
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/slider.js"></script>
-<script type="text/javascript" src="js/superfish.js"></script>
-<script type="text/javascript" src="js/custom.js"></script>
+	
 <style>
 a
 {
@@ -141,11 +127,9 @@ box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 
 { 
 color:#FF0084; 
 cursor: pointer; 
-
 }
-
-
 </style>
+
 
 </head>
 
@@ -154,12 +138,75 @@ cursor: pointer;
 <div id="sub-header">	
     <?php
 	include("header.php");
-	?><br />
-		<div class="quotation"><center>Employee Details</center></div>
-        <div id="loading" ></div>
+	?>
+    
+    	<?php
+		
+		if(isset($_REQUEST['search']))
+		  {
+		 	 $srch=$_REQUEST['search'];	
+			 if($srch!=NULL)
+		 $query="select * from gatepass where client_id=(select c_id from clients where client_name LIKE '%$srch%') OR g_no LIKE '%$srch%' OR g_date LIKE '%$srch%' OR status LIKE '%$srch%' OR appr_nm LIKE '%$srch%'";
+		 else
+		     $query="select * from gatepass order by pass_id DESC";
+	 		 $ans=mysql_query($query);
+			 
+	 
+	?>
+	
+		<table class="emp_tab">        
+		<?php
+        if(mysql_num_rows($ans)==0)
+		{
+		?>
+        <tr class='emp_header'>
+         <td colspan='6' align="center"><h3> No Data available</h3></td>
+        </tr>
+		
+		<?php
+        }
+		while($c_row=mysql_fetch_array($ans))
+		{			
+        echo "<tr class='pagi'>";
+		$nm="select client_name from clients where c_id='$c_row[1]'";
+		$res=mysql_result(mysql_query($nm),0);
+        echo "<td width='250'>";
+		echo $res;
+		echo "</td>";
+        echo "<td width='250'>";
+		echo $c_row[8];
+		echo "</td>";
+        echo "<td width='160'>";
+		echo $c_row[9];
+		echo "</td>";
+		echo "<td>";
+		echo $c_row[13];
+		echo "</td>";
+		echo "<td>";
+		echo $c_row[25];		
+        echo "</td>";
+		echo "</tr>";
+		}
+		?>        
+        </table>	
+	<?php
+		}
+?>
+                
+                <br />
+                <form action="" method="post" name="search">
+				<table class="quotation">
+                <tr>
+                <td class="info">Login Logout Details</td>
+                
+                </tr>
+                </table>
+                </form>
+                
+                <div id="loading" ></div>
 		<div id="content" ></div>
         <table width="800px">
-		<tr><td>
+	<tr><Td>
 			<ul id="pagination">
 				<?php
 						
@@ -170,13 +217,18 @@ cursor: pointer;
 				}
 				?>
 	</ul>	
-	</td></tr></table>
-    </div>
-    </div>
+	</Td></tr></table>
+
+                </div>                
+               
+  				</div>
+                
+                </div>
+                
         
     
     	<div class="clear"></div>
-    </div>
+    
 </div>
  <div id="footer">
      <div class="clear"></div> 

@@ -14,7 +14,7 @@ include("session.php");
 		$p_t5=$_POST['t5'];
 		$rmk=$_POST['rmark'];
 		$vendor=$_POST['e_vendor'];
-		$pa_qry="insert into expense(e_date,e_name,e_mode,e_ch,e_amt,e_rmark,e_vendor) values('".$date."','".$p_t2."','".$p_t3."','".$p_t4."','".$p_t5."','".$rmk."')";
+		$pa_qry="insert into expense(e_date,e_name,e_mode,e_ch,e_amt,e_rmark,e_vendor) values('".$date."','".$p_t2."','".$p_t3."','".$p_t4."','".$p_t5."','".$rmk."','".$vendor."')";
 		$pa_res=mysql_query($pa_qry);
 		if($pa_res)
 		{
