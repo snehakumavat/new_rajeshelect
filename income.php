@@ -30,7 +30,7 @@ include("session.php");	include("include/database.php");
 		header("location:payment.php");
 	}
 	
-	$d=date('d-m-Y');
+	$d=date('Y-m-d');
 ?>
 <html>
 <head>
@@ -66,7 +66,7 @@ function validateMyForm ( ) {
         <table class="addemp_tab">
         <tr>
         <td class="l_form">Date:</td>
-        <td><input id="des" type="text" class="q_in" name="t1" value="<?php echo $d; ?>"></td>
+        <td><input id="des" type="date" class="q_in" name="t1" value="<?php echo $d; ?>"></td>
         </tr>
         <tr>
         <td class="l_form">Income Details:</td>

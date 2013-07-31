@@ -122,7 +122,7 @@ if(isset($_REQUEST['cancel']))
                 <div class="quotationI"><center>REW QUOTATION</center></div>
                 <br />
                 <table class="q_info3" height="400px;">
-                <tr><td class="l_form">Date:</td><td><input name="q_date" class="q_in" type="text" value="<?php  echo date("d-m-Y"); ?>"/></td></tr>
+                <tr><td class="l_form">Date:</td><td><input name="q_date" class="q_in" type="date" value="<?php  echo date('Y-m-d'); ?>"/></td></tr>
                 <tr><td class="l_form">Client Name:</td>
                 <td>
                 <input type="text" class="q_in" name="q_name" value="<?php echo $c_row[2]; ?>">

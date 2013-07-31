@@ -101,7 +101,7 @@ function validateMyForm ( ) {
         </tr>
         <tr>
         <td class="l_form">Date of Joining:</td>
-        <td><input id="doj" type="date" class="q_in" name="e_doj"></td>
+        <td><input id="doj" type="date" class="q_in" name="e_doj" value="<?php echo date('Y-m-d');?>"></td>
         </tr>
         <tr>
         <td class="l_form">Bank Name:</td>

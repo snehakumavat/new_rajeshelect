@@ -72,12 +72,12 @@ td
 </tr>
 <tr>
 <td><b>Your D.C.No. :</b> <?php echo $motor[3];?></td>
-<td><b>Your D.C.Date. :</b> <?php echo $motor[4];?></td>
+<td><b>Your D.C.Date. :</b> <?php echo date('d-m-Y',strtotime($motor[4]));?></td>
 <td><b>No. : </b><?php echo $motor[5];?></td>
 </tr>
 <tr>
 <td><b>Our D.C.No. :</b> <?php echo $motor[6];?></td>
-<td><b>Our D.C.Date. :</b> <?php echo $motor[7];?></td>
+<td><b>Our D.C.Date. :</b> <?php echo date('d-m-Y',strtotime($motor[7])); ?></td>
 <td><b>Vendor code No. :</b> <?php echo $motor[8];?></td>
 </tr>
 <tr>

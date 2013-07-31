@@ -219,15 +219,15 @@ function addRow(tableID) {
            
             <tr>
           <td class="l_form">Work Order Date:</td>
-          <td><input id="odate" class="q_in" type="date" name="wd" tabindex=""/></td>  
+          <td><input id="odate" class="q_in" type="date" name="wd" value="<?php echo date('Y-m-d');?>" tabindex=""/></td>  
           <td class="l_form" >Cost Center:</td>
           <td><input id="center" class="q_in" type="text" name="center" tabindex=""/></td>              
             </tr>
             <tr>
           <td class="l_form">Validity From:</td>
-          <td><input id="d1" class="q_in" type="date" name="d1" tabindex=""/></td>
+          <td><input id="d1" class="q_in" type="date" name="d1" value="<?php echo date('Y-m-d');?>" tabindex=""/></td>
           <td class="l_form">Validity To:</td>
-          <td><input id="d2" class="q_in" type="date" name="d2" tabindex=""/></td>
+          <td><input id="d2" class="q_in" type="date" name="d2" value="<?php echo date('Y-m-d');?>" tabindex=""/></td>
             </tr>
             </table>
            <br><br>

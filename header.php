@@ -102,11 +102,10 @@
           
                           
         </ul>
-  </div>
-
+  
  <?php
  if(isset($_SESSION['uname']) && isset($_SESSION['password']))
 {
-	echo '<h4 align="right" style="margin-right:60px;">'.$_SESSION['uname'].' is Login</h4>';
+	echo '<h4 align="right" style="margin-right:60px; margin-top:-10px;">'.$_SESSION['uname'].' is Login</h4>';
 }
- ?>
+ ?></div>

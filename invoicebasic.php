@@ -115,7 +115,7 @@ if(isset($_REQUEST['cancel']))
                 <div class="quotationI"><center>REW TAX INVOICE</center></div>
                 <br />
                 <table class="q_info3" height="300px">
-                <tr><td class="l_form">Date:</td><td><input name="q_date" class="q_in" type="text" value="<?php  echo date("d-m-Y"); ?>"/></td></tr>
+                <tr><td class="l_form">Date:</td><td><input name="q_date" class="q_in" type="date" value="<?php  echo date("Y-m-d"); ?>"/></td></tr>
                 <tr><td class="l_form">Gatepass No:</td>
                 <td>
                 <input type="text" class="q_in" name="g_no" value="<?php echo $gate; ?>" readonly>
@@ -154,11 +154,11 @@ if(isset($_REQUEST['cancel']))
 				</td></tr>
                  <tr><td class="l_form">Date:</td>
                 <td>
-                <input type="text" class="q_in" name="date1" value="<?php echo date('d-m-Y'); ?>" >
+                <input type="date" class="q_in" name="date1" value="<?php echo date('Y-m-d'); ?>" >
 				</td></tr>
                 <tr><td class="l_form">Date:</td>
                 <td>
-                <input type="text" class="q_in" name="date2" value="<?php echo date('d-m-Y'); ?>" >
+                <input type="date" class="q_in" name="date2" value="<?php echo date('Y-m-d'); ?>" >
 				</td></tr>
                 <tr>
                 <td class="l_form">Invoice given to Client:</td>

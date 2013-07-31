@@ -239,11 +239,11 @@ function add_phone_field()
               <td class="l_form">Gate Pass No.:</td>
               <td><input id="gn1" class="q_in" type="text" name="gn1" tabindex="7"/></td>
               <td class="l_form">Gate Pass Date:</td>
-              <td><input id="gd1" class="q_in" type="date" name="gd1" value="<?php echo date('d-m-Y'); ?>" tabindex="8"/></td>             </tr>
+              <td><input id="gd1" class="q_in" type="date" name="gd1" value="<?php echo date('Y-m-d'); ?>" tabindex="8"/></td>             </tr>
            
             <tr>
           <td class="l_form">Due Date:</td>
-          <td><input id="due1" class="q_in" type="date" name="due1" value="<?php echo date('d-m-Y'); ?>" tabindex="9"/></td>  
+          <td><input id="due1" class="q_in" type="date" name="due1" value="<?php echo date('Y-m-d'); ?>" tabindex="9"/></td>  
           <td class="l_form" >Requested By:</td>
           <td><input id="req1" class="q_in" type="text" name="req1" tabindex="10"/></td>              
             </tr>

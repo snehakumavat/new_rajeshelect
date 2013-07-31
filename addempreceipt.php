@@ -25,17 +25,18 @@ include("include/database.php");
 		$e_t6=$row_up[7];
 		$e_t7=$row_up[8];
 		$e_t8=$row_up[9];
-		$e_t9=$row_up[10];
+		//$e_t9=$row_up[10];
 		$e_t10=$_POST['e_nod'];
 		$e_t11=$_POST['e_nop'];
 		$e_t12=$_POST['txt_earning'];
 		$e_t13=$_POST['txt_deduction'];
 		$e_t14=$_POST['txt_netpay'];
+		$days=$_POST['days'];
 		$month=date('m');
 		$year=date('Y');
 		
-		$e_qry="insert into emp_sal(es_code,es_name,es_add,es_contact,es_doj,es_desig,es_accno,es_bankname,es_panno,es_no_of_days,es_days_present,es_days_paid,year,month,earning,deduction,net_pay) values('".$e_t0."','".$e_t1."'
-	,'".$e_t2."','".$e_t3."','".$e_t5."','".$e_t4."','".$e_t7."','".$e_t6."','".$e_t8."','".$e_t9."','".$e_t10."','".$e_t11."','".$year."','".$month."','".$e_t12."','".$e_t13."','".$e_t14."')";
+	echo	$e_qry="insert into emp_sal (es_code,es_name,es_add,es_contact,es_doj,es_desig,es_accno,es_bankname,es_panno,es_no_of_days,es_days_present,es_days_paid,year,month,earning,deduction,net_pay)
+		 values('".$e_t0."','".$e_t1."','".$e_t2."','".$e_t3."','".$e_t4."','".$e_t5."','".$e_t7."','".$e_t6."','".$e_t8."','".$days."','".$e_t10."','".$e_t11."','".$year."','".$month."','".$e_t12."','".$e_t13."','".$e_t14."')";
 		$e_res=mysql_query($e_qry);
 		if($e_res)
 		{
@@ -46,8 +47,8 @@ include("include/database.php");
 			echo "error";
 		}
 		
-		$sal_code=mysql_insert_id();
-		
+		 $sal_code=mysql_insert_id();
+	
 		$a=$_POST['d1'];
 		$b = count($a);
 		for($i=0; $i<$b; $i++)
@@ -202,7 +203,7 @@ function deleteRow(tableID)
     <?php
 	include("header.php");
 	?><br />
-		<div class="quotation"><center>Update Employee Details</center></div>
+		<div class="quotation"><center>Employee Salary Slip</center></div>
         <div>
         <form action="" method="post">
         <table class="maintbl" border="1">
@@ -226,7 +227,8 @@ function deleteRow(tableID)
         <td class="form"><b>Designation:</b></td>
         <td><?php echo $row_up[6]; ?></td>
         <td class="form"><b>Date of Joining:</b></td>
-        <td><?php echo $row_up[5]; ?></td>
+        <td><?php echo date('d-m-Y',strtotime($row_up[5])); ?></td>
+        
         </tr>
         
         <tr>
@@ -240,7 +242,7 @@ function deleteRow(tableID)
         <td class="form"><b>PAN No:</b></td>
         <td><?php echo $row_up[9]; ?></td>
          <td class="form"><b>No of Days:</b></td>
-        <td><?php echo $row_up[10]; ?></td>
+        <td><input id="days" type="text" class="q_in" name="days"></td>
         </tr>
         
         <tr>
@@ -329,11 +331,42 @@ function deleteRow(tableID)
                 </tr>
                 </table>
         <br><br>
+        <?php
+		$yer=date('Y');
+		$mon=date('n');
+		$del=$_REQUEST['del'];
+		 $find="select * from emp_sal where es_code='$row_up[1]' and year='$yer' and month='$mon'";
+	   $an=mysql_query($find);
+	   
+		if($del==1)
+		{
+			while($res=mysql_fetch_array($an))
+			{
+			 $delete1="delete from sub_salary  where sal_code='$res[0]'";	
+			mysql_query($delete1);
+			}
+			$delete="delete from emp_sal  where es_code='$row_up[1]' and year='$yer' and month='$mon'";
+			mysql_query($delete);
+			 $id=$_REQUEST['e_id3'];
+			header('Location:addempreceipt.php?e_id3='.$id);
+			}
+		      
+	   $cnt=mysql_num_rows($an);
+	  if($cnt>0)
+	  {
+		   echo "<h2><center> You already inserted salary record for this month</h2>";
+		   echo "<h4> <center>Still you want to add record then <a href='addempreceipt.php?e_id3=$_REQUEST[e_id3]&del=1'>click here </a> but after click previous record will be deleted</h4>";
+	  }
+	  else
+	  {
+		?>
         <div class="addemp_b">
          <input name="e_up" class="formbutton" value="Submit " type="submit" />
          <input name="e_can" class="formbutton" value="Cancel" type="submit" />
         </div>
-        
+       <?php
+	  }
+	   ?> 
         </form>
     </div>
     </div>

@@ -60,7 +60,7 @@ include("session.php");
 		header("location:payment.php");
 	}
 	
-	$d=date('d-m-Y');
+	$d=date('Y-m-d');
 ?>
 <html>
 <head>

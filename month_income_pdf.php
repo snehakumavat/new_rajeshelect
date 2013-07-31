@@ -1,10 +1,26 @@
 <?php
 error_reporting(0);
 include("session.php");
-include("include/database.php");	
-	$up_e=$_REQUEST['id'];
-	$up_qry="select * from emp_sal where es_id='$up_e'";
+include("include/database.php");
+
+if(isset($_REQUEST['year']))
+{
+	$year=$_POST['year'];
+	$month=$_POST['date_month'];
+	$code=$_POST['emp_code'];				
+}	
+	$up_qry="select * from emp_sal where es_code='$code' and year='$year' and month='$month'";
 	$up_res=mysql_query($up_qry);
+	if(!$up_qry)
+	{
+		echo "Record not found...";
+		exit();	
+	}
+		$cnt=mysql_num_rows($up_res);
+		if($cnt==0)
+		{
+			echo "<h2 style='color:red;'> <center> Please first insert salary Record for this employee</h2>";
+			}
 	$row_up=mysql_fetch_array($up_res);
 	
 	 
@@ -43,7 +59,8 @@ include("include/database.php");
 <body>
         <h3 align="center">Rajesh Eectric Works</h3>
         <table class="maintbl" border="1">
-          <tr><td colspan="4" align="center"><b>PAYSLIP FOR THE MONTH OF <?php echo date('F Y'); ?></b></td></tr>
+          <tr><td colspan="4" align="center"><b>PAYSLIP FOR THE MONTH OF <?php   echo date ("F", mktime(0,0,0,$month,1,0)); echo ' '.$year;
+ ?></b></td></tr>
       
          <tr>
         <td class="form"><b>Employee ID:</b></td>
@@ -105,7 +122,7 @@ include("include/database.php");
                 </tr>
                 <?php
 				$count=0;
-                $query="select * from sub_salary where sal_code='$up_e'";
+                $query="select * from sub_salary where sal_code='$row_up[0]'";
 				$res=mysql_query($query);
 				while($sal=mysql_fetch_array($res))
 				{
@@ -122,8 +139,9 @@ include("include/database.php");
                 </tr>
           <?php
 				}
+				
 		  ?>
-          <tr>
+          		<tr>
                          
                 <td colspan="2">GROSS EARNINGS</td>
                 <td><?php echo $row_up[15];?></td>

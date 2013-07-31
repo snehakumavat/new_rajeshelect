@@ -106,7 +106,7 @@ $e_qry="insert into assign_job(job_id,stock_id,emp_id,assg_val,date) values('".$
         </tr>
         <tr>
         <td class="l_form">Assign Date</td>
-        <td><input type="date" name="date" value="<?php echo date('d-m-Y'); ?>" /></td>
+        <td><input type="date" name="date" value="<?php echo date('Y-m-d'); ?>" /></td>
         </tr>
         </table>        
         <div class="addemp_button">

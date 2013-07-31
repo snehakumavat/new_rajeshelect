@@ -140,14 +140,14 @@ if(isset($_REQUEST['cr_id2']))
               <td class="l_form" >Your D.C.No :</td>
                <td > <input type="text"  class="q_in" value="<?php echo $motor[3]; ?>" name="dc"></td>
               <td class="l_form"  >Your D.C.Date :</td>
-               <td > <input type="text"  class="q_in" value="<?php echo date('d-m-Y',strtotime($motor[4]));?>" name="dcd"></td>
+               <td > <input type="date"  class="q_in" value="<?php echo $motor[4];?>" name="dcd"></td>
               
             </tr>
             <tr>
               <td class="l_form" >Our D.C.No :</td>
                <td> <input type="text"  class="q_in" value="<?php echo $motor[6]; ?>" name="odc"></td>
               <td class="l_form" >Our D.C.Date :</td>
-                <td><input type="text"  class="q_in" value="<?php echo  date('d-m-Y',strtotime($motor[7]));?>" name="odcd"></td>
+                <td><input type="date"  class="q_in" value="<?php echo  $motor[7];?>" name="odcd"></td>
               
             </tr>
             <tr>

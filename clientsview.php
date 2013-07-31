@@ -47,7 +47,7 @@ include("session.php");
                 <tr><td class="l_form">Email Id:</td><td><label><?php echo $c_row[10]; ?></label></td></tr>
                 <tr><td class="l_form">Phone No:</td><td><label><?php echo $c_row[8]; ?></label></td></tr>
                 <tr><td class="l_form">Mobile No:</td><td><label><?php echo $c_row[9]; ?></label></td></tr>
-                <tr><td class="l_form">Date:</td><td><label><?php  echo date("d-m-Y"); ?></label></td></tr>
+                <tr><td class="l_form">Date:</td><td><label><?php  echo $c_row[1];; ?></label></td></tr>
                
                 
                 </table>

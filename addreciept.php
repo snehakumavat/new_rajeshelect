@@ -121,7 +121,7 @@ $count=mysql_num_rows($c_res1);
                 <div class="quotationI"><center>REW Delivery Challan</center></div>
                 <br />
                 <table class="q_info3" height="300px">
-                <tr><td class="l_form">Date:</td><td><input name="q_date" class="q_in" type="text" value="<?php  echo date("d-m-Y"); ?>"/></td></tr>
+                <tr><td class="l_form">Date:</td><td><input name="q_date" class="q_in" type="date" value="<?php  echo date("Y-m-d"); ?>"/></td></tr>
                 
                 <tr><td class="l_form">Client Name:</td>
                 <td>
@@ -150,11 +150,11 @@ $count=mysql_num_rows($c_res1);
                  
                  <tr><td class="l_form">Date:</td>
                 <td>
-                <input type="text" class="q_in" name="date1" value="<?php echo date('d-m-Y', strtotime($c_row[13])); ?>" >
+                <input type="date" class="q_in" name="date1" value="<?php echo date('Y-m-d', strtotime($c_row[13])); ?>" >
 				</td></tr>
                 <tr><td class="l_form">Date:</td>
                 <td>
-                <input type="text" class="q_in" name="date2"value="<?php echo date('d-m-Y', strtotime($c_row[14])); ?>" >
+                <input type="date" class="q_in" name="date2"value="<?php echo date('Y-m-d', strtotime($c_row[14])); ?>" >
 				</td></tr>
                 </table>
                 <br />

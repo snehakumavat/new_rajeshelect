@@ -139,14 +139,14 @@ include("include/database.php");
               <td class="l_form" >Your D.C.No :</td>
                <td > <input type="text"  class="q_in" value="" name="dc"></td>
               <td class="l_form"  >Your D.C.Date :</td>
-               <td > <input type="date"  class="q_in" value="<?php echo date('d-m-Y');?>" name="dcd"></td>
+               <td > <input type="date"  class="q_in" value="<?php echo date('Y-m-d');?>" name="dcd"></td>
               
             </tr>
             <tr>
               <td class="l_form" >Our D.C.No :</td>
                <td> <input type="text"  class="q_in" value="" name="odc"></td>
               <td class="l_form" >Our D.C.Date :</td>
-                <td><input type="date"  class="q_in" value="2-07-2013" name="odcd"></td>
+                <td><input type="date"  class="q_in" value="<?php echo date('Y-m-d');?>" name="odcd"></td>
               
             </tr>
             <tr>
@@ -158,7 +158,7 @@ include("include/database.php");
                 </tr>
             </table>
             <table>
-                  <tr>
+                  <tr><br>
                     <td class="des1">AC SQ.CAGE INDUCTION MOTOR TESTING CERTIFICATE</td>
                   </tr>
                 </table>
@@ -238,7 +238,7 @@ include("include/database.php");
                 </table>
                 
             <table>
-                  <tr>
+                  <tr><br>
                     <td class="des1" >DC MOTOR TESTING CERTIFICATE</td>
                   </tr>
                 </table>

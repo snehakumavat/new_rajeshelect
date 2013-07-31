@@ -77,7 +77,7 @@ include("session.php");
                 <tr><td class="l_form">Email Id:</td><td><input class="q_in" type="text" name="c_email" value="<?php echo $c_row[10]; ?>"/></td></tr>
                 <tr><td class="l_form">Phone No:</td><td><input class="q_in" type="text" name="c_ph" value="<?php echo $c_row[8]; ?>"/></td></tr>
                 <tr><td class="l_form">Mobile No:</td><td><input class="q_in" type="text" name="c_mo" value="<?php echo $c_row[9]; ?>" /></td></tr>
-                <tr><td class="l_form">Date:</td><td><input class="q_in" type="text" name="c_date" value="<?php  echo date("d-m-Y"); ?>"/></td></tr>
+                <tr><td class="l_form">Date:</td><td><input class="q_in" type="date" name="c_date" value="<?php  echo $c_row[1]; ?>"/></td></tr>
                 </table>
         <div class="addclients_b">
          <input name="c_up" class="formbutton" value=" Update " type="submit" />

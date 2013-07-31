@@ -135,7 +135,7 @@ $ser_res=mysql_query($service);
  Welding Generators, Welding Machine, Power Generators & Alternators, All types of Industrial coils etc.</div>
 <hr noshade size="1px"> 
 <div class="left1"><B>Our Ref No:-</B><?php echo $row[2]; ?>
- <div class="right1"><b> Date:-<?php echo $row[3]; ?></b></div> </div>
+ <div class="right1"><b> Date:-<?php echo date('d-m-Y',strtotime($row[3])); ?></b></div> </div>
 <br><br>
 
 <div class="quotation"><center>REPAIRING QUOTATION</center></div>

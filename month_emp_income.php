@@ -1,11 +1,13 @@
 <?php
 	error_reporting(0);
-include("session.php");
+	include("session.php");
 	include("include/database.php");
-
-	function date_dropdown($year_limit = 0){
+	
+	
+	
+function date_dropdown($year_limit = 0)
+{
         $html_output = '<div id="date_select" >'."\n";
-       
            /*months*/
         $html_output .= '<select name="date_month" id="month_select" >'."\n";
         $months = array("", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
@@ -74,9 +76,9 @@ function validateMyForm ( ) {
 	include("header.php");
 	?>
 <br />
-		<div class="quotation"><center>Employee Salary Sleep Details</center></div>
+		<div class="quotation"><center>Employee Salary Slip Details</center></div>
         <div>
-        <form action="" method="post">
+        <form  method="post" name="emp_sal" action="month_income_pdf.php">
 <table class="emp_sal">
 		<tr><td>select Employee Code:-</td>
         <td>
@@ -84,30 +86,40 @@ function validateMyForm ( ) {
         <option value="0">select</option>
 		<?php
         $query="select * from emp";
-		$res=mysql_result($query);
+		$res1=mysql_query($query);
+		
+		while($row1=mysql_fetch_array($res1))
+		{
+		?>
+			<option value="<?php echo $row1[1]; ?>" ><?php echo $row1[1]; ?></option>
+		<?php
+        }
 		
 		?>
-        <option value="">
-        </select>
+        
+         </select>
         </td>
         </tr>
         <tr>
         <td>Select Month:-</td>
         <td>
 		<?php
-        echo date_dropdown();
+        	echo date_dropdown();
 		?>
         </td>
      </tr>
         <tr>
-        <td>Select Year:-</td>
+        	<td>Select Year:-</td>
         <td>		
 		<?php
-        yearDropdown();  
-?></td>
+       	 yearDropdown();  
+		
+		?></td>
+        
 </tr>
 </table><div class="addemp_button">
 <input type="submit"name="e_add" class="formbutton" value="submit"/>
+
 </div>
 </form>
     </div>

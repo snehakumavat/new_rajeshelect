@@ -159,11 +159,11 @@ th
 <div class="description">
 <table class="report">    		<!-- New des table added here -->
 <tr>
-<th>Item</th>
+<th width="50px">Item</th>
 <th>DESCRIPTION</th>
-<th>QTY</th>
-<th>RATE/EACH</th>
-<th>AMOUNT</th>
+<th width="100px">QTY</th>
+<th width="100px">RATE/EACH</th>
+<th width="100px">AMOUNT</th>
 </tr>
 <?php
 $item=0;
@@ -175,7 +175,7 @@ while($row_d=mysql_fetch_array($res_detail))
 	echo "<td >";
 	echo $item;
 	echo "</td>";
-	echo "<td width='300px'>";
+	echo "<td >";
 	echo $row_d[2];
 	echo "</td>";
 	echo "<td>";
