@@ -1,7 +1,7 @@
 <?php
 include("include/database.php");
 
-error_reporting(0);
+//error_reporting(0);
 include("session.php");
 $per_page = 20; 
 $sql = "select * from gatepass";
@@ -13,13 +13,8 @@ $pages = ceil($count/$per_page);
 <head>
 <title>Rajesh Electic Works</title>
 <link rel="stylesheet" href="styles2.css" type="text/css" />
-<link rel="stylesheet" href="styles2.css" type="text/css" />
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/slider.js"></script>
-<script type="text/javascript" src="js/superfish.js"></script>
-<script type="text/javascript" src="js/custom.js"></script>
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/slider.js"></script>
 <script type="text/javascript" src="js/superfish.js"></script>

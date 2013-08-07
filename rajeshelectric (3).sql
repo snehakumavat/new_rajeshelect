@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 26, 2013 at 12:55 PM
+-- Generation Time: Aug 07, 2013 at 10:32 AM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.3.13
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `assign_job` (
   `assg_val` int(10) NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY (`assg_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `assign_job`
@@ -44,7 +44,9 @@ INSERT INTO `assign_job` (`assg_id`, `job_id`, `stock_id`, `emp_id`, `assg_val`,
 (1, 2, 6, 1, 2, '2013-07-08'),
 (2, 2, 8, 2, 6, '2013-07-08'),
 (3, 2, 7, 1, 2, '2013-07-08'),
-(4, 2, 6, 1, 6, '2013-07-11');
+(4, 2, 6, 1, 6, '2013-07-11'),
+(5, 2, 6, 2, 56, '2013-05-14'),
+(6, 2, 7, 2, 56, '2013-05-17');
 
 -- --------------------------------------------------------
 
@@ -103,15 +105,23 @@ CREATE TABLE IF NOT EXISTS `certificate` (
   `analysis_fail` text NOT NULL,
   `wrk_don` text NOT NULL,
   `remark` text NOT NULL,
+  `frame_size` varchar(10) NOT NULL,
+  `mount_type` varchar(20) NOT NULL,
+  `appl_motor` text NOT NULL,
+  `m_res` varchar(15) NOT NULL,
+  `m_no_cur` varchar(20) NOT NULL,
+  `m_inter1` varchar(20) NOT NULL,
+  `m_inter2` varchar(25) NOT NULL,
   PRIMARY KEY (`crt_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `certificate`
 --
 
-INSERT INTO `certificate` (`crt_id`, `name`, `addr`, `ydc_no`, `ydc_date`, `no`, `odc_no`, `odc_date`, `vendor_cod`, `cnt_per`, `dept`, `make1`, `hp1`, `kw1`, `volts1`, `loadamp1`, `capacitor_val`, `driv_cover1`, `non_driv1`, `cooling_fan1`, `sr_no1`, `phase1`, `rpm`, `insulatin1`, `resistnce`, `megar`, `bearing_n1`, `bearing_n2`, `termplat1`, `make2`, `hp2`, `kw2`, `volts2`, `load_amp2`, `brush`, `cooling_fan2`, `driv_end2`, `non_driv2`, `sr_no2`, `comut2`, `frame`, `clas_insult2`, `motor2`, `armature`, `bear_no1`, `bear_no2`, `terminal2`, `analysis_fail`, `wrk_don`, `remark`) VALUES
-(1, 'Hindustan limiteds', 'M.I.D.C  junnar,sinnar,Nasiks', 367, '2012-06-06', 2040, 7307, '2013-07-09', '1030', 'Mr. Pamdas Songate', 'ELe maints', 'cromptons', 4.00, 3.50, 'kls ys', 'single onlys', '- dsfdse', 'stotor onlye', 'stator onlys', 'str onlys', 'IKG04987', 4, 28704, '"Fi"', 'eachs', '500 ms', 'sator onlys', 'stator onlys', 'ok', 'romton', '5.00', '8.00', '56hk', '89h', 'LOP90451', 'LOP90451', 'uio', 'io', 'LOP90451', 'iuo', 'iuo', 'iuo', '878hjkh', 'hjk768', 'hjk768', 'jhk', 'oks', 'Due to water inside the windows', 'trtory', 'goods');
+INSERT INTO `certificate` (`crt_id`, `name`, `addr`, `ydc_no`, `ydc_date`, `no`, `odc_no`, `odc_date`, `vendor_cod`, `cnt_per`, `dept`, `make1`, `hp1`, `kw1`, `volts1`, `loadamp1`, `capacitor_val`, `driv_cover1`, `non_driv1`, `cooling_fan1`, `sr_no1`, `phase1`, `rpm`, `insulatin1`, `resistnce`, `megar`, `bearing_n1`, `bearing_n2`, `termplat1`, `make2`, `hp2`, `kw2`, `volts2`, `load_amp2`, `brush`, `cooling_fan2`, `driv_end2`, `non_driv2`, `sr_no2`, `comut2`, `frame`, `clas_insult2`, `motor2`, `armature`, `bear_no1`, `bear_no2`, `terminal2`, `analysis_fail`, `wrk_don`, `remark`, `frame_size`, `mount_type`, `appl_motor`, `m_res`, `m_no_cur`, `m_inter1`, `m_inter2`) VALUES
+(1, 'sneha kumavat', 'dfgdfg ', 435, '2013-07-29', 123, 568, '2013-07-02', '34578', 'hitesh', 'mechanical', '12', 4.00, 1.00, '7', '7', '7', '7', '7', '7', '1', 5, 1, '', '7', '7', '7', '7', '7', '7', '8.00', '4.00', '5', '1', '7r', '7', '2', '25', '7', '8', 'sdfsdfdsf sdf', '5', '1', '5', '2r', '5r', '5r', '5', '5', '55', 'sdfsdfdsf ', '2', 'adsfdsf sdfds f', '5r', '5r', '5r', '5r'),
+(2, 'sneha kumavat', 'dfgdfg ', 435, '2013-07-29', 123, 568, '2013-07-02', '34578', 'hitesh', 'mechanical', '12', 4.00, 1.00, '7', '7', '7', '7', '7', '7', '1', 5, 1, '', '7', '7', '7', '7', '7', '7', '8.00', '4.00', '5', '1', '7r', '7', '2', '25', '7', '8', 'sdfsdfdsf sdf', '5', '1', '5', '2r', '5r', '5r', '5', '5', '55', 'sdfsdfdsf ', '2', 'adsfdsf sdfds f', '5r', '5r', '5r', '5r');
 
 -- --------------------------------------------------------
 
@@ -121,7 +131,7 @@ INSERT INTO `certificate` (`crt_id`, `name`, `addr`, `ydc_no`, `ydc_date`, `no`,
 
 CREATE TABLE IF NOT EXISTS `clients` (
   `c_id` int(11) NOT NULL AUTO_INCREMENT,
-  `c_date` varchar(25) NOT NULL,
+  `c_date` date NOT NULL,
   `client_name` varchar(40) NOT NULL,
   `comp_name` varchar(70) NOT NULL,
   `c_add1` text NOT NULL,
@@ -139,8 +149,8 @@ CREATE TABLE IF NOT EXISTS `clients` (
 --
 
 INSERT INTO `clients` (`c_id`, `c_date`, `client_name`, `comp_name`, `c_add1`, `c_add2`, `c_city`, `c_pin`, `c_ph`, `c_mo`, `c_email`) VALUES
-(3, '26-06-2013', 'pete walbort', 'DSW', 'us', '', 'uk', 121212, 223232, 34343434, 'sneha@gmail.com'),
-(5, '21-06-2013', 'reshma', 'wavetechline.com', 'nashik uttam nagar', 'cbs road', 'nashik', 422122, 123456, 5566787654, 'wavetechline@gmail.com');
+(3, '2013-02-05', 'pete walbort', 'DSW', 'us', 'v ', 'uk', 121212, 223232, 34343434, 'sneha@gmail.com'),
+(5, '2013-07-02', 'reshma', 'wavetechline.com', 'nashik uttam nagar', 'vcbs road ', 'nashik', 422122, 123456, 5566787654, 'wavetechline@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -150,20 +160,66 @@ INSERT INTO `clients` (`c_id`, `c_date`, `client_name`, `comp_name`, `c_add1`, `
 
 CREATE TABLE IF NOT EXISTS `emp` (
   `e_id` int(11) NOT NULL AUTO_INCREMENT,
+  `e_code` varchar(20) NOT NULL,
   `e_name` varchar(100) NOT NULL,
   `e_add` varchar(100) NOT NULL,
   `e_contact` bigint(11) NOT NULL,
-  `e_desig` varchar(11) NOT NULL,
+  `e_doj` date NOT NULL,
+  `e_desig` varchar(50) NOT NULL,
+  `e_accno` varchar(50) NOT NULL,
+  `e_bankname` varchar(50) NOT NULL,
+  `e_panno` varchar(50) NOT NULL,
   PRIMARY KEY (`e_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `emp`
 --
 
-INSERT INTO `emp` (`e_id`, `e_name`, `e_add`, `e_contact`, `e_desig`) VALUES
-(1, 'sajit', 'Nashik Road 1', 9962847564, 'welder'),
-(2, 'Mohan', 'nashik jaibhavai road jachak mala trupti society', 9878675432, 'welder');
+INSERT INTO `emp` (`e_id`, `e_code`, `e_name`, `e_add`, `e_contact`, `e_doj`, `e_desig`, `e_accno`, `e_bankname`, `e_panno`) VALUES
+(2, 'WT0002', 'Mohan', 'nashik jaibhavai road jachak mala trupti society', 9878675432, '2013-07-09', 'S/W Developer', '123456789', 'SBI', 'erdter4564565'),
+(3, 'WT0001', 'Kishor', 'Nashik', 9999999999, '2011-06-06', 'Director', 'ic1232423423', 'ICICI', '1212dfdf'),
+(4, '234234', 'dsfsdf', 'sdfs sdfsdf', 456456456, '2008-07-31', ' sdfdsf', '46456n', 'fghfgh fgh', '56456ertdrt'),
+(5, 'w203', 'sneha', 'pune narayngoan', 5689895643, '2013-05-08', 'developer', '1245711000012', 'bank of maharashtra', '1212W4578454'),
+(6, '100', 'kishor', 'nashik', 8888884083, '2010-07-31', 'Director', '123465789', 'HDFC', 'ABCD1345D');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `emp_sal`
+--
+
+CREATE TABLE IF NOT EXISTS `emp_sal` (
+  `es_id` int(11) NOT NULL AUTO_INCREMENT,
+  `es_code` varchar(50) NOT NULL,
+  `es_name` varchar(50) NOT NULL,
+  `es_add` varchar(255) NOT NULL,
+  `es_contact` varchar(12) NOT NULL,
+  `es_doj` date NOT NULL,
+  `es_desig` varchar(50) NOT NULL,
+  `es_accno` varchar(20) NOT NULL,
+  `es_bankname` varchar(50) NOT NULL,
+  `es_panno` varchar(20) NOT NULL,
+  `es_no_of_days` int(20) NOT NULL,
+  `es_days_present` int(20) NOT NULL,
+  `es_days_paid` int(20) NOT NULL,
+  `year` int(10) NOT NULL,
+  `month` int(10) NOT NULL,
+  `earning` int(50) NOT NULL,
+  `deduction` int(50) NOT NULL,
+  `net_pay` int(50) NOT NULL,
+  PRIMARY KEY (`es_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+
+--
+-- Dumping data for table `emp_sal`
+--
+
+INSERT INTO `emp_sal` (`es_id`, `es_code`, `es_name`, `es_add`, `es_contact`, `es_doj`, `es_desig`, `es_accno`, `es_bankname`, `es_panno`, `es_no_of_days`, `es_days_present`, `es_days_paid`, `year`, `month`, `earning`, `deduction`, `net_pay`) VALUES
+(1, 'WT0001', 'Kishor', 'Nashik', '9999999999', '0000-00-00', '2011-06-06', 'ICICI', 'ic1232423423', 'cfggh102131', 30, 0, 0, 0, 0, 3500, 100, 3400),
+(2, 'WT0001', 'Kishor', 'Nashik', '9999999999', '0000-00-00', '2011-06-06', 'ICICI', 'ic1232423423', 'cfggh102131', 30, 28, 28, 2013, 0, 1050, 1050, 0),
+(9, 'WT0001', 'Kishor', 'Nashik', '9999999999', '2011-06-06', 'Director', 'ICICI', 'ic1232423423', '1212dfdf', 31, 23, 29, 2013, 7, 5678, 87, 5591),
+(11, '100', 'kishor', 'nashik', '8888884083', '2010-07-31', 'Director', 'HDFC', '123465789', 'ABCD1345D', 31, 23, 28, 2013, 7, 6500, 200, 6300);
 
 -- --------------------------------------------------------
 
@@ -181,7 +237,7 @@ CREATE TABLE IF NOT EXISTS `expense` (
   `e_rmark` text NOT NULL,
   `e_vendor` int(20) NOT NULL,
   PRIMARY KEY (`e_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `expense`
@@ -191,7 +247,8 @@ INSERT INTO `expense` (`e_id`, `e_date`, `e_name`, `e_mode`, `e_ch`, `e_amt`, `e
 (1, '2013-07-19', 'petrol', 'By Check', '', 1000, '', 0),
 (2, '2013-07-19', 'emp', 'By Check', '123456', 5000, '', 0),
 (3, '2013-07-19', 'personal', 'By Check', '12345646', 5000, '', 0),
-(4, '2013-07-19', 'petrol', 'By Cash', '7878', 787, '', 0);
+(4, '2013-07-19', 'petrol', 'By Cash', '7878', 787, '', 0),
+(5, '2013-07-30', 'pen', 'By Cash', '-', 678, 'test', 454545);
 
 -- --------------------------------------------------------
 
@@ -260,7 +317,7 @@ CREATE TABLE IF NOT EXISTS `income` (
   `p_amt` double NOT NULL,
   `p_rmark` text NOT NULL,
   PRIMARY KEY (`p_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `income`
@@ -270,7 +327,9 @@ INSERT INTO `income` (`p_id`, `p_date`, `p_name`, `p_mode`, `p_ch`, `p_amt`, `p_
 (1, '2013-07-19', 'etststdsds', 'By Cash', '', 6576767, '0'),
 (2, '2013-03-15', 'priya', 'By Cash', '', 7890, 'testing data'),
 (3, '2014-01-19', 'dida', 'By Cash', '-', 3456, 'get togethor'),
-(4, '2013-07-01', 'total expence data working realy', 'By Cash', '-', 6789, 'testdfgdf dfdfg dfgdfg');
+(4, '2013-07-01', 'total expence data working realy', 'By Cash', '-', 6789, 'testdfgdf dfdfg dfgdfg'),
+(5, '2014-05-01', 'testing', 'By Cash', 'ASE454546', 1590, 'goods'),
+(6, '2013-05-01', 'books', 'By Check', 'ASE454546', 1590, 'goods');
 
 -- --------------------------------------------------------
 
@@ -280,7 +339,7 @@ INSERT INTO `income` (`p_id`, `p_date`, `p_name`, `p_mode`, `p_ch`, `p_amt`, `p_
 
 CREATE TABLE IF NOT EXISTS `invoice` (
   `i_id` int(11) NOT NULL AUTO_INCREMENT,
-  `q_date` varchar(25) NOT NULL,
+  `q_date` date NOT NULL,
   `gatepass_no` varchar(20) NOT NULL,
   `c_id` int(11) NOT NULL,
   `c_comp` varchar(50) NOT NULL,
@@ -294,20 +353,22 @@ CREATE TABLE IF NOT EXISTS `invoice` (
   `tin_no` int(20) NOT NULL,
   `date1` date NOT NULL,
   `date2` date NOT NULL,
+  `given` int(2) NOT NULL,
   PRIMARY KEY (`i_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `invoice`
 --
 
-INSERT INTO `invoice` (`i_id`, `q_date`, `gatepass_no`, `c_id`, `c_comp`, `q_name`, `q_address`, `q_mo`, `po_no`, `rgp_no`, `dc_no`, `code_no`, `tin_no`, `date1`, `date2`) VALUES
-(1, '09-07-2013', '0', 5, '', 'reshma', 'nashik uttam nagar', 5566787654, 1023, 456, 678, '0', 3443, '2013-07-09', '2013-07-09'),
-(3, '09-07-2013', '0', 5, 'wavetechline.com', 'reshma', 'nashik uttam nagar', 5566787654, 45689, 5678, 4563, '23321', 23345, '2013-06-11', '2013-07-03'),
-(4, '2013-07-15', 'HI4567', 3, 'DSW', 'pete walbort', 'us', 34343434, 8960, 761254, 75462, '12456', 1254, '2013-07-15', '2013-07-15'),
-(5, '2013-07-16', 'HI4567', 5, '3', 'pete walbort', 'us', 34343434, 8989, 75641, 4541, '56564', 12586, '2013-06-15', '2013-07-15'),
-(6, '2013-07-16', 'HI4567', 3, 'DSW', 'pete walbort', 'us', 34343434, 45689, 761254, 367, '0', 12586, '2013-07-16', '2013-07-16'),
-(7, '2013-07-16', 'PI4567', 5, 'wavetechline.com', 'reshma', 'nashik uttam nagar', 5566787654, 8989, 5678, 4563, '-', 0, '2013-07-16', '2013-07-16');
+INSERT INTO `invoice` (`i_id`, `q_date`, `gatepass_no`, `c_id`, `c_comp`, `q_name`, `q_address`, `q_mo`, `po_no`, `rgp_no`, `dc_no`, `code_no`, `tin_no`, `date1`, `date2`, `given`) VALUES
+(1, '2013-07-29', '0', 1, '5', 'reshma', 'nashik uttam nagar', 5566787654, 1023, 456, 678, '0', 3443, '2013-07-09', '2013-07-09', 2),
+(3, '0000-00-00', '0', 5, 'wavetechline.com', 'reshma', 'nashik uttam nagar', 5566787654, 45689, 5678, 4563, '23321', 23345, '2013-06-11', '2013-07-03', 0),
+(4, '2013-07-29', 'HI4567', 4, '3', 'pete walbort', 'us', 34343434, 8960, 761254, 75462, '12456', 1254, '2013-07-15', '2013-07-15', 1),
+(5, '2013-07-16', 'HI4567', 5, '3', 'pete walbort', 'us', 34343434, 8989, 75641, 4541, '56564', 12586, '2013-06-15', '2013-07-15', 0),
+(6, '2013-07-29', 'HI4567', 6, '3', 'pete walbort', 'us', 34343434, 45689, 761254, 367, '0', 12586, '2013-07-16', '2013-07-16', 1),
+(7, '2013-07-29', 'PI4567', 7, '5', 'reshma', 'nashik uttam nagar', 5566787654, 8989, 5678, 4563, '-', 0, '2013-07-16', '2013-07-16', 2),
+(8, '2013-07-29', 'HI4567', 8, '3', 'pete walbort', 'us', 34343434, 435456, 4564564, 45612, '746465', 456456, '2013-07-29', '2013-07-29', 1);
 
 -- --------------------------------------------------------
 
@@ -399,6 +460,48 @@ INSERT INTO `login` (`u_id`, `u_name`, `u_pass`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `log_history`
+--
+
+CREATE TABLE IF NOT EXISTS `log_history` (
+  `l_id` int(20) NOT NULL AUTO_INCREMENT,
+  `c_name` varchar(15) NOT NULL,
+  `login_time` datetime NOT NULL,
+  `logout_time` datetime NOT NULL,
+  PRIMARY KEY (`l_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
+
+--
+-- Dumping data for table `log_history`
+--
+
+INSERT INTO `log_history` (`l_id`, `c_name`, `login_time`, `logout_time`) VALUES
+(1, 'rajesh', '2013-07-30 05:07:55', '2013-07-30 05:07:49'),
+(2, 'rajesh', '2013-07-30 05:07:38', '2013-07-30 05:07:49'),
+(3, 'rajesh', '2013-07-30 05:07:47', '2013-07-30 06:07:15'),
+(4, 'rajesh', '2013-07-30 11:07:40', '2013-07-30 11:07:16'),
+(5, 'rajesh', '2013-07-30 11:44:03', '2013-07-30 11:44:16'),
+(6, 'rajesh', '2013-07-30 11:44:28', '2013-07-30 11:52:46'),
+(7, 'rajesh', '2013-07-30 11:52:48', '2013-07-30 11:53:39'),
+(8, 'rajesh', '2013-07-30 11:53:40', '2013-07-30 11:53:51'),
+(9, 'ram', '2013-07-30 11:53:57', '0000-00-00 00:00:00'),
+(10, 'rajesh', '2013-07-30 15:23:50', '0000-00-00 00:00:00'),
+(11, 'rajesh', '2013-07-30 16:34:15', '0000-00-00 00:00:00'),
+(12, 'rajesh', '2013-07-31 11:04:59', '2013-07-31 11:05:18'),
+(13, 'rajesh', '2013-07-31 11:05:23', '2013-07-31 12:46:55'),
+(14, 'rajesh', '2013-07-31 12:47:01', '2013-07-31 12:49:27'),
+(15, 'ram', '2013-07-31 12:49:34', '2013-07-31 17:07:05'),
+(16, 'ram', '2013-07-31 17:07:21', '2013-07-31 17:07:40'),
+(17, 'rajesh', '2013-08-01 11:36:24', '2013-08-01 11:36:47'),
+(18, 'rajesh', '2013-08-01 12:16:01', '0000-00-00 00:00:00'),
+(19, 'rajesh', '2013-08-02 16:45:00', '2013-08-02 16:49:37'),
+(20, 'rajesh', '2013-08-03 12:16:07', '0000-00-00 00:00:00'),
+(21, 'rajesh', '2013-08-07 10:05:56', '0000-00-00 00:00:00'),
+(22, 'rajesh', '2013-08-07 10:08:27', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `material_desc`
 --
 
@@ -457,7 +560,7 @@ CREATE TABLE IF NOT EXISTS `partial_payment` (
   `c_name` varchar(25) NOT NULL,
   `p_mode` varchar(25) NOT NULL,
   `c_no` varchar(25) NOT NULL,
-  `p_date` varchar(25) NOT NULL,
+  `p_date` date NOT NULL,
   `i_amt` double NOT NULL,
   `p_amt` double NOT NULL,
   `bank_nm` varchar(40) NOT NULL,
@@ -471,10 +574,10 @@ CREATE TABLE IF NOT EXISTS `partial_payment` (
 --
 
 INSERT INTO `partial_payment` (`p_id`, `i_id`, `c_id`, `c_name`, `p_mode`, `c_no`, `p_date`, `i_amt`, `p_amt`, `bank_nm`, `remark`, `refno`) VALUES
-(1, 5, 3, 'pete walbort', 'By Check', 'BNH896742', '15-07-2013', 88, 0, '', '', ''),
-(2, 5, 3, 'pete walbort', 'By Check', 'BNH896742', '15-07-2013', 88, 50, 'bank of maharashtra', 'OK bill no 789', ''),
-(3, 5, 3, 'pete walbort', 'By Check', 'BNH896742', '15-07-2013', 88, 50, 'bank of maharashtra', 'OK bill no 789', ''),
-(4, 4, 3, 'pete walbort', 'By Cash', 'gyt56453534', '15-04-2013', 112, 78, 'bank of india', 'pending', '');
+(1, 5, 3, 'pete walbort', 'By Check', 'BNH896742', '0000-00-00', 88, 0, '', '', ''),
+(2, 5, 3, 'pete walbort', 'By Check', 'BNH896742', '0000-00-00', 88, 50, 'bank of maharashtra', 'OK bill no 789', ''),
+(3, 5, 3, 'pete walbort', 'By Check', 'BNH896742', '0000-00-00', 88, 50, 'bank of maharashtra', 'OK bill no 789', ''),
+(4, 4, 3, 'pete walbort', 'By Cash', 'gyt56453534', '0000-00-00', 112, 78, 'bank of india', 'pending', '');
 
 -- --------------------------------------------------------
 
@@ -497,7 +600,7 @@ CREATE TABLE IF NOT EXISTS `po` (
   `vat` float(10,2) NOT NULL,
   `total_purches` double(15,2) NOT NULL,
   PRIMARY KEY (`po_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `po`
@@ -510,7 +613,8 @@ INSERT INTO `po` (`po_id`, `c_name`, `address`, `ph_no`, `vendor`, `work_no`, `w
 (4, 'wavetechline.com', ' nashik uttam nagar', 123456, 568247, 54879, '2913-06-12', '2010-07-12', '1212-12-12', 'testing', 56.00, 56.00, 162.00),
 (5, 'DSW', ' us', 223232, 0, 0, '0000-00-00', '0000-00-00', '0000-00-00', '', 6.00, 6.00, 322.00),
 (6, 'DSW', ' us', 223232, 0, 0, '0000-00-00', '0000-00-00', '0000-00-00', '', 6.00, 6.00, 322.00),
-(7, 'DSW', ' us', 223232, 0, 0, '0000-00-00', '0000-00-00', '0000-00-00', '', 6.00, 6.00, 322.00);
+(7, 'DSW', ' us', 223232, 0, 0, '0000-00-00', '0000-00-00', '0000-00-00', '', 6.00, 6.00, 322.00),
+(8, 'wavetechline.com', ' nashik uttam nagar', 123456, 67543, 45345, '2014-04-17', '2013-03-05', '2013-02-05', 'pune', 3.00, 4.00, 295.00);
 
 -- --------------------------------------------------------
 
@@ -522,7 +626,7 @@ CREATE TABLE IF NOT EXISTS `quotation` (
   `q_id` int(11) NOT NULL AUTO_INCREMENT,
   `c_id` int(11) NOT NULL,
   `q_ref_no` varchar(25) NOT NULL,
-  `q_date` varchar(100) NOT NULL,
+  `q_date` date NOT NULL,
   `q_name` varchar(100) NOT NULL,
   `q_address` varchar(100) NOT NULL,
   `q_pass` varchar(100) NOT NULL,
@@ -534,23 +638,25 @@ CREATE TABLE IF NOT EXISTS `quotation` (
   `q_trans` decimal(10,2) NOT NULL,
   `q_tax` int(1) NOT NULL DEFAULT '0',
   `a_total` decimal(30,0) NOT NULL,
+  `a_failure` text NOT NULL,
   PRIMARY KEY (`q_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
 
 --
 -- Dumping data for table `quotation`
 --
 
-INSERT INTO `quotation` (`q_id`, `c_id`, `q_ref_no`, `q_date`, `q_name`, `q_address`, `q_pass`, `q_mo`, `q_mail`, `q_vendor_no`, `q_sub`, `q_fax`, `q_trans`, `q_tax`, `a_total`) VALUES
-(5, 5, 'AQR1234/WER', '01-07-2013', 'reshma', 'nashik uttam nagar', 'A123', 5566787654, 'wavetechline@gmail.com', '0', 'Quatation For AC MOTOR REwinding & repairing', '02132-2556677', '0.00', 0, '0'),
-(8, 5, 'DTE56-UI78ASDRET', '02-07-2013', 'reshma', 'nashik uttam nagar', 'A123', 5566787654, 'purank@gmail.xom', '345632', 'port at won the leak', '03452-256789', '0.00', 0, '0'),
-(21, 5, 'DTE56-UI78ASDRET', '02-07-2013', 'reshma', 'nashik uttam nagar', '0', 5566787654, '', '20005651', 'Quatation For AC MOTOR REwinding & repairing', '025551 230924', '0.00', 0, '0'),
-(22, 5, 'DTE56-UI78ASDRET', '02-07-2013', 'reshma', 'nashik uttam nagar', 'A123', 5566787654, 'nashik uttam nagar', '20005651', 'Quatation For AC MOTOR REwinding & repairing', '025551 230924', '0.00', 0, '0'),
-(23, 5, 'DTE56-UI78ASDRET', '02-07-2013', 'reshma', 'nashik uttam nagar', '0', 5566787654, 'nashik uttam nagar', '20005651', 'Quatation For AC MOTOR REwinding & repairing', '025551 230924', '0.00', 0, '0'),
-(24, 5, 'DTE56-UI78ASDRET', '02-07-2013', 'reshma', 'nashik uttam nagar', '0', 5566787654, 'wavetechline@gmail.com', '20005651', 'Quatation For AC MOTOR REwinding & repairing', '025551 230924', '89.00', 0, '0'),
-(25, 5, 'ABC56-UI78ASDRET', '02-01-2014', 'reshma', 'nashik uttam nagar', 'PI4567', 5566787654, 'wavetechline@gmail.com', '20898989', 'Quatation For AC MOTOR REwinding & repairing', '025551 230924', '19.00', 1, '0'),
-(26, 5, 'OPE.SNR/45-14/MLL-67', '04-07-2013', 'reshma', 'nashik uttam nagar', 'A123', 5566787654, 'wavetechline@gmail.com', '457831', 'port at won the leak', '03452-256789', '56.00', 2, '0'),
-(27, 5, 'OPE.SNR/45-14/MLL-67', '16-07-2013', 'reshma', 'nashik uttam nagar', '', 5566787654, 'wavetechline@gmail.com', '454545', 'Quatation For AC MOTOR REwinding & repairing', '025551 230924', '56.00', 1, '0');
+INSERT INTO `quotation` (`q_id`, `c_id`, `q_ref_no`, `q_date`, `q_name`, `q_address`, `q_pass`, `q_mo`, `q_mail`, `q_vendor_no`, `q_sub`, `q_fax`, `q_trans`, `q_tax`, `a_total`, `a_failure`) VALUES
+(5, 5, 'AQR1234/WER', '0000-00-00', 'reshma', 'nashik uttam nagar', 'A123', 5566787654, 'wavetechline@gmail.com', '0', 'Quatation For AC MOTOR REwinding & repairing', '02132-2556677', '0.00', 0, '0', ''),
+(8, 5, 'DTE56-UI78ASDRET', '0000-00-00', 'reshma', 'nashik uttam nagar', 'A123', 5566787654, 'purank@gmail.xom', '345632', 'port at won the leak', '03452-256789', '0.00', 0, '0', ''),
+(21, 5, 'DTE56-UI78ASDRET', '0000-00-00', 'reshma', 'nashik uttam nagar', '0', 5566787654, '', '20005651', 'Quatation For AC MOTOR REwinding & repairing', '025551 230924', '0.00', 0, '0', ''),
+(22, 5, 'DTE56-UI78ASDRET', '0000-00-00', 'reshma', 'nashik uttam nagar', 'A123', 5566787654, 'nashik uttam nagar', '20005651', 'Quatation For AC MOTOR REwinding & repairing', '025551 230924', '0.00', 0, '0', ''),
+(23, 5, 'DTE56-UI78ASDRET', '0000-00-00', 'reshma', 'nashik uttam nagar', '0', 5566787654, 'nashik uttam nagar', '20005651', 'Quatation For AC MOTOR REwinding & repairing', '025551 230924', '0.00', 0, '0', ''),
+(24, 5, 'DTE56-UI78ASDRET', '0000-00-00', 'reshma', 'nashik uttam nagar', '0', 5566787654, 'wavetechline@gmail.com', '20005651', 'Quatation For AC MOTOR REwinding & repairing', '025551 230924', '89.00', 0, '0', ''),
+(25, 5, 'ABC56-UI78ASDRET', '0000-00-00', 'reshma', 'nashik uttam nagar', 'PI4567', 5566787654, 'wavetechline@gmail.com', '20898989', 'Quatation For AC MOTOR REwinding & repairing', '025551 230924', '19.00', 1, '0', ''),
+(26, 5, 'OPE.SNR/45-14/MLL-67', '0000-00-00', 'reshma', 'nashik uttam nagar', 'A123', 5566787654, 'wavetechline@gmail.com', '457831', 'port at won the leak', '03452-256789', '56.00', 2, '0', ''),
+(27, 5, 'OPE.SNR/45-14/MLL-67', '2013-03-04', 'reshma', 'nashik uttam nagar', '', 5566787654, 'wavetechline@gmail.com', '454545', 'Quatation For AC MOTOR REwinding & repairing', '025551 230924', '56.00', 1, '0', 'ertt ertert ert'),
+(28, 3, 'REW.SNR/13-14/MLL-', '2013-07-10', 'pete walbort', 'us', '', 34343434, 'sneha@gmail.com', '78786', 'rtiu', '67676', '7876.00', 1, '0', 'testing data report');
 
 -- --------------------------------------------------------
 
@@ -561,7 +667,7 @@ INSERT INTO `quotation` (`q_id`, `c_id`, `q_ref_no`, `q_date`, `q_name`, `q_addr
 CREATE TABLE IF NOT EXISTS `reciept` (
   `r_id` int(11) NOT NULL AUTO_INCREMENT,
   `i_id` int(10) NOT NULL,
-  `r_date` varchar(25) NOT NULL,
+  `r_date` date NOT NULL,
   `c_id` int(11) NOT NULL,
   `r_name` varchar(25) NOT NULL,
   `r_address` varchar(100) NOT NULL,
@@ -571,7 +677,7 @@ CREATE TABLE IF NOT EXISTS `reciept` (
   `date1` date NOT NULL,
   `date2` date NOT NULL,
   PRIMARY KEY (`r_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 --
 -- Dumping data for table `reciept`
@@ -583,7 +689,40 @@ INSERT INTO `reciept` (`r_id`, `i_id`, `r_date`, `c_id`, `r_name`, `r_address`, 
 (3, 4, '2013-07-17', 0, 'pete walbort', 'us', 8960, 761254, '56564', '2013-07-13', '2013-07-15'),
 (4, 5, '2013-07-17', 5, 'pete walbort', 'us', 8989, 75641, '56564', '2013-06-15', '2013-07-15'),
 (5, 7, '2013-07-17', 5, 'reshma', 'nashik uttam nagar', 8989, 5678, '-', '2013-07-16', '2013-07-16'),
-(6, 6, '2013-07-17', 3, 'pete walbort', 'us', 45689, 761254, '454545', '2013-07-16', '2013-07-16');
+(6, 6, '2013-07-17', 3, 'pete walbort', 'us', 45689, 761254, '454545', '2013-07-16', '2013-07-16'),
+(7, 8, '1970-01-01', 8, 'pete walbort', 'us', 435456, 4564564, '', '1970-01-01', '2013-07-29'),
+(8, 8, '1970-01-01', 8, 'pete walbort', 'us', 435456, 4564564, '', '2013-12-31', '2013-07-29'),
+(9, 8, '2013-07-17', 8, 'pete walbort', 'us', 435456, 4564564, '457831', '2013-07-11', '2013-07-29'),
+(10, 3, '1970-01-01', 5, 'reshma', 'nashik uttam nagar', 45689, 5678, '23321', '1970-01-01', '2013-07-03'),
+(11, 3, '2013-07-30', 5, 'reshma', 'nashik uttam nagar', 45689, 5678, '23321', '2013-06-11', '2013-07-03'),
+(12, 1, '2013-07-30', 1, 'reshma', 'nashik uttam nagar', 1023, 456, '0', '2013-07-09', '2013-07-09'),
+(13, 3, '2013-07-30', 5, 'reshma', 'nashik uttam nagar', 45689, 5678, '23321', '2013-06-11', '2013-07-03');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `service_tax`
+--
+
+CREATE TABLE IF NOT EXISTS `service_tax` (
+  `s_id` int(20) NOT NULL AUTO_INCREMENT,
+  `s_id1` varchar(20) NOT NULL,
+  `details` varchar(255) NOT NULL,
+  PRIMARY KEY (`s_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `service_tax`
+--
+
+INSERT INTO `service_tax` (`s_id`, `s_id1`, `details`) VALUES
+(1, '1', '70% COMPOSITION SCHEME OF SERVICE TAX UNDER ST NOTIFICATION NO. 24-2012 WEF.06 JUNE 2012'),
+(2, '2', 'SERVICE TAX AGAINST REVERSE CHARGE MECHANISM UNDER ST NOTIFICATION NO. 30-2012 WEF.20 JUNE 2012'),
+(3, 'A', 'VAT/TIN NUMBER:-27900789615 V,W.E.F 27.08.2010'),
+(4, 'B', 'CST/TIN NUMBER:-27900789615 C,W.E.F 27.08.2010'),
+(5, 'C', 'SERVICE TAX NUMBER:-AMEPM1485HSD001'),
+(6, 'D', 'LBT NUMBER:-NSK101496'),
+(7, 'E', 'PAN NUMBER:-AMEPM1485H');
 
 -- --------------------------------------------------------
 
@@ -600,7 +739,7 @@ CREATE TABLE IF NOT EXISTS `stock` (
   `suplier_name` varchar(30) NOT NULL,
   `st_date` datetime NOT NULL,
   PRIMARY KEY (`st_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `stock`
@@ -609,7 +748,8 @@ CREATE TABLE IF NOT EXISTS `stock` (
 INSERT INTO `stock` (`st_id`, `avail_id`, `st_name`, `st_category`, `quantity`, `suplier_name`, `st_date`) VALUES
 (6, '3', 'copper red wire ', 'electrics', 21, 'sunil', '2013-07-05 04:37:17'),
 (7, 'PQR#$', 'silicon wire', 'electric', 21, 'gadha', '2013-07-08 03:16:40'),
-(8, 'WE34', 'oil', 'liquids', 5667, 'pawan', '2013-07-26 10:08:19');
+(8, 'WE34', 'oil', 'liquids', 5667, 'pawan', '2013-07-26 10:08:19'),
+(9, '', '', '', 0, '', '2013-07-27 10:16:40');
 
 -- --------------------------------------------------------
 
@@ -625,27 +765,28 @@ CREATE TABLE IF NOT EXISTS `sub_invoice` (
   `rate` decimal(25,2) NOT NULL,
   `total` double NOT NULL,
   PRIMARY KEY (`s_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=37 ;
 
 --
 -- Dumping data for table `sub_invoice`
 --
 
 INSERT INTO `sub_invoice` (`s_id`, `i_id`, `des`, `quantity`, `rate`, `total`) VALUES
-(1, 1, 'durbin m/c', '896.00', '12.00', 10752),
-(2, 1, 'mototr rewinding charger', '765.00', '67.00', 51255),
 (6, 3, 'telescope rotator not work', '34.00', '67.00', 2278),
 (7, 3, 'mototr rewinding charger', '2.00', '78.00', 156),
 (8, 3, 'rotor', '5.00', '67.00', 335),
-(9, 4, 'mototr rewinding charger', '4.00', '5.00', 20),
-(10, 4, 'mototr rewinding charger', '6.00', '7.00', 42),
-(11, 4, 'mototr rewinding charger', '4.00', '5.00', 20),
-(12, 4, 'turbo electric wire', '5.00', '6.00', 30),
 (22, 5, 'durbin m/c', '5.00', '6.00', 30),
 (23, 5, 'material maching', '2.00', '1.00', 2),
 (24, 5, 'mototr rewinding charger', '7.00', '8.00', 56),
-(25, 6, '', '0.00', '0.00', 0),
-(26, 7, 'rotry', '6.00', '6.00', 36);
+(28, 8, '', '0.00', '0.00', 0),
+(29, 7, 'rotry', '6.00', '6.00', 36),
+(30, 6, '', '0.00', '0.00', 0),
+(31, 4, 'mototr rewinding charger', '4.00', '5.00', 20),
+(32, 4, 'mototr rewinding charger', '6.00', '7.00', 42),
+(33, 4, 'mototr rewinding charger', '4.00', '5.00', 20),
+(34, 4, 'turbo electric wire', '5.00', '6.00', 30),
+(35, 1, 'durbin m/c', '896.00', '12.00', 10752),
+(36, 1, 'mototr rewinding charger', '765.00', '67.00', 51255);
 
 -- --------------------------------------------------------
 
@@ -663,7 +804,7 @@ CREATE TABLE IF NOT EXISTS `sub_quotation` (
   `Amount` decimal(11,2) NOT NULL,
   `total` float NOT NULL,
   PRIMARY KEY (`s_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=87 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=101 ;
 
 --
 -- Dumping data for table `sub_quotation`
@@ -675,8 +816,11 @@ INSERT INTO `sub_quotation` (`s_id`, `q_id`, `less`, `des`, `quantity`, `rate`, 
 (70, 25, 0, 'jet king', '45.00', '1.00', '45.00', 0),
 (81, 26, 0, 'material maching', '2.00', '23.00', '46.00', 0),
 (82, 26, 0, 'rotry', '1.00', '45.00', '45.00', 0),
-(85, 27, 0, 'mototr rewinding charger', '6.00', '5.00', '30.00', 0),
-(86, 27, 0, 'material maching', '6.00', '7.00', '42.00', 0);
+(96, 28, 0, 'rty try', '6.00', '6.00', '36.00', 0),
+(97, 27, 0, 'mototr rewinding charger', '6.00', '5.00', '30.00', 0),
+(98, 27, 0, 'material maching', '6.00', '7.00', '42.00', 0),
+(99, 27, 0, 'ert', '5.00', '5.00', '25.00', 0),
+(100, 27, 0, 'ert', '5.00', '5.00', '25.00', 0);
 
 -- --------------------------------------------------------
 
@@ -692,7 +836,7 @@ CREATE TABLE IF NOT EXISTS `sub_reciept` (
   `rate` decimal(25,2) NOT NULL,
   `total` double NOT NULL,
   PRIMARY KEY (`rd_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
 
 --
 -- Dumping data for table `sub_reciept`
@@ -710,7 +854,48 @@ INSERT INTO `sub_reciept` (`rd_id`, `r_id`, `des`, `quantity`, `rate`, `total`) 
 (9, 4, 'material maching', '2.00', '1.00', 2),
 (10, 4, 'mototr rewinding charger', '7.00', '8.00', 56),
 (11, 5, 'rotry', '6.00', '6.00', 36),
-(12, 6, 'test', '22.00', '2.00', 44);
+(12, 6, 'test', '22.00', '2.00', 44),
+(13, 7, '', '0.00', '0.00', 0),
+(14, 8, '', '0.00', '0.00', 0),
+(15, 9, '', '0.00', '0.00', 0),
+(16, 10, 'telescope rotator not work', '34.00', '67.00', 2278),
+(17, 10, 'mototr rewinding charger', '2.00', '78.00', 156),
+(18, 10, 'rotor', '5.00', '67.00', 335),
+(19, 11, 'telescope rotator not work', '34.00', '67.00', 2278),
+(20, 11, 'mototr rewinding charger', '2.00', '78.00', 156),
+(21, 11, 'rotor', '5.00', '67.00', 335),
+(22, 12, 'durbin m/c', '896.00', '12.00', 10752),
+(23, 12, 'mototr rewinding charger', '765.00', '67.00', 51255),
+(24, 13, 'telescope rotator not work', '34.00', '67.00', 2278),
+(25, 13, 'mototr rewinding charger', '2.00', '78.00', 156),
+(26, 13, 'rotor', '5.00', '67.00', 335);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sub_salary`
+--
+
+CREATE TABLE IF NOT EXISTS `sub_salary` (
+  `sal_id` int(20) NOT NULL AUTO_INCREMENT,
+  `sal_code` int(50) NOT NULL,
+  `e_desc` text NOT NULL,
+  `e_amt` float(20,2) NOT NULL,
+  `d_desc` text NOT NULL,
+  `d_amt` float(20,2) NOT NULL,
+  PRIMARY KEY (`sal_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+
+--
+-- Dumping data for table `sub_salary`
+--
+
+INSERT INTO `sub_salary` (`sal_id`, `sal_code`, `e_desc`, `e_amt`, `d_desc`, `d_amt`) VALUES
+(4, 6, 'basic', 6500.00, 'tax', 200.00),
+(5, 6, 'HRA', 1000.00, '', 0.00),
+(6, 6, 'Travel Allowance', 500.00, '', 0.00),
+(11, 9, 'basic', 5678.00, 'tax', 87.00),
+(15, 11, 'basic', 6500.00, 'tax', 200.00);
 
 -- --------------------------------------------------------
 
@@ -728,7 +913,7 @@ CREATE TABLE IF NOT EXISTS `sub_service` (
   `rate` float(10,2) NOT NULL,
   `val` float(10,2) NOT NULL,
   PRIMARY KEY (`sr_no`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `sub_service`
@@ -742,7 +927,9 @@ INSERT INTO `sub_service` (`sr_no`, `po_id`, `serv_no`, `serv_desc`, `uom`, `qnt
 (5, 3, 0, '', '', 0.00, 0.00, 0.00),
 (6, 4, 0, 'test record', 'kg', 5.00, 5.00, 25.00),
 (7, 4, 0, 'test rec2', 'km', 5.00, 5.00, 25.00),
-(8, 7, 8989, 'yu fgh', 'ty', 56.00, 5.00, 280.00);
+(8, 7, 8989, 'yu fgh', 'ty', 56.00, 5.00, 280.00),
+(9, 8, 123, 'testing data voltanatly', 'test', 12.00, 12.00, 144.00),
+(10, 8, 124, 'renaming data', 'tot', 12.00, 12.00, 144.00);
 
 -- --------------------------------------------------------
 
@@ -755,7 +942,7 @@ CREATE TABLE IF NOT EXISTS `terms` (
   `t_id1` varchar(10) NOT NULL,
   `t_term` varchar(200) NOT NULL,
   PRIMARY KEY (`t_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
 
 --
 -- Dumping data for table `terms`
@@ -763,10 +950,20 @@ CREATE TABLE IF NOT EXISTS `terms` (
 
 INSERT INTO `terms` (`t_id`, `t_id1`, `t_term`) VALUES
 (1, 'A', 'payment Terms: with in 30days from the dateof our supply.'),
-(2, 'B', 'guaranty : Gurrranty period 06 monts on rewinding items from  the date of delivery'),
+(2, 'B', '<b>Guaranty</b> : Gurrranty period 06 monts on rewinding items from  the date of delivery'),
 (3, 'C', 'Service Tax  :- Service Tax 12.00% On 70% of the SUB TOTAL'),
-(4, 'rtytry', 'rtytrytry'),
-(5, '', '');
+(4, 'D', 'VAT/Sales Tax:-VAT 5% on Raw Material of the SUB TOTAL'),
+(5, 'E', 'TDS :-As per rule'),
+(6, 'F', 'Scrap:-The above prices are consider with scrap copper value'),
+(7, 'G', 'Spare Parts:-The additional cost for spares will quote after opening the motor'),
+(8, 'H', 'Mechanical:-The additional cost for mechanical ,Machining Job work a qoute will provide after opening the motor'),
+(9, 'I', 'Additional:-Other than these a quotation will provide seperatly as per actual condition of the motor'),
+(10, 'J', 'Transportation:-By us on payable basis'),
+(11, 'K', 'No Guaranty On Overhaul Items,Spare Parts & Portable Hand Tools Eg...Hand Drill,Hand Grinder,Cutter Machine etc.'),
+(12, 'L', 'Test Certificate of the each repaired motor will be provided at the time of delivery'),
+(13, 'M', 'Actual Prices will quote after dismentling the Motor'),
+(14, 'N', 'Repairing time of the motor will depends on spare parts availability.min 12 days and max 28 days '),
+(15, 'O', 'We are not Responsible for any damages for winding related items.Which is sent by you for only Overhauling, Varnishing, Bearing replacement etc job work');
 
 -- --------------------------------------------------------
 
