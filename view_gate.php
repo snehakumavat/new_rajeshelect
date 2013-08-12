@@ -66,92 +66,97 @@ document.getElementById("total").value=d;
 	?>  <div class="quo"> <br />
 		<div class="quotation"><center>Returnable Gate Pass</center></div>
         <div>
-        <form action="" method="post">
-         <table  style="margin-left:500px;"><tr><td colspan="3" align="right" style="font-size:30px;"><?php echo $cmpnm['comp_name'];?></td></tr></table>
-        <table class="q_clients_2" >       
+         <form action="" method="post">
+        <!--<INPUT class="formbutton" Type="button" VALUE="Back" onClick="history.go(-1);return true;">-->
+         <table  style="margin-left:500px;"></table>
+        <table class="q_clients_2" > 
+        <tr><td colspan="4" align="center" style="font-size:18px;"><?php echo $cmpnm['comp_name'];?></td></tr>      
             <tr>
-            
               <td class="l_form">TIN NO:</td>
-              <td><input id="tin" class="q_in" type="text" name="tin" value="<?php echo $c_row[2]; ?>" tabindex="1"/></td>
+              <td><input id="tin" class="q_in" type="text" name="tin" value="<?php echo $c_row[2]; ?>" tabindex="1" readonly /></td>
               <td class="l_form">&nbsp;&nbsp; CST NO:</td>
-              <td><input id="cst" class="q_in" type="text" name="cst" tabindex="2"  value="<?php echo $c_row[3];?>"/> </td>             </tr>
+              <td><input id="cst" class="q_in" type="text" name="cst" tabindex="2"  value="<?php echo $c_row[3];?>" readonly/> </td>             </tr>
            
             <tr>
           <td class="l_form">Ex Ring:</td>
-          <td><input id="ring" class="q_in" type="text" name="ring" tabindex="3" value="<?php echo $c_row[4];?>"/></td>  
+          <td><input id="ring" class="q_in" type="text" name="ring" tabindex="3" value="<?php echo $c_row[4];?>" readonly/></td>  
           <td class="l_form" >&nbsp;&nbsp;Ex No.:</td>
-          <td><input id="exno" class="q_in" type="text" name="exno" tabindex="4" value="<?php echo $c_row[5];?>"/></td>              
+          <td><input id="exno" class="q_in" type="text" name="exno" tabindex="4" value="<?php echo $c_row[5];?>" readonly/></td>              
             </tr>
             <tr>
           <td class="l_form">Ex Div:</td>
-          <td><input id="div1" class="q_in" type="text" name="div1" tabindex="5" value="<?php echo $c_row[6];?>"/></td>
+          <td><input id="div1" class="q_in" type="text" name="div1" tabindex="5" value="<?php echo $c_row[6];?>" readonly/></td>
           <td class="l_form">&nbsp;&nbsp;Ex Com:</td>
-          <td><input id="com1" class="q_in" type="text" name="com1" tabindex="6" value="<?php echo $c_row[7];?>"/></td>
+          <td><input id="com1" class="q_in" type="text" name="com1" tabindex="6" value="<?php echo $c_row[7];?>" readonly/></td>
             </tr>
             </table>
-        <table class="midtext1">
-            <tr >
-            <td colspan="3"><label class="descg">Gate Pass Details</label></td>
-            </tr> 
-            </table>
-            
-            <table class="q_clients_2" >       
+        
+            <table class="q_clients_2" > 
+            <tr><td colspan="4" align="center" style="font-size:18px;">Gate Pass Details</td></tr>      
             <tr>
               <td class="l_form">Gate Pass No.:</td>
-              <td><input id="gn1" class="q_in" type="text" name="gn1" tabindex="7" value="<?php echo $c_row[8];?>"/></td>
+              <td><input id="gn1" class="q_in" type="text" name="gn1" tabindex="7" value="<?php echo $c_row[8];?>" readonly/></td>
               <td class="l_form">&nbsp;&nbsp;Gate Pass &nbsp;&nbsp;Date:</td>
-              <td><input id="gd1" class="q_in" type="text" name="gd1" value="<?php echo date('d-m-Y',strtotime($c_row[9]));?>" tabindex="8"/></td>             </tr>
+              <td><input id="gd1" class="q_in" type="date" name="gd1" value="<?php echo $c_row[9];?>" tabindex="8" readonly/></td>             </tr>
            
             <tr>
           <td class="l_form">Due Date:</td>
-          <td><input id="due1" class="q_in" type="text" name="due1" value="<?php echo date('d-m-Y',strtotime($c_row[10]));?>" tabindex="9"/></td>  
+          <td><input id="due1" class="q_in" type="date" name="due1" value="<?php echo $c_row[10];?>" tabindex="9" readonly/></td>  
           <td class="l_form" >&nbsp;&nbsp;Requested By:</td>
-          <td><input id="req1" class="q_in" type="text" name="req1" tabindex="10" value="<?php echo $c_row[11];?>"/></td>              
+          <td><input id="req1" class="q_in" type="text" name="req1" tabindex="10" value="<?php echo $c_row[11];?>" readonly/></td>              
             </tr>
             <tr>
           <td class="l_form">Department:</td>
-          <td><input id="dept" class="q_in" type="text" name="dept" tabindex="11" value="<?php echo $c_row[12];?>"/></td>
+          <td><input id="dept" class="q_in" type="text" name="dept" tabindex="11" value="<?php echo $c_row[12];?>" readonly/></td>
           <td class="l_form">&nbsp;&nbsp;Status:</td>
-          <td><input id="st1" class="q_in" type="text" name="st1" tabindex="12" value="<?php echo $c_row[13];?>"/></td>
+          <td><input id="st1" class="q_in" type="text" name="st1" tabindex="12" value="<?php echo $c_row[13];?>" readonly/></td>
             </tr>
             </table>
-            <table class="midtext1">
-            <tr >
-            <td colspan="3"><label class="descg">Party Details</label></td>
-            </tr> 
-            </table>
-             <table class="q_clients_2" >       
+           
+             <table class="q_clients_u" >
+             <tr><td colspan="4" align="center" style="font-size:18px;">Party Details</td></tr>             
             <tr>
               <td class="l_form">Truck Ref No.:</td>
-              <td><input id="ref1" class="q_in" type="text" name="ref1" tabindex="13" value="<?php echo $c_row[14];?>"/></td>
+              <td><input id="ref1" class="q_in" type="text" name="ref1" tabindex="13" value="<?php echo $c_row[14];?>" readonly/></td>
               <td class="l_form">&nbsp;&nbsp;Party Name:</td>
-              <td><input id="part1" class="q_in" type="text" name="part1" tabindex="14" value="<?php echo $c_row[15];?>"/></td>             </tr>
+              <td><input id="part1" class="q_in" type="text" name="part1" tabindex="14" value="<?php echo $c_row[15];?>" readonly/></td>             </tr>
            
             <tr>
           <td class="l_form">Address:</td>
-          <td><textarea id="add1" class="q_add" type="text" name="add1" tabindex="15"><?php echo $c_row[16];?></textarea></td>  
+          <td><textarea id="add1" class="q_add" type="text" name="add1" tabindex="15" readonly><?php echo $c_row[16];?></textarea></td>  
           <td class="l_form" >&nbsp;&nbsp; Mode Of &nbsp;&nbsp;Transport:</td>
-          <td><input id="tran" class="q_in" type="text" name="tran" tabindex="16" value="<?php echo $c_row[17];?>"/></td>              
+          <td><input id="tran" class="q_in" type="text" name="tran" tabindex="16" value="<?php echo $c_row[17];?>" readonly/></td>              
             </tr>
             <tr>
           <td class="l_form">Time</td>
-          <td><input id="time" class="q_in" type="text" value="<?php echo $c_row[18];?>" name="time" tabindex="17"/></td>
+          <td><input id="time" class="q_in" type="text" value="<?php echo $c_row[18];?>" name="time" tabindex="17" readonly/></td>
           <td class="l_form">&nbsp;&nbsp;Transport &nbsp;&nbsp;Name:</td>
-          <td><input id="nm1" class="q_in" type="text" name="nm1" tabindex="18"value="<?php echo $c_row[19];?>" /></td>
+          <td><input id="nm1" class="q_in" type="text" name="nm1" tabindex="18"value="<?php echo $c_row[19];?>" readonly /></td>
             </tr>
              <tr>
           <td class="l_form">Vehicle Number:</td>
-          <td><input id="vno" class="q_in" type="text" name="vno" tabindex="19" value="<?php echo $c_row[20];?>"/></td>
+          <td><input id="vno" class="q_in" type="text" name="vno" tabindex="19" value="<?php echo $c_row[20];?>"readonly /></td>
           <td class="l_form">&nbsp;&nbsp;Issue To &nbsp;&nbsp;Person:</td>
-          <td><input id="ip1" class="q_in" type="text" name="ip1" tabindex="20" value="<?php echo $c_row[21];?>"/></td>
+          <td><input id="ip1" class="q_in" type="text" name="ip1" tabindex="20" value="<?php echo $c_row[21];?>"readonly /></td>
             </tr>
             </table>
+            <table class='request' >
+            <tr><td align="left" style="font-size:18px;" >Requested By</td>
+             
+             <td><input type="text" name="nm2"  class="q_in" value="<?php echo $c_row[24];?>"></td></tr> 
+            </table>
+                      
+             <table class='request'>
+             <tr><td colspan="4" align="left" style="font-size:18px;">Authorization</td></tr>                              
+            <tr>
+              <td class="l_form">Approver Name:</td>
+              <td><input id="apr" class="q_in" type="text" name="apr" tabindex="28" value="<?php echo $c_row[25];?>"readonly /></td>
+              <td class="l_form">&nbsp;&nbsp;Date:</td>
+              <td><input id="date" class="q_in" type="text" name="date" value="<?php echo $c_row[26];?>" tabindex="29" width="40px"readonly /></td>             </tr>
+            </table>
             
-            
-             <table class="midtext1">
-            <tr >
-            <td colspan="3"><label class="descg">Material Details</label></td>
-            </tr> 
+               <table class="material">
+             <tr><td colspan="4" align="center" style="font-size:18px;">Material Details</td></tr>
             </table>
 				 <table class="des">
                 <tr>
@@ -249,54 +254,8 @@ document.getElementById("total").value=d;
                 
                 </tr>
                 </table>
-             <!--<table class="q_clients4" >       
-            <tr>
-              <td class="l_form">Description Of Material.:</td>
-              <td><input id="desc1" class="q_in" type="text" name="desc1" tabindex="21"/></td>
-              <td class="l_form">&nbsp;&nbsp;Quantity:</td>
-              <td><input id="quant" class="q_in" type="text" name="quant" tabindex="22"/></td>             </tr>
-            <tr>
-          <td class="l_form">Unit:</td>
-  <td><textarea id="unit" class="q_add" type="text" name="unit" tabindex="23"></textarea></td>  
-  <td class="l_form" >&nbsp;&nbsp; Rate:</td>
-          <td><input id="rate" class="q_in" type="text" name="rate" tabindex="24"/></td>           </tr>
-            <tr>
-          
-          <td class="l_form">&nbsp;&nbsp;Amount:</td>
-          <td><input id="amt" class="q_in" type="text" name="amt" tabindex="25"/></td>
-            </tr>
-            <tr>
-          <td class="l_form" >Remarks</td>
-          <td colspan="3">
-          <textarea id="remark" class="q_add1" name="remark" tabindex="26"> </textarea></td>
-            </tr>
-            <tr>
-          <td class="l_form" >Requested By</td>
-          <td colspan="3">
-          <input type="text" id="nm2" class="q_in" name="nm2" tabindex="27" /></td>
-            </tr>                        
-            </table>-->
-             
-            <table class="midtext1">
-            <tr >
-            <td colspan="3"><label class="descg">Requested By</label></td>
-            </tr>
-            <tr><td colspan="3" align="center"><br><input type="text" name="nm2"  class="q_in" value="<?php echo $c_row[24];?>" readonly></td></tr> 
-            </table>
-                      
-             <table class="midtext1">
-            <tr >
-            <td colspan="3"><label class="descg">Authorization</label></td>
-            </tr> 
-            </table>
-
-             <table style="margin-left:250px;">       
-            <tr>
-              <td class="l_form">Approver Name:</td>
-              <td><input id="apr" class="q_in" type="text" name="apr" tabindex="28" value="<?php echo $c_row[25];?>"/></td>
-              <td class="l_form">&nbsp;&nbsp;Date:</td>
-              <td><input id="date" class="q_in1" type="text" name="date" value="<?php echo date('d-m-Y h:i:s',strtotime($c_row[26]));?>" tabindex="29" width="40px"/></td>             </tr>
-            </table>
+                          
+            
   
             
                 

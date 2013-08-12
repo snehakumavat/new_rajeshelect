@@ -63,7 +63,7 @@ function validateMyForm ( ) {
 		<div class="quotation"><center>Income Details</center></div>
         <div>
         <form name="form1" action="" method="post">
-        <table class="addemp_tab">
+        <table class="addpay_tab">
         <tr>
         <td class="l_form">Date:</td>
         <td><input id="des" type="date" class="q_in" name="t1" value="<?php echo $d; ?>"></td>

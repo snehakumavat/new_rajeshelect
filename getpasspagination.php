@@ -38,7 +38,7 @@ if($_GET)
         <td width="250">Gate pass No.</td>
         <td width="160">Gate pass date.</td>
         <td>Status</td>
-		<td>Approver Name</td>	        
+		<td>Date &amp; time</td>	        
         <td width="180">Action</td>
         </tr>
 		<?php
@@ -68,8 +68,8 @@ if($_GET)
 		echo "</td>";
 		echo "<td>";
 		echo $c_row[26];		
-        echo "<td width='100' class='print'>";
-		echo "<a href='?c_id1=$c_row[8]&c_id3=$id' onclick='return confirmSubmit()'>Delete</a>&nbsp;<a href='updategatepass.php?c_id2=$c_row[0]'>Update</a>&nbsp;<a href='view_gate.php?c_id3=$c_row[0]'>View</a>";
+        echo "<td width='100' >";
+		echo "<a href='?c_id1=$c_row[8]&c_id3=$id' onclick='return confirmSubmit()'><img src='imgs1/green_delete.png' height='20px;'/></a>&nbsp;<a href='updategatepass.php?c_id2=$c_row[0]'><img src='imgs1/updt.png' height='20px;'/></a>&nbsp;<a href='view_gate.php?c_id3=$c_row[0]'><img src='imgs1/view.png'  /></a>";
 		echo "</td>";
 		echo "</tr>";
 		}

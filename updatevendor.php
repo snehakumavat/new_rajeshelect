@@ -80,7 +80,7 @@ function validateMyForm ( ) {
 		<div class="quotation"><center>Add New Vendor</center></div>
         
         <form name="form1" action="" method="post">
-        <table class="addemp_tab">
+        <table class="addpay_tab">
         <tr>
         <td class="l_form">Vendor Name:</td>
         <td><input id="vname" type="text" class="q_in" name="v_name" value="<?php echo $vr[1]; ?>"></td>

@@ -78,7 +78,7 @@ function validateMyForm ( ) {
 		<div class="quotation"><center>Add New Employee</center></div>
         <div>
         <form name="form1" action="" method="post">
-        <table class="addemp_tab">
+        <table class="addpay_tab">
         <tr>
         <td class="l_form">Employee ID:</td>
         <td><input id="eid" type="text" class="q_in" name="e_id"></td>

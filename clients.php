@@ -134,7 +134,7 @@ margin-right: 16px;
 padding:5px;3 
 color:#FFF;
 margin-left:2px;
-background-color:#00a1d2;
+background-color:#7aa127;
 box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
    -o-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
    -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
@@ -184,24 +184,23 @@ cursor: pointer;
 		while($c_row=mysql_fetch_array($ans))
 		{
         echo "<tr class='pagi'>";
-        echo "<td width='250'>";
+         
+       echo "<td width='250'>";
 		echo $c_row[2];
 		echo "</td>";
         echo "<td width='160'>";
 		echo $c_row[3];
-		echo "</td>";
+		echo "</td>";		
 		echo "<td>";
-		echo $c_row[4];
+		echo $c_row[8];	
 		echo "</td>";
-	    echo "<td>";
-		echo date('d-m-Y',strtotime($c_row[3]));
-		echo "</td>";
-		echo "<td width='100' class='print'>";
-		echo "<a href='?c_id1=$c_row[0]' onclick='return confirmSubmit()'>Delete</a>&nbsp;<a href='updateclients.php?c_id2=$c_row[0]'>Update</a>&nbsp;<a href='clientsview.php?c_id3=$c_row[0]'>View</a>&nbsp;<a href='gatepass.php?c_id3=$c_row[0]'>GatePass</a>&nbsp;<a href='view_gatepass.php?c_id3=$c_row[0]'>g_v</a>";
+		echo "<td >";
+		echo "<a href='?c_id1=$c_row[0]' onclick='return confirmSubmit()'><img src='imgs1/green_delete.png' height='20px;'/></a>&nbsp;<a href='updateclients.php?c_id2=$c_row[0]'><img src='imgs1/updt.png' height='20px;'/></a>&nbsp;<a href='clientsview.php?c_id3=$c_row[0]'><img src='imgs1/view.png'  /></a>&nbsp;<a href='gatepass.php?c_id3=$c_row[0]' class='print'>GatePass</a>&nbsp;<a href='view_gatepass.php?c_id3=$c_row[0]' class='print'>g_v</a>";
 		echo "</td>";
 		echo "</tr>";
 		}
 		?>      
+        
         </table>
         <?php
 		  }
@@ -213,7 +212,7 @@ cursor: pointer;
                 <td class="info">Clients Details</td>
                 <td width="300px;"><input type='text' name="search"   class="result" title="Enter client name,cmp_name,date here" />
                 
-                <input type="submit" name="result" value="search" class="go" /></td>
+                <input type="submit" name="result" value="" class="go" /></td>
                 </tr>
                 </table>
                 </form>

@@ -59,8 +59,8 @@ $page=$_GET['page'];
 		echo $c_row[7];
 		echo "</td>";
 		
-	    echo "<td width='100' class='print'>";
-		echo "<a href='addpayment.php?p_id=$c_row[0]&c_id=$c_row[3]'>Paid</a>&nbsp;<a href='viewpayment.php?v_id=$c_row[0]'>View</a>";
+	    echo "<td width='100' >";
+		echo "<a href='addpayment.php?p_id=$c_row[0]&c_id=$c_row[3]'><img src='imgs1/payment.png' height='20px' width='20px' /></a>&nbsp;<a href='viewpayment.php?v_id=$c_row[0]'><img src='imgs1/view.png' /></a>";
 		echo "</td>";
 		echo "</tr>";
 		}

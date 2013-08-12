@@ -2,7 +2,7 @@
 error_reporting(0);
 include("session.php");
 	include("include/database.php");	
-	$per_page = 20; 
+	$per_page = 25; 
 	$sql = "select * from assign_job";
 	$rsd = mysql_query($sql);
 	$count = mysql_num_rows($rsd);
@@ -186,7 +186,7 @@ cursor: pointer;
                 <td class="info">Stock Assign Details</td>
                 <td width="300px;"><input type='text' name="search"   class="result" title="Enter Employee name,sotck_name,date here" />
                 
-                <input type="submit" name="result" value="search" class="go" /></td>
+                <input type="submit" name="result" value=" " class="go" /></td>
                 </tr>
                 </table>
                 </form>

@@ -54,9 +54,8 @@ if($_GET)
 		echo "</td>";
 		echo "<td width='100'>";
 		echo $c_row[4];		
-        echo "<td width='300' class='print'>";
-		echo "<a href='?c_id1=$c_row[0]' onclick='return confirmSubmit()'>Delete</a>&nbsp;<a href='updateworksheet.php?c_id2=$c_row[0]'>Update</a>&nbsp;<a href='viewwork.php?c_id3=$c_row[0]'>View</a>&nbsp;<a href='demoworkpdf.php?c_id3=$c_row[0]'>print</a>&nbsp;
-		<a href='assignstock.php?job_id=$c_row[0]'>assign_stock</a>&nbsp;<a href='view_assgn.php'>view_assign</a>";
+        echo "<td width='300'>";
+		echo "<a href='?c_id1=$c_row[0]' onclick='return confirmSubmit()'><img src='imgs1/green_delete.png' height='20px;'/></a>&nbsp;<a href='updateworksheet.php?c_id2=$c_row[0]'> <img src='imgs1/updt.png' height='20px;'/></a>&nbsp;<a  href='viewwork.php?c_id3=$c_row[0]'><img src='imgs1/view.png'  /></a>&nbsp;<a href='assignstock.php?job_id=$c_row[0]' class='print'>assign stock</a>&nbsp;<a class='print' href='view_assgn.php'>view_assign</a>";
 		echo "</td>";
 		echo "</tr>";
 		}

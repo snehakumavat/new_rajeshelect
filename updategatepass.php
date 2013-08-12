@@ -208,13 +208,14 @@ function addRow(tableID) {
 	$nm=mysql_query($query);
 	$cmpnm=mysql_fetch_array($nm);
 	?><br />
-    <div class="quo">
+     
 		<div class="quotation"><center>Returnable Gate Pass</center></div>
         <div>
         <form action="" method="post">
-        <INPUT class="formbutton" Type="button" VALUE="Back" onClick="history.go(-1);return true;">
-         <table  style="margin-left:500px;"><tr><td colspan="3" align="right" style="font-size:30px;"><?php echo $cmpnm['comp_name'];?></td></tr></table>
-        <table class="q_clients_2" >       
+        <!--<INPUT class="formbutton" Type="button" VALUE="Back" onClick="history.go(-1);return true;">-->
+         <table  style="margin-left:500px;"></table>
+        <table class="q_clients_2" > 
+        <tr><td colspan="4" align="center" style="font-size:18px;"><?php echo $cmpnm['comp_name'];?></td></tr>      
             <tr>
               <td class="l_form">TIN NO:</td>
               <td><input id="tin" class="q_in" type="text" name="tin" value="<?php echo $c_row[2]; ?>" tabindex="1"/></td>
@@ -234,13 +235,9 @@ function addRow(tableID) {
           <td><input id="com1" class="q_in" type="text" name="com1" tabindex="6" value="<?php echo $c_row[7];?>"/></td>
             </tr>
             </table>
-        <table class="midtext1">
-            <tr >
-            <td colspan="3"><label class="descg">Gate Pass Details</label></td>
-            </tr> 
-            </table>
-            
-            <table class="q_clients_2" >       
+        
+            <table class="q_clients_2" > 
+            <tr><td colspan="4" align="center" style="font-size:18px;">Gate Pass Details</td></tr>      
             <tr>
               <td class="l_form">Gate Pass No.:</td>
               <td><input id="gn1" class="q_in" type="text" name="gn1" tabindex="7" value="<?php echo $c_row[8];?>"/></td>
@@ -260,12 +257,9 @@ function addRow(tableID) {
           <td><input id="st1" class="q_in" type="text" name="st1" tabindex="12" value="<?php echo $c_row[13];?>"/></td>
             </tr>
             </table>
-            <table class="midtext1">
-            <tr >
-            <td colspan="3"><label class="descg">Party Details</label></td>
-            </tr> 
-            </table>
-             <table class="q_clients_2" >       
+           
+             <table class="q_clients_u" >
+             <tr><td colspan="4" align="center" style="font-size:18px;">Party Details</td></tr>             
             <tr>
               <td class="l_form">Truck Ref No.:</td>
               <td><input id="ref1" class="q_in" type="text" name="ref1" tabindex="13" value="<?php echo $c_row[14];?>"/></td>
@@ -291,15 +285,28 @@ function addRow(tableID) {
           <td><input id="ip1" class="q_in" type="text" name="ip1" tabindex="20" value="<?php echo $c_row[21];?>"/></td>
             </tr>
             </table>
+            <table class='request' >
+            <tr><td align="left" style="font-size:18px;" >Requested By</td>
+             
+             <td><input type="text" name="nm2"  class="q_in" value="<?php echo $c_row[24];?>"></td></tr> 
+            </table>
+                      
+             <table class='request'>
+             <tr><td colspan="4" align="left" style="font-size:18px;">Authorization</td></tr>                              
+            <tr>
+              <td class="l_form">Approver Name:</td>
+              <td><input id="apr" class="q_in" type="text" name="apr" tabindex="28" value="<?php echo $c_row[25];?>"/></td>
+              <td class="l_form">&nbsp;&nbsp;Date:</td>
+              <td><input id="date" class="q_in" type="text" name="date" value="<?php echo $c_row[26];?>" tabindex="29" width="40px"/></td>             </tr>
+            </table>
+  
             
-            
-             <table class="midtext1">
-            <tr >
-            <td colspan="3"><label class="descg">Material Details</label></td>
-            </tr>
+             <table class="material">
+             <tr><td colspan="4" align="center" style="font-size:18px;">Material Details</td></tr>
+         
             <tr><td colspan="3">
-            <input type="button" value="Add Row" onClick="addRow('dataTable')" >&nbsp;
-<input type="button" value="Delete Row" onClick="deleteRow('dataTable')" >
+            <input type="button" class="print" value="Add Row" onClick="addRow('dataTable')" >&nbsp;
+<input type="button" value="Delete Row" class="print" onClick="deleteRow('dataTable')" >
 				</td>
             </tr> 
             </table>
@@ -312,13 +319,13 @@ function addRow(tableID) {
                 <td class="heading" width="200">Rate</td>
                 <td class="heading" width="200">Amount</td>
                 </tr></table>
-                <!--<span style="color:#00f;font-size:20px;font-weight:bold;cursor:pointer;" onClick="add_phone_field()">[+]</span>-->
+                <!--<span style="color:#00f;font-size:18px;font-weight:bold;cursor:pointer;" onClick="add_phone_field()">[+]</span>-->
                <table class="des" id="dataTable">
 <tr style="display:none;"><td style="white-space:nowrap;" width="20"><input type="checkbox" name="chk[]"/></td>
-                <td width="150px">
+                <td  >
                  <input class="des_in" type="text" name="d[]" id="0" value="" > <br>
                 </td>
-                 <td width="150px">
+                 <td  >
                  <input class="des_in" type="text" name="alp[]" id="0" value=""> <br>
                 </td>
                  <td>
@@ -348,10 +355,10 @@ function addRow(tableID) {
 						
 				?>
                   <tr><td style="white-space:nowrap;" width="20"><input type="checkbox" name="chk[]"/></td>
-                <td width="150">
+                <td  >
                  <input class="des_in" type="text" name="d[]" id="d[]" value="<?php echo $res[3];?>"><br>
                 </td>
-                <td width="150px">
+                <td  >
                  <input class="des_in" type="text" name="alp[]" id="0" value="<?php echo $res[4];?>"> <br>
                 </td>
                  <td>
@@ -383,10 +390,10 @@ function addRow(tableID) {
 				{
 				?> 
                 <tr><td>&nbsp;&nbsp;&nbsp;</td>
-                <td width="150px">
+                <td >
                  <input class="des_in" type="text" name="d[]" id="0" value="" > <br>
                 </td>
-                 <td width="150px">
+                 <td  >
                  <input class="des_in" type="text" name="alp[]" id="0" value=""> <br>
                 </td>
                  <td>
@@ -413,14 +420,14 @@ function addRow(tableID) {
                 
                  <table class="des">
                 <tr><td>&nbsp;&nbsp;&nbsp;</td>
-                <td width="250" colspan="3">
+                <td width="150" colspan="3">
                  <input class="des_in" type="text" name="total" id="tot" value='TOTAL' align="right"  readonly><br>
                 </td>
                 <td>
-                 <input class="des_q" type="text" name="" id=""><br>
+                 <input class="des_in" type="text" name="" id=""><br>
                 </td>
                 <td>
-                 <input class="des_q" type="text" name="" id=""><br>
+                 <input class="des_in" type="text" name="" id=""><br>
                 </td>
                 <td>
                  <input class="des_cap" type="text" name="tot_qnt" id="tot_qnt" value="<?php echo $c_row[22];?>" readonly><br>
@@ -437,55 +444,8 @@ function addRow(tableID) {
                 
                 </tr>
                 </table>
-             <!--<table class="q_clients4" >       
-            <tr>
-              <td class="l_form">Description Of Material.:</td>
-              <td><input id="desc1" class="q_in" type="text" name="desc1" tabindex="21"/></td>
-              <td class="l_form">&nbsp;&nbsp;Quantity:</td>
-              <td><input id="quant" class="q_in" type="text" name="quant" tabindex="22"/></td>             </tr>
-            <tr>
-          <td class="l_form">Unit:</td>
-  <td><textarea id="unit" class="q_add" type="text" name="unit" tabindex="23"></textarea></td>  
-  <td class="l_form" >&nbsp;&nbsp; Rate:</td>
-          <td><input id="rate" class="q_in" type="text" name="rate" tabindex="24"/></td>           </tr>
-            <tr>
-          
-          <td class="l_form">&nbsp;&nbsp;Amount:</td>
-          <td><input id="amt" class="q_in" type="text" name="amt" tabindex="25"/></td>
-            </tr>
-            <tr>
-          <td class="l_form" >Remarks</td>
-          <td colspan="3">
-          <textarea id="remark" class="q_add1" name="remark" tabindex="26"> </textarea></td>
-            </tr>
-            <tr>
-          <td class="l_form" >Requested By</td>
-          <td colspan="3">
-          <input type="text" id="nm2" class="q_in" name="nm2" tabindex="27" /></td>
-            </tr>                        
-            </table>-->
+                        
             
-            <table class="midtext1">
-            <tr >
-            <td colspan="3"><label class="descg">Requested By</label></td>
-            </tr>
-            <tr><td colspan="3" align="center"><br><input type="text" name="nm2"  class="q_in" value="<?php echo $c_row[24];?>"></td></tr> 
-            </table>
-                      
-             <table class="midtext1">
-            <tr >
-            <td colspan="3"><label class="descg">Authorization</label></td>
-            </tr> 
-            </table>
-
-             <table style="margin-left:250px;">       
-            <tr>
-              <td class="l_form">Approver Name:</td>
-              <td><input id="apr" class="q_in" type="text" name="apr" tabindex="28" value="<?php echo $c_row[25];?>"/></td>
-              <td class="l_form">&nbsp;&nbsp;Date:</td>
-              <td><input id="date" class="q_in1" type="text" name="date" value="<?php echo $c_row[26];?>" tabindex="29" width="40px"/></td>             </tr>
-            </table>
-  
             
                 
         <div class="addclients_b"> 
@@ -495,7 +455,7 @@ function addRow(tableID) {
         
         </form>
     </div>
-    </div>
+     
         
     
     	<div class="clear"></div>

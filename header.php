@@ -99,13 +99,14 @@
            <li>
            <a class="has_submenu" href="logout.php">logout</a>
            </li> 
-          
+           <li>
+           <?php
+ if(isset($_SESSION['uname']) && isset($_SESSION['password']))
+{
+	echo '<h4 style="color:#000;margin-left:20px;margin-top:12px;">Welcome: '.$_SESSION['uname'].'</h4>';
+}
+ ?></li>
                           
         </ul>
   
- <?php
- if(isset($_SESSION['uname']) && isset($_SESSION['password']))
-{
-	echo '<h4 align="right" style="margin-right:60px; margin-top:-10px;">'.$_SESSION['uname'].' is Login</h4>';
-}
- ?></div>
+</div>

@@ -133,7 +133,7 @@ margin-right: 16px;
 padding:5px;3 
 color:#FFF;
 margin-left:2px;
-background-color:#00a1d2;
+background-color:#7aa127;
 box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
    -o-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
    -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
@@ -212,7 +212,7 @@ cursor: pointer;
                 <td class="info">purches Order Details</td>
                 <td width="300px;"><input type='text' name="search"   class="result" title="Enter client name,cmp_name,vendor_code,Ph no here" />
                 
-                <input type="submit" name="result" value="search" class="go" /></td>
+                <input type="submit" name="result" value=" " class="go" /></td>
                 </tr>
                 </table>
                 </form>

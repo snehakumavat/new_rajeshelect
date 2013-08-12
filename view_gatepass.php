@@ -135,7 +135,7 @@ margin-right: 16px;
 padding:5px;3 
 color:#FFF;
 margin-left:2px;
-background-color:#00a1d2;
+background-color:#7aa127;
 box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
    -o-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
    -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
@@ -195,8 +195,8 @@ cursor: pointer;
 		echo "</td>";
 		echo "<td>";
 		echo $c_row[26];		
-        echo "<td width='100' class='print'>";
-		echo "<a href='?c_id1=$c_row[8]&c_id3=$id' onclick='return confirmSubmit()'>Delete</a>&nbsp;<a href='updategatepass.php?c_id2=$c_row[0]'>Update</a>&nbsp;<a href='view_gate.php?c_id3=$c_row[0]'>View</a>";
+        echo "<td width='100' >";
+		echo "<a href='?c_id1=$c_row[8]&c_id3=$id' onclick='return confirmSubmit()'><img src='imgs1/green_delete.png' height='20px;'/></a>&nbsp;<a href='updategatepass.php?c_id2=$c_row[0]'><img src='imgs1/updt.png' height='20px;'/></a>&nbsp;<a href='view_gate.php?c_id3=$c_row[0]'><img src='imgs1/view.png'  /></a>";
 		echo "</td>";
 		echo "</tr>";
 		}
@@ -209,12 +209,12 @@ cursor: pointer;
                 <br />
                 
                 <form action="" method="post" name="search">
-                <INPUT class="formbutton" Type="button" VALUE="Back" onClick="history.go(-1);return true;">
+                <!--<INPUT class="formbutton" Type="button" VALUE="Back" onClick="history.go(-1);return true;">-->
 				<table class="emp_tab">
                 <tr class="search_res" >
                 <td class="info">GatePass Details</td>
                 <td width="300px;"><input type='text' name="search" class="result" title="Enter gatepass no,date,approver name,status here.."  /><input type="hidden" name="id" value="<?php echo $id; ?>">
-                             <input type="submit" name="result" value="search" class="go" /></td>
+                             <input type="submit" name="result" value="" class="go" /></td>
                 </tr>
                 </table>
                 </form>

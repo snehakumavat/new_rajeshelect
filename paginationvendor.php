@@ -1,7 +1,7 @@
 <?php
+include("session.php");
 include("include/database.php");
 error_reporting(0);
-include("session.php");
 	
 ?>
 
@@ -42,7 +42,7 @@ if($_GET)
 		echo $v_row[3];
 		echo "</td>";
         echo "<td width='70' class='print'>";
-		echo "<a href='?v_id1=$v_row[0]' onclick='return confirmSubmit()'>Delete</a>&nbsp;<a href='updatevendor.php?v_id=$v_row[0]'>Update</a>";
+		echo "<a href='?v_id1=$v_row[0]' onclick='return confirmSubmit()'><img src='imgs1/green_delete.png' height='20px' width='20px' /></a>&nbsp;<a href='updatevendor.php?v_id=$v_row[0]'><img src='imgs1/updt.png' height='20px' width='20px' /></a>";
 		echo "</td>";
 		echo "</tr>";
 		}

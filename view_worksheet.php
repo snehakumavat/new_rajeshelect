@@ -130,7 +130,7 @@ margin-right: 16px;
 padding:5px;3 
 color:#FFF;
 margin-left:2px;
-background-color:#00a1d2;
+background-color:#7aa127;
 box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
    -o-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
    -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
@@ -201,8 +201,8 @@ cursor: pointer;
 		echo "</td>";
 		echo "<td >";
 		echo $c_row[4];		
-        echo "<td class='print'>";
-		echo "<a href='?c_id1=$c_row[0]' onclick='return confirmSubmit()'>Delete</a>&nbsp;<a href='updateworksheet.php?c_id2=$c_row[0]'>Update</a>&nbsp;<a href='viewwork.php?c_id3=$c_row[0]'>View</a>&nbsp;<a href='assignstock.php?job_id=$c_row[0]'>assign stock</a>&nbsp;<a href='view_assgn.php'>view_assign</a>";
+        echo "<td >";
+		echo "<a href='?c_id1=$c_row[0]' onclick='return confirmSubmit()'><img src='imgs1/green_delete.png' height='20px;'/></a>&nbsp;<a href='updateworksheet.php?c_id2=$c_row[0]'> <img src='imgs1/updt.png' height='20px;'/></a>&nbsp;<a  href='viewwork.php?c_id3=$c_row[0]'><img src='imgs1/view.png'  /></a>&nbsp;<a href='assignstock.php?job_id=$c_row[0]' class='print'>assign stock</a>&nbsp;<a class='print' href='view_assgn.php'>view_assign</a>";
 		echo "</td>";
 		echo "</tr>";
 		}
@@ -214,13 +214,13 @@ cursor: pointer;
 				<br>
                 
                 <form action="" method="post" name="search">
-				<table class="quotation">
-                <tr>
+				<table class="emp_tab">
+                <tr class="search_res">
                 <td class="info"> Job Worksheet Details</td>
                 <td width="350"><input type='text' class="result" name="search"  title="Enter client name here" />
                 
                 
-                <input type="submit" name="result" value="search" class="go" /></td>
+                <input type="submit" name="result" value="" class="go" /></td>
                 </tr>
                 </table>
                 </form>

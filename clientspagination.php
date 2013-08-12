@@ -36,9 +36,10 @@ if($_GET)
 		echo $c_row[3];
 		echo "</td>";		
 		echo "<td>";
-		echo $c_row[8];		
-        echo "<td width='100' class='print'>";
-		echo "<a href='?c_id1=$c_row[0]' onclick='return confirmSubmit()'>Delete</a>&nbsp;<a href='updateclients.php?c_id2=$c_row[0]'>Update</a>&nbsp;<a href='clientsview.php?c_id3=$c_row[0]'>View</a>&nbsp;<a href='gatepass.php?c_id3=$c_row[0]'>GatePass</a>&nbsp;<a href='view_gatepass.php?c_id3=$c_row[0]'>g_v</a>";
+		echo $c_row[8];	
+		echo "</td>";
+		echo "<td >";		
+        echo "<a href='?c_id1=$c_row[0]' onclick='return confirmSubmit()'><img src='imgs1/green_delete.png' height='20px;'/></a>&nbsp;<a href='updateclients.php?c_id2=$c_row[0]'><img src='imgs1/updt.png' height='20px;'/></a>&nbsp;<a href='clientsview.php?c_id3=$c_row[0]'><img src='imgs1/view.png'  /></a>&nbsp;<a href='gatepass.php?c_id3=$c_row[0]' class='print'>GatePass</a>&nbsp;<a href='view_gatepass.php?c_id3=$c_row[0]' class='print'>ViewGatepass</a>";
 		echo "</td>";
 		echo "</tr>";
 		}

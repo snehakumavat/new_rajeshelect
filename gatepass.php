@@ -206,9 +206,9 @@ function add_phone_field()
         <div class="quotation"><center>Returnable Gate Pass</center></div>
         <div>
         <form action="" method="post" name="gatepass1">
-        <INPUT class="formbutton" Type="button" VALUE="Back" onClick="history.go(-1);return true;">
-        <table  style="margin-left:500px;"><tr><td colspan="3" align="right" style="font-size:30px;"><?php echo $cmpnm['comp_name'];?></td></tr></table>
-        <table class="tab-1" >       
+        
+            <table class="q_clients_2" >
+            <tr><td colspan="4" align="center" style="font-size:18px;"><?php echo $cmpnm['comp_name'];?></td></tr>      
             <tr>
               <td class="l_form">TIN NO:</td>
               <td><input id="tin" class="q_in" type="text" name="tin" tabindex="1"/></td>
@@ -228,13 +228,9 @@ function add_phone_field()
           <td><input id="com1" class="q_in" type="text" name="com1" tabindex="6"/></td>
             </tr>
             </table>
-        <table  >
-            <tr >
-            <td colspan="3"><label class="descg">Gate Pass Details</label></td>
-            </tr> 
-            </table>
-            
-            <table class="tab-2" >       
+                    
+            <table class="q_clients_2" > 
+            <tr><td colspan="4" align="center" style="font-size:18px;">Gate Pass Details</td></tr>       
             <tr>
               <td class="l_form">Gate Pass No.:</td>
               <td><input id="gn1" class="q_in" type="text" name="gn1" tabindex="7"/></td>
@@ -254,12 +250,9 @@ function add_phone_field()
           <td><input id="st1" class="q_in" type="text" name="st1" tabindex="12"/></td>
             </tr>
             </table>
-            <table class="midtext1">
-            <tr >
-            <td colspan="3"><label class="descg">Party Details</label></td>
-            </tr> 
-            </table>
-             <table class="q_clients_2" >       
+            
+             <table class="q_clients_u" >
+              <tr><td colspan="4" align="center" style="font-size:18px;">Party Details</td></tr>       
             <tr>
               <td class="l_form">Truck Ref No.:</td>
               <td><input id="ref1" class="q_in" type="text" name="ref1" tabindex="13"/></td>
@@ -285,17 +278,33 @@ function add_phone_field()
           <td><input id="ip1" class="q_in" type="text" name="ip1" tabindex="20"/></td>
             </tr>
             </table>
-            
-            
-             <table class="midtext1">
+             <table class='request'>
             <tr >
-            <td colspan="3"><label class="descg">Material Details</label></td>
+            <td  align="left" style="font-size:18px;"> Requested By </td>
+            <td ><input type="text" name="nm2"  class="q_in"></td></tr> 
+            </table>
+
+                                  
+             <table class="request">
+            <tr >
+            <td colspan="3" style="font-size:18px;"> Authorization </td>
             </tr> 
-            <tr><td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="button" value="Add Row" onClick="addRow('dataTable')" >&nbsp;
-			<input type="button" value="Delete Row" onClick="deleteRow('dataTable')" >
+              
+            <tr>
+              <td class="l_form">Approver Name:</td>
+              <td><input id="apr" class="q_in" type="text" name="apr" tabindex="28"/></td>
+              <td class="l_form">&nbsp;&nbsp;Date:</td>
+              <td><input id="date" class="q_in" type="text" name="date" value="<?php echo date('d-m-Y - h:i:sa'); ?>" tabindex="29" width="40px"/></td>             </tr>
+            </table>        
+            
+              <table class="material">
+             <tr><td colspan="4" align="center" style="font-size:18px;">Material Details</td></tr>
+         
+            <tr><td colspan="3">
+            <input type="button" class="print" value="Add Row" onClick="addRow('dataTable')" >&nbsp;
+<input type="button" value="Delete Row" class="print" onClick="deleteRow('dataTable')" >
 				</td>
-            </tr>
+            </tr> 
             </table>
 				 <table class="des" >
                 <tr>
@@ -361,33 +370,8 @@ function add_phone_field()
                 
                 </tr>
                 </table>
-              <!--<table class="midtext1">
-            <tr >
-            <td colspan="3"><label class="descg">Remarks</label></td>
-            </tr>
-            <tr><td align="center"><br><input type="text" name="remark" class="q_in"></td></tr> 
-            </table>-->
-            <table class="midtext1">
-            <tr >
-            <td colspan="3"><label class="descg">Requested By</label></td>
-            </tr>
-            <tr><td colspan="3" align="center"><br><input type="text" name="nm2"  class="q_in"></td></tr> 
-            </table>
-
-                                  
-             <table class="midtext1">
-            <tr >
-            <td colspan="3"><label class="descg">Authorization</label></td>
-            </tr> 
-            </table>
-
-             <table style="margin-left:250px;">       
-            <tr>
-              <td class="l_form">Approver Name:</td>
-              <td><input id="apr" class="q_in" type="text" name="apr" tabindex="28"/></td>
-              <td class="l_form">&nbsp;&nbsp;Date:</td>
-              <td><input id="date" class="q_in1" type="text" name="date" value="<?php echo date('d-m-Y - h:i:sa'); ?>" tabindex="29" width="40px"/></td>             </tr>
-            </table>            
+             
+               
                 
         <div class="addclients_b">
          <input name="g_add" class="formbutton" value=" Submit " type="submit" />

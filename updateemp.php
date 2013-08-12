@@ -61,7 +61,7 @@ include("include/database.php");
 		<div class="quotation"><center>Update Employee Details</center></div>
         <div>
         <form action="" method="post">
-        <table class="addemp_tab">
+        <table class="addpay_tab">
          <tr>
         <td class="l_form">Employee ID:</td>
         <td><input id="eid" type="text" class="q_in" name="eu_id" value="<?php echo $row_up[1]; ?>"></td>

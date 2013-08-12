@@ -1,10 +1,11 @@
 body {
-	background:#000;
-	margin:0;
+	background:#fff;
+	margin:0 auto;
 	padding:0;
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 13px;
 	color: #000;
+	width:1250px;
 }
 .info
 {
@@ -58,8 +59,8 @@ body {
 }
 .result
 {
-	height:30px;
-	width:200px;
+	height:20px;
+	width:120px;
 	margin-left:10px;
 	border-radius:5px;
 	border:none;
@@ -72,30 +73,13 @@ box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 
 }
 .go
 {
-	width:80px;
-	border-radius:5px;
-	font-size:18px;
-	color:#FFF;
-	border: 1px solid rgba(0,0,0,0.5);
-    background:#09C;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
-   -o-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
-   -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
-   -moz-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);	
+	background-image:url(imgs1/srch.png);
+	background-color:#7aa127;
+	padding-top:10;
+	border:hidden;	
+	width:30px;	
 }
-.go:hover
-{
-	width:80px;
-	border-radius:5px;
-	font-size:18px;
-	color:#000;
-	border: 1px solid rgba(0,0,0,0.5);
-   background:#CCC;
-   box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
-   -o-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
-   -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
-   -moz-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);	
-}
+
 .h_booking
 {
 	width:1178px;
@@ -108,21 +92,24 @@ box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 
 {
 	font-size:16px;
 }
-.print a
+.print 
 {
 	
-	background-color:#00a1d2;
+	background-color:#7aa127;
 	padding:2px 4px 2px 4px;
 	color:#000;
 	text-decoration:none;
-	font-size:15px;
-	border: 1px solid rgba(0,0,0,0.5);
-   background:#CCC;
-   box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
-   -o-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
-   -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
-   -moz-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+	font-size:12px;
+}
+.addpay_tab
+{
 	
+	margin-left:450px;
+	margin-top:30px;
+	background-color:#DFE;
+	width:400px;
+	height:auto;
+	padding:10px 10px 20px 50px;
 }
 .insert a
 {
@@ -289,7 +276,7 @@ form input.formbutton {
 	overflow: visible;
 	font-family: Lucida Grande;
 	border: 1px solid rgba(0,0,0,0.5);
-   background:#09C;
+   background:#7aa127;
    box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
    -o-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
    -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
@@ -373,7 +360,7 @@ h5 {
 }
 
 ul, ol {
-	margin: 0 0 35px 35px;
+	margin: -4px 0 35px 35px;
 }
 
 li {
@@ -493,7 +480,7 @@ div#sub-header {
 	margin-left:-180px;
 	width:1315px;
 	height:1500px;
-	background-color:#CCC;
+	background-color:#FFF;
 	opacity:0.9;
 	
 }
@@ -610,23 +597,20 @@ div#footer-links p {
 }
 .quotation
 {
-	font-size:20px;
+	font-size:15px;
 	color:#FAFAFA;
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight:500;
 	letter-spacing:5px;
-	background-color:#00a1d2;
+	background-color:#7aa127;
 	width:98%;
 	text-shadow: 0 1px 1px #333; 
+	height:20px;
+	margin-top:10px;
 	margin-left:12px;
-	height:30px;
-	margin-top:0px;
 	padding:3px 0px 0px 0px;
-   background:#09C;
-   box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
-   -o-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
-   -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
-   -moz-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);	
+   background:#7aa127;
+  
 }
 .quotationI
 {
@@ -671,7 +655,7 @@ div#footer-links p {
 }
 .l_form
 {
-	font-size:18px;
+	font-size:12px;
 	color:#000;
 	border:none;
 	margin-left:125px;
@@ -680,11 +664,11 @@ div#footer-links p {
 
 .q_in
 {
-	width:175px;
-	height:30px;
+	width:150px;
+	height:25px;
 	border:1px solid #999;
 	background-color:#FFF;
-	font-size:18px;
+	font-size:12px;
 	color:#000;
 	margin-top: 5px;
 
@@ -892,18 +876,23 @@ div#footer-links p {
 }
 .heading
 {
-	background-color:#333;
+	background-color:#7aa127;
 	color:#FFF;
-	height:30px;
+	height:15px;
 	letter-spacing:1px;
+	font-size:12px;
 
 }
 .des
 {
-	width:1000px;
-
+	width:900px;
 	margin-left:100px;
+	
 }
+.des td
+{
+	
+	}
 .q_info
 {
 	width:320px;
@@ -921,10 +910,10 @@ div#footer-links p {
 }
 .q_add
 {
-	width:175px;
-	height:80px;
+	width:150px;
+	height:50px;
 	background-color:#FFF;
-	font-size:18px;
+	font-size:12px;
 	border:1px solid #999;
 	color:#000;
 }
@@ -961,8 +950,9 @@ div#footer-links p {
 .des_in
 {
 	width:100%;
+	height:25px;
 	background-color:#FFF;
-	font-size:18px;
+	font-size:12px;
 	color:#000;
 	border:1px solid #999;
 
@@ -971,9 +961,10 @@ div#footer-links p {
 .des_sr
 {
 	width:100%;
+	height:25px;
     text-align:center;
 	background-color:#FFF;
-	font-size:18px;
+	font-size:12px;
 	color:#000;
 	border:1px solid #999;
 
@@ -982,8 +973,9 @@ div#footer-links p {
 .des_cap
 {
 	width:100%;
+	height:25px;
 	background-color:#FFF;
-	font-size:18px;
+	font-size:12px;
 	color:#000;
 	border:1px solid #999;
 
@@ -991,9 +983,9 @@ div#footer-links p {
 .des_ser
 {
 	width:100%;
-	height:125%;
+	height:25px;
 	background-color:#FFF;
-	font-size:18px;
+	font-size:12px;
 	color:#000;
 	border:1px solid #999;
 
@@ -1001,9 +993,10 @@ div#footer-links p {
 .des_amt
 {
 	width:100%;
+	height:25px;
 	background-color:#333;
 	background-color:#FFF;
-	font-size:18px;
+	font-size:12px;
 	color:#000;
 	border:1px solid #999;
 
@@ -1011,9 +1004,9 @@ div#footer-links p {
 .des_r
 {
 	width:100%;
-	height:138%;
+	height:25px;
 	background-color:#FFF;
-	font-size:18px;
+	font-size:12px;
 	color:#000;
 	border:1px solid #999;
 
@@ -1022,7 +1015,7 @@ div#footer-links p {
 {
 	width:100%;
 	background-color:#FFF;
-	font-size:18px;
+	font-size:12px;
 	color:#000;
 	border:1px solid #999;
 
@@ -1038,14 +1031,14 @@ div#footer-links p {
 	height:125%;
 	background-color:#333;
 	opacity:0.5;
-	font-size:18px;
+	font-size:12px;
 	color:#FFF;
 }
 .emp_tab_res
 {
 	margin-top:5px;
 	margin-left:12px;
-	width:1290px;
+	width:1235px;
 	height:auto;
 }
 
@@ -1058,7 +1051,7 @@ div#footer-links p {
 {
 	text-align:center;
 	color:#000;
-	font-size:17px;
+	font-size:12px;
 	text-transform:uppercase;
 }
 .emp_tab
@@ -1103,15 +1096,12 @@ div#footer-links p {
 	height:25px;
 	color:#000;
 	text-align:center;
-	background-color:#333;
+	background-color:#000;
 	font-size:12px;
 	margin-left:12px;
 	letter-spacing:1px;
-	 background:#FFF;
-   box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
-   -o-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
-   -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
-   -moz-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);	
+	 background:#DFE;
+   
 }
 .emp_header input
 {
@@ -1151,10 +1141,11 @@ div#footer-links p {
 {
 	
 	width:400px;
-	height:300px;
+	height:250px;
 	border:medium;
-		margin-top:20px;
-	margin-left:300px;
+	margin-top:20px;
+	margin-left:450px;
+	background-color:#DFE;
 
 }
 .pay
@@ -1243,7 +1234,7 @@ div#footer-links p {
 .addemp_button
 {
 	margin-top:20px;
-	margin-left:570px;
+	margin-left:500px;
 }
 
 .pay_button
@@ -1258,7 +1249,22 @@ div#footer-links p {
 	margin-top:8px;		
 	margin-left:30px;
 }
-
+.request
+{
+	
+	background-color:#DFE;
+	margin-left:650px;
+	width:550;
+	margin-top:10px;
+	}
+.material
+{
+	background-color:#DFE;
+	margin-left:110px;
+	width:890;
+	margin-top:30px;
+	
+	}
  .descg
 {
 	width:630px;
@@ -1362,15 +1368,18 @@ div#footer-links p {
 {
 	margin-top:50px;
 	width:320px;
-	height:450px;
+	height:300px;
 	margin-left:250px;
+	background-color:#DFE;
 }
 .q_clients2
 {
-	margin-top:-450px;
+	margin-top:-299px;
 	width:320px;
-	height:450px;
-	margin-left:675px;
+	height:300px;
+	margin-left:605px;
+	background-color:#DFE;
+
 }
 .w_clients2
 {
@@ -1378,14 +1387,16 @@ div#footer-links p {
 	width: 589px;
 	height: 180px;
 	margin-left: 15px;
+	background-color:#DFE;
 }
 
 .q_clients1
 {
-	margin-top: -180px;
+	margin-top:-180px;
     width: 580px;
     height: 380px;
     margin-left: 640px;
+	background-color:#DFE;
 }
 .q_client_s
 {
@@ -1393,13 +1404,24 @@ div#footer-links p {
 	width:565px;
 	height:230px;
 	margin-left:28px;
+	background-color:#DFE;
 }
 .q_clients_2
 {
 	margin-top:10px;
-	width:600px;
+	width:550px;
 	height:150px;
-	margin-left:260px;
+	margin-left:20px;
+	background-color:#DFE;
+}
+.q_clients_u
+{
+	margin-top:10px;
+	width:550px;
+	height:150px;
+	margin-left:650px;
+	margin-top:-310px;
+	background-color:#DFE;
 }
 .q_clients_w
 {
@@ -1407,6 +1429,7 @@ div#footer-links p {
 	width: 580px;
 	height: 140px;
 	margin-left: 18px;
+	background-color:#DFE;
 }
 .q_clients3
 {
@@ -1414,6 +1437,7 @@ div#footer-links p {
 	width: 585px;
 	height: 288px;
 	margin-left: 640px;
+	background-color:#DFE;
 }
 .q_clients4
 {
@@ -1421,6 +1445,7 @@ div#footer-links p {
 	width:320px;
 	height:250px;
 	margin-left:250px;
+	background-color:#DFE;
 }
 
 
@@ -1434,7 +1459,7 @@ select
 .addclients_b
 {
 	margin-top:30px;
-	margin-left:20px;
+	margin-left:400px;
 	
 }
 .booking
@@ -1546,15 +1571,15 @@ option
 }
 .emp_header
 {
-	background-color:#CCC;
-	height:30px;
+	background-color:#7aa127;
+	height:25px;
 	font-size:14px;
 	text-align:center;
 	color:#FFF;
 }
 .emp_header td
 {
-	 background:#09C;
+	 background:#7aa127;
    box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
    -o-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
    -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
@@ -1563,17 +1588,14 @@ option
 
 .search_res
 {
-	background-color:#CCC;
-	height:40px;
+	background-color:#FFF;
+	height:25px;
 	color:#FFF;
 }
 .search_res td
 {
-	 background:#09C;
-   box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
-   -o-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
-   -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
-   -moz-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);	
+	 background:#7aa127;
+   
 }
 .h_tab1
 {

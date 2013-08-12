@@ -108,7 +108,7 @@ margin-right: 16px;
 padding:5px;3 
 color:#FFF;
 margin-left:2px;
-background-color:#00a1d2;
+background-color:#7aa127;
 box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
    -o-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
    -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
@@ -184,11 +184,11 @@ cursor: pointer;
 		  }
 		?>
                  <form action="" method="post" name="search">
-				<table class="quotation">
-                <tr>
+				<table class="emp_tab">
+                <tr class="search_res">
                 <td class="info">Quotation Details</td>
-                <td width="350"><input type='text' class="result" name="search"  title="Enter client name,date,address,email,ref no.,mobile no here" />
-                <input type="submit" name="result" value="search" class="go" /></td>
+                <td width="300px"><input type='text' class="result" name="search"  title="Enter client name,date,address,email,ref no.,mobile no here" />
+                <input type="submit" name="result" value=" " class="go" /></td>
                 </tr>
                 </table>
                 </form>

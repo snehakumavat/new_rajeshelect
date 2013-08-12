@@ -87,6 +87,7 @@ include("include/database.php");
 	margin-top:10px;
 	border-collapse:collapse;
 	margin-left:300px;
+	background-color:#DFE;
 }
 .form
 {
@@ -98,7 +99,7 @@ include("include/database.php");
 .earning{
 	width:950px;
 	margin-left:130px;
-	background-color:#42C1FF;
+	background-color:#7aa127;
 }
 
 </style>
@@ -255,12 +256,7 @@ function deleteRow(tableID)
         </tr>
    
         </table>
-        <table class="midtext1">
-            <tr><td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="button" value="Add Row" onClick="addRow('dataTable')" >&nbsp;
-			<input type="button" value="Delete Row" onClick="deleteRow('dataTable')" >
-			</td></tr>
-        </table>
+        
         <table class="earning" align="center" >
         <tr>
         	<td colspan="2" align="center" width="124px"><b>EARNINGS</b></td>
