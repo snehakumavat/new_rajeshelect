@@ -121,7 +121,7 @@ include("include/database.php");
       <div>
         <form action="" method="post" name="certificate">
           <br>
-          <table  align="center" class="testing1" >
+          <table  align="center" class="q_clients_2" >
             <tr>
               <td class="l_form"   > M/s. </td>
               <td ><input type="text"  class="q_in" value="" name="nm">
@@ -157,14 +157,26 @@ include("include/database.php");
                 <td><input type="text"  class="q_in" value="" name="vno"></td>
                 </tr>
             </table>
-            <table>
-                  <tr><br>
-                    <td class="des1">AC SQ.CAGE INDUCTION MOTOR TESTING CERTIFICATE</td>
+             <table class='q_clients4'>
+                  <tr>
+                    <td class="l_form"  >Analysis of Failure :</td>
+                      <td  colspan="3" class="l_form" >  <textarea  class="q_add" name="af"></textarea>
+                      </td>
+                       
+                  </tr>
+                      <tr>
+                    <td class="l_form" >Special  Remarks:</td>
+                      <td class="l_form" >  <textarea  class="q_add" name="sr"></textarea></td>
+                      <td class="l_form" >Work Done :</td>
+                      <td>  <textarea  class="q_add" name="wd"></textarea>
+                      </td>
                   </tr>
                 </table>
-                
+           
                 <table class="test2">
-            
+              <tr> 
+                    <td colspan="4" style="font-size:18px; padding-bottom:20px;" align="center" >AC SQ.CAGE INDUCTION MOTOR TESTING CERTIFICATE</td>
+                  </tr>
                   <tr>
                     <td class="l_form" >Make:-</td>
                      <td> <input type="text"  class="q_in" value="" name="mk"></td>
@@ -237,13 +249,12 @@ include("include/database.php");
                      </tr>
                 </table>
                 
-            <table>
-                  <tr><br>
-                    <td class="des1" >DC MOTOR TESTING CERTIFICATE</td>
-                  </tr>
-                </table>
+          
               
-              <table class="test2" >
+              <table class="test3" >
+              <tr> 
+                    <td  colspan="4" style="font-size:18px; padding-bottom:20px;" align="center" >DC MOTOR TESTING CERTIFICATE</td>
+                  </tr>
                   <tr>
                     <td class="l_form"  width="395"   >Make:-</td>
                       <td>  <input type="text"  class="q_in" value="" name="mk1"></td>
@@ -312,22 +323,8 @@ include("include/database.php");
                   </tr>
                 </table>
            
-             <table class='test2'>
-                  <tr>
-                    <td class="l_form" width="260" >Analysis of Failure :</td>
-                      <td  colspan="3">  <textarea  class="q_in" name="af"></textarea>
-                      </td>
-                       
-                  </tr>
-                               <tr>
-                    <td class="l_form" >Special  Remarks:</td>
-                      <td>  <textarea  class="q_add" name="sr"></textarea></td>
-                      <td class="l_form" >Work Done :</td>
-                      <td>  <textarea  class="q_add" name="wd"></textarea>
-                      </td>
-                  </tr>
-                </table>
-                <div class="addclients_b" align="center">
+            
+                <div class="addclients_b"  >
             <input name="c_add" class="formbutton" value=" Add " type="submit" tabindex="49" onClick="javascript:return validateMyForm();" />
             <input name="can" class="formbutton" value="Cancel" type="submit" tabindex="50" />
           </div>

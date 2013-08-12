@@ -1,8 +1,7 @@
 <?php
-//error_reporting(0);
+include("session.php");
 include("include/database.php");
 error_reporting(0);
-include("session.php");
 
 $in=$_REQUEST['c_id2'];
 
@@ -13,7 +12,7 @@ $c_row=mysql_fetch_array($c_res);
 $c_emp="select * from emp";
 $c_emp_res=mysql_query($c_emp);
 
-echo $c_query="select * from quotation order by q_id DESC ";
+  $c_query="select * from quotation order by q_id DESC ";
 $c_res1=mysql_query($c_query);
 if($res=mysql_fetch_array($c_res1))
 {
@@ -117,11 +116,11 @@ if(isset($_REQUEST['cancel']))
                 
                 
                 <form name="form5" action="" method="post" enctype="multipart/form-data">
-                <br />
-                
-                <div class="quotationI"><center>REW QUOTATION</center></div>
-                <br />
-                <table class="q_info3" height="400px;">
+                   <table style="width:1100px; background-color:#DFE;" >
+                    <tr><td  style="font-size:18px;" align="center">REW QUOTATION</td></tr>
+                    </table>                                        
+                <table class="q_info3">
+               
                 <tr><td class="l_form">Date:</td><td><input name="q_date" class="q_in" type="date" value="<?php  echo date('Y-m-d'); ?>"/></td></tr>
                 <tr><td class="l_form">Client Name:</td>
                 <td>
@@ -129,7 +128,7 @@ if(isset($_REQUEST['cancel']))
 				</td>
                 </tr>
                 <tr><td class="l_form">Address:</td><td><textarea class="q_add" name="q_address"><?php echo $c_row[4]; ?></textarea></td></tr>
-                 <tr><td class="l_form">Enter Ref No:</td><td><input name="q_ref" class="q_in1" type="text" value="REW.SNR/13-14/MLL-"/></td></tr>
+                 <tr><td class="l_form">Enter Ref No:</td><td><input name="q_ref" class="q_in" type="text" value="REW.SNR/13-14/MLL-"/></td></tr>
                <tr><td class="l_form">Enter Vendor No:</td>
                <td><input type="text" name="q_vendor" class="q_in" />
                 
@@ -141,10 +140,7 @@ if(isset($_REQUEST['cancel']))
                 </tr>
                 
                 </table>
-                
-                
-                
-                
+                                                                
                 
                 <table class="q_info4" >
                 <tr><td class="l_form">Quotation No</td>
@@ -179,7 +175,10 @@ if(isset($_REQUEST['cancel']))
                 <td><input name="q_sub" class="q_in2" type="text" value=""/></td></tr>
                 <tr><td class="l_form">Enter Transportation Charges</td>
                 <td><input name="t_charge" class="q_in" type="text" value=""  /></td></tr>
-                
+                 <tr>
+                <td class="l_form" > Analysis of Failure :</td>
+                      <td>  <textarea  class="q_add"  name="af"></textarea></td>
+                      </tr> 
                 </table>
                 <br />
                 <table class="des">
@@ -206,9 +205,12 @@ if(isset($_REQUEST['cancel']))
                 </div>
                  <br>
                 <br>
-                <font size="+2">Enter Amount to be less from original</font>
-                <br>
-                <table class="" align="center">
+                <table style="width:1100px; background-color:#DFE;" >
+                    <tr><td  style="font-size:18px;" align="center">Enter Amount to be less from original</td></tr>
+                    </table>        
+                
+                 
+                <table class="des" align="center">
                 <tr>
                <td class="heading">Description</td>              
                 <td class="heading">Rate/Each</td>                 
@@ -225,10 +227,7 @@ if(isset($_REQUEST['cancel']))
                  <input class="des_q" type="text" name="capacity"id="capacity"  value="" ><br>
                 </td>
                 </tr>
-                <tr>
-                <td class="l_form" ><br><br>Analysis of Failure :</td>
-                      <td> <br><br> <textarea  class="q_add"  name="af"></textarea></td>
-                      </tr>       
+                     
                 </table>
                 <br><br>
                 <div class="q_button5" align="center">

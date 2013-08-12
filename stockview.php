@@ -44,7 +44,7 @@ include("session.php");
         <div>
         <form name="form1" action="" method="post">
         
-        <table class="q_clients4">
+        <table class="addpay_tab">
                 <tr><td class="l_form">ID:</td><td><input id="id" class="q_in" type="text" name="id" value="<?php echo $result[1];?>" readonly="readonly" /></td></tr>
                 <tr><td class="l_form">Name:</td><td><input id="nm1" class="q_in" type="text" name="nm1" value="<?php echo $result[2] ;?>"  readonly="readonly" /></td></tr>
                 <tr><td class="l_form">Category:</td><td><input type="text" id="cate" class="q_in" name="cate" value="<?php echo $result[3];?>"  readonly="readonly" /></td></tr>
@@ -54,7 +54,7 @@ include("session.php");
                 </table>
                 
                 
-        <div class="addclients_b">
+        <div class="addemp_button">
         
          <input name="can" class="formbutton" value="Back" type="submit" />
         </div>

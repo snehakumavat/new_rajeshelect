@@ -30,8 +30,12 @@ include("session.php");
 	$g_t20=$_REQUEST['tot_amt'];    // total amount 20
 	//$g_t21=$_REQUEST['remark'];
 	$g_t22=$_REQUEST['nm2'];
-	$g_t23=$_REQUEST['apr'];
-	$g_t24=date('Y-m-d',strtotime($_REQUEST['date']));		
+	$g_t23=$_REQUEST['apr'];	
+$timestamp = DateTime::createFromFormat('d-m-Y - h:i:sa', $_REQUEST['date']);
+ $g_t24= $timestamp->format('Y-m-d H:i:s');
+		
+	 
+	
 	$g_t25=$_REQUEST['tin'];
 	$g_t26=$_REQUEST['cst'];
 	$g_t27=$_REQUEST['ring'];
@@ -40,7 +44,7 @@ include("session.php");
 	$g_t30=$_REQUEST['com1'];
 	
 	$a=$_POST['d'];
-	$b = count($a);
+	  $b = count($a);
 	for($i=0; $i<$b; $i++)
 	{
 		//$id=$_REQUEST['i_id'];			
@@ -52,15 +56,15 @@ include("session.php");
 		$q_r=$_POST['r'][$i];
 		$q_a=$_POST['a'][$i];
 	//	$total=10;
-			
+		
 	 $quo="INSERT INTO `material_desc`( `gatpas_id`,`client_id`, `desc_mat`, `appl`,`remark`,`quant`, `unit`, `rate`, `amount`) VALUES ('".$g_t1."','".$c_up."','".$q_d."','".$alp."','".$rmk."','".$q_q."','".$q_u."','".$q_r."','".$q_a."')";
 	 $quo_res=mysql_query($quo);	
 	
 	}
 	
- '<br>'.$result="insert into gatepass(`client_id`, `tin_no`, `cst_no`, `ex_ring`, `ex_no`, `ex_div`, `ex_com`,`g_no`,`g_date`,`due_date`,`req`,`dept`,`status`, `t_ref_no`,`p_name`,`addr`,`mode`, `time`, `t_name`, `v_no`, `issue`,`total_qnt`, `total_amt`, `req_by`, `appr_nm`, `date_tim`) values('".$c_up."','".$g_t25."','".$g_t26."','".$g_t27."','".$g_t28."','".$g_t29."','".$g_t30."','".$g_t1."','".$g_t2."','".$g_t3."','".$g_t4."','".$g_t5."','".$g_t6."','".$g_t7."','".$g_t8."','".$g_t9."','".$g_t10."','".$g_t11."','".$g_t12."','".$g_t13."','".$g_t14."','".$g_t16."','".$g_t20."','".$g_t22."','".$g_t23."','".$g_t24."')";
-	//$ans=mysql_query($result);
-	//exit();
+     $result="insert into gatepass(`client_id`, `tin_no`, `cst_no`, `ex_ring`, `ex_no`, `ex_div`, `ex_com`,`g_no`,`g_date`,`due_date`,`req`,`dept`,`status`, `t_ref_no`,`p_name`,`addr`,`mode`, `time`, `t_name`, `v_no`, `issue`,`total_qnt`, `total_amt`, `req_by`, `appr_nm`, `date_tim`) values('".$c_up."','".$g_t25."','".$g_t26."','".$g_t27."','".$g_t28."','".$g_t29."','".$g_t30."','".$g_t1."','".$g_t2."','".$g_t3."','".$g_t4."','".$g_t5."','".$g_t6."','".$g_t7."','".$g_t8."','".$g_t9."','".$g_t10."','".$g_t11."','".$g_t12."','".$g_t13."','".$g_t14."','".$g_t16."','".$g_t20."','".$g_t22."','".$g_t23."','".$g_t24."')";
+	 $ans=mysql_query($result) or die("mysql_error:-".mysql_error());
+	 //exit();
 	if($ans)
 	{
 	header("location:view_gatepass.php?c_id3=$c_up");

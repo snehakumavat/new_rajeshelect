@@ -105,16 +105,14 @@ function validateMyForm ( ) {
       </div>
       <div>
         <form name="form1" action="" method="post">
-          <table class="toptext">
+         
+            <table class="q_client_s" > 
             <tr>
               <td class="l_form" colspan="2">Name of the Client:</td>
-              <td><input id="cname" type="text" name="c_fname" tabindex="1" value="<?php echo $res[1]; ?>"readonly /></td>
-            </tr> 
-            <tr>
-            <td colspan="3"><label class="desc" > Motor Description</label></td>
-            </tr> 
-            </table>
-            <table class="q_client_s" >       
+              <td><input id="cname" type="text" name="c_fname" tabindex="1" value="<?php echo $res[1]; ?>" readonly /></td>   
+             <tr>            
+            <td colspan="4" style="font-size:18;" align="center"> <br> Motor Description </td>
+            </tr>          
             <tr>
               <td class="l_form">Make:</td>
               <td><input id="make" class="q_in" type="text" name="make" tabindex="2" value="<?php echo $res[2]; ?>" readonly /></td>
@@ -146,13 +144,12 @@ function validateMyForm ( ) {
               </tr>
             </table>
             
-            <table class="midtext">
-            <tr >
-            <td colspan="3"><label class="desc1">Winding Data</label></td>
-            </tr> 
-            </table>
             
-            <table class="q_clients1" >       
+            
+            <table class="q_clients1" >  
+             <tr >
+            <td colspan="4" style="font-size:18;" align="center"> Winding Data </td>
+            </tr>       
             <tr>
               <td class="l_form">slots:</td>
               <td><input id="slot1" class="q_in" type="text" name="slot1" tabindex="11" value="<?php echo $res[11]; ?>" readonly/></td>
@@ -200,13 +197,12 @@ function validateMyForm ( ) {
 <td colspan="4"><textarea id="failure" class="q_add" name="failure" tabindex="25" readonly><?php echo $res[25]; ?></textarea></td>
               </tr>
             </table>
-             <table class="midtext">
-            <tr >
-            <td colspan="3"><label class="desc">Motor Testing Details</label></td>
-            </tr> 
-            </table>
+             
             
-            <table class="q_clients_w" >       
+            <table class="q_clients_w" >  
+            <tr >
+            <td colspan="4" style="font-size:18;" align="center">Motor Testing Details</td>
+            </tr>       
             <tr>
               <td class="l_form">N.L.Ampere:</td>
               <td><input id="nl1" class="q_in" type="text" name="nl1" tabindex="26" value="<?php echo $res[26]; ?>" readonly/></td>
@@ -226,13 +222,32 @@ function validateMyForm ( ) {
           <td><input id="current2" class="q_in" type="text" name="current2" tabindex="31" value="<?php echo $res[31]; ?>" readonly/></td>
             </tr>
             </table>
-            <table class="toptext1">
-            <tr >
-            <td colspan="3"><label class="desc2">Additional Work/Spare Replacement</label></td>
-            </tr> 
+                                      
+            <table class="w_clients2" >
+             <tr >
+            <td colspan="4" style="font-size:18;" align="center">Additional Details</td>
+            </tr>         
+            <tr>
+              <td class="l_form" align="">Stator Core Length:</td>
+              <td><input id="core1" class="q_in" type="text" name="core1" tabindex="44" value="<?php echo $res[44]; ?>" readonly/></td>
+              <td class="l_form">&nbsp;&nbsp;Rotor Core &nbsp;&nbsp;Length:</td>
+              <td><input id="core2" class="q_in" type="text" name="core2" tabindex="45" value="<?php echo $res[45]; ?>" readonly/></td>             </tr>
+           
+            <tr>
+          <td class="l_form">Rotor O.D.:</td>
+          <td><input id="rotor" class="q_in" type="text" name="rotor" tabindex="46" value="<?php echo $res[46]; ?>" readonly/></td>  
+          <td class="l_form" >&nbsp;&nbsp; Slot Dia:</td>
+          <td><input id="dia" class="q_in" type="text" name="dia" tabindex="47" value="<?php echo $res[47]; ?>" readonly/></td>              
+            </tr>
+            <tr>
+          <td class="l_form">Stator Dia :</td>
+          <td><input id="stator" class="q_in" type="text" name="stator" tabindex="48" value="<?php echo $res[48]; ?>" readonly /></td>
+             </tr>
             </table>
-            
-            <table class="q_clients3" >       
+            <table class="q_clients3" >
+            <tr >
+            <td colspan="4" style="font-size:18;" align="center">Additional Work/Spare Replacement</td>
+            </tr>         
             <tr>
               <td class="l_form">Air Fan:</td>
               <td><input id="air" class="q_in" type="text" name="air" tabindex="32" value="<?php echo $res[32]; ?>" readonly/></td>
@@ -269,30 +284,6 @@ function validateMyForm ( ) {
               <td class="l_form">&nbsp;&nbsp;Stator Core &nbsp;&nbsp;Repair:</td>
               <td><input id="core" class="q_in" type="text" name="core" tabindex="43" value="<?php echo $res[43];?>" readonly/></td>
             </tr>            
-            </table> 
-              <table class="midtext1">
-            <tr >
-            <td colspan="3"><label class="desc3">Additional Details</label></td>
-            </tr> 
-            </table>
-            
-            <table class="w_clients2" >       
-            <tr>
-              <td class="l_form" align="">Stator Core Length:</td>
-              <td><input id="core1" class="q_in" type="text" name="core1" tabindex="44" value="<?php echo $res[44]; ?>" readonly/></td>
-              <td class="l_form">&nbsp;&nbsp;Rotor Core &nbsp;&nbsp;Length:</td>
-              <td><input id="core2" class="q_in" type="text" name="core2" tabindex="45" value="<?php echo $res[45]; ?>" readonly/></td>             </tr>
-           
-            <tr>
-          <td class="l_form">Rotor O.D.:</td>
-          <td><input id="rotor" class="q_in" type="text" name="rotor" tabindex="46" value="<?php echo $res[46]; ?>" readonly/></td>  
-          <td class="l_form" >&nbsp;&nbsp; Slot Dia:</td>
-          <td><input id="dia" class="q_in" type="text" name="dia" tabindex="47" value="<?php echo $res[47]; ?>" readonly/></td>              
-            </tr>
-            <tr>
-          <td class="l_form">Stator Dia :</td>
-          <td><input id="stator" class="q_in" type="text" name="stator" tabindex="48" value="<?php echo $res[48]; ?>" readonly /></td>
-             </tr>
             </table>
           <div class="addclients_b">
            

@@ -619,8 +619,8 @@ div#footer-links p {
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight:500;
 	letter-spacing:5px;
-	background-color:#F87B27;
-	width:80%;
+	background-color:;
+	width:550px;
 	height:30px;
 	margin-left:100px;
 	margin-top:2px;
@@ -628,10 +628,7 @@ div#footer-links p {
 	background: #F87B27 url('images/frontpage-link.png') repeat-x scroll top left;	
 	padding:3px 0px 0px 0px;
 	 background:#09C;
-   box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
-   -o-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
-   -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
-   -moz-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);	
+ 
 }
 .quotationT
 {
@@ -648,10 +645,7 @@ div#footer-links p {
 	background: #F87B27 url('images/frontpage-link.png') repeat-x scroll top left;	
 	padding:3px 0px 0px 0px;
 	 background:#09C;
-   box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
-   -o-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
-   -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
-   -moz-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+   
 }
 .l_form
 {
@@ -1362,7 +1356,25 @@ div#footer-links p {
    -moz-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);	
 	
 	}
-
+.q_info3
+{
+	margin-top:15px;
+	width:550px;
+	height:330px;
+	margin-left:28px;
+	background-color:#DFE;
+	padding:10 10 10 20;
+	
+}
+.q_info4
+{
+	margin-top:-330px;
+    width: 550px;
+    height: 330px;
+    margin-left: 550px;
+	background-color:#DFE;
+	padding:10 10 10 20;
+	}
 
 .q_clients
 {
@@ -1383,28 +1395,32 @@ div#footer-links p {
 }
 .w_clients2
 {
-	margin-top: -255px;
-	width: 589px;
+	 
+	width: 550px;
 	height: 180px;
-	margin-left: 15px;
+	margin-left: 23px;
+	margin-top:20px;
 	background-color:#DFE;
+	padding:10 10 10 20;
 }
 
 .q_clients1
 {
-	margin-top:-180px;
-    width: 580px;
+	margin-top:-275px;
+    width: 550px;
     height: 380px;
     margin-left: 640px;
 	background-color:#DFE;
+	padding:10 10 10 20;
 }
 .q_client_s
 {
-	margin-top:5px;
-	width:565px;
+	margin-top:15px;
+	width:550px;
 	height:230px;
 	margin-left:28px;
 	background-color:#DFE;
+	padding:10 10 10 20;
 }
 .q_clients_2
 {
@@ -1425,26 +1441,28 @@ div#footer-links p {
 }
 .q_clients_w
 {
-	margin-top: 5px;
-	width: 580px;
+	margin-top:-90px;
+	width: 550px;
 	height: 140px;
-	margin-left: 18px;
+	margin-left:28px;
 	background-color:#DFE;
+	padding:10 10 10 20;
 }
 .q_clients3
 {
-	margin-top: -50px;
-	width: 585px;
+	margin-top: -225px;
+	width: 550px;
 	height: 288px;
 	margin-left: 640px;
 	background-color:#DFE;
 }
 .q_clients4
 {
-	margin-top:20px;
-	width:320px;
-	height:250px;
-	margin-left:250px;
+	 
+	width:550px;
+	 height:150px;
+	margin-left:650px;
+	margin-top:-180px;
 	background-color:#DFE;
 }
 
@@ -1681,6 +1699,7 @@ option
 	margin-left: 25px;
 	margin-top: -10px;
 	margin-bottom:-10px;
+	background-color:#DFE;
 }
 .des1
 {
@@ -1701,15 +1720,20 @@ option
 	}
 	
 	.test2{
-		margin-left: 25px;
-		margin-top: 5px;
-		width: 880px;
-		margin-bottom: -10px;
+		padding:10 10 10 10;
+		margin-left: 20px;
+		margin-top: 50px;
+		width:550px;
+		background-color:#DFE;		
+		
 	}
 	
 	.test3{
-		width: 880px;
-		margin-left: 25px;
+		padding:10 20 10 50;
+		margin-left: 620px;
+		margin-top: -440px;
+		width:550px;
+		background-color:#DFE;	
 	}
 	
 	.guaranty{

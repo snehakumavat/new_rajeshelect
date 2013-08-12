@@ -122,7 +122,7 @@ if(isset($_REQUEST['cr_id2']))
       <div>
         <form action="" method="post" name="certificate">
           <br>
-          <table  align="center" class="testing1" >
+          <table class="q_clients_2" >
             <tr>
               <td class="l_form"   > M/s. </td>
               <td ><input type="text"  class="q_in" value="<?php echo $motor[1]; ?>" name="nm">
@@ -158,14 +158,23 @@ if(isset($_REQUEST['cr_id2']))
                 <td><input type="text"  class="q_in" value="<?php echo $motor[8]; ?>" name="vno"></td>
                 </tr>
             </table>
-            <table>
+             <table class='q_clients4'>
                   <tr>
-                    <td class="des1">AC SQ.CAGE INDUCTION MOTOR TESTING CERTIFICATE</td>
+                    <td class="l_form" width="260"  >Work Done :</td>
+                      <td>  <textarea  class="q_add" name="wd"><?php echo $motor[48]; ?></textarea></td>
+                  </tr>
+                    <tr>
+                    <td class="l_form" >Special  Remarks:</td>
+                      <td>  <textarea  class="q_add" name="sr"><?php echo $motor[49]; ?></textarea></td>
+                      
+                      <td class="l_form" >Analysis of Failure :</td>
+                      <td>  <textarea  class="q_add"  name="af"><?php echo $motor[47]; ?></textarea></td>
                   </tr>
                 </table>
-                
-                <table class="test2">
-            
+           <table class="test2">
+              <tr> 
+                    <td colspan="4" style="font-size:18px; padding-bottom:20px;" align="center" >AC SQ.CAGE INDUCTION MOTOR TESTING CERTIFICATE</td>
+                  </tr>
                   <tr>
                     <td class="l_form" >Make:-</td>
                      <td> <input type="text"  class="q_in" value="<?php echo $motor[11]; ?>" name="mk"></td>
@@ -239,13 +248,10 @@ if(isset($_REQUEST['cr_id2']))
                      </tr>
                 </table>
                 
-            <table>
-                  <tr>
-                    <td class="des1" >DC MOTOR TESTING CERTIFICATE</td>
+           <table class="test3" >
+              <tr> 
+                    <td  colspan="4" style="font-size:18px; padding-bottom:20px;" align="center" >DC MOTOR TESTING CERTIFICATE</td>
                   </tr>
-                </table>
-              
-              <table class="test2" >
                   <tr>
                     <td class="l_form"  width="395"   >Make:-</td>
                       <td>  <input type="text"  class="q_in" value="<?php echo $motor[29]; ?>" name="mk1"></td>
@@ -314,19 +320,7 @@ if(isset($_REQUEST['cr_id2']))
                   </tr>
                 </table>
            
-             <table class='test2'>
-                  <tr>
-                    <td class="l_form" width="260"  >Work Done :</td>
-                      <td>  <textarea  class="q_in" name="wd"><?php echo $motor[48]; ?></textarea></td>
-                  </tr>
-                    <tr>
-                    <td class="l_form" >Special  Remarks:</td>
-                      <td>  <textarea  class="q_add" name="sr"><?php echo $motor[49]; ?></textarea></td>
-                      
-                      <td class="l_form" >Analysis of Failure :</td>
-                      <td>  <textarea  class="q_add"  name="af"><?php echo $motor[47]; ?></textarea></td>
-                  </tr>
-                </table>
+            
                 <div class="addclients_b">
             <input name="c_add" class="formbutton" value=" Update " type="submit" tabindex="49" onClick="javascript:return validateMyForm();" />
             <input name="can" class="formbutton" value="Cancel" type="submit" tabindex="50" />

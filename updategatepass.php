@@ -56,12 +56,12 @@ if(isset($_REQUEST['g_up']))
 		$q_a=$_POST['a'][$i];		
 	/* $quo="UPDATE `material_desc` SET `gatpas_id`='".$g_t1."',`client_id`='".$c_up."' ,`desc_mat`='".$q_d."',`quant`='".$q_c."',`tot_qnt`='-',`unit`='".$q_r."',`rate`='".$q_q."',`amount`='".$q_a."',`tot_amt`='-' WHERE gatpas_id='$c_row[8]'"; */
 	 $quo="INSERT INTO `material_desc`( `gatpas_id`,`client_id`, `desc_mat`,`appl`,`remark`,`quant`,`unit`, `rate`, `amount`) VALUES ('".$g_t1."','".$c_row[1]."','".$q_d."','".$alp."','".$rmk."','".$q_q."','".$q_u."','".$q_r."','".$q_a."')";
-	mysql_query($quo);
+	//mysql_query($quo);
 	}
-	$result="UPDATE `gatepass` SET `client_id`='".$c_row[1]."', `tin_no`='".$g_t25."',`cst_no`='".$g_t26."',`ex_ring`='".$g_t27."'
+	  $result="UPDATE `gatepass` SET `client_id`='".$c_row[1]."', `tin_no`='".$g_t25."',`cst_no`='".$g_t26."',`ex_ring`='".$g_t27."'
 	,`ex_no`='".$g_t28."',`ex_div`='".$g_t29."',`ex_com`='".$g_t30."',`g_no`='".$g_t1."',`g_date`='".$g_t2."',`due_date`='".$g_t3."',`req`='".$g_t4."',`dept`='".$g_t5."',`status`='".$g_t6."',`t_ref_no`='".$g_t7."' ,`p_name`='".$g_t8."',`addr`='".$g_t9."',`mode`='".$g_t10."',`time`='".$g_t11."',`t_name`='".$g_t12."',`v_no`='".$g_t13."',`issue`='".$g_t14."',`total_qnt`='".$g_t16."',`total_amt`='".$g_t20."',`req_by`='".$g_t22."',`appr_nm`='".$g_t23."',`date_tim`='".$g_t24."' WHERE pass_id='$c_up'";
-	//exit();
-	$ans=mysql_query($result);
+ 
+	 $ans=mysql_query($result);
 	if($ans)
 	{
 	header("location:view_gatepass.php?c_id3=".$c_row[1]);

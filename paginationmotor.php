@@ -46,7 +46,7 @@ if($_GET)
 		echo $e_row[48];
 		echo "</td>";
         echo "<td width='70' class='print'>";
-		echo "<a href='?cr_id1=$e_row[0]' onclick='return confirmSubmit()'>Delete</a>&nbsp;<a href='updatemotor.php?cr_id2=$e_row[0]'>View/Update</a> <a href='motor_pdf.php?cr_id=$e_row[0]'>Print</a>";
+		echo "<a href='?cr_id1=$e_row[0]' onclick='return confirmSubmit()'><img src='imgs1/green_delete.png' height='20px' width='20px' /></a>&nbsp;<a href='updatemotor.php?cr_id2=$e_row[0]'><img src='imgs1/view.png'  />/<img src='imgs1/updt.png' height='20px' width='20px' /></a> <a href='motor_pdf.php?cr_id=$e_row[0]'><img src='imgs1/print.png'  /></a>";
 		echo "</td>";
 		echo "</tr>";
 		}

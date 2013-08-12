@@ -58,7 +58,7 @@ include("session.php");
         <div>
         <form name="form1" action="" method="post">
         
-        <table class="q_clients4">
+        <table class="addpay_tab">
                 <tr><td class="l_form">ID:</td><td><input id="id" class="q_in" type="text" name="id" /></td></tr>
                 <tr><td class="l_form">Name:</td><td><input id="nm1" class="q_in" type="text" name="nm1" /></td></tr>
                 <tr><td class="l_form">Category:</td><td><input type="text" id="cate" class="q_in" name="cate" /></td></tr>
@@ -68,7 +68,7 @@ include("session.php");
                 </table>
                 
                 
-        <div class="addclients_b">
+        <div class="addemp_button">
          <input name="c_add" class="formbutton" value=" Add " type="submit" onClick="javascript:return validateMyForm();" />
          <input name="can" class="formbutton" value="Cancel" type="submit" />
         </div>

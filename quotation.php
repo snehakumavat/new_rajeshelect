@@ -172,8 +172,8 @@ cursor: pointer;
 				 echo "<td width='200'>";
                 echo $row[2];
                 echo "</td>";
-				echo "<td width='70' class='print'>";
-                echo "<a href='updatequo.php?id=$row[0]'>Update</a>&nbsp;<a href='qreport.php?id=$row[0]'>Print</a>";
+				echo "<td width='70' >";
+                echo "<a href='updatequo.php?id=$row[0]'><img src='imgs1/updt.png' width='20' height='20' /></a>&nbsp;<a href='qreport.php?id=$row[0]'><img src='imgs1/print.png' /></a>";
                 echo "</td>";
                 echo "</tr>";
                 

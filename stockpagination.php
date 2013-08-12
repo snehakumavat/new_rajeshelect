@@ -58,7 +58,7 @@ if($_GET)
 		echo $c_row[4];
 		echo "</td>";
         echo "<td width='100' class='print'>";
-		echo "<a href='?c_id1=$c_row[0]' onclick='return confirmSubmit()'>Delete</a>&nbsp;<a href='updatestock.php?c_id2=$c_row[0]'>Update</a>&nbsp;<a href='stockview.php?c_id3=$c_row[0]'>View</a>";
+		echo "<a href='?c_id1=$c_row[0]' onclick='return confirmSubmit()'><img src='imgs1/green_delete.png' height='20px' width='20px' /></a>&nbsp;<a href='updatestock.php?c_id2=$c_row[0]'><img src='imgs1/updt.png' height='20px' width='20px' /></a>&nbsp;<a href='stockview.php?c_id3=$c_row[0]'><img src='imgs1/view.png' /></a>";
 		echo "</td>";
 		echo "</tr>";
 		}

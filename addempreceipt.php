@@ -86,7 +86,7 @@ include("include/database.php");
 	height:180px;
 	margin-top:10px;
 	border-collapse:collapse;
-	margin-left:300px;
+	margin-left:230px;
 	background-color:#DFE;
 }
 .form
@@ -97,8 +97,8 @@ include("include/database.php");
 	margin-top:1px;
 }
 .earning{
-	width:950px;
-	margin-left:130px;
+	width:880px;
+	margin-left:120px;	
 	background-color:#7aa127;
 }
 
@@ -257,17 +257,21 @@ function deleteRow(tableID)
    
         </table>
         
+         <table style="margin-left:150px; margin-top:30px;">             
+            <tr><td >
+            <input type="button" class="print" value="Add Row" onClick="addRow('dataTable')" >&nbsp;
+<input type="button" value="Delete Row" class="print" onClick="deleteRow('dataTable')" >
+				</td>
+            </tr> 
+            </table>
         <table class="earning" align="center" >
         <tr>
         	<td colspan="2" align="center" width="124px"><b>EARNINGS</b></td>
         	<td colspan="2" align="center"><b>DEDUCTIONS</b></td>
         </tr>
-        </table>
+        </table>       
         
-        
-        <table class="des" >
-        	
-            <br>
+        <table class="des" >        	             
             <tr>
                 <td width="20"></td>
                 
@@ -356,7 +360,7 @@ function deleteRow(tableID)
 	  else
 	  {
 		?>
-        <div class="addemp_b">
+        <div class="addclients_b">
          <input name="e_up" class="formbutton" value="Submit " type="submit" />
          <input name="e_can" class="formbutton" value="Cancel" type="submit" />
         </div>
