@@ -43,8 +43,8 @@ $page=$_GET['page'];
      echo "<td width='160'>";
 		echo $c_row[10];
 		echo "</td>"; 
-		 echo "<td width='100'class='print'>";
-		echo "<a href='quotationbasic.php?c_id2=$c_row[0]'>Create</a>";
+		 echo "<td width='100' >";
+		echo "<a href='quotationbasic.php?c_id2=$c_row[0]'> <img src='imgs1/create.png' /></a>";
 		echo "</td>";
 		echo "</tr>";
 		}

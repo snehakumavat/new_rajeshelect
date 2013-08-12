@@ -74,7 +74,7 @@ $rsd = mysql_query($sql);
                 echo round($total,2);		/*total*/
                 echo "</td>";
 				echo "<td class='print'>";
-                echo "<a href='updateinvoice.php?id=$row[0]'>Update</a>&nbsp;<a href='report.php?id=$row[0]'>Print</a>";
+                echo "<a href='updateinvoice.php?id=$row[0]'><img src='imgs1/updt.png' width='16' height='16' /></a>&nbsp;<a href='report.php?id=$row[0]'><img src='imgs1/print.png' /></a>";
                 echo "</td>";
                 echo "</tr>";
                 

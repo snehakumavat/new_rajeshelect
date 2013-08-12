@@ -121,8 +121,10 @@ $query="select * from sub_quotation where q_id='$c_res[0]' and less='0'";
                 <form name="form5" action="" method="post" enctype="multipart/form-data">
                 <br />
                 
-                <div class="quotationI"><center>REW QUOTATION</center></div>
-                <br />
+                 <table style="width:1100px; background-color:#DFE;" >
+                    <tr><td  style="font-size:18px;" align="center">REW QUOTATION</td></tr>
+                    </table>
+                
                 <table class="q_info3" height="400px;">
                 <tr><td class="l_form">Date:</td><td><input name="q_date" class="q_in" type="date" value="<?php  echo $c_res[3]; ?>"/></td></tr>
                 <tr><td class="l_form">Client Name:</td>
@@ -190,6 +192,10 @@ $query="select * from sub_quotation where q_id='$c_res[0]' and less='0'";
                 <td><input name="q_sub" class="q_in2" type="text" value="<?php echo $c_res[10]; ?>" /></td></tr>
                 <tr><td class="l_form">Enter Transportation Charges</td>
                 <td><input name="t_charge" class="q_in" type="text" value="<?php echo $c_res[12]; ?>"  /></td></tr>
+                 <tr>
+                <td class="l_form" > Analysis of Failure :</td>
+                      <td>   <textarea  class="q_add"  name="af"><?php echo $c_res[15];?></textarea></td>
+                      </tr>  
                 </table>
                 <br />
                 <table class="des">
@@ -257,9 +263,12 @@ $query="select * from sub_quotation where q_id='$c_res[0]' and less='0'";
                 
                 <br>
                 <br>
-                <font size="+2">Enter Amount to be less from original</font>
-                <br>
-                <table class="" align="center">
+               <table style="width:1100px; background-color:#DFE;" >
+                    <tr><td  style="font-size:18px;" align="center">Enter Amount to be less from original</td></tr>
+                    </table>        
+                
+                
+                <table class="des" align="center">
                 <tr>
                <td class="heading">Description</td>              
                 <td class="heading">Rate/Each</td>                 
@@ -276,14 +285,11 @@ $query="select * from sub_quotation where q_id='$c_res[0]' and less='0'";
                  <input class="des_q" type="text" name="capacity"id="capacity"  value="<?php echo $l1[4];?>" ><br>
                 </td>
                 </tr>
-                <tr>
-                <td class="l_form" ><br><br>Analysis of Failure :</td>
-                      <td> <br><br> <textarea  class="q_add"  name="af"><?php echo $c_res[15];?></textarea></td>
-                      </tr>        
+                     
                 </table>
-                
-                <div class="q_button5">
-                <br><br>
+                  <br><br>
+                <div class="q_button5" align="center">
+              
                 <input name="submit" class="formbutton" value=" Submit " type="submit" onClick="javascript:return validateMyForm();" />
                 <input name="cancel" class="formbutton" value="Cancel" type="submit" />
                 </div>

@@ -49,13 +49,13 @@
 		echo "<a href='reciept_detail.php?id=$c_row[0]'>Details</a>&nbsp;";
 		echo "<a href='addreciept.php?id=$row[0]&&id2=$a'>Reciept</a>";
 		echo "</td>";*/
-		echo "<td class='print'>";
-		echo "<a href='addreciept.php?id=$c_row[0]'>Create</a>&nbsp;";
+		echo "<td  >";
+		echo "<a href='addreciept.php?id=$c_row[0]'><img src='imgs1/create.png' /></a>&nbsp;";
 		$qury="select * from reciept where i_id=$c_row[0]";
 		$ans=mysql_query($qury);
 		$cnt=mysql_num_rows($ans);
 		if($cnt>0)		
-		echo "<a href='recieptpdf.php?id=$c_row[0]'>Print</a>";
+		echo "<a href='recieptpdf.php?id=$c_row[0]'><img src='imgs1/print.png' /></a>";
 		echo "</td>";
 		echo "</tr>";
 		}

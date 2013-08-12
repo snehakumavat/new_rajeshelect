@@ -196,7 +196,7 @@ cursor: pointer;
 		echo date('d-m-Y',strtotime($c_row[3]));
 		echo "</td>";
 		echo "<td width='100' class='print'>";
-		echo "<a href='?po_id1=$c_row[0]' onclick='return confirmSubmit()'>Delete</a>&nbsp;<a href='updatepo.php?po_id=$c_row[0]'>View/Update</a>&nbsp;";
+		echo "<a href='?po_id1=$c_row[0]' onclick='return confirmSubmit()'><img src='imgs1/green_delete.png' width='16' height='16' /></a>&nbsp;<a href='updatepo.php?po_id=$c_row[0]'><img src='imgs1/view.png' />/<img src='imgs1/updt.png' width='16' height='16' /></a>&nbsp;";
 		echo "</td>";
 		echo "</tr>";
 		}
