@@ -118,8 +118,12 @@ $count=mysql_num_rows($c_res1);
                 
                 <form name="form5" action="" method="post" enctype="multipart/form-data">
                 <br />                
-                <div class="quotationI"><center>REW Delivery Challan</center></div>
-                <br />
+                
+                <table style="width:1070px; background-color:#DFE; margin-left:30px;">
+                <tr>
+                <td style="font-size:18px;" align="center">REW Delivery Challan</td>
+                </tr>
+                </table>
                 <table class="q_info3" height="300px">
                 <tr><td class="l_form">Date:</td><td><input name="q_date" class="q_in" type="date" value="<?php  echo date("Y-m-d"); ?>"/></td></tr>
                 
@@ -140,7 +144,7 @@ $count=mysql_num_rows($c_res1);
                 <input type="text" class="q_in" name="rgp" value="<?php echo $c_row[9]; ?>">
 				</td></tr>
                 </table>
-                <table class="q_info5">
+                <table class="q_info4">
                 
                  <tr><td class="l_form">Vendor Code No:</td>
                 <td>
@@ -223,7 +227,7 @@ $count=mysql_num_rows($c_res1);
 				$cnt=mysql_num_rows($ans);
 				if($cnt>0)
 				{
-					echo"<h4> You Can Print the Reciept Record is Inserted Successfully";
+					echo"<br><br><h4 align='center'> You Can Print the Reciept Record is Inserted Successfully</h4>";
 				}
 				else
 				{

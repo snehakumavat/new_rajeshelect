@@ -192,7 +192,7 @@ function addRow(tableID) {
         <div class="quotation"><center>Purches Order Details</center></div>
         <div><br>
         <form action="" method="post" name="po" >
-        <table style="margin-left:100px;">       
+        <table class='q_clients_2'>       
             <tr>
            <td class="l_form">Client Name:-</td>
          <td><input id="cmp1" class="q_in" type="text" name="cmp1" value="<?php echo $cmpnm[3]; ?>" tabindex=""/></td>
@@ -208,9 +208,9 @@ function addRow(tableID) {
          <input type='text' id="phno" class="q_in"  name="phno"  value="<?php echo $cmpnm[8]; ?>" tabindex=""/></td>
             </tr>                       
             </table>
-        <br><br>
-            
-            <table  style="margin-left:100px;">       
+    
+            <br><br>
+            <table  class='q_clients4' align="left">       
             <tr>
               <td class="l_form">Vendor Code:</td>
               <td><input id="vc" class="q_in" type="text" name="vc" tabindex=""/></td>
@@ -230,10 +230,10 @@ function addRow(tableID) {
           <td><input id="d2" class="q_in" type="date" name="d2" value="<?php echo date('Y-m-d');?>" tabindex=""/></td>
             </tr>
             </table>
-           <br><br>
+        
             
             
-             <table class="midtext1">
+             <table class="des">
              
             <tr><td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="button" value="Add Row" onClick="addRow('dataTable');add();" >&nbsp;

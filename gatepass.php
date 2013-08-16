@@ -111,7 +111,7 @@ var obj = document.getElementsByTagName("input");
          if(obj[i].name == "r[]")
 		 {
 			 var rate = obj[i].value;
-		 }
+		 }                                                                                                                                                      
          if(obj[i].name == "a[]")
 		 {
           		if(qty > 0 && rate > 0)

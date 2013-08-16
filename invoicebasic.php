@@ -111,9 +111,12 @@ if(isset($_REQUEST['cancel']))
                 
                 <form name="form5" action="" method="post" enctype="multipart/form-data">
                 <br />
-                
-                <div class="quotationI"><center>REW TAX INVOICE</center></div>
-                <br />
+                <table style="width:1070px; background-color:#DFE; margin-left:30px;">
+                <tr>
+                <td style="font-size:18px;" align="center">REW TAX INVOICE</td>
+                </tr>
+                </table>
+                 
                 <table class="q_info3" height="300px">
                 <tr><td class="l_form">Date:</td><td><input name="q_date" class="q_in" type="date" value="<?php  echo date("Y-m-d"); ?>"/></td></tr>
                 <tr><td class="l_form">Gatepass No:</td>
@@ -137,7 +140,7 @@ if(isset($_REQUEST['cancel']))
                 <input type="text" class="q_in" name="rgp" >
 				</td></tr>
                 </table>
-                <table class="q_info5">
+                <table class="q_info4">
                 <tr><td class="l_form">Invoice No</td>
                 <td><input name="invoice" class="q_in" type="text" value="<?php echo $count+1; ?>" readonly /></td></tr>
                 <tr><td class="l_form">Our DC No:</td>

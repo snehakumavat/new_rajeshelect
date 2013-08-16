@@ -44,7 +44,7 @@ $page=$_GET['page'];
 		echo "</td>";
 		
 		echo "<td width='100' class='print'>";
-		echo "<a href='invoicebasic.php?c_id1=$c_row[0]'>Create</a>";
+		echo "<a href='invoicebasic.php?c_id1=$c_row[0]'><img src='imgs1/create.png'/></a>";
 		echo "</td>";
 		echo "</tr>";
 		}

@@ -163,7 +163,7 @@ cursor: pointer;
 		if(isset($_REQUEST['search']))
 		  {
 		 	 $srch=$_REQUEST['search'];			
-			 $query="select  * from po where client_name LIKE '%$srch%' OR comp_name LIKE '%$srch%' OR c_date LIKE '%$srch%' OR c_email LIKE'%srch%'";
+			  $query="select  * from po where c_name LIKE '%$srch%' OR ph_no LIKE '%$srch%' OR work_no LIKE '%$srch%' OR cost_center LIKE'%$srch%' OR vendor LIKE'%$srch%'";
 	 		 $ans=mysql_query($query);
 	 
 	?>

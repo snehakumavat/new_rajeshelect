@@ -116,7 +116,7 @@ var obj = document.getElementsByTagName("input");
 		  add+=(vat*1);		 
         document.getElementById("total").value = add;
 		var words = toWords(add);
-		document.getElementById("word").innerHTML=words;
+		document.getElementById("word").innerHTML='New value= '+words;
         total=0;
 }
 
@@ -207,7 +207,7 @@ function addRow(tableID) {
         <div><br>
         <form action="" method="post" name="po" >
         <INPUT class="formbutton" Type="button" VALUE="Back" onClick="history.go(-1);return true;">
-        <table style="margin-left:100px;">       
+        <table class='q_clients_2'>       
             <tr>
            <td class="l_form">Client Name:-</td>
          <td><input id="cmp1" class="q_in" type="text" name="cmp1" value="<?php echo $cmpnm[1]; ?>" tabindex=""/></td>
@@ -225,7 +225,7 @@ function addRow(tableID) {
             </table>
         <br><br>
             
-            <table  style="margin-left:100px;">       
+            <table   class=" q_clients4">       
             <tr>
               <td class="l_form">Vendor Code:</td>
               <td><input id="vc" class="q_in" type="text" name="vc" value="<?php echo $cmpnm[4]; ?>" tabindex=""/></td>

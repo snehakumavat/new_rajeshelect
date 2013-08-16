@@ -121,8 +121,12 @@ $count=mysql_num_rows($c_res1);
                 <form name="form5" action="" method="post" enctype="multipart/form-data">
                 <br />
                 
-                <div class="quotationI"><center>REW TAX INVOICE</center></div>
-                <br />
+                <table style="width:1070px; background-color:#DFE; margin-left:30px;">
+                <tr>
+                <td style="font-size:18px;" align="center">REW TAX INVOICE</td>
+                </tr>
+                </table>
+                
                 <table class="q_info3" height="300px">
                 <tr><td class="l_form">Date:</td><td><input name="q_date" class="q_in" type="text" value="<?php  echo date("d-m-Y"); ?>"/></td></tr>
                 <tr><td class="l_form">Gatepass No:</td>
@@ -146,7 +150,8 @@ $count=mysql_num_rows($c_res1);
                 <input type="text" class="q_in" name="rgp" value="<?php echo $c_row[9]; ?>">
 				</td></tr>
                 </table>
-                <table class="q_info5">
+                
+                <table class="q_info4">
                 <tr><td class="l_form">Invoice No</td>
                 <td><input name="invoice" class="q_in" type="text" value="<?php echo $c_row[0]; ?>" readonly/></td></tr>
                 <tr><td class="l_form">Our DC No:</td>

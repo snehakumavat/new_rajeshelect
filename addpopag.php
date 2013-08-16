@@ -46,7 +46,7 @@ $page=$_GET['page'];
 		echo "</td>"; 
 		
         echo "<td width='100'class='print'>";
-		echo "<a href='po.php?c_id2=$c_row[0]'>Create</a>";
+		echo "<a href='po.php?c_id2=$c_row[0]'><img src='imgs1/create.png'/></a>";
 		echo "</td>";
 		echo "</tr>";
 		}
